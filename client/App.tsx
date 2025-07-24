@@ -22,7 +22,8 @@ const App = () => (
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route path="/" element={<ClaimsDetail />} />
+            <Route path="/" element={<Summary />} />
+            <Route path="/claims-detail" element={<ClaimsDetail />} />
             <Route path="/claimant" element={<PlaceholderPage title="Claimant Information" />} />
             <Route path="/any-applicable" element={<PlaceholderPage title="Any Applicable" />} />
             <Route path="/bodily-injury" element={<PlaceholderPage title="Bodily Injury" />} />
