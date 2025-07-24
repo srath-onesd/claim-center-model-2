@@ -112,19 +112,19 @@ export function Summary() {
         </div>
 
         {/* Right Column - High Risk Indicators */}
-        <div className="space-y-6">
-          <div className="bg-white rounded-lg border p-6">
-            <h2 className="text-lg font-medium mb-4">High Risk Indicators</h2>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-start space-x-2">
+        <div className="space-y-3">
+          <div className="bg-white rounded border p-3">
+            <h2 className="text-sm font-medium mb-2">High Risk Indicators</h2>
+            <ul className="space-y-1 text-xs">
+              <li className="flex items-start space-x-1">
                 <span className="text-blue-600">•</span>
                 <span>Hit Mitigation</span>
               </li>
-              <li className="flex items-start space-x-2">
+              <li className="flex items-start space-x-1">
                 <span className="text-blue-600">•</span>
                 <span>3 Running Report</span>
               </li>
-              <li className="flex items-start space-x-2">
+              <li className="flex items-start space-x-1">
                 <span className="text-blue-600">•</span>
                 <span>2 Claims/suits in file time</span>
               </li>
