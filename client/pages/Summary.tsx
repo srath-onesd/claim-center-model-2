@@ -44,7 +44,7 @@ export function Summary() {
               {/* Pie Chart */}
               <div className="flex-shrink-0">
                 <div className="relative w-20 h-20">
-                  <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 32 32">
+                  <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 32 32">
                     <circle
                       cx="16" cy="16" r="14"
                       fill="none"
@@ -82,28 +82,28 @@ export function Summary() {
               </div>
 
               {/* Legend and Values */}
-              <div className="flex-1 ml-8">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-700">Gross Incurred</span>
+              <div className="flex-1 ml-4">
+                <div className="space-y-1">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="text-xs text-gray-700">Gross Incurred</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-gray-700">Paid</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="text-xs text-gray-700">Paid</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-amber-500 rounded-full"></div>
-                    <span className="text-sm text-gray-700">Recovery</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span className="text-xs text-gray-700">Recovery</span>
                   </div>
                 </div>
-                
-                <div className="mt-6 space-y-2">
+
+                <div className="mt-3 space-y-1">
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-gray-900">$16,400</div>
+                    <div className="text-lg font-bold text-gray-900">$16,400</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-xl font-semibold text-gray-700">$2,000</div>
+                    <div className="text-sm font-semibold text-gray-700">$2,000</div>
                   </div>
                 </div>
               </div>
