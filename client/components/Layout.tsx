@@ -100,8 +100,9 @@ export function Layout({ children }: LayoutProps) {
         {/* Sidebar */}
         <aside className={cn(
           "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
-          "lg:w-64 lg:block",
-          sidebarOpen ? "fixed inset-y-0 left-0 z-50 w-64 top-[120px]" : "hidden"
+          sidebarOpen ? "w-64 block" : "w-0 hidden",
+          "lg:relative lg:top-0",
+          sidebarOpen && "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0"
         )}>
           <nav className="p-4">
             <ul className="space-y-1">
