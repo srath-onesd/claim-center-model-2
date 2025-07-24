@@ -106,7 +106,7 @@ export function Layout({ children }: LayoutProps) {
           <nav className="p-4">
             <ul className="space-y-1">
               {navigationItems.map((item) => (
-                <li key={item.name}>
+                <li key={item.href}>
                   <Link
                     to={item.href}
                     onClick={() => setSidebarOpen(false)}
