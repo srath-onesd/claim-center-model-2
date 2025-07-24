@@ -17,7 +17,7 @@ const navigationItems = [
   { name: 'Financials', href: '/financials', icon: '💰' },
   { name: 'Recovery', href: '/recovery', icon: '🔄' },
   { name: 'Payments', href: '/payments', icon: '💳' },
-  { name: 'Recovery', href: '/recovery-2', icon: '📊' },
+  { name: 'Recovery Analysis', href: '/recovery-2', icon: '📊' },
   { name: 'Subrogation', href: '/subrogation', icon: '⚖️' },
   { name: 'Unit Lookup', href: '/unit-lookup', icon: '🔍' },
   { name: 'Legal', href: '/legal', icon: '⚖️' },
