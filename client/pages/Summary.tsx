@@ -6,9 +6,9 @@ export function Summary() {
         <h1 className="text-lg font-semibold text-gray-900">Summary</h1>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {/* Left Column - Basic Info and Financial Info */}
-        <div className="lg:col-span-2 space-y-3">
+        <div className="space-y-3">
           {/* Basic Info */}
           <div className="bg-white rounded border p-3">
             <div className="flex items-center justify-between mb-2">
