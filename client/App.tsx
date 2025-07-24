@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout";
+import { Summary } from "./pages/Summary";
 import { ClaimsDetail } from "./pages/ClaimsDetail";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
