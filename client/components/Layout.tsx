@@ -62,8 +62,8 @@ export function Layout({ children }: LayoutProps) {
               </Button>
               <span className="font-semibold">Open</span>
               <div className="hidden sm:flex items-center space-x-4 text-sm">
-                <span>Claim: 244-19143</span>
-                <span>Policy Eff: 124408</span>
+                <span>Claim: 24E-19143</span>
+                <span>Policy Eff: 12/31/2025</span>
                 <span className="hidden md:inline">Insured: Bluedown Bowl</span>
                 <span className="hidden lg:inline">Contact: Amy Applegate, Bob Fay</span>
                 <span className="hidden xl:inline">DOL: 11/11/2024</span>
@@ -71,7 +71,7 @@ export function Layout({ children }: LayoutProps) {
                 <span className="hidden xl:inline">Search</span>
               </div>
             </div>
-            <div className="text-sm">Advisor</div>
+            <div className="text-sm">Action</div>
           </div>
         </div>
 
