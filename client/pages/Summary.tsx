@@ -1,49 +1,49 @@
 export function Summary() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-3 h-[calc(100vh-140px)] overflow-y-auto">
       {/* Summary Header */}
       <div>
-        <h1 className="text-2xl font-semibold text-gray-900">Summary</h1>
+        <h1 className="text-lg font-semibold text-gray-900">Summary</h1>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         {/* Left Column - Basic Info and Financial Info */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-3">
           {/* Basic Info */}
-          <div className="bg-white rounded-lg border p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-medium">Basic Info</h2>
+          <div className="bg-white rounded border p-3">
+            <div className="flex items-center justify-between mb-2">
+              <h2 className="text-sm font-medium">Basic Info</h2>
               <button className="p-1 hover:bg-gray-100 rounded">
-                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                 </svg>
               </button>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+            <div className="flex items-center space-x-3">
+              <div className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
                 Open
               </div>
-              <div className="text-gray-600">
+              <div className="text-gray-600 text-xs">
                 Open 24 days
               </div>
             </div>
           </div>
 
           {/* Financial Info */}
-          <div className="bg-white rounded-lg border p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-medium">Financial Info</h2>
+          <div className="bg-white rounded border p-3">
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-sm font-medium">Financial Info</h2>
               <button className="p-1 hover:bg-gray-100 rounded">
-                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                 </svg>
               </button>
             </div>
-            
+
             <div className="flex items-center justify-between">
               {/* Pie Chart */}
               <div className="flex-shrink-0">
-                <div className="relative w-32 h-32">
+                <div className="relative w-20 h-20">
                   <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 32 32">
                     <circle
                       cx="16" cy="16" r="14"
