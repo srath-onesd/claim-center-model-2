@@ -134,24 +134,24 @@ export function Summary() {
       </div>
 
       {/* Loss Details */}
-      <div className="bg-white rounded-lg border p-6">
-        <h2 className="text-lg font-medium mb-4">Loss Details</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="bg-white rounded border p-3">
+        <h2 className="text-sm font-medium mb-2">Loss Details</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           <div>
-            <div className="text-sm font-medium text-gray-900 mb-1">Loss Date:</div>
-            <div className="text-sm text-gray-600">01/10/2024, 12:00 AM</div>
+            <div className="text-xs font-medium text-gray-900 mb-1">Loss Date:</div>
+            <div className="text-xs text-gray-600">01/10/2024, 12:00 AM</div>
           </div>
           <div>
-            <div className="text-sm font-medium text-gray-900 mb-1">Notice Date:</div>
-            <div className="text-sm text-gray-600">01/10/2024, 12:00 AM</div>
+            <div className="text-xs font-medium text-gray-900 mb-1">Notice Date:</div>
+            <div className="text-xs text-gray-600">01/10/2024, 12:00 AM</div>
           </div>
           <div>
-            <div className="text-sm font-medium text-gray-900 mb-1">Loss Location:</div>
-            <div className="text-sm text-gray-600">1922 Patricia Ave, Arvada, CA 93007</div>
+            <div className="text-xs font-medium text-gray-900 mb-1">Loss Location:</div>
+            <div className="text-xs text-gray-600">1922 Patricia Ave, Arvada, CA 93007</div>
           </div>
           <div>
-            <div className="text-sm font-medium text-gray-900 mb-1">Description:</div>
-            <div className="text-sm text-gray-600">Insured hit other party's car in the front passenger tire while making a left</div>
+            <div className="text-xs font-medium text-gray-900 mb-1">Description:</div>
+            <div className="text-xs text-gray-600">Insured hit other party's car in the front passenger tire while making a left</div>
           </div>
         </div>
       </div>
