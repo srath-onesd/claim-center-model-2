@@ -161,7 +161,7 @@ export function Summary() {
         <div className="px-6 py-4 border-b bg-gray-50">
           <h2 className="text-lg font-medium">Financial Details</h2>
         </div>
-        
+
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="bg-gray-100">
@@ -216,6 +216,135 @@ export function Summary() {
                 <td className="px-4 py-3">$14,000.00</td>
                 <td className="px-4 py-3">$20,000.00</td>
                 <td className="px-4 py-3">$0.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Policy Coverage Detail */}
+      <div className="bg-white rounded-lg border">
+        <div className="px-6 py-4 border-b bg-gray-50">
+          <h2 className="text-lg font-medium">Policy Coverage Detail</h2>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs min-w-[1400px]">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Insured</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">LDOF</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Effective</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Expiration</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Description Text</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">P# Limit</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Incurred Expenses</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Deductible</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Repro</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Overdraft</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Cyber Crime</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Social Engineering</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">Claims brought by Corporate Lawyers</th>
+                <th className="px-2 py-3 text-left font-medium text-gray-900">CAFSI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="px-2 py-3">Bluedown Bowl</td>
+                <td className="px-2 py-3">01/11/2024</td>
+                <td className="px-2 py-3">01/01/2024</td>
+                <td className="px-2 py-3">01/01/2025</td>
+                <td className="px-2 py-3">$1,000,000 DEDUCTIBLE applicable to claims expenses, indemnity payments and/or cost of repairs.</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$1,000,000</td>
+                <td className="px-2 py-3">$2,000,000</td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-2 py-3">James</td>
+                <td className="px-2 py-3">01/11/2024</td>
+                <td className="px-2 py-3">01/01/2024</td>
+                <td className="px-2 py-3">01/01/2025</td>
+                <td className="px-2 py-3">$1,000,000 $250,000 $500,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$250,000</td>
+                <td className="px-2 py-3">$1,000,000</td>
+                <td className="px-2 py-3">$2,000,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* Remaining Per Claim/Per Aggregate by Coverage */}
+      <div className="bg-white rounded-lg border">
+        <div className="px-6 py-4 border-b bg-gray-50">
+          <h2 className="text-lg font-medium">Remaining Per Claim/Per Aggregate by Coverage</h2>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="px-4 py-3 text-left font-medium text-gray-900">Policy Coverage</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-900">Remaining for this Claim (Paid)</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-900">Remaining for this Claim (Incurred)</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-900">Remaining Per Aggregate (Paid)</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-900">Remaining Per Aggregate (Incurred)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="px-4 py-3 font-medium">A</td>
+                <td className="px-4 py-3">$1,000,000.00</td>
+                <td className="px-4 py-3">$1,000,000.00</td>
+                <td className="px-4 py-3">$2,000,000.00</td>
+                <td className="px-4 py-3">$2,000,000.00</td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-3 font-medium">BECO</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-3 font-medium">Operations</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$1,000,000.00</td>
+                <td className="px-4 py-3">$1,000,000.00</td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-3 font-medium">DISPA</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$500,000.00</td>
+                <td className="px-4 py-3">$500,000.00</td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-3 font-medium">CSPA</td>
+                <td className="px-4 py-3">$1,000,000.00</td>
+                <td className="px-4 py-3">$1,000,000.00</td>
+                <td className="px-4 py-3">$2,000,000.00</td>
+                <td className="px-4 py-3">$2,000,000.00</td>
+              </tr>
+              <tr className="border-b">
+                <td className="px-4 py-3 font-medium">QC</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
+                <td className="px-4 py-3">$250,000.00</td>
               </tr>
             </tbody>
           </table>
