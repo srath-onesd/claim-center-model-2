@@ -43,6 +43,7 @@ const headerTabs = [
 
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -51,28 +52,38 @@ export function Layout({ children }: LayoutProps) {
         <div className="px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="lg:hidden text-primary-foreground hover:bg-primary-foreground/10"
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+              >
+                {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+              </Button>
               <span className="font-semibold">Open</span>
-              <span className="text-sm">Claim: 244-19143</span>
-              <span className="text-sm">Policy Eff: 124408</span>
-              <span className="text-sm">Insured: Bluedown Bowl</span>
-              <span className="text-sm">Contact: Amy Applegate, Bob Fay</span>
-              <span className="text-sm">DOL: 11/11/2024</span>
-              <span className="text-sm">Adjuster: Mital</span>
-              <span className="text-sm">Search</span>
+              <div className="hidden sm:flex items-center space-x-4 text-sm">
+                <span>Claim: 244-19143</span>
+                <span>Policy Eff: 124408</span>
+                <span className="hidden md:inline">Insured: Bluedown Bowl</span>
+                <span className="hidden lg:inline">Contact: Amy Applegate, Bob Fay</span>
+                <span className="hidden xl:inline">DOL: 11/11/2024</span>
+                <span className="hidden xl:inline">Adjuster: Mital</span>
+                <span className="hidden xl:inline">Search</span>
+              </div>
             </div>
             <div className="text-sm">Advisor</div>
           </div>
         </div>
-        
+
         {/* Tab Navigation */}
         <div className="border-t border-primary-foreground/20">
-          <div className="flex px-4">
+          <div className="flex px-4 overflow-x-auto">
             {headerTabs.map((tab) => (
               <Link
                 key={tab.name}
                 to={tab.href}
                 className={cn(
-                  "px-4 py-2 text-sm border-b-2 transition-colors",
+                  "px-4 py-2 text-sm border-b-2 transition-colors whitespace-nowrap",
                   tab.active || location.pathname === tab.href
                     ? "border-white bg-white/10"
                     : "border-transparent hover:bg-white/5"
@@ -87,13 +98,18 @@ export function Layout({ children }: LayoutProps) {
 
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-64 bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto">
+        <aside className={cn(
+          "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
+          "lg:w-64 lg:block",
+          sidebarOpen ? "fixed inset-y-0 left-0 z-50 w-64 top-[120px]" : "hidden"
+        )}>
           <nav className="p-4">
             <ul className="space-y-1">
               {navigationItems.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.href}
+                    onClick={() => setSidebarOpen(false)}
                     className={cn(
                       "flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium transition-colors",
                       location.pathname === item.href
@@ -110,8 +126,16 @@ export function Layout({ children }: LayoutProps) {
           </nav>
         </aside>
 
+        {/* Overlay for mobile */}
+        {sidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
+
         {/* Main Content */}
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-4 lg:p-6">
           {children}
         </main>
       </div>
