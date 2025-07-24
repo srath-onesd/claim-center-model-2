@@ -107,21 +107,21 @@ export function ClaimsDetail() {
         </div>
         
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-xs sm:text-sm min-w-[1200px]">
             <thead className="bg-gray-100">
               <tr>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">LDCP</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Effective</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Expiration</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">P# Limit</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Incurred Expenses</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Deductible</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Repairs Overhead</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Option Crime</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Social Engineering</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">Claims Brought by Corporate Lawyers</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-900">CAFSI</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Coverage</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">LDCP</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Effective</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Expiration</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">P# Limit</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Incurred Expenses</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Deductible</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Repairs Overhead</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Option Crime</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Social Engineering</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">Claims Brought by Corporate Lawyers</th>
+                <th className="px-2 sm:px-4 py-3 text-left font-medium text-gray-900">CAFSI</th>
               </tr>
             </thead>
             <tbody>
