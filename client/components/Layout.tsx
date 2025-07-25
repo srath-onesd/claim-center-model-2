@@ -186,7 +186,7 @@ export function Layout({ children }: LayoutProps) {
           </div>
         </div>
 
-        {/* Tab Navigation }
+        {/* Tab Navigation
         <div className="border-t border-primary-foreground/20">
           <div className="flex px-4 overflow-x-auto">
             {headerTabs.map((tab) => (
