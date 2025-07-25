@@ -46,10 +46,10 @@ export function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" style={{width: "100vw"}}>
       {/* Header */}
       <header className="bg-primary text-primary-foreground">
-        <div className="px-4 py-2" style={{width: "100vw"}}>
+        <div className="px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Button
