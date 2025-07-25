@@ -109,7 +109,7 @@ export function Layout({ children }: LayoutProps) {
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    onClick={() => setSidebarOpen(false)}
+                    onClick={() => setSidebarOpen(true)}
                     className={cn(
                       "flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium transition-colors",
                       location.pathname === item.href
