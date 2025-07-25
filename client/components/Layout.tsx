@@ -48,7 +48,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50" style={{width: "100vw"}}>
       {/* Header */}
-      <header className="bg-primary text-primary-foreground" style={{width: "100vw"}}>
+      <header className="bg-primary text-primary-foreground">
         <div className="px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
