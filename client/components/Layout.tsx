@@ -9,6 +9,7 @@ interface LayoutProps {
 }
 
 const navigationItems = [
+  { id: "overview", label: 'Overview', href: '/', icon: '📋' },
   { id: "claimdetails", label: 'Claim Details', href: '/', icon: '📋' },
   {
     id: "claimants",
@@ -20,7 +21,7 @@ const navigationItems = [
       {
         id: "claimant1",
         label: "Amy Applegate",
-        href: "/exposures/amy-applegate",
+        href: "/claimants/amy-applegate",
         expandable: true,
         subItems: [
           { id: "pc-liability-1", label: "Bodily Injury", href: "/exposures/amy-applegate/bodily-injury" },
@@ -30,7 +31,7 @@ const navigationItems = [
       {
         id: "claimant2",
         label: "Bob Pay",
-        href: "/exposures/bob-pay",
+        href: "/claimants/bob-pay",
         expandable: true,
         subItems: [
           { id: "pc-liability-2", label: "Bodily Injury", href: "/exposures/bob-pay/bodily-injury" },
