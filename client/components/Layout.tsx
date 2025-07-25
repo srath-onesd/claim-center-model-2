@@ -52,16 +52,6 @@ const navigationItems = [
   { name: 'Claim History', href: '/claim-history', icon: '📚' }
 ];
 
-const headerTabs = [
-  { name: 'Claim', href: '/', active: true },
-  { name: 'Claimant', href: '/claimant', active: false },
-  { name: 'Related Incidents and Claims', href: '/related', active: false },
-  { name: 'Coverage Details', href: '/coverage', active: false },
-  { name: 'Deductible Financials', href: '/deductible', active: false },
-  { name: 'Audit Log', href: '/audit', active: false },
-  { name: 'Journal', href: '/journal', active: false }
-];
-
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -154,7 +144,7 @@ export function Layout({ children }: LayoutProps) {
                     )}
                   >
                     <span className="text-lg">{item.icon}</span>
-                    <span>{item.name}</span>
+                    <span>{item.label}</span>
                   </Link>
                 </li>
               ))}
