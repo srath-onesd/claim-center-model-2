@@ -166,6 +166,7 @@ export function Layout({ children }: LayoutProps) {
                 <span><p>DOL: <strong>31/12/2025</strong></p></span>
                 <span><p>Adjuster: <strong>Mitali</strong></p></span>
                 <button style={{
+                  position: "fixed"
                   top: "32%",
                   right: "120px",
                   transform: "translateY(-50%)",
