@@ -11,45 +11,52 @@ interface LayoutProps {
 const navigationItems = [
   { id: "claimdetails", label: 'Claim Details', href: '/', icon: '📋' },
   {
-    id: "claimants", label: 'Claimants', href: '/claimants', icon: '👤',
+    id: "claimants",
+    label: 'Claimants',
+    href: '/claimants',
+    icon: '👤',
     expandable: true,
     subItems: [
       {
         id: "claimant1",
         label: "Amy Applegate",
         href: "/exposures/amy-applegate",
+        expandable: true,
         subItems: [
-          { id: "pc-liability-1", label: "Bodily Injury", href: "/exposures/amy-applegate/pc-liability" }
+          { id: "pc-liability-1", label: "Bodily Injury", href: "/exposures/amy-applegate/bodily-injury" },
+          { id: "pd-liability-1", label: "Property Damage", href: "/exposures/amy-applegate/property-damage" }
         ]
       },
       {
-        id: "claimant2", 
+        id: "claimant2",
         label: "Bob Pay",
         href: "/exposures/bob-pay",
+        expandable: true,
         subItems: [
-          { id: "pc-liability-2", label: "Property Damage", href: "/exposures/bob-pay/pc-liability" }
+          { id: "pc-liability-2", label: "Bodily Injury", href: "/exposures/bob-pay/bodily-injury" },
+          { id: "pd-liability-2", label: "Property Damage", href: "/exposures/bob-pay/property-damage" }
         ]
       }
     ]
   },
-  { name: 'Any Applicable', href: '/any-applicable', icon: '📄' },
-  { name: 'Bodily Injury', href: '/bodily-injury', icon: '🏥' },
-  { name: 'Fault Key', href: '/fault-key', icon: '🔑' },
-  { name: 'Financials', href: '/financials', icon: '💰' },
-  { name: 'Recovery', href: '/recovery', icon: '🔄' },
-  { name: 'Payments', href: '/payments', icon: '💳' },
-  { name: 'Recovery Analysis', href: '/recovery-2', icon: '📊' },
-  { name: 'Subrogation', href: '/subrogation', icon: '⚖️' },
-  { name: 'Unit Lookup', href: '/unit-lookup', icon: '🔍' },
-  { name: 'Legal', href: '/legal', icon: '⚖️' },
-  { name: 'Property Damage', href: '/property-damage', icon: '🏠' },
-  { name: 'Special', href: '/special', icon: '⭐' },
-  { name: 'Reserves', href: '/reserves', icon: '💰' },
-  { name: 'Diary', href: '/diary', icon: '📅' },
-  { name: 'Notes', href: '/notes', icon: '📝' },
-  { name: 'Events', href: '/events', icon: '📅' },
-  { name: 'Documents', href: '/documents', icon: '📄' },
-  { name: 'Claim History', href: '/claim-history', icon: '📚' }
+  { id: "any-applicable", label: 'Any Applicable', href: '/any-applicable', icon: '📄' },
+  { id: "bodily-injury", label: 'Bodily Injury', href: '/bodily-injury', icon: '🏥' },
+  { id: "fault-key", label: 'Fault Key', href: '/fault-key', icon: '🔑' },
+  { id: "financials", label: 'Financials', href: '/financials', icon: '💰' },
+  { id: "recovery", label: 'Recovery', href: '/recovery', icon: '🔄' },
+  { id: "payments", label: 'Payments', href: '/payments', icon: '💳' },
+  { id: "recovery-analysis", label: 'Recovery Analysis', href: '/recovery-2', icon: '📊' },
+  { id: "subrogation", label: 'Subrogation', href: '/subrogation', icon: '⚖️' },
+  { id: "unit-lookup", label: 'Unit Lookup', href: '/unit-lookup', icon: '🔍' },
+  { id: "legal", label: 'Legal', href: '/legal', icon: '⚖️' },
+  { id: "property-damage", label: 'Property Damage', href: '/property-damage', icon: '🏠' },
+  { id: "special", label: 'Special', href: '/special', icon: '⭐' },
+  { id: "reserves", label: 'Reserves', href: '/reserves', icon: '💰' },
+  { id: "diary", label: 'Diary', href: '/diary', icon: '📅' },
+  { id: "notes", label: 'Notes', href: '/notes', icon: '📝' },
+  { id: "events", label: 'Events', href: '/events', icon: '📅' },
+  { id: "documents", label: 'Documents', href: '/documents', icon: '📄' },
+  { id: "claim-history", label: 'Claim History', href: '/claim-history', icon: '📚' }
 ];
 
 export function Layout({ children }: LayoutProps) {
