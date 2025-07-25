@@ -200,23 +200,7 @@ export function Layout({ children }: LayoutProps) {
         )}>
           <nav className="p-4">
             <ul className="space-y-1">
-              {navigationItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    to={item.href}
-                    onClick={() => setSidebarOpen(true)}
-                    className={cn(
-                      "flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                      location.pathname === item.href
-                        ? "bg-primary text-primary-foreground"
-                        : "text-gray-700 hover:bg-gray-100"
-                    )}
-                  >
-                    <span className="text-lg">{item.icon}</span>
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
-              ))}
+              {navigationItems.map((item) => renderNavigationItem(item))}
             </ul>
           </nav>
         </aside>
