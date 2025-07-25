@@ -55,8 +55,9 @@ const navigationItems = [
         icon: '🔄',
         expandable: true,
         subItems: [
-          { id: "pc-liability-2", label: "Bodily Injury", href: "/financials/recovery/bodily-injury" },
-          { id: "pd-liability-2", label: "Property Damage", href: "/financials/recovery/property-damage" }
+          { id: "subrogation", label: "Bodily Injury", href: "/financials/recovery/subrogation" },
+          { id: "financialreceipts", label: "Financial Receipts", href: "/financials/recovery/financialreceipts" },
+          { id: "pd-liability-2", label: "Property Damage", href: "/financials/recovery/Deductible" }
         ]
       }
     ]
