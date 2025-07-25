@@ -146,18 +146,6 @@ export function Layout({ children }: LayoutProps) {
                     <span className="text-lg">{item.icon}</span>
                     <span>{item.label}</span>
                   </Link>
-                  {hasSubItems && (
-                    <button
-                      onClick={() => toggleExpanded(item.id)}
-                      className="px-1 py-1 text-white hover:bg-blue-400 rounded"
-                    >
-                      {isExpanded ? (
-                        <ChevronDown className="w-3 h-3" />
-                      ) : (
-                        <ChevronRight className="w-3 h-3" />
-                      )}
-                    </button>
-                  )}
                 </li>
               ))}
             </ul>
