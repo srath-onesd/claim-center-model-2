@@ -51,7 +51,7 @@ export function Layout({ children }: LayoutProps) {
       <header className="bg-primary text-primary-foreground" style={{width: "100vw"}}>
         <div className="px-4 py-2">
           <div className="flex items-center justify-between" style={{width: "100vw"}}>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4" style={{width: "100vw"}}>
               <Button
                 variant="ghost"
                 size="sm"
