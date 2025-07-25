@@ -92,10 +92,12 @@ export function Summary() {
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                     <span className="text-xs text-gray-700">Paid</span>
+                    <span className="text-xs text-gray-700">$500.00</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
                     <span className="text-xs text-gray-700">Recovery</span>
+                    <span className="text-xs text-gray-700">$0.00</span>
                   </div>
                 </div>
 
