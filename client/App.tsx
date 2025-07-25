@@ -52,4 +52,15 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Proper root management to avoid createRoot warnings during HMR
+const container = document.getElementById("root")!;
+
+// Check if root already exists
+if (!(container as any)._reactRoot) {
+  const root = createRoot(container);
+  (container as any)._reactRoot = root;
+  root.render(<App />);
+} else {
+  // Re-use existing root for HMR
+  (container as any)._reactRoot.render(<App />);
+}
