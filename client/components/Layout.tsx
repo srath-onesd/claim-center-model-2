@@ -60,7 +60,7 @@ export function Layout({ children }: LayoutProps) {
               >
                 {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
               </Button>
-              <span className="font-semibold">Open</span>
+              <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded"><p>Open</p></span>
               <div className="hidden sm:flex items-center space-x-4 text-sm">
                 <span>Claim: 24E-19143</span>
                 <span>Policy Eff: 12/31/2025</span>
