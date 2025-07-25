@@ -59,9 +59,71 @@ const navigationItems = [
   { id: "claim-history", label: 'Claim History', href: '/claim-history', icon: '📚' }
 ];
 
+interface NavigationItem {
+  id: string;
+  label: string;
+  href: string;
+  icon?: string;
+  expandable?: boolean;
+  subItems?: NavigationItem[];
+}
+
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+
+  const toggleExpanded = (itemId: string) => {
+    const newExpanded = new Set(expandedItems);
+    if (newExpanded.has(itemId)) {
+      newExpanded.delete(itemId);
+    } else {
+      newExpanded.add(itemId);
+    }
+    setExpandedItems(newExpanded);
+  };
+
+  const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
+    const isExpanded = expandedItems.has(item.id);
+    const hasSubItems = item.subItems && item.subItems.length > 0;
+    const paddingLeft = level * 16 + 12; // Increase indent for each level
+
+    return (
+      <li key={item.id}>
+        <div
+          className={cn(
+            "flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors",
+            location.pathname === item.href
+              ? "bg-primary text-primary-foreground"
+              : "text-gray-700 hover:bg-gray-100"
+          )}
+          style={{ paddingLeft: `${paddingLeft}px` }}
+        >
+          <Link
+            to={item.href}
+            onClick={() => setSidebarOpen(true)}
+            className="flex items-center space-x-3 flex-1"
+          >
+            {level === 0 && item.icon && <span className="text-lg">{item.icon}</span>}
+            <span>{item.label}</span>
+          </Link>
+          {hasSubItems && item.expandable && (
+            <button
+              onClick={() => toggleExpanded(item.id)}
+              className="p-1 hover:bg-gray-200 rounded"
+            >
+              {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+            </button>
+          )}
+        </div>
+        {hasSubItems && isExpanded && (
+          <ul className="mt-1 space-y-1">
+            {item.subItems!.map((subItem) => renderNavigationItem(subItem, level + 1))}
+          </ul>
+        )}
+      </li>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
