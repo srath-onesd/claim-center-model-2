@@ -39,13 +39,18 @@ const navigationItems = [
       }
     ]
   },
-  { id: "any-applicable", label: 'Any Applicable', href: '/any-applicable', icon: '📄' },
-  { id: "bodily-injury", label: 'Bodily Injury', href: '/bodily-injury', icon: '🏥' },
-  { id: "fault-key", label: 'Fault Key', href: '/fault-key', icon: '🔑' },
-  { id: "financials", label: 'Financials', href: '/financials', icon: '💰' },
-  { id: "recovery", label: 'Recovery', href: '/recovery', icon: '🔄' },
-  { id: "payments", label: 'Payments', href: '/payments', icon: '💳' },
-  { id: "recovery-analysis", label: 'Recovery Analysis', href: '/recovery-2', icon: '📊' },
+  {
+    id: "financials",
+    label: 'Financials',
+    href: '/financials',
+    icon: '💰',
+    expandable: true,
+    subItems: [
+      { id: "reserves", label: 'Reserves', href: '/financials/reserves', icon: '💳' },
+      { id: "payments", label: 'Payments', href: '/financials/payments', icon: '💳' },
+      { id: "recovery", label: 'Recovery', href: '/recovery', icon: '🔄' },
+
+  },
   { id: "subrogation", label: 'Subrogation', href: '/subrogation', icon: '⚖️' },
   { id: "unit-lookup", label: 'Unit Lookup', href: '/unit-lookup', icon: '🔍' },
   { id: "legal", label: 'Legal', href: '/legal', icon: '⚖️' },
