@@ -48,7 +48,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-primary text-primary-foreground">
+      <header className="bg-primary text-primary-foreground" style={{width: "100vw"}}>
         <div className="px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -68,9 +68,24 @@ export function Layout({ children }: LayoutProps) {
                 <span><p>Claimant: <strong>Amy Applegate, Bob Pay</strong></p></span>
                 <span><p>DOL: <strong>31/12/2025</strong></p></span>
                 <span><p>Adjuster: <strong>Mitali</strong></p></span>
+                <button style={{
+                  top: "32%",
+                  right: "120px",
+                  transform: "translateY(-50%)",
+                  padding: "6px 10px",
+                  backgroundColor: "#007bff",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                  margin: "15px 0 0 auto",
+                  zIndex: 1000
+                }}>
+                  Action
+                </button>
               </div>
             </div>
-            <div className="text-sm">Action</div>
           </div>
         </div>
 
