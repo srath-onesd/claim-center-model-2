@@ -48,7 +48,17 @@ const navigationItems = [
     subItems: [
       { id: "reserves", label: 'Reserves', href: '/financials/reserves', icon: '💳' },
       { id: "payments", label: 'Payments', href: '/financials/payments', icon: '💳' },
-      { id: "recovery", label: 'Recovery', href: '/recovery', icon: '🔄' }
+      {
+        id: "recovery",
+        label: 'Recovery',
+        href: '/financials/recovery',
+        icon: '🔄',
+        expandable: true,
+        subItems: [
+          { id: "pc-liability-2", label: "Bodily Injury", href: "/financials/recovery/bodily-injury" },
+          { id: "pd-liability-2", label: "Property Damage", href: "/financials/recovery/property-damage" }
+        ]
+      }
     ]
   },
   { id: "subrogation", label: 'Subrogation', href: '/subrogation', icon: '⚖️' },
