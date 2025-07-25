@@ -48,8 +48,8 @@ const navigationItems = [
     subItems: [
       { id: "reserves", label: 'Reserves', href: '/financials/reserves', icon: '💳' },
       { id: "payments", label: 'Payments', href: '/financials/payments', icon: '💳' },
-      { id: "recovery", label: 'Recovery', href: '/recovery', icon: '🔄' },
-
+      { id: "recovery", label: 'Recovery', href: '/recovery', icon: '🔄' }
+    ]
   },
   { id: "subrogation", label: 'Subrogation', href: '/subrogation', icon: '⚖️' },
   { id: "unit-lookup", label: 'Unit Lookup', href: '/unit-lookup', icon: '🔍' },
