@@ -62,13 +62,12 @@ export function Layout({ children }: LayoutProps) {
               </Button>
               <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded"><p>Open</p></span>
               <div className="hidden sm:flex items-center space-x-4 text-sm">
-                <span>Claim: 24E-19143</span>
-                <span>Policy Eff: 12/31/2025</span>
-                <span className="hidden md:inline">Insured: Bluedown Bowl</span>
-                <span className="hidden lg:inline">Contact: Amy Applegate, Bob Fay</span>
-                <span className="hidden xl:inline">DOL: 11/11/2024</span>
-                <span className="hidden xl:inline">Adjuster: Mital</span>
-                <span className="hidden xl:inline">Search</span>
+                <span><p>Claim: <strong>23E:12345</strong></p></span>
+                <span><p>Policy: <strong>54:123456</strong></p></span>
+                <span><p>Insured: <strong>Shubham Raut</strong></p></span>
+                <span><p>Claimant: <strong>Amy Applegate, Bob Pay</strong></p></span>
+                <span><p>DOL: <strong>31/12/2025</strong></p></span>
+                <span><p>Adjuster: <strong>Mitali</strong></p></span>
               </div>
             </div>
             <div className="text-sm">Action</div>
