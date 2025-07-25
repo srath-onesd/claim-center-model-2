@@ -9,7 +9,7 @@ interface LayoutProps {
 }
 
 const navigationItems = [
-  { id: "overview", label: 'Overview', href: '/overview', icon: '📋' },
+  { id: "overview", label: 'Overview', href: '/', icon: '📋' },
   { id: "claimdetails", label: 'Claim Details', href: '/claimdetails', icon: '📋' },
   {
     id: "claimants",
