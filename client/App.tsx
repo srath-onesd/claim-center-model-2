@@ -24,25 +24,76 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Summary />} />
             <Route path="/claims-detail" element={<ClaimsDetail />} />
-            <Route path="/claimant" element={<PlaceholderPage title="Claimant Information" />} />
-            <Route path="/bodily-injury" element={<PlaceholderPage title="Bodily Injury" />} />
-            <Route path="/financials" element={<PlaceholderPage title="Financials" />} />
-            <Route path="/recovery" element={<PlaceholderPage title="Recovery" />} />
-            <Route path="/payments" element={<PlaceholderPage title="Payments" />} />
-            <Route path="/recovery-2" element={<PlaceholderPage title="Recovery Details" />} />
-            <Route path="/subrogation" element={<PlaceholderPage title="Subrogation" />} />
-            <Route path="/unit-lookup" element={<PlaceholderPage title="Unit Lookup" />} />
-            <Route path="/property-damage" element={<PlaceholderPage title="Property Damage" />} />
-            <Route path="/reserves" element={<PlaceholderPage title="Reserves" />} />
+            <Route
+              path="/claimant"
+              element={<PlaceholderPage title="Claimant Information" />}
+            />
+            <Route
+              path="/bodily-injury"
+              element={<PlaceholderPage title="Bodily Injury" />}
+            />
+            <Route
+              path="/financials"
+              element={<PlaceholderPage title="Financials" />}
+            />
+            <Route
+              path="/recovery"
+              element={<PlaceholderPage title="Recovery" />}
+            />
+            <Route
+              path="/payments"
+              element={<PlaceholderPage title="Payments" />}
+            />
+            <Route
+              path="/recovery-2"
+              element={<PlaceholderPage title="Recovery Details" />}
+            />
+            <Route
+              path="/subrogation"
+              element={<PlaceholderPage title="Subrogation" />}
+            />
+            <Route
+              path="/unit-lookup"
+              element={<PlaceholderPage title="Unit Lookup" />}
+            />
+            <Route
+              path="/property-damage"
+              element={<PlaceholderPage title="Property Damage" />}
+            />
+            <Route
+              path="/reserves"
+              element={<PlaceholderPage title="Reserves" />}
+            />
             <Route path="/diary" element={<PlaceholderPage title="Diary" />} />
             <Route path="/notes" element={<PlaceholderPage title="Notes" />} />
-            <Route path="/events" element={<PlaceholderPage title="Events" />} />
-            <Route path="/documents" element={<PlaceholderPage title="Documents" />} />
-            <Route path="/claim-history" element={<PlaceholderPage title="Claim History" />} />
-            <Route path="/related" element={<PlaceholderPage title="Related Incidents and Claims" />} />
-            <Route path="/coverage" element={<PlaceholderPage title="Coverage Details" />} />
-            <Route path="/deductible" element={<PlaceholderPage title="Deductible Financials" />} />
-            <Route path="/journal" element={<PlaceholderPage title="Journal" />} />
+            <Route
+              path="/events"
+              element={<PlaceholderPage title="Events" />}
+            />
+            <Route
+              path="/documents"
+              element={<PlaceholderPage title="Documents" />}
+            />
+            <Route
+              path="/claim-history"
+              element={<PlaceholderPage title="Claim History" />}
+            />
+            <Route
+              path="/related"
+              element={<PlaceholderPage title="Related Incidents and Claims" />}
+            />
+            <Route
+              path="/coverage"
+              element={<PlaceholderPage title="Coverage Details" />}
+            />
+            <Route
+              path="/deductible"
+              element={<PlaceholderPage title="Deductible Financials" />}
+            />
+            <Route
+              path="/journal"
+              element={<PlaceholderPage title="Journal" />}
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
