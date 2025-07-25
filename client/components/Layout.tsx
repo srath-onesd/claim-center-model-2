@@ -167,7 +167,7 @@ export function Layout({ children }: LayoutProps) {
                 <span><p>Adjuster: <strong>Mitali</strong></p></span>
                 <button style={{
                   position: "fixed",
-                  top: "32%",
+                  top: "2%",
                   right: "120px",
                   transform: "translateY(-50%)",
                   padding: "6px 10px",
