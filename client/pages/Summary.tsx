@@ -87,7 +87,7 @@ export function Summary() {
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                     <span className="text-xs text-gray-700">Gross Incurred</span>
-                    <span className="text-xs text-gray-700">$2000.00</span>
+                    <span className="text-xs text-gray-700" style={{ textAlign: 'right' }}>$2000.00</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
