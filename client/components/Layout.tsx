@@ -9,8 +9,8 @@ interface LayoutProps {
 }
 
 const navigationItems = [
-  { name: 'Claim Details', href: '/', icon: '📋' },
-  { name: 'Claimant', href: '/claimant', icon: '👤' },
+  { id: "claimdetails", label: 'Claim Details', href: '/', icon: '📋' },
+  { id: "claimant", label: 'Claimant', href: '/claimant', icon: '👤' },
   { name: 'Any Applicable', href: '/any-applicable', icon: '📄' },
   { name: 'Bodily Injury', href: '/bodily-injury', icon: '🏥' },
   { name: 'Fault Key', href: '/fault-key', icon: '🔑' },
