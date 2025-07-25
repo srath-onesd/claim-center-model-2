@@ -10,7 +10,28 @@ interface LayoutProps {
 
 const navigationItems = [
   { id: "claimdetails", label: 'Claim Details', href: '/', icon: '📋' },
-  { id: "claimant", label: 'Claimant', href: '/claimant', icon: '👤' },
+  {
+    id: "claimants", label: 'Claimants', href: '/claimants', icon: '👤',
+    expandable: true,
+    subItems: [
+      {
+        id: "claimant1",
+        label: "Amy Applegate",
+        href: "/exposures/amy-applegate",
+        subItems: [
+          { id: "pc-liability-1", label: "Bodily Injury", href: "/exposures/amy-applegate/pc-liability" }
+        ]
+      },
+      {
+        id: "claimant2", 
+        label: "Bob Pay",
+        href: "/exposures/bob-pay",
+        subItems: [
+          { id: "pc-liability-2", label: "Property Damage", href: "/exposures/bob-pay/pc-liability" }
+        ]
+      }
+    ]
+  },
   { name: 'Any Applicable', href: '/any-applicable', icon: '📄' },
   { name: 'Bodily Injury', href: '/bodily-injury', icon: '🏥' },
   { name: 'Fault Key', href: '/fault-key', icon: '🔑' },
