@@ -100,15 +100,6 @@ export function Summary() {
                     <span className="text-xs text-gray-700">$0.00</span>
                   </div>
                 </div>
-
-                <div className="mt-3 space-y-1">
-                  <div className="text-right">
-                    <div className="text-lg font-bold text-gray-900">$16,400</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-semibold text-gray-700">$2,000</div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
