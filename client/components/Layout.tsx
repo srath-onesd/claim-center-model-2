@@ -9,8 +9,8 @@ interface LayoutProps {
 }
 
 const navigationItems = [
-  { id: "overview", label: 'Overview', href: '/', icon: '📋' },
-  { id: "claimdetails", label: 'Claim Details', href: '/', icon: '📋' },
+  { id: "overview", label: 'Overview', href: '/overview', icon: '📋' },
+  { id: "claimdetails", label: 'Claim Details', href: '/claimdetails', icon: '📋' },
   {
     id: "claimants",
     label: 'Claimants',
@@ -24,8 +24,8 @@ const navigationItems = [
         href: "/claimants/amy-applegate",
         expandable: true,
         subItems: [
-          { id: "pc-liability-1", label: "Bodily Injury", href: "/exposures/amy-applegate/bodily-injury" },
-          { id: "pd-liability-1", label: "Property Damage", href: "/exposures/amy-applegate/property-damage" }
+          { id: "pc-liability-1", label: "Bodily Injury", href: "/claimants/amy-applegate/bodily-injury" },
+          { id: "pd-liability-1", label: "Property Damage", href: "/claimants/amy-applegate/property-damage" }
         ]
       },
       {
