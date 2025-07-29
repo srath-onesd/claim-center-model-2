@@ -107,14 +107,7 @@ const navigationItems = [
     ],
   },
   { id: "legal", label: "Legal", href: "/legal", icon: "⚖️" },
-  {
-    id: "property-damage",
-    label: "Property Damage",
-    href: "/property-damage",
-    icon: "🏠",
-  },
-  { id: "special", label: "Special", href: "/special", icon: "⭐" },
-  { id: "reserves", label: "Reserves", href: "/reserves", icon: "💰" },
+  
   { id: "diary", label: "Diary", href: "/diary", icon: "📅" },
   { id: "notes", label: "Notes", href: "/notes", icon: "📝" },
   { id: "events", label: "Events", href: "/events", icon: "📅" },
