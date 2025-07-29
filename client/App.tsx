@@ -102,6 +102,10 @@ const App = () => (
               path="/financials/recovery/Deductible"
               element={<PlaceholderPage title="Deductible Recovery" />}
             />
+            <Route
+              path="/financials/payments"
+              element={<PlaceholderPage title="Financial Payments" />}
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
