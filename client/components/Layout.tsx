@@ -89,7 +89,7 @@ const navigationItems = [
         subItems: [
           {
             id: "subrogation",
-            label: "Bodily Injury",
+            label: "Subrogation",
             href: "/financials/recovery/subrogation",
           },
           {
@@ -98,9 +98,9 @@ const navigationItems = [
             href: "/financials/recovery/financialreceipts",
           },
           {
-            id: "pd-liability-2",
-            label: "Property Damage",
-            href: "/financials/recovery/Deductible",
+            id: "deductible",
+            label: "Deductible",
+            href: "/financials/recovery/deductible",
           },
         ],
       },
