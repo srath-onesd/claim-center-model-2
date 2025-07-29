@@ -106,8 +106,6 @@ const navigationItems = [
       },
     ],
   },
-  { id: "subrogation", label: "Subrogation", href: "/subrogation", icon: "⚖️" },
-  { id: "unit-lookup", label: "Unit Lookup", href: "/unit-lookup", icon: "🔍" },
   { id: "legal", label: "Legal", href: "/legal", icon: "⚖️" },
   {
     id: "property-damage",
