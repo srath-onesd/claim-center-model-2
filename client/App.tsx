@@ -107,6 +107,10 @@ const App = () => (
               path="/financials/payments"
               element={<PlaceholderPage title="Financial Payments" />}
             />
+            <Route
+              path="/financials/reserves"
+              element={<PlaceholderPage title="Financial Reserves" />}
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
