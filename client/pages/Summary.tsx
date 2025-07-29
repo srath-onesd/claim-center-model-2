@@ -1,445 +1,640 @@
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Avatar, AvatarFallback, AvatarInitials } from "@/components/ui/avatar";
+import { 
+  MapPin, 
+  Calendar, 
+  Phone, 
+  Mail, 
+  FileText, 
+  Upload, 
+  Download,
+  Search,
+  Edit,
+  Clock,
+  User,
+  DollarSign,
+  TrendingUp,
+  Shield,
+  AlertCircle,
+  Link
+} from "lucide-react";
+
 export function Summary() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activityFilter, setActivityFilter] = useState("all");
+
   return (
-    <div className="space-y-3 h-[calc(100vh-140px)] overflow-y-auto">
-      {/* Summary Header */}
-      <div>
-        <h1 className="text-lg font-semibold text-gray-900">Summary</h1>
+    <div className="min-h-screen bg-gray-50">
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white border-b px-6 py-3">
+        <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <span>Home</span>
+          <span>›</span>
+          <span>Claims</span>
+          <span>›</span>
+          <span className="text-gray-900 font-medium">Claim #CLM-2024-001</span>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-        {/* Left Column - Basic Info and Financial Info */}
-        <div className="space-y-3">
-          {/* Basic Info */}
-          <div className="bg-white rounded border p-3">
-            <div className="flex items-center justify-between mb-2">
-              <h2 className="text-sm font-medium">Basic Info</h2>
-              <button className="p-1 hover:bg-gray-100 rounded">
-                <svg
-                  className="w-3 h-3 text-gray-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
-                Open
-              </div>
-              <div className="text-gray-600 text-xs">Open 24 days</div>
-            </div>
+      {/* Search Bar */}
+      <div className="bg-white border-b px-6 py-4">
+        <div className="flex items-center space-x-4">
+          <div className="relative flex-1 max-w-md">
+            <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+            <Input
+              placeholder="Search within claim data and logs..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10"
+            />
+          </div>
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
+            Open
+          </Badge>
+          <span className="text-sm text-gray-600">Open 24 days</span>
+        </div>
+      </div>
+
+      <div className="p-6 space-y-6">
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          {/* Left Column - Basic Info & Financial Info */}
+          <div className="lg:col-span-2 space-y-6">
+            
+            {/* Basic Information Panel */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <CardTitle className="text-lg font-semibold">Basic Information</CardTitle>
+                <Button variant="ghost" size="sm">
+                  <Edit className="h-4 w-4" />
+                </Button>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Claim Number</label>
+                    <p className="text-sm text-gray-600 mt-1">CLM-2024-001</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Date of Loss</label>
+                    <div className="flex items-center mt-1">
+                      <Calendar className="h-4 w-4 text-gray-400 mr-1" />
+                      <p className="text-sm text-gray-600">01/10/2024</p>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Loss Location</label>
+                    <div className="flex items-center mt-1">
+                      <MapPin className="h-4 w-4 text-gray-400 mr-1" />
+                      <p className="text-sm text-gray-600">1922 Patricia Ave, Arvada, CA</p>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Loss Type</label>
+                    <p className="text-sm text-gray-600 mt-1">Auto Accident</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Line of Business</label>
+                    <p className="text-sm text-gray-600 mt-1">Auto Insurance</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Policy Number</label>
+                    <p className="text-sm text-gray-600 mt-1">POL-2024-0001</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Insured Name</label>
+                    <p className="text-sm text-gray-600 mt-1">Bluedown Bowl</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Assigned Adjuster</label>
+                    <div className="mt-1">
+                      <p className="text-sm text-gray-600">Mital Patel</p>
+                      <div className="flex items-center space-x-2 mt-1">
+                        <Button variant="ghost" size="sm" className="p-0 h-auto">
+                          <Phone className="h-3 w-3 mr-1" />
+                          <span className="text-xs">(555) 123-4567</span>
+                        </Button>
+                        <Button variant="ghost" size="sm" className="p-0 h-auto">
+                          <Mail className="h-3 w-3 mr-1" />
+                          <span className="text-xs">mital@company.com</span>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Deductible</label>
+                    <p className="text-sm text-gray-600 mt-1">$1,000.00</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Enhanced Financial Information Panel */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold">Financial Overview</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* Key Financial Metrics */}
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-gray-900">$34,485</div>
+                    <div className="text-sm text-gray-600">Total Incurred</div>
+                    <Progress value={75} className="mt-2" />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">$14,485</div>
+                    <div className="text-sm text-gray-600">Outstanding Reserves</div>
+                    <Progress value={42} className="mt-2" />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">$20,000</div>
+                    <div className="text-sm text-gray-600">Amount Paid</div>
+                    <Progress value={58} className="mt-2" />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-amber-600">$0</div>
+                    <div className="text-sm text-gray-600">Recoveries</div>
+                    <Progress value={0} className="mt-2" />
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-600">$1,000</div>
+                    <div className="text-sm text-gray-600">Deductible</div>
+                    <Progress value={100} className="mt-2" />
+                  </div>
+                </div>
+
+                {/* Financial Breakdown Table */}
+                <div className="mt-6">
+                  <h3 className="text-md font-semibold mb-4">Breakdown by Claimant-Coverage</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Claimant Name</th>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage Type</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Recovery</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="px-4 py-3">Amy Applegate</td>
+                          <td className="px-4 py-3">Medical Payments</td>
+                          <td className="px-4 py-3 text-right">$585.00</td>
+                          <td className="px-4 py-3 text-right">$100.00</td>
+                          <td className="px-4 py-3 text-right">$485.00</td>
+                          <td className="px-4 py-3 text-right">$0.00</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">Amy Applegate</td>
+                          <td className="px-4 py-3">Liability - Bodily Injury</td>
+                          <td className="px-4 py-3 text-right">$34,000.00</td>
+                          <td className="px-4 py-3 text-right">$20,000.00</td>
+                          <td className="px-4 py-3 text-right">$14,000.00</td>
+                          <td className="px-4 py-3 text-right">$0.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Related Claims & Incidents */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Link className="h-5 w-5 mr-2" />
+                  Related Claims & Incidents
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-medium">Incident Report #INC-2024-001</h4>
+                        <p className="text-sm text-gray-600">Same location, 01/10/2024</p>
+                        <p className="text-sm text-gray-600">Multi-vehicle collision at intersection</p>
+                      </div>
+                      <Button variant="outline" size="sm">View Details</Button>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-medium">Weather Event: Winter Storm</h4>
+                        <p className="text-sm text-gray-600">01/09/2024 - 01/11/2024</p>
+                        <p className="text-sm text-gray-600">Icy road conditions reported in area</p>
+                      </div>
+                      <Button variant="outline" size="sm">View Report</Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Financial Info */}
-          <div className="bg-white rounded border p-3">
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="text-sm font-medium">Financial Info</h2>
-              <button className="p-1 hover:bg-gray-100 rounded">
-                <svg
-                  className="w-3 h-3 text-gray-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                  />
-                </svg>
-              </button>
-            </div>
-
-            <div className="flex items-center justify-between">
-              {/* Pie Chart */}
-              <div className="flex-shrink-0">
-                <div className="relative w-20 h-20">
-                  <svg
-                    className="w-20 h-20 transform -rotate-90"
-                    viewBox="0 0 32 32"
+          {/* Right Column - Timeline, Documents, Contacts */}
+          <div className="space-y-6">
+            
+            {/* Timeline/Activity Log */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Clock className="h-5 w-5 mr-2" />
+                  Activity Timeline
+                </CardTitle>
+                <div className="flex space-x-2">
+                  <Button
+                    variant={activityFilter === "all" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActivityFilter("all")}
                   >
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="14"
-                      fill="none"
-                      stroke="#e5e7eb"
-                      strokeWidth="4"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="14"
-                      fill="none"
-                      stroke="#3b82f6"
-                      strokeWidth="4"
-                      strokeDasharray="60 40"
-                      strokeLinecap="round"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="14"
-                      fill="none"
-                      stroke="#10b981"
-                      strokeWidth="4"
-                      strokeDasharray="25 75"
-                      strokeDashoffset="-60"
-                      strokeLinecap="round"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="14"
-                      fill="none"
-                      stroke="#f59e0b"
-                      strokeWidth="4"
-                      strokeDasharray="15 85"
-                      strokeDashoffset="-85"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                    All
+                  </Button>
+                  <Button
+                    variant={activityFilter === "notes" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActivityFilter("notes")}
+                  >
+                    Notes
+                  </Button>
+                  <Button
+                    variant={activityFilter === "payments" ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActivityFilter("payments")}
+                  >
+                    Payments
+                  </Button>
                 </div>
-              </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4 max-h-96 overflow-y-auto">
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                        <User className="h-4 w-4 text-blue-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">Mital Patel</p>
+                        <p className="text-xs text-gray-500">2 hours ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Updated reserve amount to $14,485</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                        <DollarSign className="h-4 w-4 text-green-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">System</p>
+                        <p className="text-xs text-gray-500">5 hours ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Payment of $20,000 issued to Amy Applegate</p>
+                    </div>
+                  </div>
 
-              {/* Legend and Values */}
-              <div className="flex-1 ml-4">
-                <div className="space-y-1">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-xs text-gray-700">
-                      Gross Incurred
-                    </span>
-                    <span
-                      className="text-xs text-gray-700"
-                      style={{ marginLeft: "auto" }}
-                    >
-                      $2000.00
-                    </span>
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                        <FileText className="h-4 w-4 text-purple-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">John Smith</p>
+                        <p className="text-xs text-gray-500">1 day ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Uploaded medical report: "MRI_Results_01_15_2024.pdf"</p>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-xs text-gray-700">Paid</span>
-                    <span
-                      className="text-xs text-gray-700"
-                      style={{ marginLeft: "auto" }}
-                    >
-                      $500.00
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
-                    <span className="text-xs text-gray-700">Recovery</span>
-                    <span
-                      className="text-xs text-gray-700"
-                      style={{ marginLeft: "auto" }}
-                    >
-                      $0.00
-                    </span>
+
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <Phone className="h-4 w-4 text-yellow-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">Mital Patel</p>
+                        <p className="text-xs text-gray-500">2 days ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Phone call with claimant regarding treatment progress</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
+
+            {/* Documents Section */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <FileText className="h-5 w-5 mr-2" />
+                  Documents
+                </CardTitle>
+                <Button variant="outline" size="sm" className="ml-auto">
+                  <Upload className="h-4 w-4 mr-2" />
+                  Upload
+                </Button>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <FileText className="h-5 w-5 text-blue-600" />
+                      <div>
+                        <p className="text-sm font-medium">Police Report</p>
+                        <p className="text-xs text-gray-500">2.3 MB • PDF</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Download className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <FileText className="h-5 w-5 text-green-600" />
+                      <div>
+                        <p className="text-sm font-medium">Medical Report</p>
+                        <p className="text-xs text-gray-500">1.8 MB • PDF</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Download className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <FileText className="h-5 w-5 text-red-600" />
+                      <div>
+                        <p className="text-sm font-medium">Vehicle Estimate</p>
+                        <p className="text-xs text-gray-500">956 KB • PDF</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Download className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Contacts & Parties Involved */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <User className="h-5 w-5 mr-2" />
+                  Contacts & Parties
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback>BI</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Bluedown Bowl</p>
+                        <p className="text-xs text-gray-500">Insured</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback>AA</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Amy Applegate</p>
+                        <p className="text-xs text-gray-500">Claimant</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback>MP</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Mital Patel</p>
+                        <p className="text-xs text-gray-500">Adjuster</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback>AR</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">ABC Auto Repair</p>
+                        <p className="text-xs text-gray-500">Service Provider</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </div>
 
-      {/* Loss Details */}
-      <div className="bg-white rounded border p-3">
-        <h2 className="text-sm font-medium mb-2">Loss Details</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-          <div>
-            <div className="text-xs font-medium text-gray-900 mb-1">
-              Loss Date:
-            </div>
-            <div className="text-xs text-gray-600">01/10/2024, 12:00 AM</div>
-          </div>
-          <div>
-            <div className="text-xs font-medium text-gray-900 mb-1">
-              Notice Date:
-            </div>
-            <div className="text-xs text-gray-600">01/10/2024, 12:00 AM</div>
-          </div>
-          <div>
-            <div className="text-xs font-medium text-gray-900 mb-1">
-              Loss Location:
-            </div>
-            <div className="text-xs text-gray-600">
-              1922 Patricia Ave, Arvada, CA 93007
-            </div>
-          </div>
-          <div>
-            <div className="text-xs font-medium text-gray-900 mb-1">
-              Description:
-            </div>
-            <div className="text-xs text-gray-600">
-              Insured hit other party's car in the front passenger tire while
-              making a left
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Financial Details */}
-      <div className="bg-white rounded border">
-        <div className="px-3 py-2 border-b bg-gray-50">
-          <h2 className="text-sm font-medium">Financial Details</h2>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="px-2 py-2 text-left font-medium text-gray-900"></th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Coverage
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Claimant
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Adjuster
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Outstanding Reserves
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Paid
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Recovery
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="px-2 py-2">
-                  <input
-                    type="checkbox"
-                    className="rounded border-gray-300 w-3 h-3"
-                  />
-                </td>
-                <td className="px-2 py-2">Medical Payments</td>
-                <td className="px-2 py-2">
-                  <a href="#" className="text-blue-600 hover:underline">
-                    Amy Applegate
-                  </a>
-                </td>
-                <td className="px-2 py-2">
-                  <a href="#" className="text-blue-600 hover:underline">
-                    Mital
-                  </a>
-                </td>
-                <td className="px-2 py-2">$485.00</td>
-                <td className="px-2 py-2">$100.00</td>
-                <td className="px-2 py-2">$0.00</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 py-2">
-                  <input
-                    type="checkbox"
-                    className="rounded border-gray-300 w-3 h-3"
-                  />
-                </td>
-                <td className="px-2 py-2">
-                  Liability - Bodily Injury and Property Damage
-                </td>
-                <td className="px-2 py-2">
-                  <a href="#" className="text-blue-600 hover:underline">
-                    Amy Applegate
-                  </a>
-                </td>
-                <td className="px-2 py-2">
-                  <a href="#" className="text-blue-600 hover:underline">
-                    Mital
-                  </a>
-                </td>
-                <td className="px-2 py-2">$14,000.00</td>
-                <td className="px-2 py-2">$20,000.00</td>
-                <td className="px-2 py-2">$0.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Policy Coverage Detail */}
-      <div className="bg-white rounded border">
-        <div className="px-3 py-2 border-b bg-gray-50">
-          <h2 className="text-sm font-medium">Policy Coverage Detail</h2>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs min-w-[1000px]">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Insured
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  LDOF
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Effective
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Expiration
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Description Text
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  P# Limit
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Incurred Expenses
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Deductible
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Repro
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Overdraft
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Cyber Crime
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Social Engineering
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  Claims brought by Corporate Lawyers
-                </th>
-                <th className="px-1 py-2 text-left font-medium text-gray-900">
-                  CAFSI
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="px-1 py-2">Bluedown Bowl</td>
-                <td className="px-1 py-2">01/11/2024</td>
-                <td className="px-1 py-2">01/01/2024</td>
-                <td className="px-1 py-2">01/01/2025</td>
-                <td className="px-1 py-2">
-                  $1,000,000 DEDUCTIBLE applicable to claims expenses, indemnity
-                  payments and/or cost of repairs.
-                </td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$1,000,000</td>
-                <td className="px-1 py-2">$2,000,000</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-1 py-2">James</td>
-                <td className="px-1 py-2">01/11/2024</td>
-                <td className="px-1 py-2">01/01/2024</td>
-                <td className="px-1 py-2">01/01/2025</td>
-                <td className="px-1 py-2">$1,000,000 $250,000 $500,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$250,000</td>
-                <td className="px-1 py-2">$1,000,000</td>
-                <td className="px-1 py-2">$2,000,000</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Remaining Per Claim/Per Aggregate by Coverage */}
-      <div className="bg-white rounded border">
-        <div className="px-3 py-2 border-b bg-gray-50">
-          <h2 className="text-sm font-medium">
-            Remaining Per Claim/Per Aggregate by Coverage
-          </h2>
-        </div>
-
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Policy Coverage
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Remaining for this Claim (Paid)
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Remaining for this Claim (Incurred)
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Remaining Per Aggregate (Paid)
-                </th>
-                <th className="px-2 py-2 text-left font-medium text-gray-900">
-                  Remaining Per Aggregate (Incurred)
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b">
-                <td className="px-2 py-2 font-medium">A</td>
-                <td className="px-2 py-2">$1,000,000.00</td>
-                <td className="px-2 py-2">$1,000,000.00</td>
-                <td className="px-2 py-2">$2,000,000.00</td>
-                <td className="px-2 py-2">$2,000,000.00</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 py-2 font-medium">BECO</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 py-2 font-medium">Operations</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$1,000,000.00</td>
-                <td className="px-2 py-2">$1,000,000.00</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 py-2 font-medium">DISPA</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$500,000.00</td>
-                <td className="px-2 py-2">$500,000.00</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 py-2 font-medium">CSPA</td>
-                <td className="px-2 py-2">$1,000,000.00</td>
-                <td className="px-2 py-2">$1,000,000.00</td>
-                <td className="px-2 py-2">$2,000,000.00</td>
-                <td className="px-2 py-2">$2,000,000.00</td>
-              </tr>
-              <tr className="border-b">
-                <td className="px-2 py-2 font-medium">QC</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-                <td className="px-2 py-2">$250,000.00</td>
-              </tr>
-            </tbody>
-          </table>
+        {/* Bottom Section - Detailed Tables */}
+        <div className="space-y-6">
+          <Tabs defaultValue="financial" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="financial">Financial Details</TabsTrigger>
+              <TabsTrigger value="coverage">Policy Coverage</TabsTrigger>
+              <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="financial">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Financial Details</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage</th>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Claimant</th>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Adjuster</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding Reserves</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Recovery</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="px-4 py-3">Medical Payments</td>
+                          <td className="px-4 py-3">
+                            <button className="text-blue-600 hover:underline">Amy Applegate</button>
+                          </td>
+                          <td className="px-4 py-3">
+                            <button className="text-blue-600 hover:underline">Mital</button>
+                          </td>
+                          <td className="px-4 py-3 text-right">$485.00</td>
+                          <td className="px-4 py-3 text-right">$100.00</td>
+                          <td className="px-4 py-3 text-right">$0.00</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">Liability - Bodily Injury and Property Damage</td>
+                          <td className="px-4 py-3">
+                            <button className="text-blue-600 hover:underline">Amy Applegate</button>
+                          </td>
+                          <td className="px-4 py-3">
+                            <button className="text-blue-600 hover:underline">Mital</button>
+                          </td>
+                          <td className="px-4 py-3 text-right">$14,000.00</td>
+                          <td className="px-4 py-3 text-right">$20,000.00</td>
+                          <td className="px-4 py-3 text-right">$0.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="coverage">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Policy Coverage Detail</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-3 py-3 text-left font-medium text-gray-900">Insured</th>
+                          <th className="px-3 py-3 text-left font-medium text-gray-900">LDOF</th>
+                          <th className="px-3 py-3 text-left font-medium text-gray-900">Effective</th>
+                          <th className="px-3 py-3 text-left font-medium text-gray-900">Expiration</th>
+                          <th className="px-3 py-3 text-left font-medium text-gray-900">Description</th>
+                          <th className="px-3 py-3 text-right font-medium text-gray-900">Limit</th>
+                          <th className="px-3 py-3 text-right font-medium text-gray-900">Deductible</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="px-3 py-3">Bluedown Bowl</td>
+                          <td className="px-3 py-3">01/11/2024</td>
+                          <td className="px-3 py-3">01/01/2024</td>
+                          <td className="px-3 py-3">01/01/2025</td>
+                          <td className="px-3 py-3">$1,000,000 DEDUCTIBLE applicable to claims expenses</td>
+                          <td className="px-3 py-3 text-right">$250,000</td>
+                          <td className="px-3 py-3 text-right">$1,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="reserves">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Remaining Per Claim/Per Aggregate by Coverage</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Policy Coverage</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Remaining (Paid)</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Remaining (Incurred)</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Aggregate (Paid)</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Aggregate (Incurred)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        <tr>
+                          <td className="px-4 py-3 font-medium">Medical Payments</td>
+                          <td className="px-4 py-3 text-right">$1,000,000.00</td>
+                          <td className="px-4 py-3 text-right">$1,000,000.00</td>
+                          <td className="px-4 py-3 text-right">$2,000,000.00</td>
+                          <td className="px-4 py-3 text-right">$2,000,000.00</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 font-medium">Liability Coverage</td>
+                          <td className="px-4 py-3 text-right">$250,000.00</td>
+                          <td className="px-4 py-3 text-right">$250,000.00</td>
+                          <td className="px-4 py-3 text-right">$250,000.00</td>
+                          <td className="px-4 py-3 text-right">$250,000.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </div>
