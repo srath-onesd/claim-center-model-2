@@ -94,6 +94,14 @@ const App = () => (
               path="/journal"
               element={<PlaceholderPage title="Journal" />}
             />
+            <Route
+              path="/financials/recovery/financialreceipts"
+              element={<PlaceholderPage title="Financial Receipts" />}
+            />
+            <Route
+              path="/financials/recovery/Deductible"
+              element={<PlaceholderPage title="Deductible Recovery" />}
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
