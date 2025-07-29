@@ -136,38 +136,71 @@ export function Summary() {
               </CardContent>
             </Card>
 
-            {/* Enhanced Financial Information Panel */}
+            {/* Financial Information Panel */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg font-semibold">Financial Overview</CardTitle>
+                <CardTitle className="text-lg font-semibold">Financial Information</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Key Financial Metrics */}
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900">$34,485</div>
-                    <div className="text-sm text-gray-600">Total Incurred</div>
-                    <Progress value={75} className="mt-2" />
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Total Incurred */}
+                  <div className="p-4 bg-gray-50 rounded-lg">
+                    <div className="text-sm text-gray-600 mb-1">Total Incurred</div>
+                    <div className="text-2xl font-bold text-gray-900 mb-2">$15,750.00</div>
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                      <div className="bg-gray-800 h-2 rounded-full" style={{ width: '78%' }}></div>
+                    </div>
+                    <div className="text-xs text-gray-500">78% of policy limit</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">$14,485</div>
-                    <div className="text-sm text-gray-600">Outstanding Reserves</div>
-                    <Progress value={42} className="mt-2" />
+
+                  {/* Outstanding Reserves */}
+                  <div className="p-4 bg-yellow-50 rounded-lg">
+                    <div className="text-sm text-gray-600 mb-1">Outstanding Reserves</div>
+                    <div className="text-2xl font-bold text-yellow-600 mb-2">$8,250.00</div>
+                    <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
+                      <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '65%' }}></div>
+                    </div>
+                    <div className="text-xs text-gray-500">Reserve adequacy: Good</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">$20,000</div>
-                    <div className="text-sm text-gray-600">Amount Paid</div>
-                    <Progress value={58} className="mt-2" />
+
+                  {/* Amount Paid */}
+                  <div className="p-4 bg-green-50 rounded-lg">
+                    <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
+                    <div className="text-2xl font-bold text-green-600 mb-2">$7,500.00</div>
+                    <div className="w-full bg-green-200 rounded-full h-2 mb-2">
+                      <div className="bg-green-600 h-2 rounded-full" style={{ width: '50%' }}></div>
+                    </div>
+                    <div className="text-xs text-gray-500">Last payment: Mar 20, 2024</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-amber-600">$0</div>
-                    <div className="text-sm text-gray-600">Recoveries</div>
-                    <Progress value={0} className="mt-2" />
+
+                  {/* Recoveries */}
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <div className="text-sm text-gray-600 mb-1">Recoveries</div>
+                    <div className="text-2xl font-bold text-blue-600 mb-2">$2,100.00</div>
+                    <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
+                      <div className="bg-blue-600 h-2 rounded-full" style={{ width: '33%' }}></div>
+                    </div>
+                    <div className="text-xs text-gray-500">Recovery rate: 13.3%</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">$1,000</div>
-                    <div className="text-sm text-gray-600">Deductible</div>
-                    <Progress value={100} className="mt-2" />
+
+                  {/* Deductible */}
+                  <div className="p-4 bg-purple-50 rounded-lg">
+                    <div className="text-sm text-gray-600 mb-1">Deductible</div>
+                    <div className="text-2xl font-bold text-gray-900 mb-2">$500.00</div>
+                    <div className="w-full bg-purple-200 rounded-full h-2 mb-2">
+                      <div className="bg-purple-600 h-2 rounded-full" style={{ width: '100%' }}></div>
+                    </div>
+                    <div className="text-xs text-gray-500">Collected from insured</div>
+                  </div>
+
+                  {/* Coverage Limits */}
+                  <div className="p-4 bg-indigo-50 rounded-lg">
+                    <div className="text-sm text-gray-600 mb-1">Coverage Limits</div>
+                    <div className="text-2xl font-bold text-gray-900 mb-2">$20,000.00</div>
+                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-2">
+                      <div className="bg-indigo-600 h-2 rounded-full" style={{ width: '78%' }}></div>
+                    </div>
+                    <div className="text-xs text-gray-500">Property Damage limit</div>
                   </div>
                 </div>
 
@@ -198,10 +231,10 @@ export function Summary() {
                         <tr>
                           <td className="px-4 py-3">Amy Applegate</td>
                           <td className="px-4 py-3">Liability - Bodily Injury</td>
-                          <td className="px-4 py-3 text-right">$34,000.00</td>
-                          <td className="px-4 py-3 text-right">$20,000.00</td>
-                          <td className="px-4 py-3 text-right">$14,000.00</td>
-                          <td className="px-4 py-3 text-right">$0.00</td>
+                          <td className="px-4 py-3 text-right">$15,165.00</td>
+                          <td className="px-4 py-3 text-right">$7,400.00</td>
+                          <td className="px-4 py-3 text-right">$7,765.00</td>
+                          <td className="px-4 py-3 text-right">$2,100.00</td>
                         </tr>
                       </tbody>
                     </table>
