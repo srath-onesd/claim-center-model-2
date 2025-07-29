@@ -121,7 +121,7 @@ const App = () => (
             />
             <Route
               path="/financials/recovery/subrogation"
-              element={<PlaceholderPage title="Recovery Subrogation" />}
+              element={<PlaceholderPage title="Subrogation Recovery" />}
             />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
