@@ -193,7 +193,7 @@ export function Summary() {
                     <div className="text-xs text-gray-500">Collected from insured</div>
                   </div>
 
-                  {/* Coverage Limits */}
+                  {/* Coverage Limits 
                   <div className="p-4 bg-indigo-50 rounded-lg">
                     <div className="text-sm text-gray-600 mb-1">Coverage Limits</div>
                     <div className="text-2xl font-bold text-gray-900 mb-2">$20,000.00</div>
@@ -202,7 +202,7 @@ export function Summary() {
                     </div>
                     <div className="text-xs text-gray-500">Property Damage limit</div>
                   </div>
-                </div>
+                </div>*/}
 
                 {/* Financial Breakdown Table */}
                 <div className="mt-6">
