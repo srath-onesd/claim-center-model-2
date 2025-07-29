@@ -30,6 +30,10 @@ const App = () => (
               element={<PlaceholderPage title="Claimant Information" />}
             />
             <Route
+              path="/claimants"
+              element={<PlaceholderPage title="Claimants" />}
+            />
+            <Route
               path="/bodily-injury"
               element={<PlaceholderPage title="Bodily Injury" />}
             />
