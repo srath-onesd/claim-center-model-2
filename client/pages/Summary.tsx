@@ -605,27 +605,45 @@ export function Summary() {
                 </CardHeader>
                 <CardContent>
                   <div className="overflow-x-auto">
-                    <table className="w-full text-xs">
+                    <table className="w-full text-sm">
                       <thead className="bg-gray-50">
                         <tr>
-                          <th className="px-3 py-3 text-left font-medium text-gray-900">Insured</th>
-                          <th className="px-3 py-3 text-left font-medium text-gray-900">LDOF</th>
-                          <th className="px-3 py-3 text-left font-medium text-gray-900">Effective</th>
-                          <th className="px-3 py-3 text-left font-medium text-gray-900">Expiration</th>
-                          <th className="px-3 py-3 text-left font-medium text-gray-900">Description</th>
-                          <th className="px-3 py-3 text-right font-medium text-gray-900">Limit</th>
-                          <th className="px-3 py-3 text-right font-medium text-gray-900">Deductible</th>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage</th>
+                          <th className="px-4 py-3 text-right font-medium text-gray-900">Limit</th>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Effective</th>
+                          <th className="px-4 py-3 text-left font-medium text-gray-900">Expiration</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-200">
                         <tr>
-                          <td className="px-3 py-3">Bluedown Bowl</td>
-                          <td className="px-3 py-3">01/11/2024</td>
-                          <td className="px-3 py-3">01/01/2024</td>
-                          <td className="px-3 py-3">01/01/2025</td>
-                          <td className="px-3 py-3">$1,000,000 DEDUCTIBLE applicable to claims expenses</td>
-                          <td className="px-3 py-3 text-right">$250,000</td>
-                          <td className="px-3 py-3 text-right">$1,000</td>
+                          <td className="px-4 py-3">Liability - Bodily Injury</td>
+                          <td className="px-4 py-3 text-right">$100,000</td>
+                          <td className="px-4 py-3">01/01/2024</td>
+                          <td className="px-4 py-3">01/01/2025</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">Liability - Property Damage</td>
+                          <td className="px-4 py-3 text-right">$20,000</td>
+                          <td className="px-4 py-3">01/01/2024</td>
+                          <td className="px-4 py-3">01/01/2025</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">Medical Payments</td>
+                          <td className="px-4 py-3 text-right">$5,000</td>
+                          <td className="px-4 py-3">01/01/2024</td>
+                          <td className="px-4 py-3">01/01/2025</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">Comprehensive</td>
+                          <td className="px-4 py-3 text-right">$50,000</td>
+                          <td className="px-4 py-3">01/01/2024</td>
+                          <td className="px-4 py-3">01/01/2025</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3">Collision</td>
+                          <td className="px-4 py-3 text-right">$50,000</td>
+                          <td className="px-4 py-3">01/01/2024</td>
+                          <td className="px-4 py-3">01/01/2025</td>
                         </tr>
                       </tbody>
                     </table>
