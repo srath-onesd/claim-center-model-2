@@ -24,6 +24,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Summary />} />
             <Route path="/claims-detail" element={<ClaimsDetail />} />
+            <Route path="/claimdetails" element={<ClaimsDetail />} />
             <Route
               path="/claimant"
               element={<PlaceholderPage title="Claimant Information" />}
