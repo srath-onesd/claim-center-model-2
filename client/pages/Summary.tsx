@@ -276,7 +276,7 @@ export function Summary() {
                   </div>
                 </div>
 
-                {/* Financial Breakdown Table */}
+                {/* Financial Breakdown Table 
                 <div className="mt-6">
                   <h3 className="text-md font-semibold mb-4">Breakdown by Claimant-Coverage</h3>
                   <div className="overflow-x-auto">
@@ -311,7 +311,7 @@ export function Summary() {
                       </tbody>
                     </table>
                   </div>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </div>
