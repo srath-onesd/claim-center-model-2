@@ -61,7 +61,6 @@ export function OMSLayout({ children }: OMSLayoutProps) {
             <span className="text-xl font-semibold">OneShield</span>
           </div>
           <div className="text-sm">
-            <span className="opacity-75">Powered with External Customer Oversight Portal</span>
           </div>
         </div>
         <div className="flex items-center space-x-4">
