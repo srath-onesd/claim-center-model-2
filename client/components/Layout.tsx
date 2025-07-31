@@ -227,6 +227,8 @@ export function Layout({ children }: LayoutProps) {
                 <span>DOL: <strong>31/12/2025</strong></span>
                 <span>Adjuster: <strong>Mitali</strong></span>
               </div>
+            </div>
+            <div>
               <Button
                 variant="secondary"
                 size="sm"
