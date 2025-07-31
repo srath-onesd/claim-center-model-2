@@ -188,7 +188,7 @@ export function Layout({ children }: LayoutProps) {
             </button>
           )}
         </div>
-        {hasSubItems && isExpanded && (
+        {hasSubItems && isExpanded && !sidebarCollapsed && (
           <ul className="mt-1 space-y-1">
             {item.subItems!.map((subItem) =>
               renderNavigationItem(subItem, level + 1),
