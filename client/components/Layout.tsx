@@ -65,7 +65,7 @@ const navigationItems = [
                     label: "Deductible",
                     href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
                   },
-                    
+                ]
               },
               {
                 id: "journal",
