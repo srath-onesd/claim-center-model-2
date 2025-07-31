@@ -20,7 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
+        <OMSLayout>
           <Routes>
             <Route path="/" element={<Summary />} />
             <Route path="/claims-detail" element={<ClaimsDetail />} />
@@ -126,7 +126,7 @@ const App = () => (
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Layout>
+        </OMSLayout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
