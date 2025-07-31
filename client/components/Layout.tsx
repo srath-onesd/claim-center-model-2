@@ -201,7 +201,6 @@ const navigationItems = [
       }
     ]
   },
-  { id: "events", label: "Events", href: "/events", icon: "📅" },
   {
     id: "claim-history",
     label: "Claim History",
