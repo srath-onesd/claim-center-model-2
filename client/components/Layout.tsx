@@ -196,132 +196,93 @@ export function Layout({ children }: LayoutProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-primary text-primary-foreground">
-        <div className="px-4 py-2">
+    <div className="h-full bg-gray-50 flex">
+      {/* Claims Center Header Bar */}
+      <div className="flex flex-col w-full">
+        <div className="bg-primary text-primary-foreground px-4 py-2 border-b">
           <div className="flex items-center justify-between">
-            <div
-              className="flex items-center space-x-4"
-              style={{ width: "1200px" }}
-            >
+            <div className="flex items-center space-x-4">
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-primary-foreground hover:bg-primary-foreground/10"
+                className="text-primary-foreground hover:bg-primary-foreground/10 lg:hidden"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
               >
                 {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
               </Button>
               <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded">
-                <p>Open</p>
+                Open
               </span>
-              <div
-                className="hidden sm:flex items-center space-x-4 text-sm"
-                style={{ width: "1200px" }}
-              >
-                <span>
-                  <p>
-                    Claim: <strong>23E:12345</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Policy: <strong>54:123456</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Insured: <strong>Shubham Raut</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Claimant: <strong>Amy Applegate, Bob Pay</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    DOL: <strong>31/12/2025</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Adjuster: <strong>Mitali</strong>
-                  </p>
-                </span>
-                <button
-                  style={{
-                    
-                    top: "2%",
-                    right: "120px",
-                    transform: "translateY(-50%)",
-                    padding: "6px 10px",
-                    backgroundColor: "#007bff",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                    margin: "15px 0 0 auto",
-                  }}
-                >
-                  Action
-                </button>
+              <h1 className="text-lg font-medium">Claims Center</h1>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="hidden sm:flex items-center space-x-4 text-sm">
+                <span>Claim: <strong>23E:12345</strong></span>
+                <span>Policy: <strong>54:123456</strong></span>
+                <span>Insured: <strong>Shubham Raut</strong></span>
+                <span>Claimant: <strong>Amy Applegate, Bob Pay</strong></span>
+                <span>DOL: <strong>31/12/2025</strong></span>
+                <span>Adjuster: <strong>Mitali</strong></span>
               </div>
+              <Button
+                variant="secondary"
+                size="sm"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                Action
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* Tab Navigation
-        <div className="border-t border-primary-foreground/20">
-          <div className="flex px-4 overflow-x-auto">
-            {headerTabs.map((tab) => (
-              <Link
-                key={tab.name}
-                to={tab.href}
-                className={cn(
-                  "px-4 py-2 text-sm border-b-2 transition-colors whitespace-nowrap",
-                  tab.active || location.pathname === tab.href
-                    ? "border-white bg-white/10"
-                    : "border-transparent hover:bg-white/5"
-                )}
+        {/* Content with sidebar */}
+        <div className="flex flex-1 overflow-hidden">
+          {/* Claims Center Sidebar */}
+          <aside
+            className={cn(
+              "bg-white shadow-sm transition-all duration-300 ease-in-out border-r",
+              sidebarCollapsed ? "w-16" : "w-64",
+              "lg:block",
+              sidebarOpen ? "block" : "hidden lg:block"
+            )}
+          >
+            <div className="p-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+                className="w-full justify-start mb-2"
               >
-                {tab.name}
-              </Link>
-            ))}
-          </div>
-        </div> */}
-      </header>
+                {sidebarCollapsed ? (
+                  <ChevronRight className="h-4 w-4" />
+                ) : (
+                  <>
+                    <ChevronDown className="h-4 w-4 mr-2" />
+                    <span>Collapse</span>
+                  </>
+                )}
+              </Button>
+            </div>
+            <nav className="px-2 pb-4">
+              <ul className="space-y-1">
+                {navigationItems.map((item) => renderNavigationItem(item))}
+              </ul>
+            </nav>
+          </aside>
 
-      <div className="flex">
-        {/* Sidebar */}
-        <aside
-          className={cn(
-            "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
-            sidebarOpen ? "w-64 block" : "w-0 hidden",
-            "lg:relative lg:top-0",
-            sidebarOpen &&
-              "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0",
+          {/* Overlay for mobile */}
+          {sidebarOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+              onClick={() => setSidebarOpen(false)}
+            />
           )}
-        >
-          <nav className="p-4">
-            <ul className="space-y-1">
-              {navigationItems.map((item) => renderNavigationItem(item))}
-            </ul>
-          </nav>
-        </aside>
 
-        {/* Overlay for mobile */}
-        {sidebarOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          />
-        )}
-
-        {/* Main Content */}
-        <main className="flex-1 p-4 lg:p-6">{children}</main>
+          {/* Main Content */}
+          <main className="flex-1 overflow-auto">
+            {children}
+          </main>
+        </div>
       </div>
     </div>
   );
