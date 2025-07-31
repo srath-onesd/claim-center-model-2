@@ -73,12 +73,12 @@ const navigationItems = [
                       {
                         id: "adddeductible",
                         label: "Add Deductible",
-                        href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation/adddeductible",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
                       },
                       {
-                        id: "finreceipts",
-                        label: "Financial Receipts",
-                        href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+                        id: "deductiblefin",
+                        label: "Deductible Financials",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
                       },
                     ]
                   },
