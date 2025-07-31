@@ -200,11 +200,8 @@ const navigationItems = [
         icon: "",
       }
     ]
-  }  
-  { id: "diary", label: "Diary", href: "/diary", icon: "📅" },
-  { id: "notes", label: "Notes", href: "/notes", icon: "📝" },
+  },
   { id: "events", label: "Events", href: "/events", icon: "📅" },
-  { id: "documents", label: "Documents", href: "/documents", icon: "📄" },
   {
     id: "claim-history",
     label: "Claim History",
