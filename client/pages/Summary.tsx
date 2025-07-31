@@ -33,7 +33,7 @@ export function Summary() {
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
-    { label: "Claim #CLM-2024-001", active: true }
+    { label: "Claim #23E-12345", active: true }
   ];
 
   return (
