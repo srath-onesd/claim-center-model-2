@@ -148,7 +148,7 @@ export function Layout({ children }: LayoutProps) {
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
-    const paddingLeft = level * 16 + 12; // Increase indent for each level
+    const paddingLeft = sidebarCollapsed ? 12 : (level * 16 + 12); // Adjust for collapsed state
 
     return (
       <li key={item.id}>
@@ -159,19 +159,23 @@ export function Layout({ children }: LayoutProps) {
               ? "bg-primary text-primary-foreground"
               : "text-gray-700 hover:bg-gray-100",
           )}
-          style={{ paddingLeft: `${paddingLeft}px` }}
+          style={{ paddingLeft: sidebarCollapsed ? '12px' : `${paddingLeft}px` }}
+          title={sidebarCollapsed ? item.label : undefined}
         >
           <Link
             to={item.href}
             onClick={() => setSidebarOpen(true)}
-            className="flex items-center space-x-3 flex-1"
+            className={cn(
+              "flex items-center flex-1",
+              sidebarCollapsed ? "justify-center" : "space-x-3"
+            )}
           >
             {level === 0 && item.icon && (
               <span className="text-lg">{item.icon}</span>
             )}
-            <span>{item.label}</span>
+            {!sidebarCollapsed && <span>{item.label}</span>}
           </Link>
-          {hasSubItems && item.expandable && (
+          {hasSubItems && item.expandable && !sidebarCollapsed && (
             <button
               onClick={() => toggleExpanded(item.id)}
               className="p-1 hover:bg-gray-200 rounded"
