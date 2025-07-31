@@ -58,12 +58,29 @@ const navigationItems = [
                     id: "subrogation",
                     label: "Subrogation",
                     href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
-                    icon: "💰",
+                  },
+                  {
+                    id: "finreceipts",
+                    label: "Financial Receipts",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
                   },
                   {
                     id: "deductible",
                     label: "Deductible",
                     href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+                    expandable: true,
+                    subItems: [
+                      {
+                        id: "adddeductible",
+                        label: "Add Deductible",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation/adddeductible",
+                      },
+                      {
+                        id: "finreceipts",
+                        label: "Financial Receipts",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+                      },
+                    ]
                   },
                 ]
               },
