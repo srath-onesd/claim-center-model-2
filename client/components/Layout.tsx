@@ -55,17 +55,18 @@ const navigationItems = [
                 expandable: true,
                 subItems: [
                   {
-                    {
-                      id: "bi-deductible-1",
-                      label: "Deductible",
-                      href: "/claimants/amy-applegate/bodily-injury/deductible",
-                      icon: "💰",
-                    },
+                    id: "subrogation",
+                    label: "Subrogation",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
+                    icon: "💰",
+                  },
+                  {
+                    id: "deductible",
+                    label: "Deductible",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+                  },
                     
-                    
-                  }
               },
-              
               {
                 id: "journal",
                 label: "Journal",
