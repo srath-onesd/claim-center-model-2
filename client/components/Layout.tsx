@@ -131,6 +131,38 @@ const navigationItems = [
                 href: "/claimants/bob-pay/bodily-injury/deductible",
                 icon: "💰",
               },
+              {
+                id: "journal",
+                label: "Journal",
+                href: "/journal",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "diary",
+                    label: "Diary",
+                    href: "/journal/diary",
+                    icon: "📅",
+                  },
+                  {
+                    id: "notes",
+                    label: "Notes",
+                    href: "/journal/notes",
+                    icon: "📝",
+                  },
+                  {
+                    id: "documents",
+                    label: "Documents",
+                    href: "/journal/documents",
+                    icon: "📄",
+                  },
+                  {
+                    id: "emails",
+                    label: "Emails",
+                    href: "/journal/emails",
+                    icon: "",
+                  }
+                ]
+              },
             ],
           },
           {
@@ -168,38 +200,6 @@ const navigationItems = [
         ],
       },
     ],
-  },
-  {
-    id: "journal",
-    label: "Journal",
-    href: "/journal",
-    expandable: true,
-    subItems: [
-      {
-        id: "diary",
-        label: "Diary",
-        href: "/journal/diary",
-        icon: "📅",
-      },
-      {
-        id: "notes",
-        label: "Notes",
-        href: "/journal/notes",
-        icon: "📝",
-      },
-      {
-        id: "documents",
-        label: "Documents",
-        href: "/journal/documents",
-        icon: "📄",
-      },
-      {
-        id: "emails",
-        label: "Emails",
-        href: "/journal/emails",
-        icon: "",
-      }
-    ]
   },
   {
     id: "claim-history",
