@@ -37,7 +37,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
     { id: "incident", label: "Incident", icon: AlertTriangle, href: "/incident" },
     { id: "admin", label: "Admin", icon: Settings, href: "/admin" },
     { id: "claims", label: "Claims", icon: FileCheck, href: "/", isActive: true },
-    { id: "claims-search", label: "Claims Search RFQ", icon: Search, href: "/claims-search" },
+    { id: "claims-search", label: "Claims Search Beta", icon: Search, href: "/claims-search" },
     { id: "customer-center", label: "Customer Center", icon: Users, href: "/customer-center" },
     { id: "manage-claims", label: "Manage Claims", icon: Target, href: "/manage-claims" },
     { id: "bulk-changes", label: "Bulk Changes/Endorsements", icon: BarChart3, href: "/bulk-changes" },
@@ -88,14 +88,9 @@ export function OMSLayout({ children }: OMSLayoutProps) {
               onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
               className="w-full justify-start mb-2"
             >
-              {omsSidebarCollapsed ? (
-                <ChevronRight className="h-4 w-4" />
-              ) : (
-                <>
-                  <ChevronLeft className="h-4 w-4 mr-2" />
-                  <span>Collapse</span>
-                </>
-              )}
+              <p>
+                <br />
+              </p>
             </Button>
           </div>
           
