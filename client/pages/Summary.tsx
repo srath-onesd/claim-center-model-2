@@ -42,99 +42,122 @@ export function Summary() {
         </div>
       </div>
 
-      {/* Search Bar */}
+      {/* Search Bar with Action Button */}
       <div className="bg-white border-b px-6 py-4">
-        <div className="flex items-center space-x-4">
-          <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-            <Input
-              placeholder="Search within claim data and logs..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
-            />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+              <Input
+                placeholder="Search within claim data and logs..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <Badge variant="secondary" className="bg-green-100 text-green-800">
+              Open
+            </Badge>
+            <span className="text-sm text-gray-600">Open 24 days</span>
           </div>
-          <Badge variant="secondary" className="bg-green-100 text-green-800">
-            Open
-          </Badge>
-          <span className="text-sm text-gray-600">Open 24 days</span>
+          {/* Action Button - Top Right */}
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            Action
+          </Button>
         </div>
       </div>
 
       <div className="p-6 space-y-6">
-        {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* Left Column - Basic Info & Financial Info */}
-          <div className="lg:col-span-2 space-y-6">
-            
-            {/* Basic Information Panel */}
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold">Basic Information</CardTitle>
-                <Button variant="ghost" size="sm">
-                  <Edit className="h-4 w-4" />
-                </Button>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Claim Number</label>
-                    <p className="text-sm text-gray-600 mt-1">CLM-2024-001</p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Date of Loss</label>
-                    <div className="flex items-center mt-1">
-                      <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                      <p className="text-sm text-gray-600">01/10/2024</p>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Loss Location</label>
-                    <div className="flex items-center mt-1">
-                      <MapPin className="h-4 w-4 text-gray-400 mr-1" />
-                      <p className="text-sm text-gray-600">1922 Patricia Ave, Arvada, CA</p>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Loss Type</label>
-                    <p className="text-sm text-gray-600 mt-1">Auto Accident</p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Line of Business</label>
-                    <p className="text-sm text-gray-600 mt-1">Auto Insurance</p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Policy Number</label>
-                    <p className="text-sm text-gray-600 mt-1">POL-2024-0001</p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Insured Name</label>
-                    <p className="text-sm text-gray-600 mt-1">Bluedown Bowl</p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Assigned Adjuster</label>
-                    <div className="mt-1">
-                      <p className="text-sm text-gray-600">Mital Patel</p>
-                      <div className="flex items-center space-x-2 mt-1">
-                        <Button variant="ghost" size="sm" className="p-0 h-auto">
-                          <Phone className="h-3 w-3 mr-1" />
-                          <span className="text-xs">(555) 123-4567</span>
-                        </Button>
-                        <Button variant="ghost" size="sm" className="p-0 h-auto">
-                          <Mail className="h-3 w-3 mr-1" />
-                          <span className="text-xs">mital@company.com</span>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">Deductible</label>
-                    <p className="text-sm text-gray-600 mt-1">$1,000.00</p>
+        {/* Full-Width Basic Information Section */}
+        <Card className="w-full">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+            <CardTitle className="text-lg font-semibold">Basic Information</CardTitle>
+            <Button variant="ghost" size="sm">
+              <Edit className="h-4 w-4" />
+            </Button>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Status and Loss Description - Prominent placement */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-lg">
+              <div>
+                <label className="text-sm font-medium text-gray-900">Status</label>
+                <div className="flex items-center mt-2">
+                  <Badge variant="secondary" className="bg-green-100 text-green-800">
+                    Open
+                  </Badge>
+                  <span className="text-sm text-gray-600 ml-2">Open 24 days</span>
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Loss Description</label>
+                <p className="text-sm text-gray-600 mt-2">
+                  Insured hit other party's car in the front passenger tire while making a left turn at intersection.
+                  Multi-vehicle collision with property damage and potential bodily injury claims.
+                </p>
+              </div>
+            </div>
+
+            {/* Other Basic Information Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div>
+                <label className="text-sm font-medium text-gray-900">Claim Number</label>
+                <p className="text-sm text-gray-600 mt-1">CLM-2024-001</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Date of Loss</label>
+                <div className="flex items-center mt-1">
+                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
+                  <p className="text-sm text-gray-600">01/10/2024</p>
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Loss Location</label>
+                <div className="flex items-center mt-1">
+                  <MapPin className="h-4 w-4 text-gray-400 mr-1" />
+                  <p className="text-sm text-gray-600">1922 Patricia Ave, Arvada, CA</p>
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Loss Type</label>
+                <p className="text-sm text-gray-600 mt-1">Auto Accident</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Line of Business</label>
+                <p className="text-sm text-gray-600 mt-1">Auto Insurance</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Policy Number</label>
+                <p className="text-sm text-gray-600 mt-1">POL-2024-0001</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Insured Name</label>
+                <p className="text-sm text-gray-600 mt-1">Bluedown Bowl</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Assigned Adjuster</label>
+                <div className="mt-1">
+                  <p className="text-sm text-gray-600">Mital Patel</p>
+                  <div className="flex items-center space-x-2 mt-1">
+                    <Button variant="ghost" size="sm" className="p-0 h-auto">
+                      <Phone className="h-3 w-3 mr-1" />
+                      <span className="text-xs">(555) 123-4567</span>
+                    </Button>
+                    <Button variant="ghost" size="sm" className="p-0 h-auto">
+                      <Mail className="h-3 w-3 mr-1" />
+                      <span className="text-xs">mital@company.com</span>
+                    </Button>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          {/* Left Column - Claimant Info */}
+          <div className="lg:col-span-2 space-y-6">
 
             {/* Financial Information Panel */}
             <Card>
