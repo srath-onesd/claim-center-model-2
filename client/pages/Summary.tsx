@@ -156,8 +156,100 @@ export function Summary() {
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          {/* Left Column - Claimant Info */}
+          {/* Left Column - Claimant Details */}
           <div className="lg:col-span-2 space-y-6">
+
+            {/* Claimant: Amy Applegate */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <User className="h-5 w-5 mr-2" />
+                  Claimant: Amy Applegate
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+
+                {/* Bodily Injury Section */}
+                <div className="border rounded-lg p-4">
+                  <h3 className="font-semibold text-md mb-3 flex items-center">
+                    <AlertCircle className="h-4 w-4 mr-2 text-red-500" />
+                    Bodily Injury
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Injury Type</label>
+                      <p className="text-sm text-gray-600 mt-1">Neck and back strain</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Treatment Status</label>
+                      <p className="text-sm text-gray-600 mt-1">Ongoing physical therapy</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Medical Provider</label>
+                      <p className="text-sm text-gray-600 mt-1">City General Hospital</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Property Damage Section */}
+                <div className="border rounded-lg p-4">
+                  <h3 className="font-semibold text-md mb-3 flex items-center">
+                    <Shield className="h-4 w-4 mr-2 text-blue-500" />
+                    Property Damage
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Vehicle</label>
+                      <p className="text-sm text-gray-600 mt-1">2020 Honda Civic</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Damage Assessment</label>
+                      <p className="text-sm text-gray-600 mt-1">Front-end collision damage</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Repair Shop</label>
+                      <p className="text-sm text-gray-600 mt-1">ABC Auto Repair</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Financial Section under Claimant */}
+                <div className="border rounded-lg p-4 bg-blue-50">
+                  <h3 className="font-semibold text-md mb-4 flex items-center">
+                    <DollarSign className="h-4 w-4 mr-2 text-green-600" />
+                    Financial Summary - Amy Applegate
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <div className="p-3 bg-white rounded border">
+                        <div className="text-sm text-gray-600">Medical Payments</div>
+                        <div className="flex justify-between">
+                          <span className="text-lg font-bold text-gray-900">$585.00</span>
+                          <span className="text-sm text-gray-500">Incurred</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span>Paid: $100.00</span>
+                          <span>Outstanding: $485.00</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="p-3 bg-white rounded border">
+                        <div className="text-sm text-gray-600">Liability - Bodily Injury</div>
+                        <div className="flex justify-between">
+                          <span className="text-lg font-bold text-gray-900">$15,165.00</span>
+                          <span className="text-sm text-gray-500">Incurred</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span>Paid: $7,400.00</span>
+                          <span>Outstanding: $7,765.00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Financial Information Panel */}
             <Card>
