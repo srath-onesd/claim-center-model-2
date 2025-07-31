@@ -82,6 +82,9 @@ export function OMSLayout({ children }: OMSLayoutProps) {
           omsSidebarCollapsed ? 'w-16' : 'w-64'
         }`}>
           <div className="p-2">
+            <div style={{ position: "relative", marginTop: "20px", height: "auto" }}>
+              Enter some text...
+            </div>
             <Button
               variant="ghost"
               size="sm"
