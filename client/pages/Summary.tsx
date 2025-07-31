@@ -6,13 +6,14 @@ import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarInitials } from "@/components/ui/avatar";
-import { 
-  MapPin, 
-  Calendar, 
-  Phone, 
-  Mail, 
-  FileText, 
-  Upload, 
+import { Breadcrumb } from "@/components/Breadcrumb";
+import {
+  MapPin,
+  Calendar,
+  Phone,
+  Mail,
+  FileText,
+  Upload,
   Download,
   Search,
   Edit,
