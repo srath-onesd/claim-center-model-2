@@ -64,78 +64,77 @@ export function Summary() {
       <div className="p-6 space-y-6">
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* First Row - Basic Information (Full Width) */}
-            <div className="mb-6">
-              <Card className="shadow-md">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 bg-gray-50 rounded-t-lg">
-                  <CardTitle className="text-lg font-semibold text-gray-900">Basic Information</CardTitle>
-                  <Button variant="ghost" size="sm">
-                    <Edit className="h-4 w-4" />
-                  </Button>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Claim Number</label>
-                      <p className="text-sm text-gray-700 font-mono bg-gray-50 px-2 py-1 rounded">CLM-2024-001</p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Date of Loss</label>
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 text-gray-400 mr-2" />
-                        <p className="text-sm text-gray-700">01/10/2024</p>
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Loss Location</label>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 text-gray-400 mr-2" />
-                        <p className="text-sm text-gray-700">1922 Patricia Ave, Arvada, CA</p>
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Loss Type</label>
-                      <p className="text-sm text-gray-700">Auto Accident</p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Line of Business</label>
-                      <p className="text-sm text-gray-700">Auto Insurance</p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Policy Number</label>
-                      <p className="text-sm text-gray-700 font-mono bg-gray-50 px-2 py-1 rounded">POL-2024-0001</p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Claim Status</label>
-                      <Badge variant="secondary" className="bg-green-100 text-green-800">Open</Badge>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Insured Name</label>
-                      <p className="text-sm text-gray-700 font-medium">Bluedown Bowl</p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-900 block mb-1">Assigned Adjuster</label>
-                      <div>
-                        <p className="text-sm text-gray-700 font-medium">Mital Patel</p>
-                        <div className="flex items-center space-x-2 mt-1">
-                          <Button variant="ghost" size="sm" className="p-0 h-auto text-xs">
-                            <Phone className="h-3 w-3 mr-1" />
-                            (555) 123-4567
-                          </Button>
-                          <Button variant="ghost" size="sm" className="p-0 h-auto text-xs">
-                            <Mail className="h-3 w-3 mr-1" />
-                            mital@company.com
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           
           {/* Left Column - Basic Info & Financial Info */}
           <div className="lg:col-span-2 space-y-6">
+            
+            {/* Basic Information Panel */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <CardTitle className="text-lg font-semibold">Basic Information</CardTitle>
+                <Button variant="ghost" size="sm">
+                  <Edit className="h-4 w-4" />
+                </Button>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Claim Number</label>
+                    <p className="text-sm text-gray-600 mt-1">CLM-2024-001</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Date of Loss</label>
+                    <div className="flex items-center mt-1">
+                      <Calendar className="h-4 w-4 text-gray-400 mr-1" />
+                      <p className="text-sm text-gray-600">01/10/2024</p>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Loss Location</label>
+                    <div className="flex items-center mt-1">
+                      <MapPin className="h-4 w-4 text-gray-400 mr-1" />
+                      <p className="text-sm text-gray-600">1922 Patricia Ave, Arvada, CA</p>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Loss Type</label>
+                    <p className="text-sm text-gray-600 mt-1">Auto Accident</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Line of Business</label>
+                    <p className="text-sm text-gray-600 mt-1">Auto Insurance</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Policy Number</label>
+                    <p className="text-sm text-gray-600 mt-1">POL-2024-0001</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Insured Name</label>
+                    <p className="text-sm text-gray-600 mt-1">Bluedown Bowl</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Assigned Adjuster</label>
+                    <div className="mt-1">
+                      <p className="text-sm text-gray-600">Mital Patel</p>
+                      <div className="flex items-center space-x-2 mt-1">
+                        <Button variant="ghost" size="sm" className="p-0 h-auto">
+                          <Phone className="h-3 w-3 mr-1" />
+                          <span className="text-xs">(555) 123-4567</span>
+                        </Button>
+                        <Button variant="ghost" size="sm" className="p-0 h-auto">
+                          <Mail className="h-3 w-3 mr-1" />
+                          <span className="text-xs">mital@company.com</span>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Deductible</label>
+                    <p className="text-sm text-gray-600 mt-1">$1,000.00</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Financial Information Panel */}
             <Card>
