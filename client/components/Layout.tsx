@@ -59,6 +59,38 @@ const navigationItems = [
                 href: "/claimants/amy-applegate/bodily-injury/deductible",
                 icon: "💰",
               },
+              {
+                id: "journal",
+                label: "Journal",
+                href: "/journal",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "diary",
+                    label: "Diary",
+                    href: "/journal/diary",
+                    icon: "📅",
+                  },
+                  {
+                    id: "notes",
+                    label: "Notes",
+                    href: "/journal/notes",
+                    icon: "📝",
+                  },
+                  {
+                    id: "documents",
+                    label: "Documents",
+                    href: "/journal/documents",
+                    icon: "📄",
+                  },
+                  {
+                    id: "emails",
+                    label: "Emails",
+                    href: "/journal/emails",
+                    icon: "",
+                  }
+                ]
+              },
             ],
           },
           {
@@ -90,6 +122,38 @@ const navigationItems = [
                 label: "Deductible",
                 href: "/claimants/amy-applegate/property-damage/deductible",
                 icon: "💰",
+              },
+              {
+                id: "journal",
+                label: "Journal",
+                href: "/journal",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "diary",
+                    label: "Diary",
+                    href: "/journal/diary",
+                    icon: "📅",
+                  },
+                  {
+                    id: "notes",
+                    label: "Notes",
+                    href: "/journal/notes",
+                    icon: "📝",
+                  },
+                  {
+                    id: "documents",
+                    label: "Documents",
+                    href: "/journal/documents",
+                    icon: "📄",
+                  },
+                  {
+                    id: "emails",
+                    label: "Emails",
+                    href: "/journal/emails",
+                    icon: "",
+                  }
+                ]
               },
             ],
           },
@@ -194,6 +258,38 @@ const navigationItems = [
                 label: "Deductible",
                 href: "/claimants/bob-pay/property-damage/deductible",
                 icon: "💰",
+              },
+              {
+                id: "journal",
+                label: "Journal",
+                href: "/journal",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "diary",
+                    label: "Diary",
+                    href: "/journal/diary",
+                    icon: "📅",
+                  },
+                  {
+                    id: "notes",
+                    label: "Notes",
+                    href: "/journal/notes",
+                    icon: "📝",
+                  },
+                  {
+                    id: "documents",
+                    label: "Documents",
+                    href: "/journal/documents",
+                    icon: "📄",
+                  },
+                  {
+                    id: "emails",
+                    label: "Emails",
+                    href: "/journal/emails",
+                    icon: "",
+                  }
+                ]
               },
             ],
           },
