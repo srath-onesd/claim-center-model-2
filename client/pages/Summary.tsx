@@ -30,7 +30,7 @@ export function Summary() {
   const [activityFilter, setActivityFilter] = useState("all");
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-full bg-gray-50">
       {/* Breadcrumb Navigation */}
       <div className="bg-white border-b px-6 py-3">
         <div className="flex items-center space-x-2 text-sm text-gray-600">
