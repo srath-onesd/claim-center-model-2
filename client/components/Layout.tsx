@@ -169,8 +169,38 @@ const navigationItems = [
       },
     ],
   },
-  { id: "legal", label: "Legal", href: "/legal", icon: "⚖️" },
-  
+  {
+    id: "journal",
+    label: "Journal",
+    href: "/journal",
+    expandable: true,
+    subItems: [
+      {
+        id: "diary",
+        label: "Diary",
+        href: "/journal/diary",
+        icon: "📅",
+      },
+      {
+        id: "notes",
+        label: "Notes",
+        href: "/journal/notes",
+        icon: "📝",
+      },
+      {
+        id: "documents",
+        label: "Documents",
+        href: "/journal/documents",
+        icon: "📄",
+      },
+      {
+        id: "emails",
+        label: "Emails",
+        href: "/journal/emails",
+        icon: "",
+      }
+    ]
+  }  
   { id: "diary", label: "Diary", href: "/diary", icon: "📅" },
   { id: "notes", label: "Notes", href: "/notes", icon: "📝" },
   { id: "events", label: "Events", href: "/events", icon: "📅" },
