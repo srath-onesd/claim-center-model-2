@@ -251,147 +251,22 @@ export function Summary() {
               </CardContent>
             </Card>
 
-            {/* Financial Information Panel */}
+            {/* Claim Overview Summary */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg font-semibold">Financial Information</CardTitle>
+                <CardTitle className="text-lg font-semibold">Claim Overview Summary</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {/* Total Incurred */}
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Total Incurred</div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">$15,750.00</div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                      <div className="bg-gray-800 h-2 rounded-full" style={{ width: '78%' }}></div>
-                    </div>
-                    <div className="text-xs text-gray-500">78% of policy limit</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h4 className="font-semibold text-md mb-2">Total Claim Value</h4>
+                    <div className="text-2xl font-bold text-blue-600">$15,750.00</div>
+                    <div className="text-sm text-gray-600 mt-1">78% of policy limit utilized</div>
                   </div>
-
-                  {/* Outstanding Reserves */}
-                  <div className="p-4 bg-yellow-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Outstanding Reserves</div>
-                    <div className="text-2xl font-bold text-yellow-600 mb-2">$8,250.00</div>
-                    <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
-                      <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '65%' }}></div>
-                    </div>
-                    <div className="text-xs text-gray-500">Reserve adequacy: Good</div>
-                  </div>
-
-                  {/* Amount Paid */}
                   <div className="p-4 bg-green-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
-                    <div className="text-2xl font-bold text-green-600 mb-2">$7,500.00</div>
-                    <div className="w-full bg-green-200 rounded-full h-2 mb-2">
-                      <div className="bg-green-600 h-2 rounded-full" style={{ width: '50%' }}></div>
-                    </div>
-                    <div className="text-xs text-gray-500">Last payment: Mar 20, 2024</div>
-                  </div>
-
-                  {/* Recoveries */}
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Recoveries</div>
-                    <div className="text-2xl font-bold text-blue-600 mb-2">$2,100.00</div>
-                    <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
-                      <div className="bg-blue-600 h-2 rounded-full" style={{ width: '33%' }}></div>
-                    </div>
-                    <div className="text-xs text-gray-500">Recovery rate: 13.3%</div>
-                  </div>
-
-                  {/* Deductible */}
-                  <div className="p-4 bg-purple-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Deductible</div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">$500.00</div>
-                    <div className="w-full bg-purple-200 rounded-full h-2 mb-2">
-                      <div className="bg-purple-600 h-2 rounded-full" style={{ width: '100%' }}></div>
-                    </div>
-                    <div className="text-xs text-gray-500">Collected from insured</div>
-                  </div>
-                  
-                  {/* Coverage Limits */}
-                  <div className="p-4 bg-indigo-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Coverage Limits</div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">$20,000.00</div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-2">
-                      <div className="bg-indigo-600 h-2 rounded-full" style={{ width: '78%' }}></div>
-                    </div>
-                    <div className="text-xs text-gray-500">Property Damage limit</div>
-                  </div>
-                </div>
-
-                {/* Financial Breakdown Table */}
-                <div className="mt-6">
-                  <h3 className="text-md font-semibold mb-4">Breakdown by Claimant-Coverage</h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-gray-50">
-                        <tr>
-                          <th className="px-4 py-3 text-left font-medium text-gray-900">Claimant Name</th>
-                          <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage Type</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Recovery</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-200">
-                        <tr>
-                          <td className="px-4 py-3">Amy Applegate</td>
-                          <td className="px-4 py-3">Medical Payments</td>
-                          <td className="px-4 py-3 text-right">$585.00</td>
-                          <td className="px-4 py-3 text-right">$100.00</td>
-                          <td className="px-4 py-3 text-right">$485.00</td>
-                          <td className="px-4 py-3 text-right">$0.00</td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 py-3">Amy Applegate</td>
-                          <td className="px-4 py-3">Liability - Bodily Injury</td>
-                          <td className="px-4 py-3 text-right">$15,165.00</td>
-                          <td className="px-4 py-3 text-right">$7,400.00</td>
-                          <td className="px-4 py-3 text-right">$7,765.00</td>
-                          <td className="px-4 py-3 text-right">$2,100.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Related Claims & Incidents */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <Link className="h-5 w-5 mr-2" />
-                  Related Claims & Incidents
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h4 className="font-medium">Claim #CLM-2024-002</h4>
-                        <p className="text-sm text-gray-600">Same policy holder, 12/15/2023</p>
-                        <p className="text-sm text-gray-600">Property damage claim - garage fire</p>
-                      </div>
-                      <Button variant="outline" size="sm">View Claim</Button>
-                    </div>
-                  </div>
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h4 className="font-medium">Incident #INC-2024-001</h4>
-                        <p className="text-sm text-gray-600">Same location, 01/10/2024</p>
-                        <p className="text-sm text-gray-600">Multi-vehicle collision at intersection</p>
-                      </div>
-                      <Button variant="outline" size="sm">View Incident</Button>
-                    </div>
-                  </div>
-                  <div className="mt-4">
-                    <Button variant="link" className="p-0 h-auto text-blue-600">
-                      View all related claims and incidents (4 total) →
-                    </Button>
+                    <h4 className="font-semibold text-md mb-2">Payment Status</h4>
+                    <div className="text-2xl font-bold text-green-600">$7,500.00</div>
+                    <div className="text-sm text-gray-600 mt-1">Paid to date</div>
                   </div>
                 </div>
               </CardContent>
