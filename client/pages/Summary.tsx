@@ -41,28 +41,22 @@ export function Summary() {
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
 
-      {/* Search Bar with Action Button */}
+      {/* Search Bar */}
       <div className="bg-white border-b px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-              <Input
-                placeholder="Search within claim data and logs..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
-              />
-            </div>
-            <Badge variant="secondary" className="bg-green-100 text-green-800">
-              Open
-            </Badge>
-            <span className="text-sm text-gray-600">Open 24 days</span>
+        <div className="flex items-center space-x-4">
+          <div className="relative flex-1 max-w-md">
+            <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+            <Input
+              placeholder="Search within claim data and logs..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10"
+            />
           </div>
-          {/* Action Button - Top Right */}
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-            Action
-          </Button>
+          <Badge variant="secondary" className="bg-green-100 text-green-800">
+            Open
+          </Badge>
+          <span className="text-sm text-gray-600">Open 24 days</span>
         </div>
       </div>
 
