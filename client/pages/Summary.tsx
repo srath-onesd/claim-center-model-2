@@ -273,9 +273,48 @@ export function Summary() {
             </Card>
           </div>
 
-          {/* Right Column - Timeline, Documents, Contacts */}
+          {/* Right Column - Related Claims, Timeline, Documents, Contacts */}
           <div className="space-y-6">
-            
+
+            {/* Related Claims & Incidents */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Link className="h-5 w-5 mr-2" />
+                  Related Claims & Incidents
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-medium">Claim #CLM-2024-002</h4>
+                        <p className="text-sm text-gray-600">Same policy holder, 12/15/2023</p>
+                        <p className="text-sm text-gray-600">Property damage claim - garage fire</p>
+                      </div>
+                      <Button variant="outline" size="sm">View Claim</Button>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-medium">Incident #INC-2024-001</h4>
+                        <p className="text-sm text-gray-600">Same location, 01/10/2024</p>
+                        <p className="text-sm text-gray-600">Multi-vehicle collision at intersection</p>
+                      </div>
+                      <Button variant="outline" size="sm">View Incident</Button>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <Button variant="link" className="p-0 h-auto text-blue-600">
+                      View all related claims and incidents (4 total) →
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Timeline/Activity Log */}
             <Card>
               <CardHeader>
