@@ -504,11 +504,11 @@ export function Layout({ children }: LayoutProps) {
               </span>
               <div className="hidden sm:flex items-center space-x-4 text-sm">
                 <span>Claim: <strong>23E:12345</strong></span>
-                <span>Policy: <strong>54:123456</strong></span>
+                <span>Policy: <strong><p>POL-2024-0001</p></strong></span>
                 <span>Insured: <strong>Shubham Raut</strong></span>
                 <span>Claimant: <strong>Amy Applegate, Bob Pay</strong></span>
-                <span>DOL: <strong>31/12/2025</strong></span>
-                <span>Adjuster: <strong>Mitali</strong></span>
+                <span>DOL: <strong><p>12/31/2025</p></strong></span>
+                <span>Adjuster: <strong><p>Mital Patel</p></strong></span>
               </div>
             </div>
             <div>
