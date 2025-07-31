@@ -90,13 +90,13 @@ export function Summary() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
                 <label className="text-sm font-medium text-gray-900">Claim Number</label>
-                <p className="text-sm text-gray-600 mt-1">CLM-2024-001</p>
+                <p className="text-sm text-gray-600 mt-1"><p>23E-12345</p></p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Date of Loss</label>
                 <div className="flex items-center mt-1">
                   <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">01/10/2024</p>
+                  <p className="text-sm text-gray-600"><p>12/31/2025</p></p>
                 </div>
               </div>
               <div>
@@ -120,7 +120,7 @@ export function Summary() {
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Insured Name</label>
-                <p className="text-sm text-gray-600 mt-1">Bluedown Bowl</p>
+                <p className="text-sm text-gray-600 mt-1"><p>Shubham Raut</p></p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Assigned Adjuster</label>
