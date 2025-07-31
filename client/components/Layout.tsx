@@ -251,7 +251,7 @@ export function Layout({ children }: LayoutProps) {
                 </span>
                 <button
                   style={{
-                    position: "fixed",
+                    
                     top: "2%",
                     right: "120px",
                     transform: "translateY(-50%)",
