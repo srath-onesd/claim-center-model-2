@@ -234,16 +234,41 @@ const navigationItems = [
                 icon: "💳",
               },
               {
-                id: "bi-recovery-2",
+                id: "bi-recovery-1",
                 label: "Recovery",
-                href: "/claimants/bob-pay/bodily-injury/recovery",
+                href: "/claimants/amy-applegate/bodily-injury/recovery",
                 icon: "🔄",
-              },
-              {
-                id: "bi-deductible-2",
-                label: "Deductible",
-                href: "/claimants/bob-pay/bodily-injury/deductible",
-                icon: "💰",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "subrogation",
+                    label: "Subrogation",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
+                  },
+                  {
+                    id: "finreceipts",
+                    label: "Financial Receipts",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+                  },
+                  {
+                    id: "deductible",
+                    label: "Deductible",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+                    expandable: true,
+                    subItems: [
+                      {
+                        id: "adddeductible",
+                        label: "Add Deductible",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
+                      },
+                      {
+                        id: "deductiblefin",
+                        label: "Deductible Financials",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
+                      },
+                    ]
+                  },
+                ]
               },
               {
                 id: "journal",
@@ -298,16 +323,41 @@ const navigationItems = [
                 icon: "💳",
               },
               {
-                id: "pd-recovery-2",
+                id: "bi-recovery-1",
                 label: "Recovery",
-                href: "/claimants/bob-pay/property-damage/recovery",
+                href: "/claimants/amy-applegate/bodily-injury/recovery",
                 icon: "🔄",
-              },
-              {
-                id: "pd-deductible-2",
-                label: "Deductible",
-                href: "/claimants/bob-pay/property-damage/deductible",
-                icon: "💰",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "subrogation",
+                    label: "Subrogation",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
+                  },
+                  {
+                    id: "finreceipts",
+                    label: "Financial Receipts",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+                  },
+                  {
+                    id: "deductible",
+                    label: "Deductible",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+                    expandable: true,
+                    subItems: [
+                      {
+                        id: "adddeductible",
+                        label: "Add Deductible",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
+                      },
+                      {
+                        id: "deductiblefin",
+                        label: "Deductible Financials",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
+                      },
+                    ]
+                  },
+                ]
               },
               {
                 id: "journal",
