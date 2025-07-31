@@ -366,7 +366,61 @@ export function Summary() {
                     </div>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+            {/* Claimant: Amy Applegate */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <User className="h-5 w-5 mr-2" />
+                  Claimant: Amy Applegate
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
 
+                {/* Bodily Injury Section */}
+                <div className="border rounded-lg p-4">
+                  <h3 className="font-semibold text-md mb-3 flex items-center">
+                    <AlertCircle className="h-4 w-4 mr-2 text-red-500" />
+                    Bodily Injury
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Injury Type</label>
+                      <p className="text-sm text-gray-600 mt-1">Neck and back strain</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Treatment Status</label>
+                      <p className="text-sm text-gray-600 mt-1">Ongoing physical therapy</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Medical Provider</label>
+                      <p className="text-sm text-gray-600 mt-1">City General Hospital</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Property Damage Section */}
+                <div className="border rounded-lg p-4">
+                  <h3 className="font-semibold text-md mb-3 flex items-center">
+                    <Shield className="h-4 w-4 mr-2 text-blue-500" />
+                    Property Damage
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Vehicle</label>
+                      <p className="text-sm text-gray-600 mt-1">2020 Honda Civic</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Damage Assessment</label>
+                      <p className="text-sm text-gray-600 mt-1">Front-end collision damage</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Repair Shop</label>
+                      <p className="text-sm text-gray-600 mt-1">ABC Auto Repair</p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
