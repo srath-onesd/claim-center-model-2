@@ -53,10 +53,6 @@ export function Summary() {
               className="pl-10"
             />
           </div>
-          <Badge variant="secondary" className="bg-green-100 text-green-800">
-            Open
-          </Badge>
-          <span className="text-sm text-gray-600">Open 24 days</span>
         </div>
       </div>
 
