@@ -30,18 +30,16 @@ export function Summary() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activityFilter, setActivityFilter] = useState("all");
 
+  const breadcrumbItems = [
+    { label: "Home", href: "/dashboard" },
+    { label: "Claims", href: "/claims" },
+    { label: "Claim #CLM-2024-001", active: true }
+  ];
+
   return (
     <div className="h-full bg-gray-50">
       {/* Breadcrumb Navigation */}
-      <div className="bg-white border-b px-6 py-3">
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <span>Home</span>
-          <span>›</span>
-          <span>Claims</span>
-          <span>›</span>
-          <span className="text-gray-900 font-medium">Claim #CLM-2024-001</span>
-        </div>
-      </div>
+      <Breadcrumb items={breadcrumbItems} />
 
       {/* Search Bar with Action Button */}
       <div className="bg-white border-b px-6 py-4">
