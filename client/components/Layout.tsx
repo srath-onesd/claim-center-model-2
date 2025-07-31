@@ -533,6 +533,7 @@ export function Layout({ children }: LayoutProps) {
               "lg:block",
               sidebarOpen ? "block" : "hidden lg:block"
             )}
+            style={{ minHeight: "400px" }}
           >
             <div className="p-2">
               <Button
@@ -546,7 +547,7 @@ export function Layout({ children }: LayoutProps) {
                 ) : (
                   <>
                     <ChevronDown className="h-4 w-4 mr-2" />
-                    <span><p>Claims Center</p></span>
+                    <span style={{ fontSize: "30px" }}><p>Claims Center</p></span>
                   </>
                 )}
               </Button>
