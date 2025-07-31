@@ -218,7 +218,7 @@ export function Layout({ children }: LayoutProps) {
                 Open
               </span>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="my-left-align-section space-x-4">
               <div className="hidden sm:flex items-center space-x-4 text-sm mr-auto">
                 <span>Claim: <strong>23E:12345</strong></span>
                 <span>Policy: <strong>54:123456</strong></span>
