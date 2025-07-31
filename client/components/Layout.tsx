@@ -402,8 +402,6 @@ export function Layout({ children }: LayoutProps) {
               <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded">
                 Open
               </span>
-            </div>
-            <div className="flex items-center space-x-4">
               <div className="hidden sm:flex items-center space-x-4 text-sm" style={{ margin: "0 auto 0 -550px" }}>
                 <span>Claim: <strong>23E:12345</strong></span>
                 <span>Policy: <strong>54:123456</strong></span>
