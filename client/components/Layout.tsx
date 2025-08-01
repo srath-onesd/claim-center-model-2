@@ -483,6 +483,10 @@ export function Layout({ children }: LayoutProps) {
       </li>
     );*/}
 
+    const isActive = location.pathname === item.href;
+    const isExpanded = expandedItems.has(item.id);
+    const hasSubItems = item.subItems && item.subItems.length > 0;
+
     return (
       <li key={item.id}>
         <div className="flex items-center">
@@ -515,7 +519,7 @@ export function Layout({ children }: LayoutProps) {
             </button>
           )}
         </div>
-        
+
         {hasSubItems && isExpanded && (
           <ul className="mt-1">
             {item.subItems.map((subItem: any) => renderNavigationItem(subItem, level + 1))}
