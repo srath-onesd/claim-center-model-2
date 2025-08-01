@@ -63,7 +63,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
               objectFit: "contain",
               objectPosition: "center",
               marginLeft: "5px",
-              minHeight: "20px",
+              minHeight: "2px",
               minWidth: "20px",
               overflow: "hidden"
             }}
