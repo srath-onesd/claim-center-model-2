@@ -504,15 +504,12 @@ export function Layout({ children }: LayoutProps) {
               <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded">
                 Open
               </span>
-              <div className="hidden sm:flex items-center space-x-4 text-sm" style={{ margin: "0 auto" }}>
-                <span>Claim: <strong>23E:12345</strong></span>
-                <span>Policy: <strong></strong></span>
-                <p style={{ fontWeight: "700" }}>001</p>
-                <span>Insured: <strong>Shubham Raut</strong></span>
-                <span>Claimant: <strong>Amy Applegate, Bob Pay</strong></span>
-                <span>DOL: <strong><p>12/31/2025</p></strong></span>
-                <span>Adjuster: <strong><p>Mital Patel</p></strong></span>
-              </div>
+              <span>Claim: <strong>23E:12345</strong></span>
+              <span>Policy: <strong>1-672148A</strong></span>
+              <span>Insured: <strong>Shubham Raut</strong></span>
+              <span>Claimant: <strong>Amy Applegate, Bob Pay</strong></span>
+              <span>DOL: <strong><p>12/31/2025</p></strong></span>
+              <span>Adjuster: <strong><p>Mital Patel</p></strong></span>
             </div>
             <div>
               <Button
