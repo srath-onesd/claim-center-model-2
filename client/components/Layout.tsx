@@ -492,7 +492,7 @@ export function Layout({ children }: LayoutProps) {
       <div className="flex flex-col w-full">
         <div className="bg-primary text-primary-foreground px-4 py-2 border-b">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 mr-auto">
               <Button
                 variant="ghost"
                 size="sm"
@@ -504,9 +504,10 @@ export function Layout({ children }: LayoutProps) {
               <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded">
                 Open
               </span>
-              <div className="hidden sm:flex items-center space-x-4 text-sm">
+              <div className="hidden sm:flex items-center space-x-4 text-sm" style={{ margin: "0 auto" }}>
                 <span>Claim: <strong>23E:12345</strong></span>
-                <span>Policy: <strong><p>001</p></strong></span>
+                <span>Policy: <strong></strong></span>
+                <p style={{ fontWeight: "700" }}>001</p>
                 <span>Insured: <strong>Shubham Raut</strong></span>
                 <span>Claimant: <strong>Amy Applegate, Bob Pay</strong></span>
                 <span>DOL: <strong><p>12/31/2025</p></strong></span>
