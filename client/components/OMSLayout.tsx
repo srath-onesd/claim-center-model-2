@@ -27,6 +27,7 @@ interface OMSLayoutProps {
 
 export function OMSLayout({ children }: OMSLayoutProps) {
   const [omsSidebarCollapsed, setOmsSidebarCollapsed] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const omsNavigationItems = [
     { id: "dashboard", label: "Dashboard", icon: Home, href: "/dashboard" },
