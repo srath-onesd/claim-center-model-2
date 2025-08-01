@@ -431,6 +431,7 @@ export function Layout({ children }: LayoutProps) {
   };
 
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
+    const isActive = location.pathname === item.href;
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
     const paddingLeft = sidebarCollapsed ? 12 : (level * 16 + 12); // Adjust for collapsed state
@@ -482,10 +483,6 @@ export function Layout({ children }: LayoutProps) {
         )}
       </li>
     );*/}
-
-    const isActive = location.pathname === item.href;
-    const isExpanded = expandedItems.has(item.id);
-    const hasSubItems = item.subItems && item.subItems.length > 0;
 
     return (
       <li key={item.id}>
