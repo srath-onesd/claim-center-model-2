@@ -434,7 +434,7 @@ export function Layout({ children }: LayoutProps) {
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
     const paddingLeft = sidebarCollapsed ? 12 : (level * 16 + 12); // Adjust for collapsed state
-
+    {/*
     return (
       <li key={item.id}>
         <div
@@ -481,8 +481,50 @@ export function Layout({ children }: LayoutProps) {
           </ul>
         )}
       </li>
+    );*/}
+
+    return (
+      <li key={item.id}>
+        <div className="flex items-center">
+          <Link
+            to={item.href}
+            className={cn(
+              "flex items-center justify-between flex-1 px-2 py-1 text-xs hover:bg-gray-100",
+              level === 0 && isActive
+                ? "bg-blue-500 text-white"
+                : level === 0
+                ? "text-white border border-blue-400"
+                : level === 1
+                ? "text-blue-200 pl-4"
+                : "text-blue-100 pl-6"
+            )}
+            style={level === 0 && !isActive ? {color: "rgba(255, 255, 255, 1)", border: "1px solid rgba(74, 144, 226, 1)"} : {}}
+          >
+            <span>{item.label}</span>
+          </Link>
+          {hasSubItems && (
+            <button
+              onClick={() => toggleExpanded(item.id)}
+              className="px-1 py-1 text-white hover:bg-blue-400 rounded"
+            >
+              {isExpanded ? (
+                <ChevronDown className="w-3 h-3" />
+              ) : (
+                <ChevronRight className="w-3 h-3" />
+              )}
+            </button>
+          )}
+        </div>
+        
+        {hasSubItems && isExpanded && (
+          <ul className="mt-1">
+            {item.subItems.map((subItem: any) => renderNavigationItem(subItem, level + 1))}
+          </ul>
+        )}
+      </li>
     );
   };
+  
 
   return (
     <div className="h-full bg-gray-50 flex">
