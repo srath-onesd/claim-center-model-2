@@ -116,7 +116,7 @@ export function Summary() {
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Policy Number</label>
-                <p className="text-sm text-gray-600 mt-1">POL-2024-0001</p>
+                <p className="text-sm text-gray-600 mt-1">1-672148A</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Insured Name</label>
