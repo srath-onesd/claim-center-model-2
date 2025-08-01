@@ -52,7 +52,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
   return (
     <div className="h-screen bg-white flex flex-col">
       {/* OMS Header */}
-      <div className="bg-blue-600 text-white px-4 py-3 flex items-center justify-between border-b">
+      <div className="bg-white-600 text-white px-4 py-3 flex items-center justify-between border-b">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
