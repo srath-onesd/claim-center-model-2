@@ -64,7 +64,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
               objectPosition: "center",
               marginLeft: "5px",
               minHeight: "2px",
-              minWidth: "20px",
+              minWidth: "2px",
               overflow: "hidden"
             }}
             alt="Logo"
