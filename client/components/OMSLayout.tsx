@@ -63,7 +63,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
                 aspectRatio: "10.78",
                 objectFit: "contain",
                 objectPosition: "center",
-                marginLeft: "20px",
+                marginLeft: "5px",
                 minHeight: "20px",
                 minWidth: "20px",
                 overflow: "hidden"
