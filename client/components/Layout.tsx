@@ -494,7 +494,7 @@ export function Layout({ children }: LayoutProps) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-primary-foreground hover:bg-primary-foreground/10 lg:hidden"
+                className="text-primary-foreground hover:bg-primary-foreground/10"
                 onClick={() => setSidebarOpen(!sidebarOpen)}
               >
                 {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
