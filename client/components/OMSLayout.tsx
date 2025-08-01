@@ -50,9 +50,9 @@ export function OMSLayout({ children }: OMSLayoutProps) {
   ];
 
   return (
-    <div className="h-screen bg-white flex flex-col">
+    <div className="h-screen bg-green flex flex-col">
       {/* OMS Header */}
-      <div className="bg-white-600 text-green px-4 py-3 flex items-center justify-between border-b">
+      <div className="bg-white-600 text-white px-4 py-3 flex items-center justify-between border-b">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <img
