@@ -52,7 +52,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
   return (
     <div className="h-screen bg-blue flex flex-col">
       {/* OMS Header */}
-      <div className="bg-white-600 text-blue px-4 py-3 flex items-center justify-between border-b">
+      <div className="bg-white text-blue px-4 py-3 flex items-center justify-between" style={{ backgroundColor: "rgba(255, 255, 255, 1)", border: "1px solid rgba(74, 144, 226, 1)" }}>
         <div className="flex items-center space-x-4">
           <img
             loading="lazy"
@@ -63,21 +63,22 @@ export function OMSLayout({ children }: OMSLayoutProps) {
               objectFit: "contain",
               objectPosition: "center",
               marginLeft: "5px",
-              minHeight: "2px",
-              minWidth: "2px",
-              overflow: "hidden"
+              minHeight: "40px",
+              minWidth: "20px",
+              overflow: "hidden",
+              width: "150px"
             }}
             alt="Logo"
           />
         </div>
         <div className="flex items-center space-x-4">
-          <span className="text-sm">David Robbins Single</span>
+          <span className="text-sm" style={{ color: "rgba(74, 144, 226, 1)" }}>David Robbins Single</span>
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="sm" className="text-white hover:bg-blue-700">
-              <User className="h-4 w-4" />
+              <User className="h-4 w-4" style={{ backgroundColor: "rgba(74, 144, 226, 1)" }} />
             </Button>
             <Button variant="ghost" size="sm" className="text-white hover:bg-blue-700">
-              <Settings className="h-4 w-4" />
+              <Settings className="h-4 w-4" style={{ backgroundColor: "rgba(74, 144, 226, 1)" }} />
             </Button>
           </div>
         </div>
