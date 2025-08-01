@@ -533,7 +533,7 @@ export function Layout({ children }: LayoutProps) {
             sidebarOpen ? "w-64 block" : "w-0 hidden",
             "lg:relative lg:top-0",
             sidebarOpen && "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0"
-            )} style={{backgroundColor: "rgba(74, 96, 220, 1)"}}>
+            )} style={{backgroundColor: "white"}}>
             <nav className="p-2">
               <ul className="space-y-1">
                 {navigationItems.map((item) => renderNavigationItem(item))}
