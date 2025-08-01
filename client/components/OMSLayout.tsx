@@ -89,21 +89,14 @@ export function OMSLayout({ children }: OMSLayoutProps) {
         <div className={`bg-gray-100 border-r transition-all duration-300 ${
           omsSidebarCollapsed ? 'w-16' : 'w-64'
         }`}>
-          <div className="p-2">
-            <div style={{ position: "relative", marginTop: "20px", height: "auto" }}>
-              Enter some text...
-            </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
-              className="w-full justify-start mb-2"
-            >
-              <p>
-                <br />
-              </p>
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-primary-foreground hover:bg-primary-foreground/10"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
+            {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+          </Button>
           
           <nav className="px-2 pb-4 space-y-1">
             {omsNavigationItems.map((item) => {
