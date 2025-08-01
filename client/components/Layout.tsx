@@ -508,8 +508,8 @@ export function Layout({ children }: LayoutProps) {
               <span>Policy: <strong>1-672148A</strong></span>
               <span>Insured: <strong>Shubham Raut</strong></span>
               <span>Claimant: <strong>Amy Applegate, Bob Pay</strong></span>
-              <span>DOL: <strong><p>12/31/2025</p></strong></span>
-              <span>Adjuster: <strong><p>Mital Patel</p></strong></span>
+              <span>DOL: <strong>12/31/2025</strong></span>
+              <span>Adjuster: <strong>Mital Patel</strong></span>
             </div>
             <div>
               <Button
