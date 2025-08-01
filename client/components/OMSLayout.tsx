@@ -95,7 +95,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
             className="text-primary-foreground hover:bg-primary-foreground/10"
             onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
           >
-            {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+            {omsSidebarCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
           </Button>
           
           <nav className="px-2 pb-4 space-y-1">
