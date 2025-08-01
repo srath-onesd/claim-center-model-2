@@ -528,33 +528,13 @@ export function Layout({ children }: LayoutProps) {
         {/* Content with sidebar */}
         <div className="flex flex-1 overflow-hidden">
           {/* Claims Center Sidebar */}
-          <aside
-            className={cn(
-              "bg-white shadow-sm transition-all duration-300 ease-in-out border-r",
-              sidebarCollapsed ? "w-16" : "w-64",
-              "lg:block",
-              sidebarOpen ? "block" : "hidden lg:block"
-            )}
-            style={{ minHeight: "400px" }}
-          >
-            <div className="p-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-                className="w-full justify-start mb-2"
-              >
-                {sidebarCollapsed ? (
-                  <ChevronRight className="h-4 w-4" />
-                ) : (
-                  <>
-                    <ChevronDown className="h-4 w-4 mr-2" />
-                    <span style={{ fontSize: "30px" }}><p>Claims Center</p></span>
-                  </>
-                )}
-              </Button>
-            </div>
-            <nav className="px-2 pb-4">
+          <aside className={cn(
+            "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
+            sidebarOpen ? "w-64 block" : "w-0 hidden",
+            "lg:relative lg:top-0",
+            sidebarOpen && "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0"
+            )} style={{backgroundColor: "rgba(74, 96, 220, 1)"}}>
+            <nav className="p-2">
               <ul className="space-y-1">
                 {navigationItems.map((item) => renderNavigationItem(item))}
               </ul>
