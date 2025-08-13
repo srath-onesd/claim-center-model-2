@@ -434,11 +434,10 @@ export function Summary() {
                 <CardTitle className="text-lg font-semibold flex items-center">
                   <Link className="h-5 w-5 mr-2" />
                   Related Claims & Incidents  
-                  
+                    <Button variant="link" className="p-0 h-auto text-blue-600">
+                      View all
+                    </Button>
                 </CardTitle>
-                <Button variant="link" className="p-0 h-auto text-blue-600">
-                    View all
-                </Button>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
