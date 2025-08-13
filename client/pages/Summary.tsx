@@ -32,6 +32,14 @@ import {
 export function Summary() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activityFilter, setActivityFilter] = useState("all");
+  const [collapsedClaimants, setCollapsedClaimants] = useState<{ [key: string]: boolean }>({});
+
+  const toggleClaimantCollapse = (claimantId: string) => {
+    setCollapsedClaimants(prev => ({
+      ...prev,
+      [claimantId]: !prev[claimantId]
+    }));
+  };
 
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
