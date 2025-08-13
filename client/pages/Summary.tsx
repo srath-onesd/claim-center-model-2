@@ -488,7 +488,7 @@ export function Summary() {
                     size="sm"
                     onClick={() => setActivityFilter("payments")}
                   >
-                    Payments
+                    Financials
                   </Button>
                 </div>
               </CardHeader>
