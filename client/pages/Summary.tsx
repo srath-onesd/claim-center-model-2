@@ -486,8 +486,14 @@ export function Summary() {
                     <Clock className="h-5 w-5 mr-2" />
                     Activity Timeline
                   </CardTitle>
-                  <Button variant="link" className="p-0 h-auto text-blue-600" >
-                    View All
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto text-blue-600"
+                    asChild
+                  >
+                    <RouterLink to="/claim-history">
+                      View All
+                    </RouterLink>
                   </Button>
                 </div>
                 <div className="flex space-x-2">
