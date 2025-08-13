@@ -481,7 +481,7 @@ export function Summary() {
                     size="sm"
                     onClick={() => setActivityFilter("notes")}
                   >
-                    Notes
+                    Diaries/Notes
                   </Button>
                   <Button
                     variant={activityFilter === "payments" ? "default" : "outline"}
