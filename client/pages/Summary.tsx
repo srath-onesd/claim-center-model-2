@@ -431,13 +431,15 @@ export function Summary() {
             {/* Related Claims & Incidents */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <Link className="h-5 w-5 mr-2" />
-                  Related Claims & Incidents
-                </CardTitle>
-                <Button variant="link" className="p-0 h-auto text-blue-600">
-                      View all related claims and incidents (4 total) →
-                </Button>
+                <div>
+                  <CardTitle className="text-lg font-semibold flex items-center">
+                    <Link className="h-5 w-5 mr-2" />
+                    Related Claims & Incidents
+                  </CardTitle>
+                  <Button variant="link" className="p-0 h-auto text-blue-600">
+                        View all related claims and incidents (4 total) →
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
