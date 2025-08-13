@@ -430,7 +430,7 @@ export function Summary() {
 
             {/* Related Claims & Incidents */}
             <Card>
-              <CardHeader>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
                   <Link className="h-5 w-5 mr-2" />
                   Related Claims & Incidents  
