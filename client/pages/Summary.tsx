@@ -444,7 +444,7 @@ export function Summary() {
                   <div className="p-4 bg-gray-50 rounded-lg">
                     <div className="flex items-center justify-between">
                       <div>
-                        <Button variant="link" size="font-medium">Claim #CLM-1234</Button>
+                        <Button variant="link" size="font-medium">Claim #23E-1234</Button>
                         <p className="text-sm text-gray-600">Loss Description: Property damage- Garage Fire</p>
                       </div>
                     </div>
