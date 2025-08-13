@@ -454,7 +454,7 @@ export function Summary() {
                     <div className="flex items-center justify-between">
                       <div>
                         <h4 className="font-medium">Incident #INC-2024-001</h4>
-                        <p className="text-sm text-gray-600">Loss Description: Multi-vehicle collision at intersection</p>
+                        <p className="text-sm text-gray-600">Loss Description: Multi-vehicle collision</p>
                       </div>
                       <Button variant="outline" size="sm">View Incident</Button>
                     </div>
