@@ -461,11 +461,6 @@ export function Summary() {
                       <Button variant="outline" size="sm">View Incident</Button>
                     </div>
                   </div>
-                  <div className="mt-4">
-                    <Button variant="link" className="p-0 h-auto text-blue-600">
-                      View all related claims and incidents (4 total) →
-                    </Button>
-                  </div>
                 </div>
               </CardContent>
             </Card>
