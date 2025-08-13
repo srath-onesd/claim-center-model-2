@@ -436,7 +436,7 @@ export function Summary() {
                   Related Claims & Incidents  
                 </CardTitle>
                 <Button variant="link" className="p-0 h-auto text-blue-600" >
-                    <Link className = "h-4 w-4">View All</Link>
+                    <div className = "h-4 w-4">View All</div>
                 </Button>
               </CardHeader>
               <CardContent>
