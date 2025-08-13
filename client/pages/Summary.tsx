@@ -435,8 +435,7 @@ export function Summary() {
                   <Link className="h-5 w-5 mr-2" />
                   Related Claims & Incidents  
                 </CardTitle>
-                
-                <Button variant="link" className="p-0 h-auto text-blue-600">
+                <Button variant="link" className="p-0 h-auto text-blue-600" style="margin-left: 20px;">
                     View all
                 </Button>
               </CardHeader>
