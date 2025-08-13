@@ -445,8 +445,7 @@ export function Summary() {
                     <div className="flex items-center justify-between">
                       <div>
                         <h4 className="font-medium">Claim #CLM-2024-002</h4>
-                        <p className="text-sm text-gray-600">Same policy holder, 12/15/2023</p>
-                        <p className="text-sm text-gray-600">Property damage claim - garage fire</p>
+                        <p className="text-sm text-gray-600">Loss Description: Property damage- Garage Fire</p>
                       </div>
                       <Button variant="outline" size="sm">View Claim</Button>
                     </div>
@@ -455,8 +454,7 @@ export function Summary() {
                     <div className="flex items-center justify-between">
                       <div>
                         <h4 className="font-medium">Incident #INC-2024-001</h4>
-                        <p className="text-sm text-gray-600">Same location, 01/10/2024</p>
-                        <p className="text-sm text-gray-600">Multi-vehicle collision at intersection</p>
+                        <p className="text-sm text-gray-600">Loss Description: Multi-vehicle collision at intersection</p>
                       </div>
                       <Button variant="outline" size="sm">View Incident</Button>
                     </div>
