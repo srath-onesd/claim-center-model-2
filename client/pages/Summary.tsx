@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,7 +24,9 @@ import {
   TrendingUp,
   Shield,
   AlertCircle,
-  Link
+  Link,
+  ChevronDown,
+  ChevronRight
 } from "lucide-react";
 
 export function Summary() {
