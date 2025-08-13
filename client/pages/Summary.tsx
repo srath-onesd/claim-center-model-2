@@ -447,7 +447,6 @@ export function Summary() {
                         <Button variant="link" size="sm">Claim #CLM-2024-002</Button>
                         <p className="text-sm text-gray-600">Loss Description: Property damage- Garage Fire</p>
                       </div>
-                      <Button variant="outline" size="sm">View Claim</Button>
                     </div>
                   </div>
                   <div className="p-4 bg-blue-50 rounded-lg">
