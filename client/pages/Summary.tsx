@@ -766,7 +766,7 @@ export function Summary() {
 
         {/* Bottom Section - Detailed Tables */}
         <div className="space-y-6">
-          <Tabs defaultValue="financial" className="w-full">
+          <Tabs defaultValue="coverage" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               {/*
               <TabsTrigger value="financial">Financial Details</TabsTrigger>
