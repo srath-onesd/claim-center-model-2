@@ -512,6 +512,7 @@ export function Summary() {
                     </RouterLink>
                   </Button>
                 </div>
+                {/*
                 <div className="flex space-x-2">
                   <Button
                     variant={activityFilter === "all" ? "default" : "outline"}
@@ -535,6 +536,7 @@ export function Summary() {
                     Financials
                   </Button>
                 </div>
+                */}
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 max-h-96 overflow-y-auto">
