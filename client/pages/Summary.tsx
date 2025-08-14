@@ -768,7 +768,9 @@ export function Summary() {
         <div className="space-y-6">
           <Tabs defaultValue="financial" className="w-full">
             <TabsList className="grid w-full grid-cols-3">
+              {/*
               <TabsTrigger value="financial">Financial Details</TabsTrigger>
+              */}
               <TabsTrigger value="coverage">Policy Coverage</TabsTrigger>
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
             </TabsList>
