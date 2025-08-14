@@ -774,7 +774,8 @@ export function Summary() {
               <TabsTrigger value="coverage">Policy Coverage</TabsTrigger>
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
             </TabsList>
-            
+
+            {/*
             <TabsContent value="financial">
               <Card>
                 <CardHeader>
@@ -824,6 +825,7 @@ export function Summary() {
                 </CardContent>
               </Card>
             </TabsContent>
+            */}
             
             <TabsContent value="coverage">
               <Card>
