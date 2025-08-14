@@ -604,6 +604,7 @@ export function Summary() {
             </Card>
 
             {/* Documents Section */}
+            {/*
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center">
@@ -664,8 +665,10 @@ export function Summary() {
                 </div>
               </CardContent>
             </Card>
+            */}
 
             {/* Contacts & Parties Involved */}
+            {/*
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center">
@@ -757,6 +760,7 @@ export function Summary() {
                 </div>
               </CardContent>
             </Card>
+            */}
           </div>
         </div>
 
