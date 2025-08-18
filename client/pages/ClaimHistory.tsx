@@ -300,13 +300,6 @@ export function ClaimHistory() {
       <div className="bg-white border-b px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" asChild>
-              <RouterLink to="/" className="flex items-center">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Overview
-              </RouterLink>
-            </Button>
-            <div className="border-l border-gray-300 h-6"></div>
             <h1 className="text-xl font-semibold text-gray-900">Claim History</h1>
           </div>
           <div className="flex items-center space-x-2">
