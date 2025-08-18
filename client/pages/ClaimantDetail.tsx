@@ -42,7 +42,7 @@ export function ClaimantDetail() {
   return (
     <div className="h-full bg-gray-50">
       {/* Breadcrumb Navigation */}
-      <div className="flex items-center space-x-20">
+      <div className="flex items-center space-x-200">
         <Breadcrumb items={breadcrumbItems} />
         <Button variant="ghost" size="sm" asChild>
           <RouterLink to="/" className="flex items-center">
