@@ -40,12 +40,41 @@ import {
 export function ClaimantDetail() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activityFilter, setActivityFilter] = useState("all");
+  const { claimantName } = useParams();
+
+  // Dynamic claimant data based on URL parameter
+  const claimants = {
+    "amy-applegate": {
+      name: "Amy Applegate",
+      displayName: "Amy Applegate",
+      initials: "AA",
+      role: "Third Party Claimant",
+      totalIncurred: "$12,450.00",
+      reserves: "$7,250.00",
+      paid: "$5,200.00",
+      medicalPayments: "$3,850.00",
+      bodilyInjury: "$8,600.00"
+    },
+    "bob-pay": {
+      name: "Bob Pay",
+      displayName: "Bob Pay",
+      initials: "BP",
+      role: "Third Party Claimant",
+      totalIncurred: "$8,750.00",
+      reserves: "$4,500.00",
+      paid: "$4,250.00",
+      medicalPayments: "$2,100.00",
+      bodilyInjury: "$6,650.00"
+    }
+  };
+
+  const currentClaimant = claimants[claimantName as keyof typeof claimants] || claimants["amy-applegate"];
 
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
     { label: "Overview", href: "/" },
-    { label: "Amy Applegate", active: true }
+    { label: currentClaimant.displayName, active: true }
   ];
 
   return (
