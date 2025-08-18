@@ -249,7 +249,7 @@ export function ClaimantDetail() {
               {/* Bodily Injury Liability */}
               <div className="p-4 bg-red-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Bodily Injury Liability</div>
-                <div className="text-2xl font-bold text-red-600 mb-2">$8,600.00</div>
+                <div className="text-2xl font-bold text-red-600 mb-2">{currentClaimant.bodilyInjury}</div>
                 <div className="w-full bg-red-200 rounded-full h-2 mb-2">
                   <div className="bg-red-600 h-2 rounded-full" style={{ width: '17%' }}></div>
                 </div>
