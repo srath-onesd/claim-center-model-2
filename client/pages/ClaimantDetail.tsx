@@ -35,7 +35,7 @@ export function ClaimantDetail() {
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
-    { label: "Claim #23E-12345", href: "/" },
+    { label: "Overview", href: "/" },
     { label: "Amy Applegate", active: true }
   ];
 
