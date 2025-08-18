@@ -239,7 +239,7 @@ export function ClaimantDetail() {
               {/* Medical Payments */}
               <div className="p-4 bg-blue-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Medical Payments</div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">$3,850.00</div>
+                <div className="text-2xl font-bold text-blue-600 mb-2">{currentClaimant.medicalPayments}</div>
                 <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
                   <div className="bg-blue-600 h-2 rounded-full" style={{ width: '77%' }}></div>
                 </div>
