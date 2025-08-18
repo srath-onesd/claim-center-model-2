@@ -111,7 +111,7 @@ const navigationItems = [
                 ]
               },
             ],
-      },
+        },
       {
         id: "claimant2",
         label: "Bob Pay",
@@ -119,12 +119,6 @@ const navigationItems = [
         expandable: true,
         subItems: [
           {
-            id: "pc-liability-2",
-            label: "Bodily Injury",
-            href: "/claimants/bob-pay/bodily-injury",
-            expandable: true,
-            subItems: [
-              {
                 id: "bi-reserves-2",
                 label: "Reserves",
                 href: "/claimants/bob-pay/bodily-injury/reserves",
