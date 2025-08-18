@@ -505,7 +505,7 @@ export function ClaimantDetail() {
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center">
                   <Clock className="h-5 w-5 mr-2" />
-                  Recent Activity
+                  Activity Timeline
                 </CardTitle>
               </CardHeader>
               <CardContent>
