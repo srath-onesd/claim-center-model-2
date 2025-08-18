@@ -29,7 +29,7 @@ const navigationItems = [
         href: "/claimants/amy-applegate",
         expandable: true,
         subItems: [
-            {
+          {
               id: "bi-reserves-1",
               label: "Reserves",
               href: "/claimants/amy-applegate/bodily-injury/reserves",
@@ -111,6 +111,7 @@ const navigationItems = [
               ]
             },
           ],
+          },
           {
             id: "pd-liability-1",
             label: "Property Damage",
