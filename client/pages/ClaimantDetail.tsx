@@ -376,6 +376,217 @@ export function ClaimantDetail() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Reserves Management */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Target className="h-5 w-5 mr-2 text-orange-500" />
+                  Reserves Management
+                </CardTitle>
+                <Button variant="outline" size="sm">
+                  <Edit className="h-4 w-4 mr-2" />
+                  Adjust Reserves
+                </Button>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="p-4 border rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-medium">Medical Reserves</h4>
+                      <Badge variant="secondary" className="bg-blue-100 text-blue-800">Active</Badge>
+                    </div>
+                    <div className="text-2xl font-bold text-blue-600 mb-1">$4,500.00</div>
+                    <div className="text-sm text-gray-600 mb-3">Outstanding medical treatment</div>
+                    <div className="w-full bg-blue-200 rounded-full h-2">
+                      <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
+                    </div>
+                  </div>
+
+                  <div className="p-4 border rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-medium">Indemnity Reserves</h4>
+                      <Badge variant="secondary" className="bg-green-100 text-green-800">Active</Badge>
+                    </div>
+                    <div className="text-2xl font-bold text-green-600 mb-1">$2,750.00</div>
+                    <div className="text-sm text-gray-600 mb-3">Pain and suffering settlement</div>
+                    <div className="w-full bg-green-200 rounded-full h-2">
+                      <div className="bg-green-600 h-2 rounded-full" style={{ width: '55%' }}></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <h4 className="font-medium mb-3">Reserve History</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <div className="flex items-center space-x-3">
+                        <ArrowUpRight className="h-4 w-4 text-green-600" />
+                        <span className="text-sm">Reserve increase - Medical</span>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-sm font-medium">+$1,500.00</div>
+                        <div className="text-xs text-gray-500">Mar 10, 2024</div>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
+                      <div className="flex items-center space-x-3">
+                        <ArrowDownRight className="h-4 w-4 text-red-600" />
+                        <span className="text-sm">Reserve decrease - Indemnity</span>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-sm font-medium">-$750.00</div>
+                        <div className="text-xs text-gray-500">Feb 28, 2024</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Payment History */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Receipt className="h-5 w-5 mr-2 text-green-500" />
+                  Payment History
+                </CardTitle>
+                <Button variant="outline" size="sm">
+                  <CreditCard className="h-4 w-4 mr-2" />
+                  New Payment
+                </Button>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                        <DollarSign className="h-5 w-5 text-green-600" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Medical Payment - City General Hospital</p>
+                        <p className="text-sm text-gray-600">Check #123456 • Ref: MED-2024-001</p>
+                        <p className="text-xs text-gray-500">March 15, 2024</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-lg font-bold text-green-600">$1,850.00</div>
+                      <Badge variant="outline" className="text-xs">Cleared</Badge>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                        <DollarSign className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Settlement Payment - Interim</p>
+                        <p className="text-sm text-gray-600">ACH Transfer • Ref: SETTLE-2024-002</p>
+                        <p className="text-xs text-gray-500">February 28, 2024</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-lg font-bold text-blue-600">$2,500.00</div>
+                      <Badge variant="outline" className="text-xs">Cleared</Badge>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-4 border rounded-lg">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <Clock className="h-5 w-5 text-yellow-600" />
+                      </div>
+                      <div>
+                        <p className="font-medium">Medical Payment - Physical Therapy</p>
+                        <p className="text-sm text-gray-600">Check #123457 • Ref: MED-2024-003</p>
+                        <p className="text-xs text-gray-500">January 20, 2024</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-lg font-bold text-yellow-600">$850.00</div>
+                      <Badge variant="outline" className="text-xs">Processing</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Total Payments to Date:</span>
+                    <span className="text-xl font-bold text-gray-900">$5,200.00</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Settlement Information */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <PieChart className="h-5 w-5 mr-2 text-purple-500" />
+                  Settlement Information
+                </CardTitle>
+                <Button variant="outline" size="sm">
+                  <Edit className="h-4 w-4 mr-2" />
+                  Update Settlement
+                </Button>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Settlement Status</label>
+                    <div className="flex items-center mt-1">
+                      <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">
+                        In Negotiation
+                      </Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Settlement Authority</label>
+                    <p className="text-sm text-gray-600 mt-1">$15,000.00</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Demand Amount</label>
+                    <p className="text-sm text-gray-600 mt-1">$18,500.00</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Last Offer</label>
+                    <p className="text-sm text-gray-600 mt-1">$12,000.00</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Attorney Representation</label>
+                    <p className="text-sm text-gray-600 mt-1">Yes - Johnson & Associates</p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-gray-900">Expected Settlement Date</label>
+                    <p className="text-sm text-gray-600 mt-1">April 30, 2024</p>
+                  </div>
+                </div>
+
+                <div className="mt-4 p-4 border rounded-lg">
+                  <h4 className="font-medium mb-2">Settlement Breakdown</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span>Medical Expenses:</span>
+                      <span>$8,500.00</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span>Lost Wages:</span>
+                      <span>$2,800.00</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span>Pain & Suffering:</span>
+                      <span>$7,200.00</span>
+                    </div>
+                    <hr className="my-2" />
+                    <div className="flex justify-between font-medium">
+                      <span>Total Demand:</span>
+                      <span>$18,500.00</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Right Column - Document Details, Parties Details */}
