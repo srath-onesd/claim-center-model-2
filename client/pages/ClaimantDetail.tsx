@@ -269,7 +269,7 @@ export function ClaimantDetail() {
 
             {/* Financial Breakdown Table */}
             <div className="mt-6">
-              <h3 className="text-md font-semibold mb-4">Coverage Breakdown - Amy Applegate</h3>
+              <h3 className="text-md font-semibold mb-4">Coverage Breakdown - {currentClaimant.displayName}</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gray-50">
