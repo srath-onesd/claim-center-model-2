@@ -29,12 +29,6 @@ const navigationItems = [
         href: "/claimants/amy-applegate",
         expandable: true,
         subItems: [
-          {
-            id: "pc-liability-1",
-            label: "Bodily Injury",
-            href: "/claimants/amy-applegate/bodily-injury",
-            expandable: true,
-            subItems: [
               {
                 id: "bi-reserves-1",
                 label: "Reserves",
