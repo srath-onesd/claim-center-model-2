@@ -71,6 +71,14 @@ export function OMSLayout({ children }: OMSLayoutProps) {
             }}
             alt="Logo"
           />
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-primary-foreground hover:bg-primary-foreground/10"
+            onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
+          >
+            {omsSidebarCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+          </Button>
         </div>
         <div className={`bg-gray-100 border-r transition-all duration-300 ${omsSidebarCollapsed ? 'w-16' : 'w-64'
           }`}>
