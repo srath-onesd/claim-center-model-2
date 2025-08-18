@@ -25,7 +25,16 @@ import {
   Building,
   UserCheck,
   CheckCircle,
-  ExternalLink
+  ExternalLink,
+  DollarSign,
+  TrendingUp,
+  CreditCard,
+  Target,
+  BarChart3,
+  PieChart,
+  Receipt,
+  ArrowUpRight,
+  ArrowDownRight
 } from "lucide-react";
 
 export function ClaimantDetail() {
