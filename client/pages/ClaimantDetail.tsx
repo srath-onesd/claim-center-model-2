@@ -164,6 +164,127 @@ export function ClaimantDetail() {
           </CardContent>
         </Card>
 
+        {/* Claimant Financial Information Panel */}
+        <Card className="w-full">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+            <CardTitle className="text-lg font-semibold flex items-center">
+              <DollarSign className="h-5 w-5 mr-2" />
+              Financial Information - Amy Applegate
+            </CardTitle>
+            <Button variant="ghost" size="sm">
+              <Edit className="h-4 w-4" />
+            </Button>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Claimant Total Incurred */}
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <div className="text-sm text-gray-600 mb-1">Total Incurred (This Claimant)</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">$12,450.00</div>
+                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                  <div className="bg-gray-800 h-2 rounded-full" style={{ width: '62%' }}></div>
+                </div>
+                <div className="text-xs text-gray-500">62% of available coverage</div>
+              </div>
+
+              {/* Outstanding Reserves */}
+              <div className="p-4 bg-yellow-50 rounded-lg">
+                <div className="text-sm text-gray-600 mb-1">Outstanding Reserves</div>
+                <div className="text-2xl font-bold text-yellow-600 mb-2">$7,250.00</div>
+                <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
+                  <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '70%' }}></div>
+                </div>
+                <div className="text-xs text-gray-500">Reserve adequacy: Good</div>
+              </div>
+
+              {/* Amount Paid to Claimant */}
+              <div className="p-4 bg-green-50 rounded-lg">
+                <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
+                <div className="text-2xl font-bold text-green-600 mb-2">$5,200.00</div>
+                <div className="w-full bg-green-200 rounded-full h-2 mb-2">
+                  <div className="bg-green-600 h-2 rounded-full" style={{ width: '42%' }}></div>
+                </div>
+                <div className="text-xs text-gray-500">Last payment: Mar 15, 2024</div>
+              </div>
+
+              {/* Medical Payments */}
+              <div className="p-4 bg-blue-50 rounded-lg">
+                <div className="text-sm text-gray-600 mb-1">Medical Payments</div>
+                <div className="text-2xl font-bold text-blue-600 mb-2">$3,850.00</div>
+                <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
+                  <div className="bg-blue-600 h-2 rounded-full" style={{ width: '77%' }}></div>
+                </div>
+                <div className="text-xs text-gray-500">77% of medical limit</div>
+              </div>
+
+              {/* Bodily Injury Liability */}
+              <div className="p-4 bg-red-50 rounded-lg">
+                <div className="text-sm text-gray-600 mb-1">Bodily Injury Liability</div>
+                <div className="text-2xl font-bold text-red-600 mb-2">$8,600.00</div>
+                <div className="w-full bg-red-200 rounded-full h-2 mb-2">
+                  <div className="bg-red-600 h-2 rounded-full" style={{ width: '17%' }}></div>
+                </div>
+                <div className="text-xs text-gray-500">17% of BI limit used</div>
+              </div>
+
+              {/* Available Coverage */}
+              <div className="p-4 bg-indigo-50 rounded-lg">
+                <div className="text-sm text-gray-600 mb-1">Available Coverage</div>
+                <div className="text-2xl font-bold text-indigo-600 mb-2">$87,550.00</div>
+                <div className="w-full bg-indigo-200 rounded-full h-2 mb-2">
+                  <div className="bg-indigo-600 h-2 rounded-full" style={{ width: '88%' }}></div>
+                </div>
+                <div className="text-xs text-gray-500">Remaining coverage available</div>
+              </div>
+            </div>
+
+            {/* Financial Breakdown Table */}
+            <div className="mt-6">
+              <h3 className="text-md font-semibold mb-4">Coverage Breakdown - Amy Applegate</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage Type</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Limit</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Available</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-4 py-3 font-medium">Medical Payments</td>
+                      <td className="px-4 py-3 text-right">$5,000.00</td>
+                      <td className="px-4 py-3 text-right">$3,850.00</td>
+                      <td className="px-4 py-3 text-right">$2,850.00</td>
+                      <td className="px-4 py-3 text-right">$1,000.00</td>
+                      <td className="px-4 py-3 text-right text-green-600">$1,150.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium">Bodily Injury Liability</td>
+                      <td className="px-4 py-3 text-right">$50,000.00</td>
+                      <td className="px-4 py-3 text-right">$8,600.00</td>
+                      <td className="px-4 py-3 text-right">$2,350.00</td>
+                      <td className="px-4 py-3 text-right">$6,250.00</td>
+                      <td className="px-4 py-3 text-right text-green-600">$41,400.00</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-3 font-medium">Property Damage</td>
+                      <td className="px-4 py-3 text-right">$50,000.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
+                      <td className="px-4 py-3 text-right text-green-600">$50,000.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
