@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { OMSLayout } from "./components/OMSLayout";
 import { Summary } from "./pages/Summary";
 import { ClaimsDetail } from "./pages/ClaimsDetail";
+import { ClaimantDetail } from "./pages/ClaimantDetail";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
 
