@@ -44,7 +44,7 @@ export function Summary() {
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
-    { label: "Claim #23E-12345", active: true }
+    { label: "Overview", active: true }
   ];
 
   return (
