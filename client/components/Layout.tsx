@@ -30,87 +30,93 @@ const navigationItems = [
         expandable: true,
         subItems: [
           {
-              id: "bi-reserves-1",
-              label: "Reserves",
-              href: "/claimants/amy-applegate/bodily-injury/reserves",
-              icon: "💳",
-            },
-            {
-              id: "bi-payments-1",
-              label: "Payments",
-              href: "/claimants/amy-applegate/bodily-injury/payments",
-              icon: "💳",
-            },
-            {
-              id: "bi-recovery-1",
-              label: "Recovery",
-              href: "/claimants/amy-applegate/bodily-injury/recovery",
-              icon: "🔄",
-              expandable: true,
-              subItems: [
-                {
-                  id: "subrogation-1",
-                  label: "Subrogation",
-                  href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
-                },
-                {
-                  id: "finreceipts-1",
-                  label: "Financial Receipts",
-                  href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
-                },
-                {
-                  id: "deductible-1",
-                  label: "Deductible",
-                  href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
-                  expandable: true,
-                  subItems: [
-                    {
-                      id: "adddeductible-1",
-                      label: "Add Deductible",
-                      href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
-                    },
-                    {
-                      id: "deductiblefin-1",
-                      label: "Deductible Financials",
-                      href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
-                    },
-                  ]
-                },
-              ]
-            },
-            {
-              id: "journal-1",
-              label: "Journal",
-              href: "/journal",
-              expandable: true,
-              subItems: [
-                {
-                  id: "diary-1",
-                  label: "Diary",
-                  href: "/journal/diary",
-                  icon: "📅",
-                },
-                {
-                  id: "notes-1",
-                  label: "Notes",
-                  href: "/journal/notes",
-                  icon: "📝",
-                },
-                {
-                  id: "documents-1",
-                  label: "Documents",
-                  href: "/journal/documents",
-                  icon: "📄",
-                },
-                {
-                  id: "emails-1",
-                  label: "Emails",
-                  href: "/journal/emails",
-                  icon: "",
-                }
-              ]
-            },
-          ],
+            id: "bi-liability-1",
+            label: "Bodily Injury",
+            href: "/claimants/amy-applegate/bodily-injury",
+            expandable: true,
+            subItems: [
+              {
+                id: "bi-reserves-1",
+                label: "Reserves",
+                href: "/claimants/amy-applegate/bodily-injury/reserves",
+                icon: "💳",
+              },
+              {
+                id: "bi-payments-1",
+                label: "Payments",
+                href: "/claimants/amy-applegate/bodily-injury/payments",
+                icon: "💳",
+              },
+              {
+                id: "bi-recovery-1",
+                label: "Recovery",
+                href: "/claimants/amy-applegate/bodily-injury/recovery",
+                icon: "🔄",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "subrogation-1",
+                    label: "Subrogation",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
+                  },
+                  {
+                    id: "finreceipts-1",
+                    label: "Financial Receipts",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+                  },
+                  {
+                    id: "deductible-1",
+                    label: "Deductible",
+                    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+                    expandable: true,
+                    subItems: [
+                      {
+                        id: "adddeductible-1",
+                        label: "Add Deductible",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
+                      },
+                      {
+                        id: "deductiblefin-1",
+                        label: "Deductible Financials",
+                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
+                      },
+                    ]
+                  },
+                ]
+              },
+              {
+                id: "journal-1",
+                label: "Journal",
+                href: "/journal",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "diary-1",
+                    label: "Diary",
+                    href: "/journal/diary",
+                    icon: "📅",
+                  },
+                  {
+                    id: "notes-1",
+                    label: "Notes",
+                    href: "/journal/notes",
+                    icon: "📝",
+                  },
+                  {
+                    id: "documents-1",
+                    label: "Documents",
+                    href: "/journal/documents",
+                    icon: "📄",
+                  },
+                  {
+                    id: "emails-1",
+                    label: "Emails",
+                    href: "/journal/emails",
+                    icon: "",
+                  }
+                ]
+              },
+            ],
           },
           {
             id: "pd-liability-1",
