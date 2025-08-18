@@ -841,6 +841,147 @@ export function ClaimantDetail() {
               </CardContent>
             </Card>
 
+            {/* Coverage Details */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Shield className="h-5 w-5 mr-2" />
+                  Coverage Details
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="font-medium text-blue-900">Bodily Injury Liability</h4>
+                      <Badge variant="outline" className="bg-blue-100 text-blue-800">Primary</Badge>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div>
+                        <span className="text-gray-600">Per Person:</span>
+                        <span className="float-right font-medium">$50,000</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Per Accident:</span>
+                        <span className="float-right font-medium">$100,000</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Used:</span>
+                        <span className="float-right font-medium">$8,600</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Available:</span>
+                        <span className="float-right font-medium text-green-600">$41,400</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="font-medium text-green-900">Medical Payments</h4>
+                      <Badge variant="outline" className="bg-green-100 text-green-800">No-Fault</Badge>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div>
+                        <span className="text-gray-600">Limit:</span>
+                        <span className="float-right font-medium">$5,000</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Used:</span>
+                        <span className="float-right font-medium">$3,850</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Available:</span>
+                        <span className="float-right font-medium text-green-600">$1,150</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="font-medium text-purple-900">Umbrella Coverage</h4>
+                      <Badge variant="outline" className="bg-purple-100 text-purple-800">Excess</Badge>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div>
+                        <span className="text-gray-600">Limit:</span>
+                        <span className="float-right font-medium">$1,000,000</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Used:</span>
+                        <span className="float-right font-medium">$0</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-600">Available:</span>
+                        <span className="float-right font-medium text-green-600">$1,000,000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Litigation Information */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Building className="h-5 w-5 mr-2" />
+                  Litigation Information
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-medium">Litigation Status:</span>
+                    <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">
+                      Pre-Litigation
+                    </Badge>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-3">
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Attorney</label>
+                      <p className="text-sm text-gray-600">Johnson & Associates</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Attorney Contact</label>
+                      <p className="text-sm text-gray-600">(555) 987-6543</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Date Represented</label>
+                      <p className="text-sm text-gray-600">February 10, 2024</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Statute of Limitations</label>
+                      <p className="text-sm text-gray-600">December 31, 2025</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-gray-900">Defense Counsel</label>
+                      <p className="text-sm text-gray-600">Smith, Wilson & Partners</p>
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <h4 className="font-medium text-yellow-900 mb-2">Important Dates</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span>Demand Letter Sent:</span>
+                        <span>March 1, 2024</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Discovery Deadline:</span>
+                        <span>September 15, 2024</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Mediation Scheduled:</span>
+                        <span>June 20, 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Activity Timeline */}
             <Card>
               <CardHeader>
