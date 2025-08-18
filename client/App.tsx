@@ -91,7 +91,7 @@ const App = () => (
             />
             <Route
               path="/claim-history"
-              element={<PlaceholderPage title="Claim History" />}
+              element={<ClaimHistory />}
             />
             <Route
               path="/related"
