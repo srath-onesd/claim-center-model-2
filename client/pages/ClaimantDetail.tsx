@@ -987,11 +987,11 @@ export function ClaimantDetail() {
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center">
                   <Clock className="h-5 w-5 mr-2" />
-                  Activity Timeline
+                  Recent Activity
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4 max-h-64 overflow-y-auto">
+                <div className="space-y-4 max-h-80 overflow-y-auto">
                   <div className="flex space-x-3">
                     <div className="flex-shrink-0">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
@@ -1006,7 +1006,7 @@ export function ClaimantDetail() {
                       <p className="text-sm text-gray-600">Updated medical records for Amy Applegate</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex space-x-3">
                     <div className="flex-shrink-0">
                       <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
@@ -1034,6 +1034,66 @@ export function ClaimantDetail() {
                         <p className="text-xs text-gray-500">1 day ago</p>
                       </div>
                       <p className="text-sm text-gray-600">Submitted additional medical documentation</p>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                        <DollarSign className="h-4 w-4 text-orange-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">Johnson & Associates</p>
+                        <p className="text-xs text-gray-500">3 days ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Submitted settlement demand of $18,500</p>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <Target className="h-4 w-4 text-yellow-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">Mital Patel</p>
+                        <p className="text-xs text-gray-500">5 days ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Increased medical reserves by $1,500</p>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                        <AlertCircle className="h-4 w-4 text-red-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">System Alert</p>
+                        <p className="text-xs text-gray-500">1 week ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Reserve adequacy review required</p>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <Phone className="h-4 w-4 text-indigo-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm font-medium">Mital Patel</p>
+                        <p className="text-xs text-gray-500">2 weeks ago</p>
+                      </div>
+                      <p className="text-sm text-gray-600">Phone call with claimant regarding treatment progress</p>
                     </div>
                   </div>
                 </div>
