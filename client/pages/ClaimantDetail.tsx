@@ -117,7 +117,7 @@ export function ClaimantDetail() {
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
             <CardTitle className="text-lg font-semibold flex items-center">
               <User className="h-5 w-5 mr-2" />
-              Claimant Information - Amy Applegate
+              Claimant Information - {currentClaimant.displayName}
             </CardTitle>
             <Button variant="ghost" size="sm">
               <Edit className="h-4 w-4" />
