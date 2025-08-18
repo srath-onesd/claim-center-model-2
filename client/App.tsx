@@ -35,6 +35,14 @@ const App = () => (
               element={<PlaceholderPage title="Claimants" />}
             />
             <Route
+              path="/claimants/amy-applegate"
+              element={<ClaimantDetail />}
+            />
+            <Route
+              path="/claimants/bob-pay"
+              element={<ClaimantDetail />}
+            />
+            <Route
               path="/bodily-injury"
               element={<PlaceholderPage title="Bodily Injury" />}
             />
