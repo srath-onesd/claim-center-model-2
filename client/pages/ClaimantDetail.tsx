@@ -101,7 +101,7 @@ export function ClaimantDetail() {
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
             <Input
-              placeholder="Search claimant information..."
+              placeholder={`Search ${currentClaimant.displayName} information...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
