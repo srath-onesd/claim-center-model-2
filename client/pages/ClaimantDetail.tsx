@@ -229,7 +229,7 @@ export function ClaimantDetail() {
               {/* Amount Paid to Claimant */}
               <div className="p-4 bg-green-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
-                <div className="text-2xl font-bold text-green-600 mb-2">$5,200.00</div>
+                <div className="text-2xl font-bold text-green-600 mb-2">{currentClaimant.paid}</div>
                 <div className="w-full bg-green-200 rounded-full h-2 mb-2">
                   <div className="bg-green-600 h-2 rounded-full" style={{ width: '42%' }}></div>
                 </div>
