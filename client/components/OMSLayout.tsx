@@ -80,17 +80,6 @@ export function OMSLayout({ children }: OMSLayoutProps) {
             {omsSidebarCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
           </Button>
         </div>
-        <div className={`bg-gray-100 border-r transition-all duration-300 ${omsSidebarCollapsed ? 'w-16' : 'w-64'
-          }`}>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-primary-foreground hover:bg-primary-foreground/10"
-            onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
-          >
-            {omsSidebarCollapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-          </Button>
-        </div>
         <div className="flex items-center space-x-4">
           <span className="text-sm" style={{ color: "rgba(74, 144, 226, 1)" }}>David Robbins Single</span>
           <div className="flex items-center space-x-2">
