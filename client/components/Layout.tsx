@@ -29,6 +29,12 @@ const navigationItems = [
         href: "/claimants/amy-applegate",
         expandable: true,
         subItems: [
+          {
+            id: "bi-liability-1",
+            label: "Bodily Injury",
+            href: "/claimants/amy-applegate/bodily-injury",
+            expandable: true,
+            subItems: [
               {
                 id: "bi-reserves-1",
                 label: "Reserves",
@@ -49,28 +55,28 @@ const navigationItems = [
                 expandable: true,
                 subItems: [
                   {
-                    id: "subrogation",
+                    id: "subrogation-1",
                     label: "Subrogation",
                     href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
                   },
                   {
-                    id: "finreceipts",
+                    id: "finreceipts-1",
                     label: "Financial Receipts",
                     href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
                   },
                   {
-                    id: "deductible",
+                    id: "deductible-1",
                     label: "Deductible",
                     href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
                     expandable: true,
                     subItems: [
                       {
-                        id: "adddeductible",
+                        id: "adddeductible-1",
                         label: "Add Deductible",
                         href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
                       },
                       {
-                        id: "deductiblefin",
+                        id: "deductiblefin-1",
                         label: "Deductible Financials",
                         href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
                       },
@@ -79,31 +85,31 @@ const navigationItems = [
                 ]
               },
               {
-                id: "journal",
+                id: "journal-1",
                 label: "Journal",
                 href: "/journal",
                 expandable: true,
                 subItems: [
                   {
-                    id: "diary",
+                    id: "diary-1",
                     label: "Diary",
                     href: "/journal/diary",
                     icon: "📅",
                   },
                   {
-                    id: "notes",
+                    id: "notes-1",
                     label: "Notes",
                     href: "/journal/notes",
                     icon: "📝",
                   },
                   {
-                    id: "documents",
+                    id: "documents-1",
                     label: "Documents",
                     href: "/journal/documents",
                     icon: "📄",
                   },
                   {
-                    id: "emails",
+                    id: "emails-1",
                     label: "Emails",
                     href: "/journal/emails",
                     icon: "",
@@ -111,7 +117,66 @@ const navigationItems = [
                 ]
               },
             ],
-        },
+          },
+          {
+            id: "pd-liability-1",
+            label: "Property Damage",
+            href: "/claimants/amy-applegate/property-damage",
+            expandable: true,
+            subItems: [
+              {
+                id: "pd-reserves-1",
+                label: "Reserves",
+                href: "/claimants/amy-applegate/property-damage/reserves",
+                icon: "💳",
+              },
+              {
+                id: "pd-payments-1",
+                label: "Payments",
+                href: "/claimants/amy-applegate/property-damage/payments",
+                icon: "💳",
+              },
+              {
+                id: "pd-recovery-1",
+                label: "Recovery",
+                href: "/claimants/amy-applegate/property-damage/recovery",
+                icon: "🔄",
+                expandable: true,
+                subItems: [
+                  {
+                    id: "subrogation-pd-1",
+                    label: "Subrogation",
+                    href: "/claimants/amy-applegate/property-damage/recovery/Subrogation",
+                  },
+                  {
+                    id: "finreceipts-pd-1",
+                    label: "Financial Receipts",
+                    href: "/claimants/amy-applegate/property-damage/recovery/finreceipts",
+                  },
+                  {
+                    id: "deductible-pd-1",
+                    label: "Deductible",
+                    href: "/claimants/amy-applegate/property-damage/recovery/deductible",
+                    expandable: true,
+                    subItems: [
+                      {
+                        id: "adddeductible-pd-1",
+                        label: "Add Deductible",
+                        href: "/claimants/amy-applegate/property-damage/recovery/deductible/adddeductible",
+                      },
+                      {
+                        id: "deductiblefin-pd-1",
+                        label: "Deductible Financials",
+                        href: "/claimants/amy-applegate/property-damage/recovery/deductible/deductiblefin",
+                      },
+                    ]
+                  },
+                ]
+              },
+            ],
+          },
+        ],
+      },
       {
         id: "claimant2",
         label: "Bob Pay",
@@ -119,6 +184,12 @@ const navigationItems = [
         expandable: true,
         subItems: [
           {
+            id: "bi-liability-2",
+            label: "Bodily Injury",
+            href: "/claimants/bob-pay/bodily-injury",
+            expandable: true,
+            subItems: [
+              {
                 id: "bi-reserves-2",
                 label: "Reserves",
                 href: "/claimants/bob-pay/bodily-injury/reserves",
@@ -131,68 +202,68 @@ const navigationItems = [
                 icon: "💳",
               },
               {
-                id: "bi-recovery-1",
+                id: "bi-recovery-2",
                 label: "Recovery",
-                href: "/claimants/amy-applegate/bodily-injury/recovery",
+                href: "/claimants/bob-pay/bodily-injury/recovery",
                 icon: "🔄",
                 expandable: true,
                 subItems: [
                   {
-                    id: "subrogation",
+                    id: "subrogation-2",
                     label: "Subrogation",
-                    href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
+                    href: "/claimants/bob-pay/bodily-injury/recovery/Subrogation",
                   },
                   {
-                    id: "finreceipts",
+                    id: "finreceipts-2",
                     label: "Financial Receipts",
-                    href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+                    href: "/claimants/bob-pay/bodily-injury/recovery/finreceipts",
                   },
                   {
-                    id: "deductible",
+                    id: "deductible-2",
                     label: "Deductible",
-                    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+                    href: "/claimants/bob-pay/bodily-injury/recovery/deductible",
                     expandable: true,
                     subItems: [
                       {
-                        id: "adddeductible",
+                        id: "adddeductible-2",
                         label: "Add Deductible",
-                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
+                        href: "/claimants/bob-pay/bodily-injury/recovery/deductible/adddeductible",
                       },
                       {
-                        id: "deductiblefin",
+                        id: "deductiblefin-2",
                         label: "Deductible Financials",
-                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
+                        href: "/claimants/bob-pay/bodily-injury/recovery/deductible/deductiblefin",
                       },
                     ]
                   },
                 ]
               },
               {
-                id: "journal",
+                id: "journal-2",
                 label: "Journal",
                 href: "/journal",
                 expandable: true,
                 subItems: [
                   {
-                    id: "diary",
+                    id: "diary-2",
                     label: "Diary",
                     href: "/journal/diary",
                     icon: "📅",
                   },
                   {
-                    id: "notes",
+                    id: "notes-2",
                     label: "Notes",
                     href: "/journal/notes",
                     icon: "📝",
                   },
                   {
-                    id: "documents",
+                    id: "documents-2",
                     label: "Documents",
                     href: "/journal/documents",
                     icon: "📄",
                   },
                   {
-                    id: "emails",
+                    id: "emails-2",
                     label: "Emails",
                     href: "/journal/emails",
                     icon: "",
@@ -220,72 +291,40 @@ const navigationItems = [
                 icon: "💳",
               },
               {
-                id: "bi-recovery-1",
+                id: "pd-recovery-2",
                 label: "Recovery",
-                href: "/claimants/amy-applegate/bodily-injury/recovery",
+                href: "/claimants/bob-pay/property-damage/recovery",
                 icon: "🔄",
                 expandable: true,
                 subItems: [
                   {
-                    id: "subrogation",
+                    id: "subrogation-pd-2",
                     label: "Subrogation",
-                    href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
+                    href: "/claimants/bob-pay/property-damage/recovery/Subrogation",
                   },
                   {
-                    id: "finreceipts",
+                    id: "finreceipts-pd-2",
                     label: "Financial Receipts",
-                    href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+                    href: "/claimants/bob-pay/property-damage/recovery/finreceipts",
                   },
                   {
-                    id: "deductible",
+                    id: "deductible-pd-2",
                     label: "Deductible",
-                    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+                    href: "/claimants/bob-pay/property-damage/recovery/deductible",
                     expandable: true,
                     subItems: [
                       {
-                        id: "adddeductible",
+                        id: "adddeductible-pd-2",
                         label: "Add Deductible",
-                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
+                        href: "/claimants/bob-pay/property-damage/recovery/deductible/adddeductible",
                       },
                       {
-                        id: "deductiblefin",
+                        id: "deductiblefin-pd-2",
                         label: "Deductible Financials",
-                        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
+                        href: "/claimants/bob-pay/property-damage/recovery/deductible/deductiblefin",
                       },
                     ]
                   },
-                ]
-              },
-              {
-                id: "journal",
-                label: "Journal",
-                href: "/journal",
-                expandable: true,
-                subItems: [
-                  {
-                    id: "diary",
-                    label: "Diary",
-                    href: "/journal/diary",
-                    icon: "📅",
-                  },
-                  {
-                    id: "notes",
-                    label: "Notes",
-                    href: "/journal/notes",
-                    icon: "📝",
-                  },
-                  {
-                    id: "documents",
-                    label: "Documents",
-                    href: "/journal/documents",
-                    icon: "📄",
-                  },
-                  {
-                    id: "emails",
-                    label: "Emails",
-                    href: "/journal/emails",
-                    icon: "",
-                  }
                 ]
               },
             ],
