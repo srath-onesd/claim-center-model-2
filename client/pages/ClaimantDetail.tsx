@@ -51,7 +51,7 @@ export function ClaimantDetail() {
           </RouterLink>
         </Button>
       </div>
-      {/* Search Bar */}
+      {/* Search Bar 
       <div className="bg-white border-b px-6 py-4">
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="sm" asChild>
@@ -71,6 +71,7 @@ export function ClaimantDetail() {
           </div>
         </div>
       </div>
+      */}
 
       <div className="p-6 space-y-6">
         {/* Full-Width Claimant Information Section */}
