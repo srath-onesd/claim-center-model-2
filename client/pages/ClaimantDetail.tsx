@@ -209,7 +209,7 @@ export function ClaimantDetail() {
               {/* Claimant Total Incurred */}
               <div className="p-4 bg-gray-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Total Incurred (This Claimant)</div>
-                <div className="text-2xl font-bold text-gray-900 mb-2">$12,450.00</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">{currentClaimant.totalIncurred}</div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div className="bg-gray-800 h-2 rounded-full" style={{ width: '62%' }}></div>
                 </div>
