@@ -538,67 +538,45 @@ export function Summary() {
                 </div>
                 */}
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4 max-h-96 overflow-y-auto">
-                  <div className="flex space-x-3">
-                    <div className="flex-shrink-0">
-                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                        <User className="h-4 w-4 text-blue-600" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2">
-                        <p className="text-sm font-medium">Mital Patel</p>
-                        <p className="text-xs text-gray-500">2 hours ago</p>
-                      </div>
-                      <p className="text-sm text-gray-600">Updated reserve amount to $14,485</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex space-x-3">
-                    <div className="flex-shrink-0">
-                      <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                        <DollarSign className="h-4 w-4 text-green-600" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2">
-                        <p className="text-sm font-medium">System</p>
-                        <p className="text-xs text-gray-500">5 hours ago</p>
-                      </div>
-                      <p className="text-sm text-gray-600">Payment of $20,000 issued to Amy Applegate</p>
-                    </div>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <div className="flex-shrink-0">
-                      <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                        <FileText className="h-4 w-4 text-purple-600" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2">
-                        <p className="text-sm font-medium">John Smith</p>
-                        <p className="text-xs text-gray-500">1 day ago</p>
-                      </div>
-                      <p className="text-sm text-gray-600">Uploaded medical report: "MRI_Results_01_15_2024.pdf"</p>
-                    </div>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <div className="flex-shrink-0">
-                      <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                        <Phone className="h-4 w-4 text-yellow-600" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2">
-                        <p className="text-sm font-medium">Mital Patel</p>
-                        <p className="text-xs text-gray-500">2 days ago</p>
-                      </div>
-                      <p className="text-sm text-gray-600">Phone call with claimant regarding treatment progress</p>
-                    </div>
-                  </div>
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50 border-b">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Date
+                        </th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Activity
+                        </th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Action Taken By
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">07-01-25</td>
+                        <td className="px-4 py-3">Last Premium Paid - $150</td>
+                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">06-30-25</td>
+                        <td className="px-4 py-3">Follow-up on recent claim #C1122 progress.</td>
+                        <td className="px-4 py-3 whitespace-nowrap">UW John</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">06-29-25</td>
+                        <td className="px-4 py-3">Confirmation of payment received premium.</td>
+                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">06-28-25</td>
+                        <td className="px-4 py-3">Logged customer preference for email communication.</td>
+                        <td className="px-4 py-3 whitespace-nowrap">Agent Johnson</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </CardContent>
             </Card>
