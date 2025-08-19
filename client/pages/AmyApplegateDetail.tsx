@@ -250,13 +250,48 @@ export function AmyApplegateDetail() {
                 <table className="w-full text-sm">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage Type</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Limit</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Reserve</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Recovery</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Available</th>
+                      <th className="px-4 py-3 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('coverage')}>
+                        <div className="flex items-center">
+                          Coverage Type
+                          {getSortIcon('coverage')}
+                        </div>
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('limit')}>
+                        <div className="flex items-center justify-end">
+                          Limit
+                          {getSortIcon('limit')}
+                        </div>
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('incurred')}>
+                        <div className="flex items-center justify-end">
+                          Incurred
+                          {getSortIcon('incurred')}
+                        </div>
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('paid')}>
+                        <div className="flex items-center justify-end">
+                          Paid
+                          {getSortIcon('paid')}
+                        </div>
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('reserve')}>
+                        <div className="flex items-center justify-end">
+                          Reserve
+                          {getSortIcon('reserve')}
+                        </div>
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('recovery')}>
+                        <div className="flex items-center justify-end">
+                          Recovery
+                          {getSortIcon('recovery')}
+                        </div>
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('available')}>
+                        <div className="flex items-center justify-end">
+                          Available
+                          {getSortIcon('available')}
+                        </div>
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
