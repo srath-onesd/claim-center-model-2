@@ -430,7 +430,7 @@ export function AmyApplegateDetail() {
                   <CalendarDays className="h-5 w-5 mr-2" />
                   Diaries
                 </CardTitle>
-                <Button variant="plus" size="sm">
+                <Button variant="outline" size="sm">
                   <Calendar className="h-4 w-4 mr-2" />
                   Add
                 </Button>
