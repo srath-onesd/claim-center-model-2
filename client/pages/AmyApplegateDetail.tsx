@@ -582,10 +582,13 @@ export function AmyApplegateDetail() {
                   <FileText className="h-5 w-5 mr-2" />
                   Document Details
                 </CardTitle>
-                <Button variant="outline" size="sm">
-                  <Upload className="h-4 w-4 mr-2" />
-                  Upload
-                </Button>
+                <div className="flex space-x-2">
+                  <Button variant="link" className="p-0 h-auto text-blue-600">View All</Button>
+                  <Button variant="outline" size="sm">
+                    <Upload className="h-4 w-4 mr-2" />
+                    Upload
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
