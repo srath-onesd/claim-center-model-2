@@ -254,7 +254,7 @@ export function BobPayDetail() {
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Limit</th>
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Reserve</th>
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Available</th>
                     </tr>
                   </thead>
@@ -265,6 +265,7 @@ export function BobPayDetail() {
                       <td className="px-4 py-3 text-right">$2,100.00</td>
                       <td className="px-4 py-3 text-right">$1,500.00</td>
                       <td className="px-4 py-3 text-right">$600.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right text-green-600">$2,900.00</td>
                     </tr>
                     <tr>
@@ -273,11 +274,13 @@ export function BobPayDetail() {
                       <td className="px-4 py-3 text-right">$6,650.00</td>
                       <td className="px-4 py-3 text-right">$2,750.00</td>
                       <td className="px-4 py-3 text-right">$3,900.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right text-green-600">$43,350.00</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 font-medium">Property Damage</td>
                       <td className="px-4 py-3 text-right">$50,000.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
