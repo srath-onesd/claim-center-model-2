@@ -26,13 +26,22 @@ import {
   AlertCircle,
   Link,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  ChevronUp,
+  ArrowUpDown
 } from "lucide-react";
+
+type SortField = 'date' | 'activity' | 'actionTaker' | 'claimNumber' | 'incidentNumber' | 'type' | 'coverage' | 'incurred' | 'reserves' | 'paid' | 'recovery';
+type SortDirection = 'asc' | 'desc';
 
 export function Summary() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activityFilter, setActivityFilter] = useState("all");
   const [collapsedClaimants, setCollapsedClaimants] = useState<{ [key: string]: boolean }>({});
+  const [sortField, setSortField] = useState<SortField>('date');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
+  const [relatedSortField, setRelatedSortField] = useState<SortField>('claimNumber');
+  const [relatedSortDirection, setRelatedSortDirection] = useState<SortDirection>('asc');
 
   const toggleClaimantCollapse = (claimantId: string) => {
     setCollapsedClaimants(prev => ({
@@ -41,10 +50,59 @@ export function Summary() {
     }));
   };
 
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const handleRelatedSort = (field: SortField) => {
+    if (relatedSortField === field) {
+      setRelatedSortDirection(relatedSortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setRelatedSortField(field);
+      setRelatedSortDirection('asc');
+    }
+  };
+
+  const getSortIcon = (field: SortField, currentField: SortField, direction: SortDirection) => {
+    if (field !== currentField) return <ArrowUpDown className="h-3 w-3" />;
+    return direction === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />;
+  };
+
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
     { label: "Overview", active: true }
+  ];
+
+  // Sample data for Related Claims & Incidents
+  const relatedClaims = [
+    { id: '23E-1234', type: 'Claim', description: 'Property damage - Garage Fire', date: '2024-01-15' },
+    { id: '23E-5678', type: 'Claim', description: 'Auto accident - Rear end collision', date: '2024-02-20' }
+  ];
+
+  const relatedIncidents = [
+    { id: 'INCIDENT-1234', type: 'Incident', description: 'Multi-vehicle collision', date: '2024-03-10' },
+    { id: 'INCIDENT-5678', type: 'Incident', description: 'Weather-related damage', date: '2024-03-25' }
+  ];
+
+  // Sample data for Activity Timeline
+  const activityData = [
+    { date: '07-01-25', activity: 'Last Premium Paid - $150', actionTaker: 'System' },
+    { date: '06-30-25', activity: 'Follow-up on recent claim #C1122 progress.', actionTaker: 'UW John' },
+    { date: '06-29-25', activity: 'Confirmation of payment received premium.', actionTaker: 'System' },
+    { date: '06-28-25', activity: 'Logged customer preference for email communication.', actionTaker: 'Agent Johnson' }
+  ];
+
+  // Sample data for Amy Applegate Financial Summary
+  const amyFinancialData = [
+    { coverage: 'Medical Payments', incurred: 585.00, reserves: 485.00, paid: 100.00, recovery: 0.00 },
+    { coverage: 'Liability - Bodily Injury', incurred: 15165.00, reserves: 7765.00, paid: 7400.00, recovery: 2100.00 },
+    { coverage: 'Property Damage', incurred: 3200.00, reserves: 800.00, paid: 2400.00, recovery: 0.00 }
   ];
 
   return (
@@ -101,13 +159,13 @@ export function Summary() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
                 <label className="text-sm font-medium text-gray-900">Claim Number</label>
-                <p className="text-sm text-gray-600 mt-1"><p>23E-12345</p></p>
+                <p className="text-sm text-gray-600 mt-1">23E-12345</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Date of Loss</label>
                 <div className="flex items-center mt-1">
                   <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600"><p>12/31/2025</p></p>
+                  <p className="text-sm text-gray-600">12/31/2025</p>
                 </div>
               </div>
               <div>
@@ -131,7 +189,7 @@ export function Summary() {
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Insured Name</label>
-                <p className="text-sm text-gray-600 mt-1"><p>Shubham Raut</p></p>
+                <p className="text-sm text-gray-600 mt-1">Shubham Raut</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Assigned Adjuster</label>
@@ -229,45 +287,9 @@ export function Summary() {
                     <div className="text-xs text-gray-500">Property Damage limit</div>
                   </div>
                 </div>
-
-                {/* Financial Breakdown Table 
-                <div className="mt-6">
-                  <h3 className="text-md font-semibold mb-4">Breakdown by Claimant-Coverage</h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-gray-50">
-                        <tr>
-                          <th className="px-4 py-3 text-left font-medium text-gray-900">Claimant Name</th>
-                          <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage Type</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Recovery</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-200">
-                        <tr>
-                          <td className="px-4 py-3">Amy Applegate</td>
-                          <td className="px-4 py-3">Medical Payments</td>
-                          <td className="px-4 py-3 text-right">$585.00</td>
-                          <td className="px-4 py-3 text-right">$100.00</td>
-                          <td className="px-4 py-3 text-right">$485.00</td>
-                          <td className="px-4 py-3 text-right">$0.00</td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 py-3">Amy Applegate</td>
-                          <td className="px-4 py-3">Liability - Bodily Injury</td>
-                          <td className="px-4 py-3 text-right">$15,165.00</td>
-                          <td className="px-4 py-3 text-right">$7,400.00</td>
-                          <td className="px-4 py-3 text-right">$7,765.00</td>
-                          <td className="px-4 py-3 text-right">$2,100.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div> */}
               </CardContent>
             </Card>
+
             {/* Claimant: Amy Applegate */}
             <Card>
               <CardHeader className="cursor-pointer" onClick={() => toggleClaimantCollapse('amy-applegate')}>
@@ -280,7 +302,149 @@ export function Summary() {
                 </CardTitle>
               </CardHeader>
               {!collapsedClaimants['amy-applegate'] && (
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-6">
+
+                  {/* Financial Summary Card */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-md font-semibold">Financial Summary</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('coverage')}>
+                                <div className="flex items-center">
+                                  Coverage
+                                  {getSortIcon('coverage', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('incurred')}>
+                                <div className="flex items-center justify-end">
+                                  Incurred
+                                  {getSortIcon('incurred', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('reserves')}>
+                                <div className="flex items-center justify-end">
+                                  Reserves
+                                  {getSortIcon('reserves', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('paid')}>
+                                <div className="flex items-center justify-end">
+                                  Paid
+                                  {getSortIcon('paid', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('recovery')}>
+                                <div className="flex items-center justify-end">
+                                  Recovery
+                                  {getSortIcon('recovery', sortField, sortDirection)}
+                                </div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            {amyFinancialData.map((item, index) => (
+                              <tr key={index} className="hover:bg-gray-50">
+                                <td className="px-3 py-2">{item.coverage}</td>
+                                <td className="px-3 py-2 text-right">${item.incurred.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-right">${item.reserves.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-right">${item.paid.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-right">${item.recovery.toLocaleString()}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Diaries Card */}
+                  <Card>
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                      <CardTitle className="text-md font-semibold">Diaries</CardTitle>
+                      <Button variant="link" className="p-0 h-auto text-blue-600 text-sm">
+                        View All
+                      </Button>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                          <div className="flex justify-between items-start">
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900">Follow up with medical provider</p>
+                              <p className="text-xs text-gray-600 mt-1">Due: 07-15-25</p>
+                            </div>
+                            <Badge variant="outline" className="text-yellow-700 border-yellow-300">Pending</Badge>
+                          </div>
+                        </div>
+                        <div className="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                          <div className="flex justify-between items-start">
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900">Review settlement documentation</p>
+                              <p className="text-xs text-gray-600 mt-1">Due: 07-20-25</p>
+                            </div>
+                            <Badge variant="outline" className="text-blue-700 border-blue-300">Scheduled</Badge>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Parties Card */}
+                  <Card>
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                      <CardTitle className="text-md font-semibold">Parties</CardTitle>
+                      <Button variant="link" className="p-0 h-auto text-blue-600 text-sm">
+                        View All
+                      </Button>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div className="flex items-center space-x-3">
+                            <Avatar>
+                              <AvatarFallback>AA</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <p className="text-sm font-medium">Amy Applegate</p>
+                              <p className="text-xs text-gray-500">Claimant - Bodily Injury</p>
+                            </div>
+                          </div>
+                          <div className="flex space-x-2">
+                            <Button variant="ghost" size="sm">
+                              <Phone className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="sm">
+                              <Mail className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div className="flex items-center space-x-3">
+                            <Avatar>
+                              <AvatarFallback>JD</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <p className="text-sm font-medium">Dr. Jane Doe</p>
+                              <p className="text-xs text-gray-500">Medical Provider</p>
+                            </div>
+                          </div>
+                          <div className="flex space-x-2">
+                            <Button variant="ghost" size="sm">
+                              <Phone className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="sm">
+                              <Mail className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
 
                   {/* Bodily Injury Section */}
                   <div className="border rounded-lg p-4">
@@ -329,6 +493,7 @@ export function Summary() {
                 </CardContent>
               )}
             </Card>
+
             {/* Claimant: Bob Pay */}
             <Card>
               <CardHeader className="cursor-pointer" onClick={() => toggleClaimantCollapse('bob-pay')}>
@@ -412,23 +577,82 @@ export function Summary() {
                 </Button>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <Button variant="link" size="font-medium">Claim #23E-1234</Button>
-                        <p className="text-sm text-gray-600">Loss Description: Property damage- Garage Fire</p>
-                      </div>
+                <div className="space-y-6">
+                  
+                  {/* Related Claims Grid */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Claims</h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-gray-50">
+                          <tr>
+                            <th className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleRelatedSort('claimNumber')}>
+                              <div className="flex items-center">
+                                Claim #
+                                {getSortIcon('claimNumber', relatedSortField, relatedSortDirection)}
+                              </div>
+                            </th>
+                            <th className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleRelatedSort('type')}>
+                              <div className="flex items-center">
+                                Description
+                                {getSortIcon('type', relatedSortField, relatedSortDirection)}
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200">
+                          {relatedClaims.map((claim) => (
+                            <tr key={claim.id} className="hover:bg-gray-50">
+                              <td className="px-3 py-2">
+                                <Button variant="link" className="p-0 h-auto text-blue-600 font-medium">
+                                  {claim.id}
+                                </Button>
+                              </td>
+                              <td className="px-3 py-2 text-gray-600">{claim.description}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <Button variant="link" size="font-medium">Incident #INCIDENT-1234</Button>
-                        <p className="text-sm text-gray-600">Loss Description: Multi-vehicle collision</p>
-                      </div>
+
+                  {/* Related Incidents Grid */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Incidents</h4>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="bg-gray-50">
+                          <tr>
+                            <th className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleRelatedSort('incidentNumber')}>
+                              <div className="flex items-center">
+                                Incident #
+                                {getSortIcon('incidentNumber', relatedSortField, relatedSortDirection)}
+                              </div>
+                            </th>
+                            <th className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleRelatedSort('type')}>
+                              <div className="flex items-center">
+                                Description
+                                {getSortIcon('type', relatedSortField, relatedSortDirection)}
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200">
+                          {relatedIncidents.map((incident) => (
+                            <tr key={incident.id} className="hover:bg-gray-50">
+                              <td className="px-3 py-2">
+                                <Button variant="link" className="p-0 h-auto text-blue-600 font-medium">
+                                  {incident.id}
+                                </Button>
+                              </td>
+                              <td className="px-3 py-2 text-gray-600">{incident.description}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
                   </div>
+
                 </div>
               </CardContent>
             </Card>
@@ -451,233 +675,45 @@ export function Summary() {
                     </RouterLink>
                   </Button>
                 </div>
-                {/*
-                <div className="flex space-x-2">
-                  <Button
-                    variant={activityFilter === "all" ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setActivityFilter("all")}
-                  >
-                    All
-                  </Button>
-                  <Button
-                    variant={activityFilter === "notes" ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setActivityFilter("notes")}
-                  >
-                    Diaries/Notes
-                  </Button>
-                  <Button
-                    variant={activityFilter === "payments" ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setActivityFilter("payments")}
-                  >
-                    Financials
-                  </Button>
-                </div>
-                */}
               </CardHeader>
               <CardContent className="p-0">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider">
-                          Date
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('date')}>
+                          <div className="flex items-center">
+                            Date
+                            {getSortIcon('date', sortField, sortDirection)}
+                          </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider">
-                          Activity
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('activity')}>
+                          <div className="flex items-center">
+                            Activity
+                            {getSortIcon('activity', sortField, sortDirection)}
+                          </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider">
-                          Action Taken By
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('actionTaker')}>
+                          <div className="flex items-center">
+                            Action Taken By
+                            {getSortIcon('actionTaker', sortField, sortDirection)}
+                          </div>
                         </th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">07-01-25</td>
-                        <td className="px-4 py-3">Last Premium Paid - $150</td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">06-30-25</td>
-                        <td className="px-4 py-3">Follow-up on recent claim #C1122 progress.</td>
-                        <td className="px-4 py-3 whitespace-nowrap">UW John</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">06-29-25</td>
-                        <td className="px-4 py-3">Confirmation of payment received premium.</td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">06-28-25</td>
-                        <td className="px-4 py-3">Logged customer preference for email communication.</td>
-                        <td className="px-4 py-3 whitespace-nowrap">Agent Johnson</td>
-                      </tr>
+                      {activityData.map((activity, index) => (
+                        <tr key={index} className="hover:bg-gray-50">
+                          <td className="px-4 py-3 whitespace-nowrap">{activity.date}</td>
+                          <td className="px-4 py-3">{activity.activity}</td>
+                          <td className="px-4 py-3 whitespace-nowrap">{activity.actionTaker}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
               </CardContent>
             </Card>
-
-            {/* Documents Section */}
-            {/*
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <FileText className="h-5 w-5 mr-2" />
-                  Documents
-                </CardTitle>
-                <Button variant="outline" size="sm" className="ml-auto">
-                  <Upload className="h-4 w-4 mr-2" />
-                  Upload
-                </Button>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-blue-600" />
-                      <div>
-                        <p className="text-sm font-medium">Police Report</p>
-                        <p className="text-xs text-gray-500">2.3 MB • PDF</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-green-600" />
-                      <div>
-                        <p className="text-sm font-medium">Medical Report</p>
-                        <p className="text-xs text-gray-500">1.8 MB • PDF</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-red-600" />
-                      <div>
-                        <p className="text-sm font-medium">Vehicle Estimate</p>
-                        <p className="text-xs text-gray-500">956 KB • PDF</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            */}
-
-            {/* Contacts & Parties Involved */}
-            {/*
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <User className="h-5 w-5 mr-2" />
-                  Contacts & Parties
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>BI</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Bluedown Bowl</p>
-                        <p className="text-xs text-gray-500">Insured</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>AA</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Amy Applegate</p>
-                        <p className="text-xs text-gray-500">Claimant</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>MP</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Mital Patel</p>
-                        <p className="text-xs text-gray-500">Adjuster</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>AR</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">ABC Auto Repair</p>
-                        <p className="text-xs text-gray-500">Service Provider</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            */}
           </div>
         </div>
 
@@ -685,64 +721,9 @@ export function Summary() {
         <div className="space-y-6">
           <Tabs defaultValue="coverage" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              {/*
-              <TabsTrigger value="financial">Financial Details</TabsTrigger>
-              */}
               <TabsTrigger value="coverage">Policy Coverage</TabsTrigger>
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
             </TabsList>
-
-            {/*
-            <TabsContent value="financial">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Financial Details</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-gray-50">
-                        <tr>
-                          <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage</th>
-                          <th className="px-4 py-3 text-left font-medium text-gray-900">Claimant</th>
-                          <th className="px-4 py-3 text-left font-medium text-gray-900">Adjuster</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding Reserves</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
-                          <th className="px-4 py-3 text-right font-medium text-gray-900">Recovery</th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-gray-200">
-                        <tr>
-                          <td className="px-4 py-3">Medical Payments</td>
-                          <td className="px-4 py-3">
-                            <button className="text-blue-600 hover:underline">Amy Applegate</button>
-                          </td>
-                          <td className="px-4 py-3">
-                            <button className="text-blue-600 hover:underline">Mital</button>
-                          </td>
-                          <td className="px-4 py-3 text-right">$485.00</td>
-                          <td className="px-4 py-3 text-right">$100.00</td>
-                          <td className="px-4 py-3 text-right">$0.00</td>
-                        </tr>
-                        <tr>
-                          <td className="px-4 py-3">Liability - Bodily Injury and Property Damage</td>
-                          <td className="px-4 py-3">
-                            <button className="text-blue-600 hover:underline">Amy Applegate</button>
-                          </td>
-                          <td className="px-4 py-3">
-                            <button className="text-blue-600 hover:underline">Mital</button>
-                          </td>
-                          <td className="px-4 py-3 text-right">$14,000.00</td>
-                          <td className="px-4 py-3 text-right">$20,000.00</td>
-                          <td className="px-4 py-3 text-right">$0.00</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            */}
             
             <TabsContent value="coverage">
               <Card>
