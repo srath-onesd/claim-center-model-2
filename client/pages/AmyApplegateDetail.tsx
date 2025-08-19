@@ -62,7 +62,7 @@ export function AmyApplegateDetail() {
   ];
 
   return (
-    <div className="h-full bg-gray-50">
+    <div className="bg-white border-b px-6 py-4">
       {/* Breadcrumb Navigation */}
       <div className="bg-white border-b px-6 py-4">
         <Breadcrumb items={breadcrumbItems} />
