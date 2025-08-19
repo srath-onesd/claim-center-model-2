@@ -614,7 +614,7 @@ export function Summary() {
                               <AvatarFallback>AA</AvatarFallback>
                             </Avatar>
                             <div>
-                              <p className="text-sm font-medium">Amy Applegate</p>
+                              <p className="text-sm font-medium">Bob Pay</p>
                               <p className="text-xs text-gray-500">Claimant - Bodily Injury</p>
                             </div>
                           </div>
