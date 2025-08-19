@@ -73,26 +73,6 @@ export function AmyApplegateDetail() {
           </RouterLink>
         </Button>
       </div>
-      {/* Search Bar */}
-      <div className="bg-white border-b px-6 py-4">
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="sm" asChild>
-            <RouterLink to="/" className="flex items-center">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Overview
-            </RouterLink>
-          </Button>
-          <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-            <Input
-              placeholder={`Search ${claimantData.displayName} information...`}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-        </div>
-      </div>
 
       <div className="p-6 space-y-6">
         {/* Full-Width Claimant Information Section */}
