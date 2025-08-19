@@ -300,6 +300,14 @@ export function AmyApplegateDetail() {
           {/* Left Column - Injury and Vehicle Details */}
           <div className="lg:col-span-2 space-y-6">
 
+            {/* Add Coverage Button */}
+            <div className="flex justify-end">
+              <Button variant="outline" size="sm">
+                <Plus className="h-4 w-4 mr-2" />
+                Add Coverage
+              </Button>
+            </div>
+
             {/* Injury Information */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
