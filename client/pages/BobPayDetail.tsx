@@ -698,7 +698,7 @@ export function BobPayDetail() {
                     </div>
                   </div>
 
-                  {/* Medical Provider */}
+                  {/* Medical Provider 
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
@@ -718,6 +718,7 @@ export function BobPayDetail() {
                       </Button>
                     </div>
                   </div>
+                  */}
 
                   {/* Repair Shop */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
