@@ -39,11 +39,11 @@ const App = () => (
             />
             <Route
               path="/claimants/amy-applegate"
-              element={<ClaimantDetail />}
+              element={<AmyApplegateDetail />}
             />
             <Route
               path="/claimants/bob-pay"
-              element={<ClaimantDetail />}
+              element={<BobPayDetail />}
             />
             <Route
               path="/bodily-injury"
