@@ -508,49 +508,148 @@ export function Summary() {
               {!collapsedClaimants['bob-pay'] && (
                 <CardContent className="space-y-4">
 
-                  {/* Bodily Injury Section */}
-                  <div className="border rounded-lg p-4">
-                    <h3 className="font-semibold text-md mb-3 flex items-center">
-                      <AlertCircle className="h-4 w-4 mr-2 text-red-500" />
-                      Bodily Injury
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div>
-                        <label className="text-sm font-medium text-gray-900">Injury Type</label>
-                        <p className="text-sm text-gray-600 mt-1">Neck and back strain</p>
+                  {/* Financial Summary Card */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-md font-semibold">Financial Summary</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('coverage')}>
+                                <div className="flex items-center">
+                                  Coverage
+                                  {getSortIcon('coverage', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('incurred')}>
+                                <div className="flex items-center justify-end">
+                                  Incurred
+                                  {getSortIcon('incurred', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('reserves')}>
+                                <div className="flex items-center justify-end">
+                                  Reserves
+                                  {getSortIcon('reserves', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('paid')}>
+                                <div className="flex items-center justify-end">
+                                  Paid
+                                  {getSortIcon('paid', sortField, sortDirection)}
+                                </div>
+                              </th>
+                              <th className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('recovery')}>
+                                <div className="flex items-center justify-end">
+                                  Recovery
+                                  {getSortIcon('recovery', sortField, sortDirection)}
+                                </div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-200">
+                            {amyFinancialData.map((item, index) => (
+                              <tr key={index} className="hover:bg-gray-50">
+                                <td className="px-3 py-2">{item.coverage}</td>
+                                <td className="px-3 py-2 text-right">${item.incurred.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-right">${item.reserves.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-right">${item.paid.toLocaleString()}</td>
+                                <td className="px-3 py-2 text-right">${item.recovery.toLocaleString()}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
                       </div>
-                      <div>
-                        <label className="text-sm font-medium text-gray-900">Treatment Status</label>
-                        <p className="text-sm text-gray-600 mt-1">Ongoing physical therapy</p>
-                      </div>
-                      <div>
-                        <label className="text-sm font-medium text-gray-900">Medical Provider</label>
-                        <p className="text-sm text-gray-600 mt-1">City General Hospital</p>
-                      </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
 
-                  {/* Property Damage Section */}
-                  <div className="border rounded-lg p-4">
-                    <h3 className="font-semibold text-md mb-3 flex items-center">
-                      <Shield className="h-4 w-4 mr-2 text-blue-500" />
-                      Property Damage
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div>
-                        <label className="text-sm font-medium text-gray-900">Vehicle</label>
-                        <p className="text-sm text-gray-600 mt-1">2020 Honda Civic</p>
+                  {/* Diaries Card */}
+                  <Card>
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                      <CardTitle className="text-md font-semibold">Diaries</CardTitle>
+                      <Button variant="link" className="p-0 h-auto text-blue-600 text-sm">
+                        View All
+                      </Button>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                          <div className="flex justify-between items-start">
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900">Follow up with medical provider</p>
+                              <p className="text-xs text-gray-600 mt-1">Due: 07-15-25</p>
+                            </div>
+                            <Badge variant="outline" className="text-yellow-700 border-yellow-300">Pending</Badge>
+                          </div>
+                        </div>
+                        <div className="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                          <div className="flex justify-between items-start">
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-900">Review settlement documentation</p>
+                              <p className="text-xs text-gray-600 mt-1">Due: 07-20-25</p>
+                            </div>
+                            <Badge variant="outline" className="text-blue-700 border-blue-300">Scheduled</Badge>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <label className="text-sm font-medium text-gray-900">Damage Assessment</label>
-                        <p className="text-sm text-gray-600 mt-1">Front-end collision damage</p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Parties Card */}
+                  <Card>
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                      <CardTitle className="text-md font-semibold">Parties</CardTitle>
+                      <Button variant="link" className="p-0 h-auto text-blue-600 text-sm">
+                        View All
+                      </Button>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div className="flex items-center space-x-3">
+                            <Avatar>
+                              <AvatarFallback>AA</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <p className="text-sm font-medium">Amy Applegate</p>
+                              <p className="text-xs text-gray-500">Claimant - Bodily Injury</p>
+                            </div>
+                          </div>
+                          <div className="flex space-x-2">
+                            <Button variant="ghost" size="sm">
+                              <Phone className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="sm">
+                              <Mail className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div className="flex items-center space-x-3">
+                            <Avatar>
+                              <AvatarFallback>JD</AvatarFallback>
+                            </Avatar>
+                            <div>
+                              <p className="text-sm font-medium">Dr. Jane Doe</p>
+                              <p className="text-xs text-gray-500">Medical Provider</p>
+                            </div>
+                          </div>
+                          <div className="flex space-x-2">
+                            <Button variant="ghost" size="sm">
+                              <Phone className="h-4 w-4" />
+                            </Button>
+                            <Button variant="ghost" size="sm">
+                              <Mail className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <label className="text-sm font-medium text-gray-900">Repair Shop</label>
-                        <p className="text-sm text-gray-600 mt-1">ABC Auto Repair</p>
-                      </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
+
                 </CardContent>
               )}
             </Card>           
