@@ -218,16 +218,6 @@ export function BobPayDetail() {
                 </div>
                 <div className="text-xs text-gray-500">13% of BI limit used</div>
               </div>
-
-              {/* Available Coverage */}
-              <div className="p-4 bg-indigo-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">Available Coverage</div>
-                <div className="text-2xl font-bold text-indigo-600 mb-2">$91,250.00</div>
-                <div className="w-full bg-indigo-200 rounded-full h-2 mb-2">
-                  <div className="bg-indigo-600 h-2 rounded-full" style={{ width: '91%' }}></div>
-                </div>
-                <div className="text-xs text-gray-500">Remaining coverage available</div>
-              </div>
             </div>
 
             {/* Financial Breakdown Table */}
