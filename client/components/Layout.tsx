@@ -112,65 +112,6 @@ const navigationItems = [
           },
         ],
       },
-          {
-            id: "pd-liability-1",
-            label: "Property Damage",
-            href: "/claimants/amy-applegate/property-damage",
-            expandable: true,
-            subItems: [
-              {
-                id: "pd-reserves-1",
-                label: "Reserves",
-                href: "/claimants/amy-applegate/property-damage/reserves",
-                icon: "💳",
-              },
-              {
-                id: "pd-payments-1",
-                label: "Payments",
-                href: "/claimants/amy-applegate/property-damage/payments",
-                icon: "💳",
-              },
-              {
-                id: "pd-recovery-1",
-                label: "Recovery",
-                href: "/claimants/amy-applegate/property-damage/recovery",
-                icon: "🔄",
-                expandable: true,
-                subItems: [
-                  {
-                    id: "subrogation-pd-1",
-                    label: "Subrogation",
-                    href: "/claimants/amy-applegate/property-damage/recovery/Subrogation",
-                  },
-                  {
-                    id: "finreceipts-pd-1",
-                    label: "Financial Receipts",
-                    href: "/claimants/amy-applegate/property-damage/recovery/finreceipts",
-                  },
-                  {
-                    id: "deductible-pd-1",
-                    label: "Deductible",
-                    href: "/claimants/amy-applegate/property-damage/recovery/deductible",
-                    expandable: true,
-                    subItems: [
-                      {
-                        id: "adddeductible-pd-1",
-                        label: "Add Deductible",
-                        href: "/claimants/amy-applegate/property-damage/recovery/deductible/adddeductible",
-                      },
-                      {
-                        id: "deductiblefin-pd-1",
-                        label: "Deductible Financials",
-                        href: "/claimants/amy-applegate/property-damage/recovery/deductible/deductiblefin",
-                      },
-                    ]
-                  },
-                ]
-              },
-            ],
-          },
-        ],
-      },
       {
         id: "claimant2",
         label: "Bob Pay",
