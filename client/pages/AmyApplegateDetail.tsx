@@ -43,8 +43,27 @@ import {
   ChevronDown
 } from "lucide-react";
 
+type SortField = 'dueDate' | 'title' | 'priority' | 'actions' | 'coverage' | 'limit' | 'incurred' | 'paid' | 'reserve' | 'recovery' | 'available';
+type SortDirection = 'asc' | 'desc';
+
 export function AmyApplegateDetail() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortField, setSortField] = useState<SortField>('dueDate');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const getSortIcon = (field: SortField) => {
+    if (field !== sortField) return <ArrowUpDown className="h-3 w-3" />;
+    return sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />;
+  };
 
   const claimantData = {
     name: "Amy Applegate",
