@@ -620,7 +620,7 @@ export function BobPayDetail() {
               <CardHeader>
                 <CardTitle className="text-lg font-semibold flex items-center">
                   <UserCheck className="h-5 w-5 mr-2" />
-                  Parties Details
+                  Parties
                 </CardTitle>
               </CardHeader>
               <CardContent>
