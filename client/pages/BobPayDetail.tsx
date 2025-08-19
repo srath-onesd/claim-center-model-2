@@ -40,29 +40,44 @@ import {
   Plus,
   ArrowUpDown,
   ChevronUp,
-  ChevronDown
+  ChevronDown,
 } from "lucide-react";
 
-type SortField = 'dueDate' | 'title' | 'priority' | 'actions' | 'coverage' | 'limit' | 'incurred' | 'paid' | 'reserve' | 'recovery' | 'available';
-type SortDirection = 'asc' | 'desc';
+type SortField =
+  | "dueDate"
+  | "title"
+  | "priority"
+  | "actions"
+  | "coverage"
+  | "limit"
+  | "incurred"
+  | "paid"
+  | "reserve"
+  | "recovery"
+  | "available";
+type SortDirection = "asc" | "desc";
 
 export function BobPayDetail() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [sortField, setSortField] = useState<SortField>('dueDate');
-  const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+  const [sortField, setSortField] = useState<SortField>("dueDate");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
-      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     } else {
       setSortField(field);
-      setSortDirection('asc');
+      setSortDirection("asc");
     }
   };
 
   const getSortIcon = (field: SortField) => {
     if (field !== sortField) return <ArrowUpDown className="h-3 w-3" />;
-    return sortDirection === 'asc' ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />;
+    return sortDirection === "asc" ? (
+      <ChevronUp className="h-3 w-3" />
+    ) : (
+      <ChevronDown className="h-3 w-3" />
+    );
   };
 
   const claimantData = {
@@ -74,14 +89,14 @@ export function BobPayDetail() {
     reserves: "$4,500.00",
     paid: "$4,250.00",
     medicalPayments: "$2,100.00",
-    bodilyInjury: "$6,650.00"
+    bodilyInjury: "$6,650.00",
   };
 
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
     { label: "Claimants", href: "/" },
-    { label: claimantData.displayName, active: true }
+    { label: claimantData.displayName, active: true },
   ];
 
   return (
@@ -113,16 +128,25 @@ export function BobPayDetail() {
             {/* Status and Claimant Type - Prominent placement */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-lg">
               <div>
-                <label className="text-sm font-medium text-gray-900">Claimant Status</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Claimant Status
+                </label>
                 <div className="flex items-center mt-2">
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                  <Badge
+                    variant="secondary"
+                    className="bg-blue-100 text-blue-800"
+                  >
                     Active
                   </Badge>
-                  <span className="text-sm text-gray-600 ml-2">Third Party Claimant</span>
+                  <span className="text-sm text-gray-600 ml-2">
+                    Third Party Claimant
+                  </span>
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Claim Type</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Claim Type
+                </label>
                 <p className="text-sm text-gray-600 mt-2">
                   Bodily Injury and Property Damage - Motor Vehicle Accident
                 </p>
@@ -132,47 +156,65 @@ export function BobPayDetail() {
             {/* Other Claimant Information Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <label className="text-sm font-medium text-gray-900">Date of Birth</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Date of Birth
+                </label>
                 <div className="flex items-center mt-1">
                   <Calendar className="h-4 w-4 text-gray-400 mr-1" />
                   <p className="text-sm text-gray-600">July 22, 1978</p>
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Phone Number</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Phone Number
+                </label>
                 <div className="flex items-center mt-1">
                   <Phone className="h-4 w-4 text-gray-400 mr-1" />
                   <p className="text-sm text-gray-600">(555) 987-6543</p>
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Email Address</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Email Address
+                </label>
                 <div className="flex items-center mt-1">
                   <Mail className="h-4 w-4 text-gray-400 mr-1" />
                   <p className="text-sm text-gray-600">bob.pay@email.com</p>
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Address</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Address
+                </label>
                 <div className="flex items-center mt-1">
                   <MapPin className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">456 Oak St, Hometown, CA 90211</p>
+                  <p className="text-sm text-gray-600">
+                    456 Oak St, Hometown, CA 90211
+                  </p>
                 </div>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Social Security</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Social Security
+                </label>
                 <p className="text-sm text-gray-600 mt-1">***-**-7890</p>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Driver's License</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Driver's License
+                </label>
                 <p className="text-sm text-gray-600 mt-1">CA DL987654321</p>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Employment Status</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Employment Status
+                </label>
                 <p className="text-sm text-gray-600 mt-1">Self-Employed</p>
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-900">Attorney</label>
+                <label className="text-sm font-medium text-gray-900">
+                  Attorney
+                </label>
                 <p className="text-sm text-gray-600 mt-1">Smith Legal Group</p>
               </div>
             </div>
@@ -194,88 +236,153 @@ export function BobPayDetail() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* Claimant Total Incurred */}
               <div className="p-4 bg-gray-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">Total Incurred (This Claimant)</div>
-                <div className="text-2xl font-bold text-gray-900 mb-2">{claimantData.totalIncurred}</div>
-                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                  <div className="bg-gray-800 h-2 rounded-full" style={{ width: '44%' }}></div>
+                <div className="text-sm text-gray-600 mb-1">
+                  Total Incurred (This Claimant)
                 </div>
-                <div className="text-xs text-gray-500">44% of available coverage</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">
+                  {claimantData.totalIncurred}
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                  <div
+                    className="bg-gray-800 h-2 rounded-full"
+                    style={{ width: "44%" }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-500">
+                  44% of available coverage
+                </div>
               </div>
 
               {/* Outstanding Reserves */}
               <div className="p-4 bg-yellow-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">Outstanding Reserves</div>
-                <div className="text-2xl font-bold text-yellow-600 mb-2">{claimantData.reserves}</div>
-                <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
-                  <div className="bg-yellow-600 h-2 rounded-full" style={{ width: '51%' }}></div>
+                <div className="text-sm text-gray-600 mb-1">
+                  Outstanding Reserves
                 </div>
-                <div className="text-xs text-gray-500">Reserve adequacy: Good</div>
+                <div className="text-2xl font-bold text-yellow-600 mb-2">
+                  {claimantData.reserves}
+                </div>
+                <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
+                  <div
+                    className="bg-yellow-600 h-2 rounded-full"
+                    style={{ width: "51%" }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-500">
+                  Reserve adequacy: Good
+                </div>
               </div>
 
               {/* Amount Paid to Claimant */}
               <div className="p-4 bg-green-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
-                <div className="text-2xl font-bold text-green-600 mb-2">{claimantData.paid}</div>
-                <div className="w-full bg-green-200 rounded-full h-2 mb-2">
-                  <div className="bg-green-600 h-2 rounded-full" style={{ width: '49%' }}></div>
+                <div className="text-2xl font-bold text-green-600 mb-2">
+                  {claimantData.paid}
                 </div>
-                <div className="text-xs text-gray-500">Last payment: Mar 10, 2024</div>
+                <div className="w-full bg-green-200 rounded-full h-2 mb-2">
+                  <div
+                    className="bg-green-600 h-2 rounded-full"
+                    style={{ width: "49%" }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-500">
+                  Last payment: Mar 10, 2024
+                </div>
               </div>
 
               {/* Medical Payments */}
               <div className="p-4 bg-blue-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">Medical Payments</div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">{claimantData.medicalPayments}</div>
-                <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
-                  <div className="bg-blue-600 h-2 rounded-full" style={{ width: '42%' }}></div>
+                <div className="text-sm text-gray-600 mb-1">
+                  Medical Payments
                 </div>
-                <div className="text-xs text-gray-500">42% of medical limit</div>
+                <div className="text-2xl font-bold text-blue-600 mb-2">
+                  {claimantData.medicalPayments}
+                </div>
+                <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
+                  <div
+                    className="bg-blue-600 h-2 rounded-full"
+                    style={{ width: "42%" }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-500">
+                  42% of medical limit
+                </div>
               </div>
 
               {/* Bodily Injury Liability */}
               <div className="p-4 bg-red-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">Bodily Injury Liability</div>
-                <div className="text-2xl font-bold text-red-600 mb-2">{claimantData.bodilyInjury}</div>
-                <div className="w-full bg-red-200 rounded-full h-2 mb-2">
-                  <div className="bg-red-600 h-2 rounded-full" style={{ width: '13%' }}></div>
+                <div className="text-sm text-gray-600 mb-1">
+                  Bodily Injury Liability
                 </div>
-                <div className="text-xs text-gray-500">13% of BI limit used</div>
+                <div className="text-2xl font-bold text-red-600 mb-2">
+                  {claimantData.bodilyInjury}
+                </div>
+                <div className="w-full bg-red-200 rounded-full h-2 mb-2">
+                  <div
+                    className="bg-red-600 h-2 rounded-full"
+                    style={{ width: "13%" }}
+                  ></div>
+                </div>
+                <div className="text-xs text-gray-500">
+                  13% of BI limit used
+                </div>
               </div>
             </div>
 
             {/* Financial Breakdown Table */}
             <div className="mt-6">
-              <h3 className="text-md font-semibold mb-4">Coverage Breakdown - {claimantData.displayName}</h3>
+              <h3 className="text-md font-semibold mb-4">
+                Coverage Breakdown - {claimantData.displayName}
+              </h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-4 py-3 text-left font-medium text-gray-900">Coverage Type</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Limit</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Reserve</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Available</th>
+                      <th className="px-4 py-3 text-left font-medium text-gray-900">
+                        Coverage Type
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">
+                        Limit
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">
+                        Incurred
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">
+                        Paid
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">
+                        Reserve
+                      </th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">
+                        Available
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     <tr>
-                      <td className="px-4 py-3 font-medium">Medical Payments</td>
+                      <td className="px-4 py-3 font-medium">
+                        Medical Payments
+                      </td>
                       <td className="px-4 py-3 text-right">$5,000.00</td>
                       <td className="px-4 py-3 text-right">$2,100.00</td>
                       <td className="px-4 py-3 text-right">$1,500.00</td>
                       <td className="px-4 py-3 text-right">$600.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">$2,900.00</td>
+                      <td className="px-4 py-3 text-right text-green-600">
+                        $2,900.00
+                      </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Bodily Injury Liability</td>
+                      <td className="px-4 py-3 font-medium">
+                        Bodily Injury Liability
+                      </td>
                       <td className="px-4 py-3 text-right">$50,000.00</td>
                       <td className="px-4 py-3 text-right">$6,650.00</td>
                       <td className="px-4 py-3 text-right">$2,750.00</td>
                       <td className="px-4 py-3 text-right">$3,900.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">$43,350.00</td>
+                      <td className="px-4 py-3 text-right text-green-600">
+                        $43,350.00
+                      </td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 font-medium">Property Damage</td>
@@ -284,7 +391,9 @@ export function BobPayDetail() {
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">$50,000.00</td>
+                      <td className="px-4 py-3 text-right text-green-600">
+                        $50,000.00
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -295,10 +404,8 @@ export function BobPayDetail() {
 
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
           {/* Left Column - Injury and Vehicle Details */}
           <div className="lg:col-span-2 space-y-6">
-
             {/* Add Coverage Button */}
             <div className="flex justify-end">
               <Button variant="outline" size="sm">
@@ -321,32 +428,57 @@ export function BobPayDetail() {
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Injury Type</label>
-                    <p className="text-sm text-gray-600 mt-1">Lower back strain, knee contusion</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Injury Type
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Lower back strain, knee contusion
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Injury Severity</label>
+                    <label className="text-sm font-medium text-gray-900">
+                      Injury Severity
+                    </label>
                     <div className="flex items-center mt-1">
-                      <Badge variant="secondary" className="bg-green-100 text-green-800">
+                      <Badge
+                        variant="secondary"
+                        className="bg-green-100 text-green-800"
+                      >
                         Minor
                       </Badge>
                     </div>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Treatment Status</label>
-                    <p className="text-sm text-gray-600 mt-1">Completed treatment</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Treatment Status
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Completed treatment
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Medical Provider</label>
-                    <p className="text-sm text-gray-600 mt-1">Westside Medical Center</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Medical Provider
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Westside Medical Center
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Date of First Treatment</label>
-                    <p className="text-sm text-gray-600 mt-1">January 5, 2024</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Date of First Treatment
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      January 5, 2024
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Expected Recovery Time</label>
-                    <p className="text-sm text-gray-600 mt-1">2-3 weeks (Completed)</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Expected Recovery Time
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      2-3 weeks (Completed)
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -366,27 +498,47 @@ export function BobPayDetail() {
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Vehicle</label>
-                    <p className="text-sm text-gray-600 mt-1">2019 Toyota Camry</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Vehicle
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      2019 Toyota Camry
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">VIN</label>
-                    <p className="text-sm text-gray-600 mt-1">4T1C11AK5KU123456</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      VIN
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      4T1C11AK5KU123456
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">License Plate</label>
+                    <label className="text-sm font-medium text-gray-900">
+                      License Plate
+                    </label>
                     <p className="text-sm text-gray-600 mt-1">XYZ-9876</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Damage Assessment</label>
-                    <p className="text-sm text-gray-600 mt-1">Rear bumper damage</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Damage Assessment
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Rear bumper damage
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Repair Shop</label>
-                    <p className="text-sm text-gray-600 mt-1">Quality Auto Body</p>
+                    <label className="text-sm font-medium text-gray-900">
+                      Repair Shop
+                    </label>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Quality Auto Body
+                    </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Repair Cost Estimate</label>
+                    <label className="text-sm font-medium text-gray-900">
+                      Repair Cost Estimate
+                    </label>
                     <p className="text-sm text-gray-600 mt-1">$3,200.00</p>
                   </div>
                 </div>
@@ -396,7 +548,6 @@ export function BobPayDetail() {
 
           {/* Right Column - Activity Timeline, Diaries, Documents, Parties Details */}
           <div className="space-y-6">
-
             {/* Activity Timeline */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
@@ -426,24 +577,42 @@ export function BobPayDetail() {
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">07-01-25</td>
-                        <td className="px-4 py-3">Medical treatment completed - Final bill $1,850</td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          07-01-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Medical treatment completed - Final bill $1,850
+                        </td>
                         <td className="px-4 py-3 whitespace-nowrap">System</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">06-28-25</td>
-                        <td className="px-4 py-3">Follow-up appointment scheduled with Westside Medical</td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          06-28-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Follow-up appointment scheduled with Westside Medical
+                        </td>
                         <td className="px-4 py-3 whitespace-nowrap">UW John</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">06-25-25</td>
-                        <td className="px-4 py-3">Payment issued for vehicle repairs</td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          06-25-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Payment issued for vehicle repairs
+                        </td>
                         <td className="px-4 py-3 whitespace-nowrap">System</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">06-20-25</td>
-                        <td className="px-4 py-3">Repair estimate approved by adjuster</td>
-                        <td className="px-4 py-3 whitespace-nowrap">Agent Smith</td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          06-20-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Repair estimate approved by adjuster
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          Agent Smith
+                        </td>
                       </tr>
                     </tbody>
                   </table>
@@ -484,43 +653,101 @@ export function BobPayDetail() {
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">08-10-25</td>
-                        <td className="px-4 py-3">Final Settlement Review - Bob Pay</td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">Medium</Badge>
+                          08-10-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Final Settlement Review - Bob Pay
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Button variant="link" size="sm" className="p-0 h-auto text-blue-600">Close</Button>
+                          <Badge
+                            variant="secondary"
+                            className="bg-yellow-100 text-yellow-800"
+                          >
+                            Medium
+                          </Badge>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto text-blue-600"
+                          >
+                            Close
+                          </Button>
                         </td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">08-18-25</td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          08-18-25
+                        </td>
                         <td className="px-4 py-3">Vehicle Repair Inspection</td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Badge variant="secondary" className="bg-red-100 text-red-800">High</Badge>
+                          <Badge
+                            variant="secondary"
+                            className="bg-red-100 text-red-800"
+                          >
+                            High
+                          </Badge>
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Button variant="link" size="sm" className="p-0 h-auto text-blue-600">Close</Button>
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto text-blue-600"
+                          >
+                            Close
+                          </Button>
                         </td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">08-22-25</td>
-                        <td className="px-4 py-3">Medical Records Review - Westside</td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Badge variant="secondary" className="bg-green-100 text-green-800">Low</Badge>
+                          08-22-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Medical Records Review - Westside
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Button variant="link" size="sm" className="p-0 h-auto text-blue-600">Close</Button>
+                          <Badge
+                            variant="secondary"
+                            className="bg-green-100 text-green-800"
+                          >
+                            Low
+                          </Badge>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto text-blue-600"
+                          >
+                            Close
+                          </Button>
                         </td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">09-05-25</td>
-                        <td className="px-4 py-3">Final Documentation Review</td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">Medium</Badge>
+                          09-05-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Final Documentation Review
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          <Button variant="link" size="sm" className="p-0 h-auto text-blue-600">Close</Button>
+                          <Badge
+                            variant="secondary"
+                            className="bg-yellow-100 text-yellow-800"
+                          >
+                            Medium
+                          </Badge>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto text-blue-600"
+                          >
+                            Close
+                          </Button>
                         </td>
                       </tr>
                     </tbody>
@@ -548,7 +775,9 @@ export function BobPayDetail() {
                       <FileText className="h-5 w-5 text-blue-600" />
                       <div>
                         <p className="text-sm font-medium">Medical Records</p>
-                        <p className="text-xs text-gray-500">3 files • 8.1 MB</p>
+                        <p className="text-xs text-gray-500">
+                          3 files • 8.1 MB
+                        </p>
                       </div>
                     </div>
                     <div className="flex space-x-2">
@@ -566,7 +795,9 @@ export function BobPayDetail() {
                       <FileText className="h-5 w-5 text-green-600" />
                       <div>
                         <p className="text-sm font-medium">Vehicle Photos</p>
-                        <p className="text-xs text-gray-500">6 files • 3.5 MB</p>
+                        <p className="text-xs text-gray-500">
+                          6 files • 3.5 MB
+                        </p>
                       </div>
                     </div>
                     <div className="flex space-x-2">
@@ -601,8 +832,12 @@ export function BobPayDetail() {
                     <div className="flex items-center space-x-3">
                       <FileText className="h-5 w-5 text-purple-600" />
                       <div>
-                        <p className="text-sm font-medium">Insurance Documentation</p>
-                        <p className="text-xs text-gray-500">2 files • 1.2 MB</p>
+                        <p className="text-sm font-medium">
+                          Insurance Documentation
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          2 files • 1.2 MB
+                        </p>
                       </div>
                     </div>
                     <div className="flex space-x-2">
@@ -650,7 +885,9 @@ export function BobPayDetail() {
                   <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-blue-600 text-white">BP</AvatarFallback>
+                        <AvatarFallback className="bg-blue-600 text-white">
+                          BP
+                        </AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">Bob Pay</p>
@@ -692,7 +929,9 @@ export function BobPayDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-purple-600 text-white">SLG</AvatarFallback>
+                        <AvatarFallback className="bg-purple-600 text-white">
+                          SLG
+                        </AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">Smith Legal Group</p>
@@ -735,7 +974,9 @@ export function BobPayDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-orange-600 text-white">QAB</AvatarFallback>
+                        <AvatarFallback className="bg-orange-600 text-white">
+                          QAB
+                        </AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">Quality Auto Body</p>
@@ -756,7 +997,9 @@ export function BobPayDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-blue-600 text-white">MP</AvatarFallback>
+                        <AvatarFallback className="bg-blue-600 text-white">
+                          MP
+                        </AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">Mital Patel</p>
