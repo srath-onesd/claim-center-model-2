@@ -64,7 +64,7 @@ export function AmyApplegateDetail() {
   return (
     <div className="h-full bg-gray-50">
       {/* Breadcrumb Navigation */}
-      <div className="bg-white border-b px-6 py-4">
+      <div className="flex flex-row items-center justify-between space-y-0 pb-4">
         <Breadcrumb items={breadcrumbItems} />
         <Button variant="ghost" size="sm" asChild>
           <RouterLink to="/" className="flex items-center">
