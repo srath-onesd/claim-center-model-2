@@ -64,13 +64,15 @@ export function AmyApplegateDetail() {
   return (
     <div className="h-full bg-gray-50">
       {/* Breadcrumb Navigation */}
-      <Breadcrumb items={breadcrumbItems} />
-      <Button variant="ghost" size="sm" asChild>
-        <RouterLink to="/" className="flex items-center">
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Overview
-        </RouterLink>
-      </Button>
+      <div className="bg-white border-b px-6 py-4">
+        <Breadcrumb items={breadcrumbItems} />
+        <Button variant="ghost" size="sm" asChild>
+          <RouterLink to="/" className="flex items-center">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Overview
+          </RouterLink>
+        </Button>
+      </div>
       {/* Search Bar */}
       <div className="bg-white border-b px-6 py-4">
         <div className="flex items-center space-x-4">
