@@ -119,150 +119,85 @@ const navigationItems = [
         expandable: true,
         subItems: [
           {
-            id: "bi-liability-2",
-            label: "Bodily Injury",
-            href: "/claimants/bob-pay/bodily-injury",
-            expandable: true,
-            subItems: [
-              {
-                id: "bi-reserves-2",
-                label: "Reserves",
-                href: "/claimants/bob-pay/bodily-injury/reserves",
-                icon: "💳",
-              },
-              {
-                id: "bi-payments-2",
-                label: "Payments",
-                href: "/claimants/bob-pay/bodily-injury/payments",
-                icon: "💳",
-              },
-              {
-                id: "bi-recovery-2",
-                label: "Recovery",
-                href: "/claimants/bob-pay/bodily-injury/recovery",
-                icon: "🔄",
-                expandable: true,
-                subItems: [
-                  {
-                    id: "subrogation-2",
-                    label: "Subrogation",
-                    href: "/claimants/bob-pay/bodily-injury/recovery/Subrogation",
-                  },
-                  {
-                    id: "finreceipts-2",
-                    label: "Financial Receipts",
-                    href: "/claimants/bob-pay/bodily-injury/recovery/finreceipts",
-                  },
-                  {
-                    id: "deductible-2",
-                    label: "Deductible",
-                    href: "/claimants/bob-pay/bodily-injury/recovery/deductible",
-                    expandable: true,
-                    subItems: [
-                      {
-                        id: "adddeductible-2",
-                        label: "Add Deductible",
-                        href: "/claimants/bob-pay/bodily-injury/recovery/deductible/adddeductible",
-                      },
-                      {
-                        id: "deductiblefin-2",
-                        label: "Deductible Financials",
-                        href: "/claimants/bob-pay/bodily-injury/recovery/deductible/deductiblefin",
-                      },
-                    ]
-                  },
-                ]
-              },
-              {
-                id: "journal-2",
-                label: "Journal",
-                href: "/journal",
-                expandable: true,
-                subItems: [
-                  {
-                    id: "diary-2",
-                    label: "Diary",
-                    href: "/journal/diary",
-                    icon: "📅",
-                  },
-                  {
-                    id: "notes-2",
-                    label: "Notes",
-                    href: "/journal/notes",
-                    icon: "📝",
-                  },
-                  {
-                    id: "documents-2",
-                    label: "Documents",
-                    href: "/journal/documents",
-                    icon: "📄",
-                  },
-                  {
-                    id: "emails-2",
-                    label: "Emails",
-                    href: "/journal/emails",
-                    icon: "",
-                  }
-                ]
-              },
-            ],
+            id: "bi-reserves-2",
+            label: "Reserves",
+            href: "/claimants/bob-pay/bodily-injury/reserves",
+            icon: "💳",
           },
           {
-            id: "pd-liability-2",
-            label: "Property Damage",
-            href: "/claimants/bob-pay/property-damage",
+            id: "bi-payments-2",
+            label: "Payments",
+            href: "/claimants/bob-pay/bodily-injury/payments",
+            icon: "💳",
+          },
+          {
+            id: "bi-recovery-2",
+            label: "Recovery",
+            href: "/claimants/bob-pay/bodily-injury/recovery",
+            icon: "🔄",
             expandable: true,
             subItems: [
               {
-                id: "pd-reserves-2",
-                label: "Reserves",
-                href: "/claimants/bob-pay/property-damage/reserves",
-                icon: "💳",
+                id: "subrogation-2",
+                label: "Subrogation",
+                href: "/claimants/bob-pay/bodily-injury/recovery/Subrogation",
               },
               {
-                id: "pd-payments-2",
-                label: "Payments",
-                href: "/claimants/bob-pay/property-damage/payments",
-                icon: "💳",
+                id: "finreceipts-2",
+                label: "Financial Receipts",
+                href: "/claimants/bob-pay/bodily-injury/recovery/finreceipts",
               },
               {
-                id: "pd-recovery-2",
-                label: "Recovery",
-                href: "/claimants/bob-pay/property-damage/recovery",
-                icon: "🔄",
+                id: "deductible-2",
+                label: "Deductible",
+                href: "/claimants/bob-pay/bodily-injury/recovery/deductible",
                 expandable: true,
                 subItems: [
                   {
-                    id: "subrogation-pd-2",
-                    label: "Subrogation",
-                    href: "/claimants/bob-pay/property-damage/recovery/Subrogation",
+                    id: "adddeductible-2",
+                    label: "Add Deductible",
+                    href: "/claimants/bob-pay/bodily-injury/recovery/deductible/adddeductible",
                   },
                   {
-                    id: "finreceipts-pd-2",
-                    label: "Financial Receipts",
-                    href: "/claimants/bob-pay/property-damage/recovery/finreceipts",
-                  },
-                  {
-                    id: "deductible-pd-2",
-                    label: "Deductible",
-                    href: "/claimants/bob-pay/property-damage/recovery/deductible",
-                    expandable: true,
-                    subItems: [
-                      {
-                        id: "adddeductible-pd-2",
-                        label: "Add Deductible",
-                        href: "/claimants/bob-pay/property-damage/recovery/deductible/adddeductible",
-                      },
-                      {
-                        id: "deductiblefin-pd-2",
-                        label: "Deductible Financials",
-                        href: "/claimants/bob-pay/property-damage/recovery/deductible/deductiblefin",
-                      },
-                    ]
+                    id: "deductiblefin-2",
+                    label: "Deductible Financials",
+                    href: "/claimants/bob-pay/bodily-injury/recovery/deductible/deductiblefin",
                   },
                 ]
               },
-            ],
+            ]
+          },
+          {
+            id: "journal-2",
+            label: "Journal",
+            href: "/journal",
+            expandable: true,
+            subItems: [
+              {
+                id: "diary-2",
+                label: "Diary",
+                href: "/journal/diary",
+                icon: "📅",
+              },
+              {
+                id: "notes-2",
+                label: "Notes",
+                href: "/journal/notes",
+                icon: "📝",
+              },
+              {
+                id: "documents-2",
+                label: "Documents",
+                href: "/journal/documents",
+                icon: "📄",
+              },
+              {
+                id: "emails-2",
+                label: "Emails",
+                href: "/journal/emails",
+                icon: "",
+              }
+            ]
           },
         ],
       },
