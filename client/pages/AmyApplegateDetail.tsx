@@ -262,11 +262,13 @@ export function AmyApplegateDetail() {
                       <td className="px-4 py-3 text-right">$8,600.00</td>
                       <td className="px-4 py-3 text-right">$2,350.00</td>
                       <td className="px-4 py-3 text-right">$6,250.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right text-green-600">$41,400.00</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 font-medium">Property Damage</td>
                       <td className="px-4 py-3 text-right">$50,000.00</td>
+                      <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
