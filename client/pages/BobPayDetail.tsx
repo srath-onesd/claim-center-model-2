@@ -57,7 +57,7 @@ export function BobPayDetail() {
   const breadcrumbItems = [
     { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
-    { label: "Overview", href: "/" },
+    { label: "Claimants", href: "/" },
     { label: claimantData.displayName, active: true }
   ];
 
