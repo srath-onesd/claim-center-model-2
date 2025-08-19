@@ -241,7 +241,8 @@ export function AmyApplegateDetail() {
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Limit</th>
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Incurred</th>
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Paid</th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900">Outstanding</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Reserve</th>
+                      <th className="px-4 py-3 text-right font-medium text-gray-900">Recovery</th>
                       <th className="px-4 py-3 text-right font-medium text-gray-900">Available</th>
                     </tr>
                   </thead>
