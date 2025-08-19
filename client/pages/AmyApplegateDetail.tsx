@@ -74,7 +74,7 @@ export function AmyApplegateDetail() {
         </Button>
       </div>
       {/* Search Bar */}
-      <div className="bg-white border-b px-6 py-4">
+      <div className="flex flex-row items-center justify-between space-y-0 pb-4">
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="sm" asChild>
             <RouterLink to="/" className="flex items-center">
