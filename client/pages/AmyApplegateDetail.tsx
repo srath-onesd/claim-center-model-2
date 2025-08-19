@@ -36,7 +36,11 @@ import {
   ArrowUpRight,
   ArrowDownRight,
   CalendarDays,
-  Flag
+  Flag,
+  Plus,
+  ArrowUpDown,
+  ChevronUp,
+  ChevronDown
 } from "lucide-react";
 
 export function AmyApplegateDetail() {
