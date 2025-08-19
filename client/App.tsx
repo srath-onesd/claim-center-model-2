@@ -10,6 +10,8 @@ import { OMSLayout } from "./components/OMSLayout";
 import { Summary } from "./pages/Summary";
 import { ClaimsDetail } from "./pages/ClaimsDetail";
 import { ClaimantDetail } from "./pages/ClaimantDetail";
+import { AmyApplegateDetail } from "./pages/AmyApplegateDetail";
+import { BobPayDetail } from "./pages/BobPayDetail";
 import { ClaimHistory } from "./pages/ClaimHistory";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
