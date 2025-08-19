@@ -678,9 +678,6 @@ export function AmyApplegateDetail() {
                       <Button variant="ghost" size="sm">
                         <Mail className="h-4 w-4" />
                       </Button>
-                      <Button variant="ghost" size="sm">
-                        <ExternalLink className="h-4 w-4" />
-                      </Button>
                     </div>
                   </div>
 
