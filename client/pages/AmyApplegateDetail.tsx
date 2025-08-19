@@ -313,10 +313,6 @@ export function AmyApplegateDetail() {
                     <p className="text-sm text-gray-600 mt-1">Ongoing physical therapy</p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-gray-900">Medical Provider</label>
-                    <p className="text-sm text-gray-600 mt-1">City General Hospital</p>
-                  </div>
-                  <div>
                     <label className="text-sm font-medium text-gray-900">Date of First Treatment</label>
                     <p className="text-sm text-gray-600 mt-1">January 2, 2024</p>
                   </div>
