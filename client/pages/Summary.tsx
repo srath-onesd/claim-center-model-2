@@ -446,7 +446,7 @@ export function Summary() {
                     </CardContent>
                   </Card>
 
-                  {/* Bodily Injury Section */}
+                  {/* Bodily Injury Section 
                   <div className="border rounded-lg p-4">
                     <h3 className="font-semibold text-md mb-3 flex items-center">
                       <AlertCircle className="h-4 w-4 mr-2 text-red-500" />
@@ -466,9 +466,9 @@ export function Summary() {
                         <p className="text-sm text-gray-600 mt-1">City General Hospital</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  {/* Property Damage Section */}
+                  {/* Property Damage Section 
                   <div className="border rounded-lg p-4">
                     <h3 className="font-semibold text-md mb-3 flex items-center">
                       <Shield className="h-4 w-4 mr-2 text-blue-500" />
@@ -488,7 +488,7 @@ export function Summary() {
                         <p className="text-sm text-gray-600 mt-1">ABC Auto Repair</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                 </CardContent>
               )}
