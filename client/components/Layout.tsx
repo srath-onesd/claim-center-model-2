@@ -247,7 +247,27 @@ export function Layout({ children }: LayoutProps) {
             )}
           >
             {level === 0 && item.icon && (
-              <span className="text-lg">{item.icon}</span>
+              item.id === "deductible-1" ? (
+                <img
+                  loading="lazy"
+                  srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                  alt="Deductible icon"
+                  className="aspect-square object-cover object-center w-full ml-5 min-h-5 min-w-5 overflow-hidden"
+                  style={{
+                    aspectRatio: "1",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    width: "100%",
+                    marginLeft: "20px",
+                    minHeight: "20px",
+                    minWidth: "20px",
+                    overflow: "hidden"
+                  }}
+                />
+              ) : (
+                <span className="text-lg">{item.icon}</span>
+              )
             )}
             {!sidebarCollapsed && <span>{item.label}</span>}
           </Link>
