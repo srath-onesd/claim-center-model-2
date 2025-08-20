@@ -150,6 +150,9 @@ export function BobPayDetail() {
                 <p className="text-sm text-gray-600 mt-2">
                   Bodily Injury and Property Damage - Motor Vehicle Accident
                 </p>
+                <p className="text-sm text-gray-600 mt-2">
+                  Bodily Injury and Property Damage - Motor Vehicle Accident
+                </p>
               </div>
             </div>
 
