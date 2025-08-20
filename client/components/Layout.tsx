@@ -172,7 +172,7 @@ const navigationItems = [
     label: "Deductible",
     href: "#", // Use # to prevent navigation when clicking
     expandable: true,
-    icon: "image.png",
+    icon: "📚",
     subItems: [
       {
         id: "adddeductible-1",
