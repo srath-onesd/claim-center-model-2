@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  FileText, 
-  Shield, 
-  Users, 
-  Settings, 
+import {
+  ChevronLeft,
+  ChevronRight,
+  FileText,
+  Shield,
+  Users,
+  Settings,
   Home,
   Plus,
   Search,
@@ -17,7 +17,9 @@ import {
   BarChart3,
   FileCheck,
   Calendar,
-  Target
+  Target,
+  Menu,
+  X
 } from "lucide-react";
 import { Layout } from "./Layout";
 
