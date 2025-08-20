@@ -52,6 +52,14 @@ export function OMSLayout({ children }: OMSLayoutProps) {
             <Shield className="h-6 w-6 text-blue-600" />
             <span className="text-lg font-semibold text-blue-600">OneShield</span>
           </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-gray-600 hover:bg-gray-100 p-1 border border-red-500 bg-red-50"
+            onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
+          >
+            {omsSidebarCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+          </Button>
         </div>
         <div className="flex items-center space-x-4">
           <span className="text-sm text-gray-600">admin admin</span>
