@@ -57,10 +57,10 @@ export function OMSLayout({ children }: OMSLayoutProps) {
           <Button
             variant="ghost"
             size="sm"
-            className="text-primary-foreground hover:bg-primary-foreground/10"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-           >
-            {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+            className="text-gray-600 hover:bg-gray-100 p-1 border border-red-500 bg-red-50"
+            onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
+          >
+            {omsSidebarCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
           </Button>
         </div>
         <div className="flex items-center space-x-4">
