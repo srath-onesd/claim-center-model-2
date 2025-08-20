@@ -71,43 +71,45 @@ export function OMSLayout({ children }: OMSLayoutProps) {
 
       <div className="flex flex-1 overflow-hidden">
         {/* OMS Sidebar */}
-        <div className={`bg-gray-100 border-r border-gray-200 transition-all duration-300 flex flex-col ${
+        <div className={`bg-white border-r border-gray-200 transition-all duration-300 flex flex-col ${
           omsSidebarCollapsed ? 'w-16' : 'w-64'
         }`}>
           {/* Sidebar Header with Toggle */}
           <div className="flex items-center justify-between p-3 border-b border-gray-200">
             {!omsSidebarCollapsed && (
-              <span className="text-sm font-semibold text-gray-700">OneShield</span>
+              <div className="flex items-center space-x-2">
+                <span className="text-sm font-medium text-gray-600">Choose</span>
+              </div>
             )}
             <Button
               variant="ghost"
               size="sm"
-              className="text-gray-600 hover:bg-gray-200 p-1"
+              className="text-gray-600 hover:bg-gray-100 p-1 ml-auto"
               onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
             >
               {omsSidebarCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
             </Button>
           </div>
 
-          <nav className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
+          <nav className="flex-1 px-2 py-2 space-y-1 overflow-y-auto">
             {omsNavigationItems.map((item) => {
               const Icon = item.icon;
               return (
                 <a
                   key={item.id}
                   href={item.href}
-                  className={`group flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+                  className={`group flex items-center px-3 py-2 text-sm transition-colors ${
                     item.isActive
-                      ? 'bg-blue-100 text-blue-700 border-l-2 border-blue-700'
-                      : 'text-gray-700 hover:bg-gray-200 hover:text-gray-900'
+                      ? 'bg-blue-50 text-blue-600 border-r-2 border-blue-600'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                   } ${omsSidebarCollapsed ? 'justify-center' : ''}`}
                   title={omsSidebarCollapsed ? item.label : undefined}
                 >
                   <Icon className={`h-4 w-4 flex-shrink-0 ${
-                    item.isActive ? 'text-blue-700' : 'text-gray-500 group-hover:text-gray-900'
+                    item.isActive ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-600'
                   } ${omsSidebarCollapsed ? '' : 'mr-3'}`} />
                   {!omsSidebarCollapsed && (
-                    <span className="truncate font-medium">{item.label}</span>
+                    <span className="truncate">{item.label}</span>
                   )}
                 </a>
               );
