@@ -6,9 +6,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout } from "./components/Layout";
+import { OMSLayout } from "./components/OMSLayout";
 import { Summary } from "./pages/Summary";
 import { ClaimsDetail } from "./pages/ClaimsDetail";
+import { ClaimantDetail } from "./pages/ClaimantDetail";
+import { AmyApplegateDetail } from "./pages/AmyApplegateDetail";
+import { BobPayDetail } from "./pages/BobPayDetail";
+import { ClaimHistory } from "./pages/ClaimHistory";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
 
@@ -20,13 +24,26 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
+        <OMSLayout>
           <Routes>
             <Route path="/" element={<Summary />} />
             <Route path="/claims-detail" element={<ClaimsDetail />} />
+            <Route path="/claimdetails" element={<ClaimsDetail />} />
             <Route
               path="/claimant"
               element={<PlaceholderPage title="Claimant Information" />}
+            />
+            <Route
+              path="/claimants"
+              element={<PlaceholderPage title="Claimants" />}
+            />
+            <Route
+              path="/claimants/amy-applegate"
+              element={<AmyApplegateDetail />}
+            />
+            <Route
+              path="/claimants/bob-pay"
+              element={<BobPayDetail />}
             />
             <Route
               path="/bodily-injury"
@@ -76,7 +93,7 @@ const App = () => (
             />
             <Route
               path="/claim-history"
-              element={<PlaceholderPage title="Claim History" />}
+              element={<ClaimHistory />}
             />
             <Route
               path="/related"
@@ -94,10 +111,34 @@ const App = () => (
               path="/journal"
               element={<PlaceholderPage title="Journal" />}
             />
+            <Route
+              path="/financials/recovery/financialreceipts"
+              element={<PlaceholderPage title="Financial Receipts" />}
+            />
+            <Route
+              path="/financials/recovery/Deductible"
+              element={<PlaceholderPage title="Deductible Recovery" />}
+            />
+            <Route
+              path="/financials/payments"
+              element={<PlaceholderPage title="Financial Payments" />}
+            />
+            <Route
+              path="/financials/reserves"
+              element={<PlaceholderPage title="Financial Reserves" />}
+            />
+            <Route
+              path="/financials/recovery"
+              element={<PlaceholderPage title="Financial Recovery" />}
+            />
+            <Route
+              path="/financials/recovery/subrogation"
+              element={<PlaceholderPage title="Subrogation Recovery" />}
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Layout>
+        </OMSLayout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

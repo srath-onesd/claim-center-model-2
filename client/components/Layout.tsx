@@ -19,7 +19,7 @@ const navigationItems = [
   {
     id: "claimants",
     label: "Claimants",
-    href: "/claimants",
+    href: "#", // Use # to prevent navigation when clicking
     icon: "👤",
     expandable: true,
     subItems: [
@@ -30,14 +30,67 @@ const navigationItems = [
         expandable: true,
         subItems: [
           {
-            id: "pc-liability-1",
-            label: "Bodily Injury",
-            href: "/claimants/amy-applegate/bodily-injury",
+            id: "bi-reserves-1",
+            label: "Reserves",
+            href: "/claimants/amy-applegate/bodily-injury/reserves",
+            icon: "💳",
           },
           {
-            id: "pd-liability-1",
-            label: "Property Damage",
-            href: "/claimants/amy-applegate/property-damage",
+            id: "bi-payments-1",
+            label: "Payments",
+            href: "/claimants/amy-applegate/bodily-injury/payments",
+            icon: "💳",
+          },
+          {
+            id: "bi-recovery-1",
+            label: "Recovery",
+            href: "#",
+            icon: "🔄",
+            expandable: true,
+            subItems: [
+              {
+                id: "subrogation-1",
+                label: "Subrogation",
+                href: "/claimants/amy-applegate/bodily-injury/recovery/Subrogation",
+              },
+              {
+                id: "finreceipts-1",
+                label: "Financial Receipts",
+                href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
+              },
+            ],
+          },
+          {
+            id: "journal-1",
+            label: "Journal",
+            href: "#",
+            expandable: true,
+            subItems: [
+              {
+                id: "diary-1",
+                label: "Diary",
+                href: "/journal/diary",
+                icon: "📅",
+              },
+              {
+                id: "notes-1",
+                label: "Notes",
+                href: "/journal/notes",
+                icon: "📝",
+              },
+              {
+                id: "documents-1",
+                label: "Documents",
+                href: "/journal/documents",
+                icon: "📄",
+              },
+              {
+                id: "emails-1",
+                label: "Emails",
+                href: "/journal/emails",
+                icon: "",
+              },
+            ],
           },
         ],
       },
@@ -48,79 +101,91 @@ const navigationItems = [
         expandable: true,
         subItems: [
           {
-            id: "pc-liability-2",
-            label: "Bodily Injury",
-            href: "/exposures/bob-pay/bodily-injury",
+            id: "bi-reserves-2",
+            label: "Reserves",
+            href: "/claimants/bob-pay/bodily-injury/reserves",
+            icon: "💳",
           },
           {
-            id: "pd-liability-2",
-            label: "Property Damage",
-            href: "/exposures/bob-pay/property-damage",
+            id: "bi-payments-2",
+            label: "Payments",
+            href: "/claimants/bob-pay/bodily-injury/payments",
+            icon: "💳",
+          },
+          {
+            id: "bi-recovery-2",
+            label: "Recovery",
+            href: "#",
+            icon: "🔄",
+            expandable: true,
+            subItems: [
+              {
+                id: "subrogation-2",
+                label: "Subrogation",
+                href: "/claimants/bob-pay/bodily-injury/recovery/Subrogation",
+              },
+              {
+                id: "finreceipts-2",
+                label: "Financial Receipts",
+                href: "/claimants/bob-pay/bodily-injury/recovery/finreceipts",
+              },
+            ],
+          },
+          {
+            id: "journal-2",
+            label: "Journal",
+            href: "#",
+            expandable: true,
+            subItems: [
+              {
+                id: "diary-2",
+                label: "Diary",
+                href: "/journal/diary",
+                icon: "📅",
+              },
+              {
+                id: "notes-2",
+                label: "Notes",
+                href: "/journal/notes",
+                icon: "📝",
+              },
+              {
+                id: "documents-2",
+                label: "Documents",
+                href: "/journal/documents",
+                icon: "📄",
+              },
+              {
+                id: "emails-2",
+                label: "Emails",
+                href: "/journal/emails",
+                icon: "",
+              },
+            ],
           },
         ],
       },
     ],
   },
   {
-    id: "financials",
-    label: "Financials",
-    href: "/financials",
-    icon: "💰",
+    id: "deductible-1",
+    label: "Deductible",
+    href: "#", // Use # to prevent navigation when clicking
     expandable: true,
+    icon: "📚",
     subItems: [
       {
-        id: "reserves",
-        label: "Reserves",
-        href: "/financials/reserves",
-        icon: "💳",
+        id: "adddeductible-1",
+        label: "Add Deductible",
+        href: "/deductible/add",
       },
       {
-        id: "payments",
-        label: "Payments",
-        href: "/financials/payments",
-        icon: "💳",
-      },
-      {
-        id: "recovery",
-        label: "Recovery",
-        href: "/financials/recovery",
-        icon: "🔄",
-        expandable: true,
-        subItems: [
-          {
-            id: "subrogation",
-            label: "Bodily Injury",
-            href: "/financials/recovery/subrogation",
-          },
-          {
-            id: "financialreceipts",
-            label: "Financial Receipts",
-            href: "/financials/recovery/financialreceipts",
-          },
-          {
-            id: "pd-liability-2",
-            label: "Property Damage",
-            href: "/financials/recovery/Deductible",
-          },
-        ],
+        id: "deductiblefin-1",
+        label: "Deductible Financials",
+        href: "/deductible/financials",
       },
     ],
   },
-  { id: "subrogation", label: "Subrogation", href: "/subrogation", icon: "⚖️" },
-  { id: "unit-lookup", label: "Unit Lookup", href: "/unit-lookup", icon: "🔍" },
-  { id: "legal", label: "Legal", href: "/legal", icon: "⚖️" },
-  {
-    id: "property-damage",
-    label: "Property Damage",
-    href: "/property-damage",
-    icon: "🏠",
-  },
-  { id: "special", label: "Special", href: "/special", icon: "⭐" },
-  { id: "reserves", label: "Reserves", href: "/reserves", icon: "💰" },
-  { id: "diary", label: "Diary", href: "/diary", icon: "📅" },
-  { id: "notes", label: "Notes", href: "/notes", icon: "📝" },
-  { id: "events", label: "Events", href: "/events", icon: "📅" },
-  { id: "documents", label: "Documents", href: "/documents", icon: "📄" },
   {
     id: "claim-history",
     label: "Claim History",
@@ -141,6 +206,7 @@ interface NavigationItem {
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
 
   const toggleExpanded = (itemId: string) => {
@@ -154,34 +220,61 @@ export function Layout({ children }: LayoutProps) {
   };
 
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
+    const isActive = location.pathname === item.href;
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
-    const paddingLeft = level * 16 + 12; // Increase indent for each level
+    const paddingLeft = sidebarCollapsed ? 12 : level * 16 + 12; // Adjust for collapsed state
 
     return (
       <li key={item.id}>
         <div
           className={cn(
-            "flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors",
+            "flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer",
             location.pathname === item.href
               ? "bg-primary text-primary-foreground"
               : "text-gray-700 hover:bg-gray-100",
           )}
-          style={{ paddingLeft: `${paddingLeft}px` }}
+          style={{
+            paddingLeft: sidebarCollapsed ? "12px" : `${paddingLeft}px`,
+          }}
+          title={sidebarCollapsed ? item.label : undefined}
         >
+          {/* Always use Link for navigation, handle expansion separately */}
           <Link
             to={item.href}
             onClick={() => setSidebarOpen(true)}
-            className="flex items-center space-x-3 flex-1"
-          >
-            {level === 0 && item.icon && (
-              <span className="text-lg">{item.icon}</span>
+            className={cn(
+              "flex items-center flex-1",
+              sidebarCollapsed ? "justify-center" : "space-x-3",
             )}
-            <span>{item.label}</span>
+          >
+            {level === 0 &&
+              item.icon &&
+              (item.id === "deductible-1" ? (
+                <img
+                  loading="lazy"
+                  srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                  alt="Deductible icon"
+                  className="w-4.5 h-4.5 object-cover"
+                  style={{
+                    width: "18px",
+                    height: "18px",
+                    objectFit: "cover",
+                  }}
+                />
+              ) : (
+                <span className="text-lg">{item.icon}</span>
+              ))}
+            {!sidebarCollapsed && <span>{item.label}</span>}
           </Link>
-          {hasSubItems && item.expandable && (
+
+          {hasSubItems && item.expandable && !sidebarCollapsed && (
             <button
-              onClick={() => toggleExpanded(item.id)}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent triggering the parent click
+                toggleExpanded(item.id);
+              }}
               className="p-1 hover:bg-gray-200 rounded"
             >
               {isExpanded ? (
@@ -192,7 +285,7 @@ export function Layout({ children }: LayoutProps) {
             </button>
           )}
         </div>
-        {hasSubItems && isExpanded && (
+        {hasSubItems && isExpanded && !sidebarCollapsed && (
           <ul className="mt-1 space-y-1">
             {item.subItems!.map((subItem) =>
               renderNavigationItem(subItem, level + 1),
@@ -204,15 +297,12 @@ export function Layout({ children }: LayoutProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-primary text-primary-foreground">
-        <div className="px-4 py-2">
+    <div className="h-full bg-gray-50 flex">
+      {/* Claims Center Header Bar */}
+      <div className="flex flex-col w-full">
+        <div className="bg-primary text-primary-foreground px-4 py-2 border-b">
           <div className="flex items-center justify-between">
-            <div
-              className="flex items-center space-x-4"
-              style={{ width: "1200px" }}
-            >
+            <div className="flex items-center space-x-4 mr-auto">
               <Button
                 variant="ghost"
                 size="sm"
@@ -222,114 +312,70 @@ export function Layout({ children }: LayoutProps) {
                 {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
               </Button>
               <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded">
-                <p>Open</p>
+                Open
               </span>
-              <div
-                className="hidden sm:flex items-center space-x-4 text-sm"
-                style={{ width: "1200px" }}
+              <span>
+                Claim: <strong>23E:12345</strong>
+              </span>
+              <span>
+                Policy: <strong>1-672148A</strong>
+              </span>
+              <span>
+                Insured: <strong>Shubham Raut</strong>
+              </span>
+              <span>
+                Claimant: <strong>Amy Applegate, Bob Pay</strong>
+              </span>
+              <span>
+                DOL: <strong>12/31/2025</strong>
+              </span>
+              <span>
+                Adjuster: <strong>Mital Patel</strong>
+              </span>
+            </div>
+            <div>
+              <Button
+                variant="secondary"
+                size="sm"
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
-                <span>
-                  <p>
-                    Claim: <strong>23E:12345</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Policy: <strong>54:123456</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Insured: <strong>Shubham Raut</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Claimant: <strong>Amy Applegate, Bob Pay</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    DOL: <strong>31/12/2025</strong>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    Adjuster: <strong>Mitali</strong>
-                  </p>
-                </span>
-                <button
-                  style={{
-                    position: "fixed",
-                    top: "2%",
-                    right: "120px",
-                    transform: "translateY(-50%)",
-                    padding: "6px 10px",
-                    backgroundColor: "#007bff",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                    margin: "15px 0 0 auto",
-                  }}
-                >
-                  Action
-                </button>
-              </div>
+                Action
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* Tab Navigation
-        <div className="border-t border-primary-foreground/20">
-          <div className="flex px-4 overflow-x-auto">
-            {headerTabs.map((tab) => (
-              <Link
-                key={tab.name}
-                to={tab.href}
-                className={cn(
-                  "px-4 py-2 text-sm border-b-2 transition-colors whitespace-nowrap",
-                  tab.active || location.pathname === tab.href
-                    ? "border-white bg-white/10"
-                    : "border-transparent hover:bg-white/5"
-                )}
-              >
-                {tab.name}
-              </Link>
-            ))}
-          </div>
-        </div> */}
-      </header>
+        {/* Content with sidebar */}
+        <div className="flex flex-1 overflow-hidden">
+          {/* Claims Center Sidebar */}
+          <aside
+            className={cn(
+              "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
+              sidebarOpen ? "w-64 block" : "w-0 hidden",
+              "lg:relative lg:top-0",
+              sidebarOpen &&
+                "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0",
+            )}
+            style={{ backgroundColor: "white" }}
+          >
+            <nav className="p-2">
+              <ul className="space-y-1">
+                {navigationItems.map((item) => renderNavigationItem(item))}
+              </ul>
+            </nav>
+          </aside>
 
-      <div className="flex">
-        {/* Sidebar */}
-        <aside
-          className={cn(
-            "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
-            sidebarOpen ? "w-64 block" : "w-0 hidden",
-            "lg:relative lg:top-0",
-            sidebarOpen &&
-              "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0",
+          {/* Overlay for mobile */}
+          {sidebarOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+              onClick={() => setSidebarOpen(false)}
+            />
           )}
-        >
-          <nav className="p-4">
-            <ul className="space-y-1">
-              {navigationItems.map((item) => renderNavigationItem(item))}
-            </ul>
-          </nav>
-        </aside>
 
-        {/* Overlay for mobile */}
-        {sidebarOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-            onClick={() => setSidebarOpen(false)}
-          />
-        )}
-
-        {/* Main Content */}
-        <main className="flex-1 p-4 lg:p-6">{children}</main>
+          {/* Main Content */}
+          <main className="flex-1 overflow-auto">{children}</main>
+        </div>
       </div>
     </div>
   );
