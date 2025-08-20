@@ -403,7 +403,7 @@ export function BobPayDetail() {
                       <td className="px-4 py-3 text-right">$6,650.00</td>
                       <td className="px-4 py-3 text-right">$2,750.00</td>
                       <td className="px-4 py-3 text-right">$3,900.00</td>
-                      <td className="px-4 py-3 text-right">$0.00</td>
+                      <td className="px-4 py-3 text-right">$300.00</td>
                       <td className="px-4 py-3 text-right text-green-600">
                         $43,350.00
                       </td>
