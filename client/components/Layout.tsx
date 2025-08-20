@@ -44,7 +44,7 @@ const navigationItems = [
           {
             id: "bi-recovery-1",
             label: "Recovery",
-            href: "/claimants/amy-applegate/bodily-injury/recovery",
+            href: "#",
             icon: "🔄",
             expandable: true,
             subItems: [
@@ -115,7 +115,7 @@ const navigationItems = [
           {
             id: "bi-recovery-2",
             label: "Recovery",
-            href: "/claimants/bob-pay/bodily-injury/recovery",
+            href: "#",
             icon: "🔄",
             expandable: true,
             subItems: [
