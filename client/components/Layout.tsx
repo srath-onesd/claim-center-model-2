@@ -146,25 +146,7 @@ const navigationItems = [
                 id: "finreceipts-2",
                 label: "Financial Receipts",
                 href: "/claimants/bob-pay/bodily-injury/recovery/finreceipts",
-              },
-              {
-                id: "deductible-2",
-                label: "Deductible",
-                href: "/claimants/bob-pay/bodily-injury/recovery/deductible",
-                expandable: true,
-                subItems: [
-                  {
-                    id: "adddeductible-2",
-                    label: "Add Deductible",
-                    href: "/claimants/bob-pay/bodily-injury/recovery/deductible/adddeductible",
-                  },
-                  {
-                    id: "deductiblefin-2",
-                    label: "Deductible Financials",
-                    href: "/claimants/bob-pay/bodily-injury/recovery/deductible/deductiblefin",
-                  },
-                ]
-              },
+              }
             ]
           },
           {
