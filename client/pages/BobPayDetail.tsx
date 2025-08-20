@@ -672,25 +672,25 @@ export function BobPayDetail() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('dueDate')}>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('dueDate')}>
                           <div className="flex items-center">
                             Due Date
                             {getSortIcon('dueDate')}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('title')}>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('title')}>
                           <div className="flex items-center">
                             Title
                             {getSortIcon('title')}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('priority')}>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('priority')}>
                           <div className="flex items-center">
                             Priority
                             {getSortIcon('priority')}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" onClick={() => handleSort('actions')}>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('actions')}>
                           <div className="flex items-center">
                             Actions
                             {getSortIcon('actions')}
