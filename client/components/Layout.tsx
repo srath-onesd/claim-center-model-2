@@ -259,9 +259,9 @@ export function Layout({ children }: LayoutProps) {
                     objectFit: "cover",
                     objectPosition: "center",
                     width: "50%",
-                    marginLeft: "20px",
-                    minHeight: "20px",
-                    minWidth: "20px",
+                    marginLeft: "2px",
+                    minHeight: "2px",
+                    minWidth: "2px",
                     overflow: "hidden"
                   }}
                 />
