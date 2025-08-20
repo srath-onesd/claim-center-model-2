@@ -30,24 +30,17 @@ export function OMSLayout({ children }: OMSLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const omsNavigationItems = [
-    { id: "dashboard", label: "Dashboard", icon: Home, href: "/dashboard" },
+    { id: "home", label: "Home", icon: Home, href: "/home" },
     { id: "new-submission", label: "New Submission", icon: Plus, href: "/new-submission" },
     { id: "submissions", label: "Submissions", icon: FileText, href: "/submissions" },
     { id: "policies", label: "Policies", icon: Shield, href: "/policies" },
-    { id: "new-incident", label: "New Incident", icon: AlertTriangle, href: "/new-incident" },
-    { id: "incident", label: "Incident", icon: AlertTriangle, href: "/incident" },
-    { id: "admin", label: "Admin", icon: Settings, href: "/admin" },
     { id: "claims", label: "Claims", icon: FileCheck, href: "/", isActive: true },
-    { id: "claims-search", label: "Claims Search Beta", icon: Search, href: "/claims-search" },
     { id: "customer-center", label: "Customer Center", icon: Users, href: "/customer-center" },
-    { id: "manage-claims", label: "Manage Claims", icon: Target, href: "/manage-claims" },
-    { id: "bulk-changes", label: "Bulk Changes/Endorsements", icon: BarChart3, href: "/bulk-changes" },
     { id: "accounting", label: "Accounting", icon: DollarSign, href: "/accounting" },
-    { id: "customer-center-beta", label: "Customer Center BETA", icon: Users, href: "/customer-center-beta" },
-    { id: "rapid-claims", label: "Rapid Claims Processing", icon: Target, href: "/rapid-claims" },
     { id: "search-center", label: "Search Center", icon: Search, href: "/search-center" },
     { id: "other-utilities", label: "Other Utilities", icon: Settings, href: "/other-utilities" },
-    { id: "message-exceptions", label: "Message Exceptions", icon: AlertTriangle, href: "/message-exceptions" },
+    { id: "customer-center-beta", label: "Customer Center BETA", icon: Users, href: "/customer-center-beta" },
+    { id: "analytics-reports", label: "Analytics Reports", icon: BarChart3, href: "/analytics-reports" },
   ];
 
   return (
