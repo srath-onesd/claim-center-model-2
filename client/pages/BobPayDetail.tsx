@@ -648,13 +648,15 @@ export function BobPayDetail() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
-                  <CalendarDays className="h-5 w-5 mr-2" />
                   Diaries
                 </CardTitle>
-                <Button variant="outline" size="sm">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Add
-                </Button>
+                <div className="flex space-x-2">
+                  <Button variant="link" className="p-0 h-auto text-blue-600">View All</Button>
+                  <Button variant="outline" size="sm">
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent className="p-0">
                 <div className="overflow-x-auto">
