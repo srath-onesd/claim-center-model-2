@@ -82,22 +82,14 @@ export function OMSLayout({ children }: OMSLayoutProps) {
         <div className={`bg-white border-r border-gray-200 transition-all duration-300 flex flex-col ${
           omsSidebarCollapsed ? 'w-16' : 'w-64'
         }`}>
-          {/* Sidebar Header with Toggle */}
-          <div className="flex items-center justify-between p-3 border-b border-gray-200">
-            {!omsSidebarCollapsed && (
+          {/* Sidebar Header */}
+          {!omsSidebarCollapsed && (
+            <div className="flex items-center p-3 border-b border-gray-200">
               <div className="flex items-center space-x-2">
                 <span className="text-sm font-medium text-gray-600">Choose</span>
               </div>
-            )}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-gray-600 hover:bg-gray-100 p-1 ml-auto"
-              onClick={() => setOmsSidebarCollapsed(!omsSidebarCollapsed)}
-            >
-              {omsSidebarCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
-            </Button>
-          </div>
+            </div>
+          )}
 
           <nav className="flex-1 px-2 py-2 space-y-1 overflow-y-auto">
             {omsNavigationItems.map((item) => {
