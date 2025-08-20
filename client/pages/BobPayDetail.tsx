@@ -148,10 +148,10 @@ export function BobPayDetail() {
                   Claim Type
                 </label>
                 <p className="text-sm text-gray-600 mt-2">
-                  Bodily Injury and Property Damage - Motor Vehicle Accident
+                  Bodily Injury
                 </p>
                 <p className="text-sm text-gray-600 mt-2">
-                  Bodily Injury and Property Damage - Motor Vehicle Accident
+                  Property Damage - Motor Vehicle Accident
                 </p>
               </div>
             </div>
