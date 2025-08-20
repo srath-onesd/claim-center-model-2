@@ -170,7 +170,7 @@ const navigationItems = [
   {
     id: "deductible-1",
     label: "Deductible",
-    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+    href: "/deductible",
     expandable: true,
     subItems: [
       {
