@@ -63,7 +63,7 @@ const navigationItems = [
           {
             id: "journal-1",
             label: "Journal",
-            href: "/journal",
+            href: "#",
             expandable: true,
             subItems: [
               {
@@ -134,7 +134,7 @@ const navigationItems = [
           {
             id: "journal-2",
             label: "Journal",
-            href: "/journal",
+            href: "#",
             expandable: true,
             subItems: [
               {
