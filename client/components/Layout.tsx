@@ -258,7 +258,7 @@ export function Layout({ children }: LayoutProps) {
                     aspectRatio: "1",
                     objectFit: "cover",
                     objectPosition: "center",
-                    width: "100%",
+                    width: "50%",
                     marginLeft: "20px",
                     minHeight: "20px",
                     minWidth: "20px",
