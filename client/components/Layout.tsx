@@ -17,6 +17,24 @@ const navigationItems = [
     icon: "📋",
   },
   {
+    id: "deductible-1",
+    label: "Deductible",
+    href: "/claimants/amy-applegate/bodily-injury/recovery/deductible",
+    expandable: true,
+    subItems: [
+      {
+        id: "adddeductible-1",
+        label: "Add Deductible",
+        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/adddeductible",
+      },
+      {
+        id: "deductiblefin-1",
+        label: "Deductible Financials",
+        href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
+      },
+    ]
+  }
+  {
     id: "claimants",
     label: "Claimants",
     href: "/claimants",
