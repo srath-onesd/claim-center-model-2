@@ -603,14 +603,23 @@ export function AmyApplegateDetail() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider">
-                          Date
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('date')}>
+                          <div className="flex items-center">
+                            Date
+                            {getSortIcon('date')}
+                          </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider">
-                          Activity
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('activity')}>
+                          <div className="flex items-center">
+                            Activity
+                            {getSortIcon('activity')}
+                          </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider">
-                          Action Taken By
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('actionby')}>
+                          <div className="flex items-center">
+                            Action Taken By
+                            {getSortIcon('actionby')}
+                          </div>
                         </th>
                       </tr>
                     </thead>
