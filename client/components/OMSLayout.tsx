@@ -53,33 +53,24 @@ export function OMSLayout({ children }: OMSLayoutProps) {
   return (
     <div className="h-screen bg-blue flex flex-col">
       {/* OMS Header */}
-      <div className="bg-white text-blue px-4 py-3 flex items-center justify-between" style={{ backgroundColor: "rgba(255, 255, 255, 1)", border: "1px solid rgba(74, 144, 226, 1)" }}>
+      <div className="bg-white px-4 py-2 flex items-center justify-between border-b border-gray-200">
         <div className="flex items-center space-x-4">
-          <img
-            loading="lazy"
-            srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2F6d9901e033b045faa8c6a785a9b741ad"
-            className="w-full h-full object-contain"
-            style={{
-              aspectRatio: "10.78",
-              objectFit: "contain",
-              objectPosition: "center",
-              marginLeft: "5px",
-              minHeight: "40px",
-              minWidth: "20px",
-              overflow: "hidden",
-              width: "150px"
-            }}
-            alt="Logo"
-          />
+          <div className="flex items-center space-x-2">
+            <Shield className="h-6 w-6 text-blue-600" />
+            <span className="text-lg font-semibold text-blue-600">OneShield</span>
+          </div>
         </div>
         <div className="flex items-center space-x-4">
-          <span className="text-sm" style={{ color: "rgba(74, 144, 226, 1)" }}>David Robbins Single</span>
+          <span className="text-sm text-gray-600">admin admin</span>
           <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="sm" className="text-white hover:bg-blue-700">
-              <User className="h-4 w-4" style={{ backgroundColor: "rgba(74, 144, 226, 1)" }} />
+            <Button variant="ghost" size="sm" className="text-gray-600 hover:bg-gray-100">
+              <User className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="sm" className="text-white hover:bg-blue-700">
-              <Settings className="h-4 w-4" style={{ backgroundColor: "rgba(74, 144, 226, 1)" }} />
+            <Button variant="ghost" size="sm" className="text-gray-600 hover:bg-gray-100">
+              <Settings className="h-4 w-4" />
+            </Button>
+            <Button variant="ghost" size="sm" className="text-gray-600 hover:bg-gray-100">
+              <span className="text-xs">×</span>
             </Button>
           </div>
         </div>
