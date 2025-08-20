@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef, useEffect } from "react";
+import { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
@@ -7,34 +7,6 @@ import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 interface LayoutProps {
   children: ReactNode;
 }
-
-// Dropdown menu items for Claimants
-const claimantDropdownItems = [
-  {
-    id: "amy-applegate",
-    label: "Amy Applegate",
-    href: "/claimants/amy-applegate",
-  },
-  {
-    id: "bob-pay", 
-    label: "Bob Pay",
-    href: "/claimants/bob-pay",
-  },
-];
-
-// Dropdown menu items for Deductible
-const deductibleDropdownItems = [
-  {
-    id: "add-deductible",
-    label: "Add Deductible",
-    href: "/deductible/add",
-  },
-  {
-    id: "deductible-financials",
-    label: "Deductible Financials", 
-    href: "/deductible/financials",
-  },
-];
 
 const navigationItems = [
   { id: "overview", label: "Overview", href: "/", icon: "📋" },
@@ -47,9 +19,8 @@ const navigationItems = [
   {
     id: "claimants",
     label: "Claimants",
-    href: "/claimants",
+    href: "#", // Use # to prevent navigation when clicking
     icon: "👤",
-    hasDropdown: true,
     expandable: true,
     subItems: [
       {
@@ -199,8 +170,7 @@ const navigationItems = [
   {
     id: "deductible-1",
     label: "Deductible",
-    href: "/deductible",
-    hasDropdown: true,
+    href: "#", // Use # to prevent navigation when clicking
     expandable: true,
     subItems: [
       {
@@ -228,66 +198,8 @@ interface NavigationItem {
   label: string;
   href: string;
   icon?: string;
-  hasDropdown?: boolean;
   expandable?: boolean;
   subItems?: NavigationItem[];
-}
-
-interface DropdownItem {
-  id: string;
-  label: string;
-  href: string;
-}
-
-interface DropdownMenuProps {
-  isOpen: boolean;
-  onClose: () => void;
-  items: DropdownItem[];
-  triggerRef: React.RefObject<HTMLButtonElement>;
-}
-
-function DropdownMenu({ isOpen, onClose, items, triggerRef }: DropdownMenuProps) {
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node) &&
-        triggerRef.current &&
-        !triggerRef.current.contains(event.target as Node)
-      ) {
-        onClose();
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [isOpen, onClose, triggerRef]);
-
-  if (!isOpen) return null;
-
-  return (
-    <div
-      ref={dropdownRef}
-      className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50"
-    >
-      <div className="py-1">
-        {items.map((item) => (
-          <Link
-            key={item.id}
-            to={item.href}
-            onClick={onClose}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-          >
-            {item.label}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export function Layout({ children }: LayoutProps) {
@@ -295,11 +207,6 @@ export function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  
-  // Refs for dropdown triggers
-  const claimantsDropdownRef = useRef<HTMLButtonElement>(null);
-  const deductibleDropdownRef = useRef<HTMLButtonElement>(null);
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
@@ -311,45 +218,51 @@ export function Layout({ children }: LayoutProps) {
     setExpandedItems(newExpanded);
   };
 
-  const toggleDropdown = (dropdownId: string) => {
-    setActiveDropdown(activeDropdown === dropdownId ? null : dropdownId);
-  };
-
-  const closeDropdown = () => {
-    setActiveDropdown(null);
-  };
-
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
     const isActive = location.pathname === item.href;
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
-    const paddingLeft = sidebarCollapsed ? 12 : (level * 16 + 12);
+    const paddingLeft = sidebarCollapsed ? 12 : (level * 16 + 12); // Adjust for collapsed state
     
-    // Handle dropdown items (Claimants and Deductible) differently
-    if (item.hasDropdown && level === 0) {
-      return (
-        <li key={item.id} className="relative">
-          <div
-            className={cn(
-              "flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors",
-              location.pathname.startsWith(item.href.replace('/claimants', '/claimants/')) || location.pathname.startsWith(item.href.replace('/deductible', '/deductible/'))
-                ? "bg-primary text-primary-foreground"
-                : "text-gray-700 hover:bg-gray-100",
-            )}
-            style={{ paddingLeft: sidebarCollapsed ? '12px' : `${paddingLeft}px` }}
-            title={sidebarCollapsed ? item.label : undefined}
-          >
-            <button
-              ref={item.id === 'claimants' ? claimantsDropdownRef : item.id === 'deductible-1' ? deductibleDropdownRef : undefined}
-              onClick={() => {
-                if (item.id === 'claimants') {
-                  toggleDropdown('claimants');
-                } else if (item.id === 'deductible-1') {
-                  toggleDropdown('deductible');
-                }
-              }}
+    return (
+      <li key={item.id}>
+        <div
+          className={cn(
+            "flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer",
+            location.pathname === item.href
+              ? "bg-primary text-primary-foreground"
+              : "text-gray-700 hover:bg-gray-100",
+          )}
+          style={{ paddingLeft: sidebarCollapsed ? '12px' : `${paddingLeft}px` }}
+          title={sidebarCollapsed ? item.label : undefined}
+          onClick={() => {
+            // If the item has sub-items and is expandable, toggle expansion
+            if (hasSubItems && item.expandable) {
+              toggleExpanded(item.id);
+            }
+            // If the item has a real href (not #), navigate to it
+            else if (item.href !== '#') {
+              // This will be handled by the Link component
+            }
+          }}
+        >
+          {/* For items with sub-items, make the whole div clickable, otherwise use Link */}
+          {hasSubItems && item.expandable ? (
+            <div className={cn(
+              "flex items-center flex-1",
+              sidebarCollapsed ? "justify-center" : "space-x-3"
+            )}>
+              {level === 0 && item.icon && (
+                <span className="text-lg">{item.icon}</span>
+              )}
+              {!sidebarCollapsed && <span>{item.label}</span>}
+            </div>
+          ) : (
+            <Link
+              to={item.href}
+              onClick={() => setSidebarOpen(true)}
               className={cn(
-                "flex items-center flex-1 text-left",
+                "flex items-center flex-1",
                 sidebarCollapsed ? "justify-center" : "space-x-3"
               )}
             >
@@ -357,92 +270,15 @@ export function Layout({ children }: LayoutProps) {
                 <span className="text-lg">{item.icon}</span>
               )}
               {!sidebarCollapsed && <span>{item.label}</span>}
-              {!sidebarCollapsed && (
-                <ChevronDown 
-                  size={16} 
-                  className={cn(
-                    "ml-auto transition-transform",
-                    (activeDropdown === 'claimants' && item.id === 'claimants') || 
-                    (activeDropdown === 'deductible' && item.id === 'deductible-1')
-                      ? "rotate-180" 
-                      : ""
-                  )}
-                />
-              )}
-            </button>
-            {hasSubItems && item.expandable && !sidebarCollapsed && (
-              <button
-                onClick={() => toggleExpanded(item.id)}
-                className="p-1 hover:bg-gray-200 rounded ml-1"
-              >
-                {isExpanded ? (
-                  <ChevronDown size={16} />
-                ) : (
-                  <ChevronRight size={16} />
-                )}
-              </button>
-            )}
-          </div>
-          
-          {/* Dropdown Menu */}
-          {item.id === 'claimants' && (
-            <DropdownMenu
-              isOpen={activeDropdown === 'claimants'}
-              onClose={closeDropdown}
-              items={claimantDropdownItems}
-              triggerRef={claimantsDropdownRef}
-            />
-          )}
-          {item.id === 'deductible-1' && (
-            <DropdownMenu
-              isOpen={activeDropdown === 'deductible'}
-              onClose={closeDropdown}
-              items={deductibleDropdownItems}
-              triggerRef={deductibleDropdownRef}
-            />
+            </Link>
           )}
           
-          {/* Expanded subitems (existing functionality) */}
-          {hasSubItems && isExpanded && !sidebarCollapsed && (
-            <ul className="mt-1 space-y-1">
-              {item.subItems!.map((subItem) =>
-                renderNavigationItem(subItem, level + 1),
-              )}
-            </ul>
-          )}
-        </li>
-      );
-    }
-    
-    // Regular navigation items
-    return (
-      <li key={item.id}>
-        <div
-          className={cn(
-            "flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors",
-            location.pathname === item.href
-              ? "bg-primary text-primary-foreground"
-              : "text-gray-700 hover:bg-gray-100",
-          )}
-          style={{ paddingLeft: sidebarCollapsed ? '12px' : `${paddingLeft}px` }}
-          title={sidebarCollapsed ? item.label : undefined}
-        >
-          <Link
-            to={item.href}
-            onClick={() => setSidebarOpen(true)}
-            className={cn(
-              "flex items-center flex-1",
-              sidebarCollapsed ? "justify-center" : "space-x-3"
-            )}
-          >
-            {level === 0 && item.icon && (
-              <span className="text-lg">{item.icon}</span>
-            )}
-            {!sidebarCollapsed && <span>{item.label}</span>}
-          </Link>
           {hasSubItems && item.expandable && !sidebarCollapsed && (
             <button
-              onClick={() => toggleExpanded(item.id)}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent triggering the parent click
+                toggleExpanded(item.id);
+              }}
               className="p-1 hover:bg-gray-200 rounded"
             >
               {isExpanded ? (
