@@ -58,7 +58,7 @@ const navigationItems = [
                 label: "Financial Receipts",
                 href: "/claimants/amy-applegate/bodily-injury/recovery/finreceipts",
               },
-            ]
+            ],
           },
           {
             id: "journal-1",
@@ -89,8 +89,8 @@ const navigationItems = [
                 label: "Emails",
                 href: "/journal/emails",
                 icon: "",
-              }
-            ]
+              },
+            ],
           },
         ],
       },
@@ -128,8 +128,8 @@ const navigationItems = [
                 id: "finreceipts-2",
                 label: "Financial Receipts",
                 href: "/claimants/bob-pay/bodily-injury/recovery/finreceipts",
-              }
-            ]
+              },
+            ],
           },
           {
             id: "journal-2",
@@ -160,8 +160,8 @@ const navigationItems = [
                 label: "Emails",
                 href: "/journal/emails",
                 icon: "",
-              }
-            ]
+              },
+            ],
           },
         ],
       },
@@ -184,7 +184,7 @@ const navigationItems = [
         label: "Deductible Financials",
         href: "/deductible/financials",
       },
-    ]
+    ],
   },
   {
     id: "claim-history",
@@ -223,8 +223,8 @@ export function Layout({ children }: LayoutProps) {
     const isActive = location.pathname === item.href;
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
-    const paddingLeft = sidebarCollapsed ? 12 : (level * 16 + 12); // Adjust for collapsed state
-    
+    const paddingLeft = sidebarCollapsed ? 12 : level * 16 + 12; // Adjust for collapsed state
+
     return (
       <li key={item.id}>
         <div
@@ -234,7 +234,9 @@ export function Layout({ children }: LayoutProps) {
               ? "bg-primary text-primary-foreground"
               : "text-gray-700 hover:bg-gray-100",
           )}
-          style={{ paddingLeft: sidebarCollapsed ? '12px' : `${paddingLeft}px` }}
+          style={{
+            paddingLeft: sidebarCollapsed ? "12px" : `${paddingLeft}px`,
+          }}
           title={sidebarCollapsed ? item.label : undefined}
         >
           {/* Always use Link for navigation, handle expansion separately */}
@@ -243,11 +245,12 @@ export function Layout({ children }: LayoutProps) {
             onClick={() => setSidebarOpen(true)}
             className={cn(
               "flex items-center flex-1",
-              sidebarCollapsed ? "justify-center" : "space-x-3"
+              sidebarCollapsed ? "justify-center" : "space-x-3",
             )}
           >
-            {level === 0 && item.icon && (
-              item.id === "deductible-1" ? (
+            {level === 0 &&
+              item.icon &&
+              (item.id === "deductible-1" ? (
                 <img
                   loading="lazy"
                   srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
@@ -257,16 +260,15 @@ export function Layout({ children }: LayoutProps) {
                   style={{
                     width: "18px",
                     height: "18px",
-                    objectFit: "cover"
+                    objectFit: "cover",
                   }}
                 />
               ) : (
                 <span className="text-lg">{item.icon}</span>
-              )
-            )}
+              ))}
             {!sidebarCollapsed && <span>{item.label}</span>}
           </Link>
-          
+
           {hasSubItems && item.expandable && !sidebarCollapsed && (
             <button
               onClick={(e) => {
@@ -293,7 +295,6 @@ export function Layout({ children }: LayoutProps) {
       </li>
     );
   };
-  
 
   return (
     <div className="h-full bg-gray-50 flex">
@@ -313,12 +314,24 @@ export function Layout({ children }: LayoutProps) {
               <span className="bg-green-600 text-white px-2 py-0.5 text-xs rounded">
                 Open
               </span>
-              <span>Claim: <strong>23E:12345</strong></span>
-              <span>Policy: <strong>1-672148A</strong></span>
-              <span>Insured: <strong>Shubham Raut</strong></span>
-              <span>Claimant: <strong>Amy Applegate, Bob Pay</strong></span>
-              <span>DOL: <strong>12/31/2025</strong></span>
-              <span>Adjuster: <strong>Mital Patel</strong></span>
+              <span>
+                Claim: <strong>23E:12345</strong>
+              </span>
+              <span>
+                Policy: <strong>1-672148A</strong>
+              </span>
+              <span>
+                Insured: <strong>Shubham Raut</strong>
+              </span>
+              <span>
+                Claimant: <strong>Amy Applegate, Bob Pay</strong>
+              </span>
+              <span>
+                DOL: <strong>12/31/2025</strong>
+              </span>
+              <span>
+                Adjuster: <strong>Mital Patel</strong>
+              </span>
             </div>
             <div>
               <Button
@@ -335,12 +348,16 @@ export function Layout({ children }: LayoutProps) {
         {/* Content with sidebar */}
         <div className="flex flex-1 overflow-hidden">
           {/* Claims Center Sidebar */}
-          <aside className={cn(
-            "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
-            sidebarOpen ? "w-64 block" : "w-0 hidden",
-            "lg:relative lg:top-0",
-            sidebarOpen && "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0"
-            )} style={{backgroundColor: "white"}}>
+          <aside
+            className={cn(
+              "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
+              sidebarOpen ? "w-64 block" : "w-0 hidden",
+              "lg:relative lg:top-0",
+              sidebarOpen &&
+                "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0",
+            )}
+            style={{ backgroundColor: "white" }}
+          >
             <nav className="p-2">
               <ul className="space-y-1">
                 {navigationItems.map((item) => renderNavigationItem(item))}
@@ -357,9 +374,7 @@ export function Layout({ children }: LayoutProps) {
           )}
 
           {/* Main Content */}
-          <main className="flex-1 overflow-auto">
-            {children}
-          </main>
+          <main className="flex-1 overflow-auto">{children}</main>
         </div>
       </div>
     </div>
