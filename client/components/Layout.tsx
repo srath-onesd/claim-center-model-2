@@ -33,7 +33,7 @@ const navigationItems = [
         href: "/claimants/amy-applegate/bodily-injury/recovery/deductible/deductiblefin",
       },
     ]
-  }
+  },
   {
     id: "claimants",
     label: "Claimants",
