@@ -235,43 +235,21 @@ export function Layout({ children }: LayoutProps) {
           )}
           style={{ paddingLeft: sidebarCollapsed ? '12px' : `${paddingLeft}px` }}
           title={sidebarCollapsed ? item.label : undefined}
-          onClick={() => {
-            // If the item has sub-items and is expandable, toggle expansion
-            if (hasSubItems && item.expandable) {
-              toggleExpanded(item.id);
-            }
-            // If the item has a real href (not #), navigate to it
-            else if (item.href !== '#') {
-              // This will be handled by the Link component
-            }
-          }}
         >
-          {/* For items with sub-items, make the whole div clickable, otherwise use Link */}
-          {hasSubItems && item.expandable ? (
-            <div className={cn(
+          {/* Always use Link for navigation, handle expansion separately */}
+          <Link
+            to={item.href}
+            onClick={() => setSidebarOpen(true)}
+            className={cn(
               "flex items-center flex-1",
               sidebarCollapsed ? "justify-center" : "space-x-3"
-            )}>
-              {level === 0 && item.icon && (
-                <span className="text-lg">{item.icon}</span>
-              )}
-              {!sidebarCollapsed && <span>{item.label}</span>}
-            </div>
-          ) : (
-            <Link
-              to={item.href}
-              onClick={() => setSidebarOpen(true)}
-              className={cn(
-                "flex items-center flex-1",
-                sidebarCollapsed ? "justify-center" : "space-x-3"
-              )}
-            >
-              {level === 0 && item.icon && (
-                <span className="text-lg">{item.icon}</span>
-              )}
-              {!sidebarCollapsed && <span>{item.label}</span>}
-            </Link>
-          )}
+            )}
+          >
+            {level === 0 && item.icon && (
+              <span className="text-lg">{item.icon}</span>
+            )}
+            {!sidebarCollapsed && <span>{item.label}</span>}
+          </Link>
           
           {hasSubItems && item.expandable && !sidebarCollapsed && (
             <button
