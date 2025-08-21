@@ -359,7 +359,7 @@ export function Layout({ children }: LayoutProps) {
             style={{ backgroundColor: "white" }}
           >
             <nav className="p-2">
-              <ul className="space-y-1 ">
+              <ul className="space-y-1">
                 {navigationItems.map((item) => renderNavigationItem(item))}
               </ul>
             </nav>
