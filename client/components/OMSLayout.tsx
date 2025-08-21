@@ -75,6 +75,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
     { icon: Plus, label: "New Submission", path: "/new-submission" },
     { icon: FileText, label: "Submissions", path: "/submissions" },
     { icon: Shield, label: "Policies", path: "/policies" },
+    { icon: FileCheck, label: "Claims", path: "/claims" },
     { icon: Users, label: "Customer Center", path: "/customer-center", isActive: true },
     { icon: DollarSign, label: "Accounting", path: "/accounting" },
     { icon: Search, label: "Search Center", path: "/search-center" },
