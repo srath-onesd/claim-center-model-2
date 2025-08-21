@@ -145,12 +145,8 @@ export function OMSLayout({ children }: OMSLayoutProps) {
       <div className="bg-white px-4 py-3 flex items-center justify-between border-b border-gray-200 shadow-sm">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <DropdownMenuLabel>
-              <div>
-                <p className="font-medium">JM John</p>
-                <p className="text-sm text-gray-500">jm.john@oneshield.com</p>
-              </div>
-            </DropdownMenuLabel>
+            <Shield className="h-5 w-5 text-blue-600" />
+            <span className="text-base font-medium text-gray-900">OneShield</span>
           </div>
         </div>
         
