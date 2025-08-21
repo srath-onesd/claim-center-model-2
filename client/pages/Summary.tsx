@@ -329,9 +329,11 @@ export function Summary() {
                 <CardTitle className="text-lg font-semibold">
                   Financial Information
                 </CardTitle>
+                {/*}
                 <Button variant="ghost" size="sm">
                   <Edit className="h-4 w-4" />
                 </Button>
+                */}
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
