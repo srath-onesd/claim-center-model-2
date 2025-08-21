@@ -300,7 +300,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="h-full bg-gray-50 flex">
       {/* Claims Center Header Bar */}
       <div className="flex flex-col w-full">
-        <div className="bg-primary text-primary-foreground px-4 py-2 border-b">
+        <div className="bg-[#0054A6] text-primary-foreground px-4 py-2 border-b">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4 mr-auto">
               <Button
