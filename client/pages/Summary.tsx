@@ -1195,8 +1195,8 @@ export function Summary() {
         <div className="space-y-6">
           <Tabs defaultValue="coverage" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="coverage">Coverage Limits</TabsTrigger>
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
+              <TabsTrigger value="coverage">Coverage Limits</TabsTrigger>
             </TabsList>
 
             <TabsContent value="coverage">
