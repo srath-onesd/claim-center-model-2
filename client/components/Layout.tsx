@@ -346,7 +346,7 @@ export function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Content with sidebar */}
-        <div className="flex flex-1 overflow-hidden bg-[#0054A6]">
+        <div className="flex flex-1 overflow-hidden ">
           {/* Claims Center Sidebar */}
           <aside
             className={cn(
