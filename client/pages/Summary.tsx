@@ -1193,7 +1193,7 @@ export function Summary() {
 
         {/* Bottom Section - Detailed Tables */}
         <div className="space-y-6">
-          <Tabs defaultValue="coverage" className="w-full">
+          <Tabs defaultValue="reserves" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
               <TabsTrigger value="coverage">Coverage Limits</TabsTrigger>
