@@ -350,7 +350,7 @@ export function Layout({ children }: LayoutProps) {
           {/* Claims Center Sidebar */}
           <aside
             className={cn(
-              "bg-[#0054A6] border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
+              "bg-white border-r border-gray-200 h-[calc(100vh-120px)] overflow-y-auto transition-all duration-300",
               sidebarOpen ? "w-64 block" : "w-0 hidden",
               "lg:relative lg:top-0",
               sidebarOpen &&
