@@ -231,7 +231,7 @@ export function Layout({ children }: LayoutProps) {
           className={cn(
             "flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer",
             location.pathname === item.href
-              ? "bg-primary text-primary-foreground"
+              ? "bg-[#0054A6] text-primary-foreground"
               : "text-gray-700 hover:bg-gray-100",
           )}
           style={{
