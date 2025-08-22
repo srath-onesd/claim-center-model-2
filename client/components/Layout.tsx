@@ -1082,7 +1082,7 @@ export function Layout({ children }: LayoutProps) {
                   </div>
 
                   {/* Panel Content - Only Action Items */}
-                  <div className="flex-1 overflow-y-auto p-4">
+                  <div className="flex-1 overflow-y-auto p-4 border-l border-gray-200">
                     <div className="space-y-3">
                       {/* Filter to only show Reserve, Payment, Recovery, Journal */}
                       {selectedClaimant.subItems
