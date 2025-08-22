@@ -187,9 +187,7 @@ export function ClaimHistory() {
   ];
 
   const breadcrumbItems = [
-    { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
-    { label: "Claim #23E-12345", href: "/" },
     { label: "Claim History", active: true }
   ];
 
