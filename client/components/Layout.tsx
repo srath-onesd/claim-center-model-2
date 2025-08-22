@@ -1118,7 +1118,7 @@ export function Layout({ children }: LayoutProps) {
                     {/* Expandable Subitems */}
                     {selectedClaimant.subItems?.map((subItem) => (
                       subItem.expandable && subItem.subItems && (
-                        <div key={subItem.id} className="bg-white border border-gray-200 rounded-lg">
+                        <div key={subItem.id} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
                           <button
                             onClick={() => toggleExpanded(subItem.id)}
                             className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
