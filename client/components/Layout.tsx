@@ -189,9 +189,9 @@ interface NavigationItem {
 
 export function Layout({ children }: LayoutProps) {
   const location = useLocation();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['claimants', 'claimant1', 'claimant2']));
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
