@@ -286,51 +286,10 @@ export function Layout({ children }: LayoutProps) {
           )}
         </div>
         {hasSubItems && isExpanded && !sidebarCollapsed && (
-          <ul className="mt-1 ml-6 space-y-1">
-            {item.subItems!.map((subItem) => {
-              const subIsActive = location.pathname === subItem.href || location.pathname + location.search === subItem.href;
-              return (
-                <li key={subItem.id}>
-                  <Link
-                    to={subItem.href}
-                    className={cn(
-                      "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20 pl-4",
-                      subIsActive
-                        ? "bg-white/15 text-white border-white/40"
-                        : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
-                    )}
-                    role="menuitem"
-                    aria-label={subItem.label}
-                  >
-                    {subItem.label}
-                  </Link>
-                  {subItem.subItems && subItem.subItems.length > 0 && expandedItems.has(subItem.id) && (
-                    <ul className="mt-1 ml-4 space-y-1">
-                      {subItem.subItems.map((nestedItem) => {
-                        const nestedIsActive = location.pathname === nestedItem.href || location.pathname + location.search === nestedItem.href;
-                        return (
-                          <li key={nestedItem.id}>
-                            <Link
-                              to={nestedItem.href}
-                              className={cn(
-                                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20 pl-6",
-                                nestedIsActive
-                                  ? "bg-white/15 text-white border-white/40"
-                                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
-                              )}
-                              role="menuitem"
-                              aria-label={nestedItem.label}
-                            >
-                              {nestedItem.label}
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </li>
-              );
-            })}
+          <ul className="mt-1 space-y-1">
+            {item.subItems!.map((subItem) =>
+              renderNavigationItem(subItem, level + 1),
+            )}
           </ul>
         )}
       </li>
