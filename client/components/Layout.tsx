@@ -1050,7 +1050,7 @@ export function Layout({ children }: LayoutProps) {
                 /* Expanded State */
                 <>
                   {/* Panel Header */}
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
+                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 border-l border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
                     <div className="flex items-center space-x-2">
                       <div className="p-1.5 bg-blue-100 rounded-full">
                         <Users className="h-4 w-4 text-blue-600" />
@@ -1059,14 +1059,26 @@ export function Layout({ children }: LayoutProps) {
                         {selectedClaimant.label}
                       </h3>
                     </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setRightPanelCollapsed(true)}
-                      className="h-8 w-8 p-0 hover:bg-white/50 transition-colors"
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </Button>
+                    <div className="flex items-center space-x-1">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setRightPanelCollapsed(true)}
+                        className="h-8 w-8 p-0 hover:bg-white/50 transition-colors"
+                        title="Collapse panel"
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setSelectedClaimant(null)}
+                        className="h-8 w-8 p-0 hover:bg-white/50 transition-colors"
+                        title="Close panel"
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    </div>
                   </div>
 
                   {/* Panel Content - Only Action Items */}
