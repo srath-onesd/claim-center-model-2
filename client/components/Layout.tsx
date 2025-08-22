@@ -707,7 +707,6 @@ export function Layout({ children }: LayoutProps) {
     new Set(["claimants"]),
   );
   const [selectedClaimant, setSelectedClaimant] = useState<NavigationItem | null>(null);
-  const [rightPanelOpen, setRightPanelOpen] = useState(false);
   const [rightPanelCollapsed, setRightPanelCollapsed] = useState(false);
 
   const toggleExpanded = (itemId: string) => {
