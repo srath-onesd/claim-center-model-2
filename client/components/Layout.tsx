@@ -1121,7 +1121,7 @@ export function Layout({ children }: LayoutProps) {
                         <div key={subItem.id} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
                           <button
                             onClick={() => toggleExpanded(subItem.id)}
-                            className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
+                            className="w-full flex items-center justify-between p-4 text-left hover:bg-blue-50/50 transition-all duration-200"
                           >
                             <div className="flex items-center space-x-3">
                               {subItem.label === "Recovery" && <FileText className="h-4 w-4 text-purple-600" />}
