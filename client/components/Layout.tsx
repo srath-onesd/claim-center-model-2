@@ -1140,7 +1140,7 @@ export function Layout({ children }: LayoutProps) {
                                 <Link
                                   key={nestedItem.id}
                                   to={nestedItem.href}
-                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition-all duration-200 border-l-2 border-transparent hover:border-blue-300"
                                 >
                                   {nestedItem.label}
                                 </Link>
