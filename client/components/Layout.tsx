@@ -846,23 +846,7 @@ export function Layout({ children }: LayoutProps) {
           aria-haspopup={hasSubItems ? "menu" : undefined}
         >
           {sidebarCollapsed ? (
-            item.icon &&
-            (item.id === "deductible-1" ? (
-              <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                alt="Deductible icon"
-                className="w-4.5 h-4.5 object-cover"
-                style={{
-                  width: "18px",
-                  height: "18px",
-                  objectFit: "cover",
-                }}
-              />
-            ) : (
-              <span className="text-lg">{item.icon}</span>
-            ))
+            <span className="text-xs font-medium">{item.label.charAt(0)}</span>
           ) : (
             <>
               <div className="flex items-center gap-3">
