@@ -14,7 +14,6 @@ const navigationItems = [
     id: "claimdetails",
     label: "Claim Details",
     href: "/claimdetails",
-    icon: "",
   },
   {
     id: "claimants",
