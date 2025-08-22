@@ -744,17 +744,26 @@ export function Layout({ children }: LayoutProps) {
 
     // Different styling for top-level items vs nested items
     if (level > 0) {
+      // Special styling for claimant level (level 1)
+      const isClaimantLevel = level === 1 && /^claimant\d+$/.test(item.id);
+
       // Nested item styling (like CustomerCenterSidebar)
       return (
         <li key={item.id}>
-          <div className="flex items-center justify-between">
+          <div className={cn(
+            "flex items-center justify-between",
+            isClaimantLevel && isExpanded && "bg-white/5 rounded-lg p-1"
+          )}>
             <Link
               to={item.href}
               className={cn(
                 "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20 flex-1",
                 isActive
                   ? "bg-white/15 text-white border-white/40"
-                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
+                  : isClaimantLevel && isExpanded
+                  ? "text-white/90 hover:bg-white/10 hover:text-white hover:border-white/30"
+                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+                isClaimantLevel && "font-medium"
               )}
               style={{
                 paddingLeft: `${level * 16 + 16}px`,
@@ -762,7 +771,7 @@ export function Layout({ children }: LayoutProps) {
               role="menuitem"
               aria-label={item.label}
             >
-              {item.label}
+              {isClaimantLevel && isExpanded && "�� "}{item.label}
             </Link>
             {hasSubItems && item.expandable && !sidebarCollapsed && (
               <button
@@ -771,12 +780,16 @@ export function Layout({ children }: LayoutProps) {
                   e.stopPropagation();
                   toggleExpanded(item.id);
                 }}
-                className="p-1 hover:bg-white/10 rounded text-white/80 mr-2"
+                className={cn(
+                  "p-1 hover:bg-white/10 rounded mr-2",
+                  isClaimantLevel ? "text-white/90" : "text-white/80"
+                )}
+                title={isClaimantLevel ? "Click to expand (closes other claimants)" : "Expand/collapse"}
               >
                 {isExpanded ? (
-                  <ChevronDown size={12} />
+                  <ChevronDown size={isClaimantLevel ? 14 : 12} />
                 ) : (
-                  <ChevronRight size={12} />
+                  <ChevronRight size={isClaimantLevel ? 14 : 12} />
                 )}
               </button>
             )}
