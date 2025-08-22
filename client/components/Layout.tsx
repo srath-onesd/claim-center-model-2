@@ -745,17 +745,11 @@ export function Layout({ children }: LayoutProps) {
 
   const handleClaimantClick = (claimant: NavigationItem) => {
     if (selectedClaimant?.id === claimant.id) {
-      // If same claimant is clicked, toggle the panel
-      if (rightPanelOpen && !rightPanelCollapsed) {
-        setRightPanelCollapsed(true);
-      } else {
-        setRightPanelCollapsed(false);
-        setRightPanelOpen(true);
-      }
+      // If same claimant is clicked, toggle the panel collapsed state
+      setRightPanelCollapsed(!rightPanelCollapsed);
     } else {
-      // If different claimant is clicked, select it and open panel
+      // If different claimant is clicked, select it and show expanded panel
       setSelectedClaimant(claimant);
-      setRightPanelOpen(true);
       setRightPanelCollapsed(false);
     }
   };
