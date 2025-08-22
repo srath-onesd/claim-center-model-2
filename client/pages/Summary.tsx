@@ -329,9 +329,11 @@ export function Summary() {
                 <CardTitle className="text-lg font-semibold">
                   Financial Information
                 </CardTitle>
+                {/*}
                 <Button variant="ghost" size="sm">
                   <Edit className="h-4 w-4" />
                 </Button>
+                */}
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1191,10 +1193,10 @@ export function Summary() {
 
         {/* Bottom Section - Detailed Tables */}
         <div className="space-y-6">
-          <Tabs defaultValue="coverage" className="w-full">
+          <Tabs defaultValue="reserves" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="coverage">Policy Coverage</TabsTrigger>
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
+              <TabsTrigger value="coverage">Coverage Limits</TabsTrigger>
             </TabsList>
 
             <TabsContent value="coverage">
