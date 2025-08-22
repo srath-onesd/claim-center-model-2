@@ -771,7 +771,7 @@ export function Layout({ children }: LayoutProps) {
               role="menuitem"
               aria-label={item.label}
             >
-              {isClaimantLevel && isExpanded && "�� "}{item.label}
+              {isClaimantLevel && isExpanded && "📋 "}{item.label}
             </Link>
             {hasSubItems && item.expandable && !sidebarCollapsed && (
               <button
@@ -870,7 +870,12 @@ export function Layout({ children }: LayoutProps) {
                     <span className="text-lg">{item.icon}</span>
                   )
                 )}
-                {item.label}
+                <span>{item.label}</span>
+                {item.id === "claimants" && item.subItems && (
+                  <span className="ml-2 px-2 py-0.5 bg-white/20 text-white/80 text-xs rounded-full">
+                    {item.subItems.length}
+                  </span>
+                )}
               </div>
               {hasSubItems && item.expandable && (
                 isExpanded ?
