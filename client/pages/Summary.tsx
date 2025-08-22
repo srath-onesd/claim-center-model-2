@@ -97,7 +97,6 @@ export function Summary() {
   };
 
   const breadcrumbItems = [
-    { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
     { label: "Overview", active: true },
   ];
