@@ -1016,7 +1016,7 @@ export function Layout({ children }: LayoutProps) {
           {rightPanelOpen && (
             <aside className="w-80 bg-white border-l border-gray-200 shadow-lg flex flex-col">
               {/* Panel Header */}
-              <div className="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center justify-between">
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
                 <div className="flex items-center space-x-2">
                   <Users className="h-5 w-5 text-gray-600" />
                   <h3 className="font-medium text-gray-900">
