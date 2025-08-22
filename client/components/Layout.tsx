@@ -407,7 +407,7 @@ export function Layout({ children }: LayoutProps) {
                 "lg:block fixed lg:relative inset-y-0 left-0 z-50 top-[120px] lg:top-0",
             )}
           >
-            {/* Sidebar Header */}
+            {/* Sidebar Header 
             <div className={cn("border-b border-white/20 py-3 flex items-center",
               sidebarCollapsed ? "px-2 justify-center" : "px-4 justify-between"
             )}>
@@ -423,7 +423,7 @@ export function Layout({ children }: LayoutProps) {
               >
                 <ChevronLeft size={16} className={cn("transition-transform", !sidebarCollapsed && "rotate-180")} />
               </button>
-            </div>
+            </div> */}
 
             {/* Navigation */}
             <nav className="flex-1 px-3 py-4 overflow-y-auto" role="navigation" aria-label="Claims Center Navigation">
