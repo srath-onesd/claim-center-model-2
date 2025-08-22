@@ -220,37 +220,71 @@ export function Layout({ children }: LayoutProps) {
   };
 
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
-    const isActive = location.pathname === item.href;
+    const isActive = location.pathname === item.href || location.pathname + location.search === item.href;
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
     const paddingLeft = sidebarCollapsed ? 12 : level * 16 + 12; // Adjust for collapsed state
 
-    return (
-      <li key={item.id}>
-        <div
-          className={cn(
-            "flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer",
-            location.pathname === item.href
-              ? "bg-white text-[#0054A6]"
-              : "text-white/80 hover:bg-white/10 hover:text-white",
-          )}
-          style={{
-            paddingLeft: sidebarCollapsed ? "12px" : `${paddingLeft}px`,
-          }}
-          title={sidebarCollapsed ? item.label : undefined}
-        >
-          {/* Always use Link for navigation, handle expansion separately */}
+    // Different styling for top-level items vs nested items
+    if (level > 0) {
+      // Nested item styling (like CustomerCenterSidebar)
+      return (
+        <li key={item.id}>
           <Link
             to={item.href}
-            onClick={() => setSidebarOpen(true)}
             className={cn(
-              "flex items-center flex-1",
-              sidebarCollapsed ? "justify-center" : "space-x-3",
+              "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+              isActive
+                ? "bg-white/15 text-white border-white/40"
+                : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
             )}
+            style={{
+              paddingLeft: `${level * 16 + 16}px`,
+            }}
+            role="menuitem"
+            aria-label={item.label}
           >
-            {level === 0 &&
-              item.icon &&
-              (item.id === "deductible-1" ? (
+            {item.label}
+          </Link>
+          {hasSubItems && isExpanded && !sidebarCollapsed && (
+            <ul className="mt-1 space-y-1">
+              {item.subItems!.map((subItem) =>
+                renderNavigationItem(subItem, level + 1),
+              )}
+            </ul>
+          )}
+        </li>
+      );
+    }
+
+    // Top-level item styling
+    return (
+      <li key={item.id}>
+        <button
+          onClick={(e) => {
+            if (hasSubItems && item.expandable && !sidebarCollapsed) {
+              e.preventDefault();
+              toggleExpanded(item.id);
+            } else {
+              // Navigate to the route if no sub-items or if collapsed
+              window.location.href = item.href;
+            }
+          }}
+          className={cn(
+            "flex items-center rounded-lg text-sm transition-colors w-full",
+            sidebarCollapsed ? "justify-center p-2" : "justify-between gap-3 px-3 py-2",
+            isActive && !location.search
+              ? "bg-white text-[#0054A6]"
+              : "text-white/80 hover:bg-white/10 hover:text-white"
+          )}
+          title={sidebarCollapsed ? item.label : undefined}
+          aria-label={item.label}
+          aria-expanded={hasSubItems ? isExpanded : undefined}
+          aria-haspopup={hasSubItems ? "menu" : undefined}
+        >
+          {sidebarCollapsed ? (
+            item.icon && (
+              item.id === "deductible-1" ? (
                 <img
                   loading="lazy"
                   srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
@@ -265,28 +299,42 @@ export function Layout({ children }: LayoutProps) {
                 />
               ) : (
                 <span className="text-lg">{item.icon}</span>
-              ))}
-            {!sidebarCollapsed && <span>{item.label}</span>}
-          </Link>
-
-          {hasSubItems && item.expandable && !sidebarCollapsed && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation(); // Prevent triggering the parent click
-                toggleExpanded(item.id);
-              }}
-              className="p-1 hover:bg-white/10 rounded text-white/80"
-            >
-              {isExpanded ? (
-                <ChevronDown size={16} />
-              ) : (
-                <ChevronRight size={16} />
+              )
+            )
+          ) : (
+            <>
+              <div className="flex items-center gap-3">
+                {item.icon && (
+                  item.id === "deductible-1" ? (
+                    <img
+                      loading="lazy"
+                      srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                      src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                      alt="Deductible icon"
+                      className="w-4.5 h-4.5 object-cover"
+                      style={{
+                        width: "18px",
+                        height: "18px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  ) : (
+                    <span className="text-lg">{item.icon}</span>
+                  )
+                )}
+                {item.label}
+              </div>
+              {hasSubItems && item.expandable && (
+                isExpanded ?
+                  <ChevronDown size={14} className="text-white/80" /> :
+                  <ChevronRight size={14} className="text-white/80" />
               )}
-            </button>
+            </>
           )}
-        </div>
+        </button>
+
         {hasSubItems && isExpanded && !sidebarCollapsed && (
-          <ul className="mt-1 space-y-1">
+          <ul className="mt-1 ml-6 space-y-1">
             {item.subItems!.map((subItem) =>
               renderNavigationItem(subItem, level + 1),
             )}
