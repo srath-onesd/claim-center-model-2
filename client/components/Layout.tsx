@@ -1024,23 +1024,26 @@ export function Layout({ children }: LayoutProps) {
           {/* Main Content */}
           <main className="flex-1 overflow-auto">{children}</main>
 
-          {/* Right Panel for Claimant Details/Subitems */}
+          {/* Floating Right Panel for Claimant Details/Subitems */}
           {selectedClaimant && (
             <aside className={cn(
-              "bg-white border-l border-gray-200 shadow-lg flex flex-col transition-all duration-300 ease-in-out",
-              rightPanelCollapsed ? "w-12" : "w-80"
+              "fixed right-0 top-16 bottom-0 bg-white shadow-xl flex flex-col transition-all duration-300 ease-in-out z-50",
+              rightPanelCollapsed ? "w-16" : "w-80"
             )}>
               {rightPanelCollapsed ? (
-                /* Collapsed State - Rotated Claimant Name */
+                /* Collapsed State - Prominent Claimant Name */
                 <div
-                  className="h-full flex items-center justify-center bg-gradient-to-b from-blue-50 to-indigo-50 cursor-pointer hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200"
+                  className="h-full flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-indigo-50 cursor-pointer hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200 border-l border-gray-200"
                   onClick={toggleRightPanel}
                   title={`Click to open ${selectedClaimant.label} details`}
                 >
-                  <div className="transform -rotate-90 whitespace-nowrap">
-                    <span className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                  <div className="transform -rotate-90 whitespace-nowrap py-8">
+                    <span className="text-lg font-bold text-gray-800 hover:text-blue-600 transition-colors tracking-wide">
                       {selectedClaimant.label}
                     </span>
+                  </div>
+                  <div className="absolute top-2 right-2 text-xs text-gray-500 bg-white/80 px-2 py-1 rounded">
+                    Actions
                   </div>
                 </div>
               ) : (
