@@ -892,7 +892,14 @@ export function Layout({ children }: LayoutProps) {
           )}
         </button>
 
-        {hasSubItems && isExpanded && !sidebarCollapsed && (
+        {hasSubItems && isExpanded && !sidebarCollapsed && item.id !== "claimants" && (
+          <ul className="mt-1 ml-6 space-y-1">
+            {item.subItems!.map((subItem) =>
+              renderNavigationItem(subItem, level + 1),
+            )}
+          </ul>
+        )}
+        {hasSubItems && isExpanded && !sidebarCollapsed && item.id === "claimants" && (
           <ul className="mt-1 ml-6 space-y-1">
             {item.subItems!.map((subItem) =>
               renderNavigationItem(subItem, level + 1),
