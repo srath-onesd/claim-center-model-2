@@ -1018,7 +1018,9 @@ export function Layout({ children }: LayoutProps) {
               {/* Panel Header */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
                 <div className="flex items-center space-x-2">
-                  <Users className="h-5 w-5 text-gray-600" />
+                  <div className="p-1.5 bg-blue-100 rounded-full">
+                    <Users className="h-4 w-4 text-blue-600" />
+                  </div>
                   <h3 className="font-medium text-gray-900">
                     {selectedClaimant?.label || "Claimant Details"}
                   </h3>
