@@ -1029,7 +1029,7 @@ export function Layout({ children }: LayoutProps) {
                   variant="ghost"
                   size="sm"
                   onClick={() => setRightPanelOpen(false)}
-                  className="h-8 w-8 p-0"
+                  className="h-8 w-8 p-0 hover:bg-white/50 transition-colors"
                 >
                   <X className="h-4 w-4" />
                 </Button>
