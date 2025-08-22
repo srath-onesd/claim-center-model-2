@@ -19,7 +19,6 @@ const navigationItems = [
     id: "claimants",
     label: "Claimants",
     href: "#", // Use # to prevent navigation when clicking
-    icon: "",
     expandable: true,
     subItems: [
       {
