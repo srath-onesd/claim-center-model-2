@@ -1032,152 +1032,111 @@ export function Layout({ children }: LayoutProps) {
           <main className="flex-1 overflow-auto">{children}</main>
 
           {/* Right Panel for Claimant Details/Subitems */}
-          {rightPanelOpen && (
-            <aside className="w-80 bg-white border-l border-gray-200 shadow-lg flex flex-col">
-              {/* Panel Header */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
-                <div className="flex items-center space-x-2">
-                  <div className="p-1.5 bg-blue-100 rounded-full">
-                    <Users className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900">
-                    {selectedClaimant?.label || "Claimant Details"}
-                  </h3>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setRightPanelOpen(false)}
-                  className="h-8 w-8 p-0 hover:bg-white/50 transition-colors"
+          {selectedClaimant && (
+            <aside className={cn(
+              "bg-white border-l border-gray-200 shadow-lg flex flex-col transition-all duration-300 ease-in-out",
+              rightPanelCollapsed ? "w-12" : "w-80"
+            )}>
+              {rightPanelCollapsed ? (
+                /* Collapsed State - Rotated Claimant Name */
+                <div
+                  className="h-full flex items-center justify-center bg-gradient-to-b from-blue-50 to-indigo-50 cursor-pointer hover:from-blue-100 hover:to-indigo-100 transition-colors duration-200"
+                  onClick={toggleRightPanel}
+                  title={`Click to open ${selectedClaimant.label} details`}
                 >
-                  <X className="h-4 w-4" />
-                </Button>
-              </div>
-
-              {/* Panel Content */}
-              <div className="flex-1 overflow-y-auto">
-                {selectedClaimant ? (
-                  <div className="p-4 space-y-6">
-                    {/* Claimant Details Section */}
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="font-medium text-gray-900 mb-3 flex items-center">
-                        <UserCheck className="h-4 w-4 mr-2 text-blue-600" />
-                        Claimant Information
-                      </h4>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Name:</span>
-                          <span className="font-medium">{selectedClaimant.label}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Status:</span>
-                          <span className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">Active</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Type:</span>
-                          <span className="font-medium">Bodily Injury</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">DOB:</span>
-                          <span className="font-medium">03/15/1985</span>
-                        </div>
+                  <div className="transform -rotate-90 whitespace-nowrap">
+                    <span className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                      {selectedClaimant.label}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                /* Expanded State */
+                <>
+                  {/* Panel Header */}
+                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
+                    <div className="flex items-center space-x-2">
+                      <div className="p-1.5 bg-blue-100 rounded-full">
+                        <Users className="h-4 w-4 text-blue-600" />
                       </div>
+                      <h3 className="font-semibold text-gray-900">
+                        {selectedClaimant.label}
+                      </h3>
                     </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setRightPanelCollapsed(true)}
+                      className="h-8 w-8 p-0 hover:bg-white/50 transition-colors"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </div>
 
-                    {/* Contact Information */}
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <h4 className="font-medium text-gray-900 mb-3 flex items-center">
-                        <Phone className="h-4 w-4 mr-2 text-gray-600" />
-                        Contact Information
-                      </h4>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex items-center space-x-2">
-                          <Phone className="h-3 w-3 text-gray-400" />
-                          <span>(555) 123-4567</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Mail className="h-3 w-3 text-gray-400" />
-                          <span>{selectedClaimant.label.toLowerCase().replace(' ', '.')}@email.com</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="h-3 w-3 text-gray-400" />
-                          <span>123 Main St, City, ST 12345</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Action Items */}
-                    <div className="bg-white border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-medium text-gray-900 mb-3 flex items-center">
-                        <Calendar className="h-4 w-4 mr-2 text-orange-600" />
-                        Quick Actions
-                      </h4>
-                      <div className="space-y-2">
-                        {selectedClaimant.subItems?.map((subItem) => (
-                          <Link
-                            key={subItem.id}
-                            to={subItem.href}
-                            className="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50 hover:shadow-sm transition-all duration-200 group border border-transparent hover:border-blue-100"
-                          >
-                            <div className="flex items-center space-x-3">
-                              {subItem.label === "Reserves" && <CreditCard className="h-4 w-4 text-green-600" />}
-                              {subItem.label === "Payments" && <CreditCard className="h-4 w-4 text-blue-600" />}
-                              {subItem.label === "Recovery" && <FileText className="h-4 w-4 text-purple-600" />}
-                              {subItem.label === "Journal" && <FileText className="h-4 w-4 text-orange-600" />}
-                              <span className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
-                                {subItem.label}
-                              </span>
-                            </div>
-                            <ChevronRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Expandable Subitems */}
-                    {selectedClaimant.subItems?.map((subItem) => (
-                      subItem.expandable && subItem.subItems && (
-                        <div key={subItem.id} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
-                          <button
-                            onClick={() => toggleExpanded(subItem.id)}
-                            className="w-full flex items-center justify-between p-4 text-left hover:bg-blue-50/50 transition-all duration-200"
-                          >
-                            <div className="flex items-center space-x-3">
-                              {subItem.label === "Recovery" && <FileText className="h-4 w-4 text-purple-600" />}
-                              {subItem.label === "Journal" && <FileText className="h-4 w-4 text-orange-600" />}
-                              <span className="font-medium text-gray-900">{subItem.label}</span>
-                            </div>
-                            {expandedItems.has(subItem.id) ? (
-                              <ChevronDown className="h-4 w-4 text-gray-600" />
-                            ) : (
-                              <ChevronRight className="h-4 w-4 text-gray-600" />
-                            )}
-                          </button>
-                          {expandedItems.has(subItem.id) && (
-                            <div className="border-t border-gray-200 bg-gray-50">
-                              {subItem.subItems.map((nestedItem) => (
-                                <Link
-                                  key={nestedItem.id}
-                                  to={nestedItem.href}
-                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition-all duration-200 border-l-2 border-transparent hover:border-blue-300"
+                  {/* Panel Content - Only Action Items */}
+                  <div className="flex-1 overflow-y-auto p-4">
+                    <div className="space-y-3">
+                      {/* Filter to only show Reserve, Payment, Recovery, Journal */}
+                      {selectedClaimant.subItems
+                        ?.filter(item => ['Reserves', 'Payments', 'Recovery', 'Journal'].includes(item.label))
+                        .map((subItem) => (
+                          <div key={subItem.id}>
+                            {subItem.expandable && subItem.subItems ? (
+                              /* Expandable sections like Recovery and Journal */
+                              <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+                                <button
+                                  onClick={() => toggleExpanded(subItem.id)}
+                                  className="w-full flex items-center justify-between p-4 text-left hover:bg-blue-50/50 transition-all duration-200"
                                 >
-                                  {nestedItem.label}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      )
-                    ))}
+                                  <div className="flex items-center space-x-3">
+                                    {subItem.label === "Recovery" && <FileText className="h-5 w-5 text-purple-600" />}
+                                    {subItem.label === "Journal" && <FileText className="h-5 w-5 text-orange-600" />}
+                                    <span className="font-medium text-gray-900">{subItem.label}</span>
+                                  </div>
+                                  {expandedItems.has(subItem.id) ? (
+                                    <ChevronDown className="h-4 w-4 text-gray-600" />
+                                  ) : (
+                                    <ChevronRight className="h-4 w-4 text-gray-600" />
+                                  )}
+                                </button>
+                                {expandedItems.has(subItem.id) && (
+                                  <div className="border-t border-gray-200 bg-gray-50">
+                                    {subItem.subItems.map((nestedItem) => (
+                                      <Link
+                                        key={nestedItem.id}
+                                        to={nestedItem.href}
+                                        className="block px-6 py-3 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition-all duration-200 border-l-2 border-transparent hover:border-blue-300"
+                                      >
+                                        {nestedItem.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              /* Direct links like Reserves and Payments */
+                              <Link
+                                to={subItem.href}
+                                className="flex items-center justify-between p-4 rounded-lg bg-white border border-gray-200 hover:bg-blue-50 hover:shadow-sm hover:border-blue-100 transition-all duration-200 group"
+                              >
+                                <div className="flex items-center space-x-3">
+                                  {subItem.label === "Reserves" && <CreditCard className="h-5 w-5 text-green-600" />}
+                                  {subItem.label === "Payments" && <CreditCard className="h-5 w-5 text-blue-600" />}
+                                  <span className="font-medium text-gray-700 group-hover:text-gray-900">
+                                    {subItem.label}
+                                  </span>
+                                </div>
+                                <ChevronRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
+                              </Link>
+                            )}
+                          </div>
+                        ))}
+                    </div>
                   </div>
-                ) : (
-                  <div className="p-4 text-center text-gray-500">
-                    <Users className="h-12 w-12 mx-auto mb-3 text-gray-300" />
-                    <p>Select a claimant to view details</p>
-                  </div>
-                )}
-              </div>
+                </>
+              )}
             </aside>
+
           )}
         </div>
       </div>
