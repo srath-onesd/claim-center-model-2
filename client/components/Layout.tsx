@@ -214,22 +214,40 @@ export function Layout({ children }: LayoutProps) {
       // Nested item styling (like CustomerCenterSidebar)
       return (
         <li key={item.id}>
-          <Link
-            to={item.href}
-            className={cn(
-              "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
-              isActive
-                ? "bg-white/15 text-white border-white/40"
-                : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
+          <div className="flex items-center justify-between">
+            <Link
+              to={item.href}
+              className={cn(
+                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20 flex-1",
+                isActive
+                  ? "bg-white/15 text-white border-white/40"
+                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
+              )}
+              style={{
+                paddingLeft: `${level * 16 + 16}px`,
+              }}
+              role="menuitem"
+              aria-label={item.label}
+            >
+              {item.label}
+            </Link>
+            {hasSubItems && item.expandable && !sidebarCollapsed && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  toggleExpanded(item.id);
+                }}
+                className="p-1 hover:bg-white/10 rounded text-white/80 mr-2"
+              >
+                {isExpanded ? (
+                  <ChevronDown size={12} />
+                ) : (
+                  <ChevronRight size={12} />
+                )}
+              </button>
             )}
-            style={{
-              paddingLeft: `${level * 16 + 16}px`,
-            }}
-            role="menuitem"
-            aria-label={item.label}
-          >
-            {item.label}
-          </Link>
+          </div>
           {hasSubItems && isExpanded && !sidebarCollapsed && (
             <ul className="mt-1 space-y-1">
               {item.subItems!.map((subItem) =>
