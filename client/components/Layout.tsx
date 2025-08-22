@@ -772,16 +772,15 @@ export function Layout({ children }: LayoutProps) {
       // Special styling for claimant level (level 1)
       const isClaimantLevel = level === 1 && /^claimant\d+$/.test(item.id);
 
-      // For claimant level items, handle selection instead of expansion
+      // For claimant level items, navigate to detail page
       if (isClaimantLevel) {
-        const isSelected = selectedClaimant?.id === item.id;
         return (
           <li key={item.id}>
-            <button
-              onClick={() => handleClaimantClick(item)}
+            <Link
+              to={item.href}
               className={cn(
-                "w-full text-left block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
-                isSelected
+                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                isActive
                   ? "bg-white/15 text-white border-white/40"
                   : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
                 "font-medium",
@@ -790,10 +789,11 @@ export function Layout({ children }: LayoutProps) {
                 paddingLeft: `${level * 16 + 16}px`,
               }}
               role="menuitem"
-              aria-label={`Select ${item.label}`}
+              aria-label={item.label}
+              onClick={() => setSelectedClaimant(item)}
             >
-              👤 {item.label}
-            </button>
+              {item.label}
+            </Link>
           </li>
         );
       }
