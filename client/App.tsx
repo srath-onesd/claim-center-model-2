@@ -54,6 +54,38 @@ const App = () => (
               element={<BobPayDetail />}
             />
             <Route
+              path="/claimants/sarah-johnson"
+              element={<SarahJohnsonDetail />}
+            />
+            <Route
+              path="/claimants/michael-chen"
+              element={<MichaelChenDetail />}
+            />
+            <Route
+              path="/claimants/lisa-rodriguez"
+              element={<LisaRodriguezDetail />}
+            />
+            <Route
+              path="/claimants/david-williams"
+              element={<DavidWilliamsDetail />}
+            />
+            <Route
+              path="/claimants/jennifer-davis"
+              element={<JenniferDavisDetail />}
+            />
+            <Route
+              path="/claimants/robert-miller"
+              element={<RobertMillerDetail />}
+            />
+            <Route
+              path="/claimants/emily-thompson"
+              element={<EmilyThompsonDetail />}
+            />
+            <Route
+              path="/claimants/james-anderson"
+              element={<JamesAndersonDetail />}
+            />
+            <Route
               path="/bodily-injury"
               element={<PlaceholderPage title="Bodily Injury" />}
             />
