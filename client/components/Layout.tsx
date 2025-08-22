@@ -1021,7 +1021,7 @@ export function Layout({ children }: LayoutProps) {
                   <div className="p-1.5 bg-blue-100 rounded-full">
                     <Users className="h-4 w-4 text-blue-600" />
                   </div>
-                  <h3 className="font-medium text-gray-900">
+                  <h3 className="font-semibold text-gray-900">
                     {selectedClaimant?.label || "Claimant Details"}
                   </h3>
                 </div>
