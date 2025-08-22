@@ -742,6 +742,11 @@ export function Layout({ children }: LayoutProps) {
     setExpandedItems(newExpanded);
   };
 
+  const handleClaimantClick = (claimant: NavigationItem) => {
+    setSelectedClaimant(claimant);
+    setRightPanelOpen(true);
+  };
+
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
     const isActive =
       location.pathname === item.href ||
@@ -755,67 +760,51 @@ export function Layout({ children }: LayoutProps) {
       // Special styling for claimant level (level 1)
       const isClaimantLevel = level === 1 && /^claimant\d+$/.test(item.id);
 
-      // Nested item styling (like CustomerCenterSidebar)
-      return (
-        <li key={item.id}>
-          <div
-            className={cn(
-              "flex items-center justify-between",
-              isClaimantLevel && isExpanded && "bg-white/5 rounded-lg p-1",
-            )}
-          >
-            <Link
-              to={item.href}
+      // For claimant level items, handle selection instead of expansion
+      if (isClaimantLevel) {
+        const isSelected = selectedClaimant?.id === item.id;
+        return (
+          <li key={item.id}>
+            <button
+              onClick={() => handleClaimantClick(item)}
               className={cn(
-                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20 flex-1",
-                isActive
+                "w-full text-left block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                isSelected
                   ? "bg-white/15 text-white border-white/40"
-                  : isClaimantLevel && isExpanded
-                    ? "text-white/90 hover:bg-white/10 hover:text-white hover:border-white/30"
-                    : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
-                isClaimantLevel && "font-medium",
+                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+                "font-medium",
               )}
               style={{
                 paddingLeft: `${level * 16 + 16}px`,
               }}
               role="menuitem"
-              aria-label={item.label}
+              aria-label={`Select ${item.label}`}
             >
-              {isClaimantLevel && isExpanded && "📋 "}
-              {item.label}
-            </Link>
-            {hasSubItems && item.expandable && !sidebarCollapsed && (
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  toggleExpanded(item.id);
-                }}
-                className={cn(
-                  "p-1 hover:bg-white/10 rounded mr-2",
-                  isClaimantLevel ? "text-white/90" : "text-white/80",
-                )}
-                title={
-                  isClaimantLevel
-                    ? "Click to expand (closes other claimants)"
-                    : "Expand/collapse"
-                }
-              >
-                {isExpanded ? (
-                  <ChevronDown size={isClaimantLevel ? 14 : 12} />
-                ) : (
-                  <ChevronRight size={isClaimantLevel ? 14 : 12} />
-                )}
-              </button>
+              👤 {item.label}
+            </button>
+          </li>
+        );
+      }
+
+      // For non-claimant nested items (shouldn't appear now, but keeping for safety)
+      return (
+        <li key={item.id}>
+          <Link
+            to={item.href}
+            className={cn(
+              "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+              isActive
+                ? "bg-white/15 text-white border-white/40"
+                : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
             )}
-          </div>
-          {hasSubItems && isExpanded && !sidebarCollapsed && (
-            <ul className="mt-1 space-y-1">
-              {item.subItems!.map((subItem) =>
-                renderNavigationItem(subItem, level + 1),
-              )}
-            </ul>
-          )}
+            style={{
+              paddingLeft: `${level * 16 + 16}px`,
+            }}
+            role="menuitem"
+            aria-label={item.label}
+          >
+            {item.label}
+          </Link>
         </li>
       );
     }
