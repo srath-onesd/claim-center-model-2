@@ -703,7 +703,7 @@ export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['claimants', 'claimant1', 'claimant2']));
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['claimants', 'claimant1', 'claimant2', 'claimant3', 'claimant5']));
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
