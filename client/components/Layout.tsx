@@ -9,12 +9,12 @@ interface LayoutProps {
 }
 
 const navigationItems = [
-  { id: "overview", label: "Overview", href: "/", icon: "📋" },
+  { id: "overview", label: "Overview", href: "/", icon: "" },
   {
     id: "claimdetails",
     label: "Claim Details",
     href: "/claimdetails",
-    icon: "📋",
+    icon: "",
   },
   {
     id: "claimants",
@@ -33,19 +33,16 @@ const navigationItems = [
             id: "bi-reserves-1",
             label: "Reserves",
             href: "/claimants/amy-applegate/bodily-injury/reserves",
-            icon: "💳",
           },
           {
             id: "bi-payments-1",
             label: "Payments",
             href: "/claimants/amy-applegate/bodily-injury/payments",
-            icon: "💳",
           },
           {
             id: "bi-recovery-1",
             label: "Recovery",
             href: "#",
-            icon: "🔄",
             expandable: true,
             subItems: [
               {
@@ -70,25 +67,21 @@ const navigationItems = [
                 id: "diary-1",
                 label: "Diary",
                 href: "/journal/diary",
-                icon: "📅",
               },
               {
                 id: "notes-1",
                 label: "Notes",
                 href: "/journal/notes",
-                icon: "📝",
               },
               {
                 id: "documents-1",
                 label: "Documents",
                 href: "/journal/documents",
-                icon: "📄",
               },
               {
                 id: "emails-1",
                 label: "Emails",
                 href: "/journal/emails",
-                icon: "",
               },
             ],
           },
@@ -104,19 +97,16 @@ const navigationItems = [
             id: "bi-reserves-2",
             label: "Reserves",
             href: "/claimants/bob-pay/bodily-injury/reserves",
-            icon: "💳",
           },
           {
             id: "bi-payments-2",
             label: "Payments",
             href: "/claimants/bob-pay/bodily-injury/payments",
-            icon: "💳",
           },
           {
             id: "bi-recovery-2",
             label: "Recovery",
             href: "#",
-            icon: "🔄",
             expandable: true,
             subItems: [
               {
@@ -141,25 +131,21 @@ const navigationItems = [
                 id: "diary-2",
                 label: "Diary",
                 href: "/journal/diary",
-                icon: "📅",
               },
               {
                 id: "notes-2",
                 label: "Notes",
                 href: "/journal/notes",
-                icon: "📝",
               },
               {
                 id: "documents-2",
                 label: "Documents",
                 href: "/journal/documents",
-                icon: "📄",
               },
               {
                 id: "emails-2",
                 label: "Emails",
                 href: "/journal/emails",
-                icon: "",
               },
             ],
           },
@@ -172,7 +158,6 @@ const navigationItems = [
     label: "Deductible",
     href: "#", // Use # to prevent navigation when clicking
     expandable: true,
-    icon: "📚",
     subItems: [
       {
         id: "adddeductible-1",
@@ -190,7 +175,6 @@ const navigationItems = [
     id: "claim-history",
     label: "Claim History",
     href: "/claim-history",
-    icon: "📚",
   },
 ];
 
