@@ -2,7 +2,7 @@ import { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
-import { Menu, X, ChevronDown, ChevronRight, ChevronLeft } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight, ChevronLeft, Users, CreditCard, FileText, UserCheck, Phone, Mail, Calendar, MapPin } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
