@@ -703,15 +703,36 @@ export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['claimants', 'claimant1', 'claimant2', 'claimant3', 'claimant5']));
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['claimants']));
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
-    if (newExpanded.has(itemId)) {
-      newExpanded.delete(itemId);
+
+    // Check if this is a claimant item (claimant1, claimant2, etc.)
+    const isClaimantItem = /^claimant\d+$/.test(itemId);
+
+    if (isClaimantItem) {
+      // Accordion behavior for claimants: only one can be expanded at a time
+      if (newExpanded.has(itemId)) {
+        // Collapse the clicked claimant
+        newExpanded.delete(itemId);
+      } else {
+        // First collapse all other claimants
+        const claimantIds = Array.from(newExpanded).filter(id => /^claimant\d+$/.test(id));
+        claimantIds.forEach(id => newExpanded.delete(id));
+
+        // Then expand the clicked claimant
+        newExpanded.add(itemId);
+      }
     } else {
-      newExpanded.add(itemId);
+      // Normal toggle behavior for non-claimant items
+      if (newExpanded.has(itemId)) {
+        newExpanded.delete(itemId);
+      } else {
+        newExpanded.add(itemId);
+      }
     }
+
     setExpandedItems(newExpanded);
   };
 
