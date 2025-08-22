@@ -1098,7 +1098,7 @@ export function Layout({ children }: LayoutProps) {
                           <Link
                             key={subItem.id}
                             to={subItem.href}
-                            className="flex items-center justify-between p-2 rounded-md hover:bg-gray-50 transition-colors group"
+                            className="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50 hover:shadow-sm transition-all duration-200 group border border-transparent hover:border-blue-100"
                           >
                             <div className="flex items-center space-x-3">
                               {subItem.label === "Reserves" && <CreditCard className="h-4 w-4 text-green-600" />}
