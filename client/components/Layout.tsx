@@ -703,7 +703,9 @@ export function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(['claimants']));
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(
+    new Set(["claimants"]),
+  );
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
@@ -718,8 +720,10 @@ export function Layout({ children }: LayoutProps) {
         newExpanded.delete(itemId);
       } else {
         // First collapse all other claimants
-        const claimantIds = Array.from(newExpanded).filter(id => /^claimant\d+$/.test(id));
-        claimantIds.forEach(id => newExpanded.delete(id));
+        const claimantIds = Array.from(newExpanded).filter((id) =>
+          /^claimant\d+$/.test(id),
+        );
+        claimantIds.forEach((id) => newExpanded.delete(id));
 
         // Then expand the clicked claimant
         newExpanded.add(itemId);
@@ -737,7 +741,9 @@ export function Layout({ children }: LayoutProps) {
   };
 
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
-    const isActive = location.pathname === item.href || location.pathname + location.search === item.href;
+    const isActive =
+      location.pathname === item.href ||
+      location.pathname + location.search === item.href;
     const isExpanded = expandedItems.has(item.id);
     const hasSubItems = item.subItems && item.subItems.length > 0;
     const paddingLeft = sidebarCollapsed ? 12 : level * 16 + 12; // Adjust for collapsed state
@@ -750,10 +756,12 @@ export function Layout({ children }: LayoutProps) {
       // Nested item styling (like CustomerCenterSidebar)
       return (
         <li key={item.id}>
-          <div className={cn(
-            "flex items-center justify-between",
-            isClaimantLevel && isExpanded && "bg-white/5 rounded-lg p-1"
-          )}>
+          <div
+            className={cn(
+              "flex items-center justify-between",
+              isClaimantLevel && isExpanded && "bg-white/5 rounded-lg p-1",
+            )}
+          >
             <Link
               to={item.href}
               className={cn(
@@ -761,9 +769,9 @@ export function Layout({ children }: LayoutProps) {
                 isActive
                   ? "bg-white/15 text-white border-white/40"
                   : isClaimantLevel && isExpanded
-                  ? "text-white/90 hover:bg-white/10 hover:text-white hover:border-white/30"
-                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
-                isClaimantLevel && "font-medium"
+                    ? "text-white/90 hover:bg-white/10 hover:text-white hover:border-white/30"
+                    : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+                isClaimantLevel && "font-medium",
               )}
               style={{
                 paddingLeft: `${level * 16 + 16}px`,
@@ -771,7 +779,8 @@ export function Layout({ children }: LayoutProps) {
               role="menuitem"
               aria-label={item.label}
             >
-              {isClaimantLevel && isExpanded && "📋 "}{item.label}
+              {isClaimantLevel && isExpanded && "📋 "}
+              {item.label}
             </Link>
             {hasSubItems && item.expandable && !sidebarCollapsed && (
               <button
@@ -782,9 +791,13 @@ export function Layout({ children }: LayoutProps) {
                 }}
                 className={cn(
                   "p-1 hover:bg-white/10 rounded mr-2",
-                  isClaimantLevel ? "text-white/90" : "text-white/80"
+                  isClaimantLevel ? "text-white/90" : "text-white/80",
                 )}
-                title={isClaimantLevel ? "Click to expand (closes other claimants)" : "Expand/collapse"}
+                title={
+                  isClaimantLevel
+                    ? "Click to expand (closes other claimants)"
+                    : "Expand/collapse"
+                }
               >
                 {isExpanded ? (
                   <ChevronDown size={isClaimantLevel ? 14 : 12} />
@@ -820,10 +833,12 @@ export function Layout({ children }: LayoutProps) {
           }}
           className={cn(
             "flex items-center rounded-lg text-sm transition-colors w-full",
-            sidebarCollapsed ? "justify-center p-2" : "justify-between gap-3 px-3 py-2",
+            sidebarCollapsed
+              ? "justify-center p-2"
+              : "justify-between gap-3 px-3 py-2",
             isActive && !location.search
               ? "bg-white text-[#0054A6]"
-              : "text-white/80 hover:bg-white/10 hover:text-white"
+              : "text-white/80 hover:bg-white/10 hover:text-white",
           )}
           title={sidebarCollapsed ? item.label : undefined}
           aria-label={item.label}
@@ -831,29 +846,28 @@ export function Layout({ children }: LayoutProps) {
           aria-haspopup={hasSubItems ? "menu" : undefined}
         >
           {sidebarCollapsed ? (
-            item.icon && (
-              item.id === "deductible-1" ? (
-                <img
-                  loading="lazy"
-                  srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                  alt="Deductible icon"
-                  className="w-4.5 h-4.5 object-cover"
-                  style={{
-                    width: "18px",
-                    height: "18px",
-                    objectFit: "cover",
-                  }}
-                />
-              ) : (
-                <span className="text-lg">{item.icon}</span>
-              )
-            )
+            item.icon &&
+            (item.id === "deductible-1" ? (
+              <img
+                loading="lazy"
+                srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
+                alt="Deductible icon"
+                className="w-4.5 h-4.5 object-cover"
+                style={{
+                  width: "18px",
+                  height: "18px",
+                  objectFit: "cover",
+                }}
+              />
+            ) : (
+              <span className="text-lg">{item.icon}</span>
+            ))
           ) : (
             <>
               <div className="flex items-center gap-3">
-                {item.icon && (
-                  item.id === "deductible-1" ? (
+                {item.icon &&
+                  (item.id === "deductible-1" ? (
                     <img
                       loading="lazy"
                       srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
@@ -868,8 +882,7 @@ export function Layout({ children }: LayoutProps) {
                     />
                   ) : (
                     <span className="text-lg">{item.icon}</span>
-                  )
-                )}
+                  ))}
                 <span>{item.label}</span>
                 {item.id === "claimants" && item.subItems && (
                   <span className="ml-2 px-2 py-0.5 bg-white/20 text-white/80 text-xs rounded-full">
@@ -877,11 +890,13 @@ export function Layout({ children }: LayoutProps) {
                   </span>
                 )}
               </div>
-              {hasSubItems && item.expandable && (
-                isExpanded ?
-                  <ChevronDown size={14} className="text-white/80" /> :
+              {hasSubItems &&
+                item.expandable &&
+                (isExpanded ? (
+                  <ChevronDown size={14} className="text-white/80" />
+                ) : (
                   <ChevronRight size={14} className="text-white/80" />
-              )}
+                ))}
             </>
           )}
         </button>
@@ -977,7 +992,11 @@ export function Layout({ children }: LayoutProps) {
             </div> */}
 
             {/* Navigation */}
-            <nav className="flex-1 px-3 py-4 overflow-y-auto" role="navigation" aria-label="Claims Center Navigation">
+            <nav
+              className="flex-1 px-3 py-4 overflow-y-auto"
+              role="navigation"
+              aria-label="Claims Center Navigation"
+            >
               <ul className="space-y-1" role="menubar">
                 {navigationItems.map((item) => renderNavigationItem(item))}
               </ul>
