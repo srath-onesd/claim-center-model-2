@@ -1001,7 +1001,7 @@ export function Layout({ children }: LayoutProps) {
                       title={`Click to open ${selectedClaimant.label} details`}
                     >
                       <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-700">
+                      <span className="text-sm font-medium text-gray-700 transform: rotate(180deg)">
                         {selectedClaimant.label}
                       </span>
                     </div>
