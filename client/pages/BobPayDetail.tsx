@@ -290,6 +290,7 @@ export function BobPayDetail() {
                   Last payment: Mar 10, 2024
                 </div>
               </div>
+            </div>
 
             {/* Financial Breakdown Table */}
             <div className="mt-6">
