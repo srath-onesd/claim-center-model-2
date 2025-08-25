@@ -356,14 +356,14 @@ export function Summary() {
                   </div>
 
                   {/* Outstanding Reserves */}
-                  <div className="p-4 bg-yellow-50 rounded-lg">
+                  <div className="p-4 bg-gray-50 rounded-lg">
                     <div className="text-sm text-gray-600 mb-1">
                       Outstanding Reserves
                     </div>
-                    <div className="text-2xl font-bold text-yellow-600 mb-2">
+                    <div className="text-2xl font-bold text-gray-900 mb-2">
                       $8,250.00
                     </div>
-                    <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                       <div
                         className="bg-yellow-600 h-2 rounded-full"
                         style={{ width: "65%" }}
