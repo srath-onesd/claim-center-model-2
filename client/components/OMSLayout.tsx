@@ -264,7 +264,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
       {/* Content Area with Header */}
       <div className="flex-1 flex flex-col overflow-hidden bg-white">
         {/* Enhanced OMS Header - Only spans content area */}
-        <div className="bg-white px-4 py-3 flex items-center justify-end border-b border-gray-200 shadow-sm">
+        <div className="bg-white px-4 py-3 flex items-center justify-between border-b border-gray-200 shadow-sm">
           <div className="flex-1 max-w-md mx-8 items-center space-x-4">
             {/* Search Input */}
             <div className="relative">
