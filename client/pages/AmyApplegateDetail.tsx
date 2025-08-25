@@ -857,9 +857,9 @@ export function AmyApplegateDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-purple-600 text-white">
+                        <AvatarFallback className="bg-gray-600 text-white">
                           JA
-                        </AvatarFallback className="bg-gray-600 text-white">
+                        </AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">
