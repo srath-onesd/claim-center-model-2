@@ -859,7 +859,7 @@ export function AmyApplegateDetail() {
                       <Avatar>
                         <AvatarFallback className="bg-purple-600 text-white">
                           JA
-                        </AvatarFallback>
+                        </AvatarFallback className="bg-gray-600 text-white">
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">
