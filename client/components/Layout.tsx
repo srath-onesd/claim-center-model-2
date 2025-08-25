@@ -992,9 +992,9 @@ export function Layout({ children }: LayoutProps) {
           {selectedClaimant && (
             <>
               {rightPanelCollapsed ? (
-                /* Collapsed State - Small button with claimant name */
+                /* Collapsed State - Small button with claimant name positioned in middle-right */
                 <div
-                  className="fixed top-4 right-4 z-50 bg-white border border-gray-300 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-200"
+                  className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-200"
                   onClick={toggleRightPanel}
                   title={`Click to open ${selectedClaimant.label} details`}
                 >
@@ -1006,8 +1006,8 @@ export function Layout({ children }: LayoutProps) {
                   </div>
                 </div>
               ) : (
-                /* Expanded State - Compact popup window */
-                <div className="fixed top-4 right-4 z-50 bg-white border border-gray-300 rounded-lg shadow-xl w-80 max-h-96 flex flex-col">
+                /* Expanded State - Compact popup window positioned in middle-right */
+                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-xl w-80 max-h-96 flex flex-col">
                   {/* Header */}
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg">
                     <div className="flex items-center space-x-2">
@@ -1029,7 +1029,7 @@ export function Layout({ children }: LayoutProps) {
                       <Button
                         variant="ghost"
                         size="sm"
-                        onClick={() => setSelectedClaimant(null)}
+                        onClick={() => setRightPanelCollapsed(true)}
                         className="h-6 w-6 p-0 hover:bg-gray-200 transition-colors"
                         title="Close panel"
                       >
