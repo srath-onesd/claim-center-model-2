@@ -700,7 +700,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-red-100 text-red-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             High
                           </Badge>
@@ -725,7 +725,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-yellow-100 text-yellow-800"
+                            className="bg-gray-80 text-yellow-700"
                           >
                             Medium
                           </Badge>
