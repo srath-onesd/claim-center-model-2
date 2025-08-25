@@ -112,6 +112,14 @@ export function OMSLayout({ children }: OMSLayoutProps) {
 
   const unreadCount = notifications.filter(n => n.unread).length;
 
+  const quickLinks = [
+    { id: 1, label: 'Policy Search', path: '/policy-search' },
+    { id: 2, label: 'Claim Search', path: '/claim-search' },
+    { id: 3, label: 'Customer Lookup', path: '/customer-lookup' },
+    { id: 4, label: 'Payment Center', path: '/payments' },
+    { id: 5, label: 'Reports', path: '/reports' }
+  ];
+
   const toggleExpanded = (itemPath: string) => {
     setExpandedItems(prev =>
       prev.includes(itemPath)
