@@ -993,10 +993,10 @@ export function Layout({ children }: LayoutProps) {
             <>
               {rightPanelCollapsed ? (
                 /* Collapsed State - Small button with claimant name positioned in middle-right */
-                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
+                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 transform: rotate(180deg)">
                   <div className="flex items-center">
                     <div
-                      className="px-3 py-2 flex items-center space-x-2 cursor-pointer flex-1 transform: rotate(180deg)"
+                      className="px-3 py-2 flex items-center space-x-2 cursor-pointer flex-1"
                       onClick={toggleRightPanel}
                       title={`Click to open ${selectedClaimant.label} details`}
                     >
