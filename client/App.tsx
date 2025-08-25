@@ -12,6 +12,14 @@ import { ClaimsDetail } from "./pages/ClaimsDetail";
 import { ClaimantDetail } from "./pages/ClaimantDetail";
 import { AmyApplegateDetail } from "./pages/AmyApplegateDetail";
 import { BobPayDetail } from "./pages/BobPayDetail";
+import { SarahJohnsonDetail } from "./pages/SarahJohnsonDetail";
+import { MichaelChenDetail } from "./pages/MichaelChenDetail";
+import { LisaRodriguezDetail } from "./pages/LisaRodriguezDetail";
+import { DavidWilliamsDetail } from "./pages/DavidWilliamsDetail";
+import { JenniferDavisDetail } from "./pages/JenniferDavisDetail";
+import { RobertMillerDetail } from "./pages/RobertMillerDetail";
+import { EmilyThompsonDetail } from "./pages/EmilyThompsonDetail";
+import { JamesAndersonDetail } from "./pages/JamesAndersonDetail";
 import { ClaimHistory } from "./pages/ClaimHistory";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
 import NotFound from "./pages/NotFound";
@@ -44,6 +52,38 @@ const App = () => (
             <Route
               path="/claimants/bob-pay"
               element={<BobPayDetail />}
+            />
+            <Route
+              path="/claimants/sarah-johnson"
+              element={<SarahJohnsonDetail />}
+            />
+            <Route
+              path="/claimants/michael-chen"
+              element={<MichaelChenDetail />}
+            />
+            <Route
+              path="/claimants/lisa-rodriguez"
+              element={<LisaRodriguezDetail />}
+            />
+            <Route
+              path="/claimants/david-williams"
+              element={<DavidWilliamsDetail />}
+            />
+            <Route
+              path="/claimants/jennifer-davis"
+              element={<JenniferDavisDetail />}
+            />
+            <Route
+              path="/claimants/robert-miller"
+              element={<RobertMillerDetail />}
+            />
+            <Route
+              path="/claimants/emily-thompson"
+              element={<EmilyThompsonDetail />}
+            />
+            <Route
+              path="/claimants/james-anderson"
+              element={<JamesAndersonDetail />}
             />
             <Route
               path="/bodily-injury"

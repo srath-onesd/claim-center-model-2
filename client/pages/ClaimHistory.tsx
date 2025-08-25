@@ -187,9 +187,7 @@ export function ClaimHistory() {
   ];
 
   const breadcrumbItems = [
-    { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
-    { label: "Claim #23E-12345", href: "/" },
     { label: "Claim History", active: true }
   ];
 
@@ -296,108 +294,15 @@ export function ClaimHistory() {
           </RouterLink>
         </Button>
       </div>
-      {/* Header */}
-      <div className="bg-white border-b px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <h1 className="text-xl font-semibold text-gray-900">Claim History</h1>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Button variant="outline" size="sm">
-              <Download className="h-4 w-4 mr-2" />
-              Export
-            </Button>
-          </div>
-        </div>
-      </div>
 
-      <div className="p-6">
-        {/* Filters and Search */}
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="text-lg font-semibold flex items-center">
-              <Filter className="h-5 w-5 mr-2" />
-              Filters & Search
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-              {/* Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-                <Input
-                  placeholder="Search events..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-
-              {/* Type Filter */}
-              <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Filter by Type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Types</SelectItem>
-                  {uniqueTypes.map(type => (
-                    <SelectItem key={type} value={type}>{type}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {/* Related To Filter */}
-              <Select value={relatedToFilter} onValueChange={setRelatedToFilter}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Filter by Related To" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Related</SelectItem>
-                  {uniqueRelatedTo.map(related => (
-                    <SelectItem key={related} value={related}>{related}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {/* User Filter */}
-              <Select value={userFilter} onValueChange={setUserFilter}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Filter by User" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Users</SelectItem>
-                  {uniqueUsers.map(user => (
-                    <SelectItem key={user} value={user}>{user}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {/* Clear Filters */}
-              <Button 
-                variant="outline" 
-                onClick={() => {
-                  setSearchQuery("");
-                  setTypeFilter("all");
-                  setRelatedToFilter("all");
-                  setUserFilter("all");
-                }}
-              >
-                Clear Filters
-              </Button>
-            </div>
-            
-            <div className="mt-4 text-sm text-gray-600">
-              Showing {filteredEvents.length} of {historyEvents.length} events
-            </div>
-          </CardContent>
-        </Card>
+      <div className="p-6">     
 
         {/* History Table */}
         <Card>
           <CardHeader>
             <CardTitle className="text-lg font-semibold flex items-center">
               <Clock className="h-5 w-5 mr-2" />
-              Event History
+              Claims History
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">

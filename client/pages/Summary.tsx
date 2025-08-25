@@ -9,6 +9,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarInitials } from "@/components/ui/avatar";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+} from "recharts";
+import {
   MapPin,
   Calendar,
   Phone,
@@ -97,7 +105,6 @@ export function Summary() {
   };
 
   const breadcrumbItems = [
-    { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
     { label: "Overview", active: true },
   ];
@@ -326,118 +333,167 @@ export function Summary() {
             {/* Financial Information Panel */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold">
-                  Financial Information
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <DollarSign className="h-5 w-5 mr-2 text-gray-600" />
+                  Financial Summary
                 </CardTitle>
-                {/*}
-                <Button variant="ghost" size="sm">
-                  <Edit className="h-4 w-4" />
-                </Button>
-                */}
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {/* Total Incurred */}
-                  <div className="p-4 bg-gray-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">
-                      Total Incurred
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* Left Side - Key Metrics */}
+                  <div className="space-y-4">
+                    {/* Total Incurred - Prominent */}
+                    <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-sm font-medium text-blue-800 mb-1">
+                            Total Incurred
+                          </div>
+                          <div className="text-3xl font-bold text-blue-900">
+                            $13,150.00
+                          </div>
+                        </div>
+                        <div className="p-3 bg-blue-100 rounded-full">
+                          <TrendingUp className="h-6 w-6 text-blue-600" />
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">
-                      $15,750.00
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                      <div
-                        className="bg-gray-800 h-2 rounded-full"
-                        style={{ width: "78%" }}
-                      ></div>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      78% of policy limit
+
+                    {/* Grid of other metrics */}
+                    <div className="grid grid-cols-2 gap-4">
+                      {/* Outstanding Reserves */}
+                      <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <div className="text-xs text-yellow-800 mb-1">
+                          Outstanding Reserves
+                        </div>
+                        <div className="text-xl font-bold text-yellow-900 mb-2">
+                          $8,250
+                        </div>
+                        <div className="text-xs text-yellow-600">
+                          Reserve adequacy: Good
+                        </div>
+                      </div>
+
+                      {/* Amount Paid */}
+                      <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+                        <div className="text-xs text-green-800 mb-1">
+                          Amount Paid
+                        </div>
+                        <div className="text-xl font-bold text-green-900 mb-2">
+                          $7,500
+                        </div>
+                        <div className="text-xs text-green-600">
+                          Last: Mar 20, 2024
+                        </div>
+                      </div>
+
+                      {/* Recoveries */}
+                      <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                        <div className="text-xs text-purple-800 mb-1">
+                          Recoveries
+                        </div>
+                        <div className="text-xl font-bold text-purple-900 mb-2">
+                          $2,100
+                        </div>
+                        <div className="text-xs text-purple-600">
+                          13.3% recovery rate
+                        </div>
+                      </div>
+
+                      {/* Deductible */}
+                      <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                        <div className="text-xs text-gray-800 mb-1">
+                          Deductible
+                        </div>
+                        <div className="text-xl font-bold text-gray-900 mb-2">
+                          $500
+                        </div>
+                        <div className="text-xs text-gray-600">Collected</div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Outstanding Reserves */}
-                  <div className="p-4 bg-yellow-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">
-                      Outstanding Reserves
+                  {/* Right Side - Pie Chart */}
+                  <div className="flex flex-col">
+                    <div className="text-sm font-medium text-gray-700 mb-4 text-center">
+                      Financial Breakdown
                     </div>
-                    <div className="text-2xl font-bold text-yellow-600 mb-2">
-                      $8,250.00
-                    </div>
-                    <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
-                      <div
-                        className="bg-yellow-600 h-2 rounded-full"
-                        style={{ width: "65%" }}
-                      ></div>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      Reserve adequacy: Good
-                    </div>
-                  </div>
-
-                  {/* Amount Paid */}
-                  <div className="p-4 bg-green-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">
-                      Amount Paid
-                    </div>
-                    <div className="text-2xl font-bold text-green-600 mb-2">
-                      $7,500.00
-                    </div>
-                    <div className="w-full bg-green-200 rounded-full h-2 mb-2">
-                      <div
-                        className="bg-green-600 h-2 rounded-full"
-                        style={{ width: "50%" }}
-                      ></div>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      Last payment: Mar 20, 2024
-                    </div>
-                  </div>
-
-                  {/* Recoveries */}
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Recoveries</div>
-                    <div className="text-2xl font-bold text-blue-600 mb-2">
-                      $2,100.00
-                    </div>
-                    <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
-                      <div
-                        className="bg-blue-600 h-2 rounded-full"
-                        style={{ width: "33%" }}
-                      ></div>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      Recovery rate: 13.3%
-                    </div>
-                  </div>
-
-                  {/* Deductible */}
-                  <div className="p-4 bg-purple-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Deductible</div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">
-                      $500.00
-                    </div>
-                    <div className="w-full bg-purple-200 rounded-full h-2 mb-2">
-                      <div
-                        className="bg-purple-600 h-2 rounded-full"
-                        style={{ width: "100%" }}
-                      ></div>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      Collected from insured
+                    <div className="flex-1" style={{ minHeight: "250px" }}>
+                      <ResponsiveContainer width="100%" height="100%">
+                        <PieChart>
+                          <Pie
+                            data={[
+                              { name: "Paid", value: 7500, color: "#10b981" },
+                              {
+                                name: "Reserves",
+                                value: 8250,
+                                color: "#f59e0b",
+                              },
+                              {
+                                name: "Recoveries",
+                                value: 2100,
+                                color: "#8b5cf6",
+                              },
+                              {
+                                name: "Deductible",
+                                value: 500,
+                                color: "#6b7280",
+                              },
+                            ]}
+                            cx="50%"
+                            cy="50%"
+                            innerRadius={40}
+                            outerRadius={80}
+                            paddingAngle={2}
+                            dataKey="value"
+                          >
+                            <Cell fill="#10b981" />
+                            <Cell fill="#f59e0b" />
+                            <Cell fill="#8b5cf6" />
+                            <Cell fill="#6b7280" />
+                          </Pie>
+                          <Tooltip
+                            formatter={(value) => [
+                              `$${value.toLocaleString()}`,
+                              "",
+                            ]}
+                            labelFormatter={(label) => `${label}`}
+                            contentStyle={{
+                              backgroundColor: "white",
+                              border: "1px solid #e5e7eb",
+                              borderRadius: "8px",
+                              fontSize: "12px",
+                            }}
+                          />
+                          <Legend
+                            verticalAlign="bottom"
+                            height={36}
+                            iconType="circle"
+                            wrapperStyle={{ fontSize: "12px" }}
+                          />
+                        </PieChart>
+                      </ResponsiveContainer>
                     </div>
                   </div>
-
-                  {/* Coverage Limits 
-                  <div className="p-4 bg-indigo-50 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Coverage Limits</div>
-                    <div className="text-2xl font-bold text-gray-900 mb-2">$20,000.00</div>
-                    <div className="w-full bg-indigo-200 rounded-full h-2 mb-2">
-                      <div className="bg-indigo-600 h-2 rounded-full" style={{ width: '78%' }}></div>
-                    </div>
-                    <div className="text-xs text-gray-500">Property Damage limit</div>
-                  </div> */}
                 </div>
+
+                {/* Bottom Summary Bar
+                <div className="mt-6 pt-4 border-t border-gray-200">
+                  <div className="flex items-center justify-between text-sm">
+                    <div className="flex items-center space-x-4">
+                      <span className="text-gray-600">Claim Status:</span>
+                      <Badge variant="secondary" className="bg-green-100 text-green-800">
+                        Active
+                      </Badge>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <span className="text-gray-600">Net Exposure:</span>
+                      <span className="font-semibold text-gray-900">
+                        ${(15750 - 2100 - 500).toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+                </div> */}
               </CardContent>
             </Card>
 

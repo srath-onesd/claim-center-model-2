@@ -2,25 +2,37 @@ import { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
-import { Menu, X, ChevronDown, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ChevronRight,
+  ChevronLeft,
+  Users,
+  CreditCard,
+  FileText,
+  UserCheck,
+  Phone,
+  Mail,
+  Calendar,
+  MapPin,
+} from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 const navigationItems = [
-  { id: "overview", label: "Overview", href: "/", icon: "" },
+  { id: "overview", label: "Overview", href: "/" },
   {
     id: "claimdetails",
     label: "Claim Details",
     href: "/claimdetails",
-    icon: "",
   },
   {
     id: "claimants",
     label: "Claimants",
     href: "#", // Use # to prevent navigation when clicking
-    icon: "",
     expandable: true,
     subItems: [
       {
@@ -694,7 +706,6 @@ interface NavigationItem {
   id: string;
   label: string;
   href: string;
-  icon?: string;
   expandable?: boolean;
   subItems?: NavigationItem[];
 }
@@ -706,6 +717,9 @@ export function Layout({ children }: LayoutProps) {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(
     new Set(["claimants"]),
   );
+  const [selectedClaimant, setSelectedClaimant] =
+    useState<NavigationItem | null>(null);
+  const [rightPanelCollapsed, setRightPanelCollapsed] = useState(true);
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
@@ -740,6 +754,23 @@ export function Layout({ children }: LayoutProps) {
     setExpandedItems(newExpanded);
   };
 
+  const handleClaimantClick = (claimant: NavigationItem) => {
+    if (selectedClaimant?.id === claimant.id) {
+      // If same claimant is clicked, toggle the panel collapsed state
+      setRightPanelCollapsed(!rightPanelCollapsed);
+    } else {
+      // If different claimant is clicked, select it and show expanded panel
+      setSelectedClaimant(claimant);
+      setRightPanelCollapsed(false);
+    }
+  };
+
+  const toggleRightPanel = () => {
+    if (selectedClaimant) {
+      setRightPanelCollapsed(!rightPanelCollapsed);
+    }
+  };
+
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
     const isActive =
       location.pathname === item.href ||
@@ -753,67 +784,51 @@ export function Layout({ children }: LayoutProps) {
       // Special styling for claimant level (level 1)
       const isClaimantLevel = level === 1 && /^claimant\d+$/.test(item.id);
 
-      // Nested item styling (like CustomerCenterSidebar)
-      return (
-        <li key={item.id}>
-          <div
-            className={cn(
-              "flex items-center justify-between",
-              isClaimantLevel && isExpanded && "bg-white/5 rounded-lg p-1",
-            )}
-          >
+      // For claimant level items, navigate to detail page
+      if (isClaimantLevel) {
+        return (
+          <li key={item.id}>
             <Link
               to={item.href}
               className={cn(
-                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20 flex-1",
+                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
                 isActive
                   ? "bg-white/15 text-white border-white/40"
-                  : isClaimantLevel && isExpanded
-                    ? "text-white/90 hover:bg-white/10 hover:text-white hover:border-white/30"
-                    : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
-                isClaimantLevel && "font-medium",
+                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+                "font-medium",
               )}
               style={{
                 paddingLeft: `${level * 16 + 16}px`,
               }}
               role="menuitem"
               aria-label={item.label}
+              onClick={() => setSelectedClaimant(item)}
             >
-              {isClaimantLevel && isExpanded && "📋 "}
               {item.label}
             </Link>
-            {hasSubItems && item.expandable && !sidebarCollapsed && (
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  toggleExpanded(item.id);
-                }}
-                className={cn(
-                  "p-1 hover:bg-white/10 rounded mr-2",
-                  isClaimantLevel ? "text-white/90" : "text-white/80",
-                )}
-                title={
-                  isClaimantLevel
-                    ? "Click to expand (closes other claimants)"
-                    : "Expand/collapse"
-                }
-              >
-                {isExpanded ? (
-                  <ChevronDown size={isClaimantLevel ? 14 : 12} />
-                ) : (
-                  <ChevronRight size={isClaimantLevel ? 14 : 12} />
-                )}
-              </button>
+          </li>
+        );
+      }
+
+      // For non-claimant nested items (shouldn't appear now, but keeping for safety)
+      return (
+        <li key={item.id}>
+          <Link
+            to={item.href}
+            className={cn(
+              "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+              isActive
+                ? "bg-white/15 text-white border-white/40"
+                : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
             )}
-          </div>
-          {hasSubItems && isExpanded && !sidebarCollapsed && (
-            <ul className="mt-1 space-y-1">
-              {item.subItems!.map((subItem) =>
-                renderNavigationItem(subItem, level + 1),
-              )}
-            </ul>
-          )}
+            style={{
+              paddingLeft: `${level * 16 + 16}px`,
+            }}
+            role="menuitem"
+            aria-label={item.label}
+          >
+            {item.label}
+          </Link>
         </li>
       );
     }
@@ -846,43 +861,10 @@ export function Layout({ children }: LayoutProps) {
           aria-haspopup={hasSubItems ? "menu" : undefined}
         >
           {sidebarCollapsed ? (
-            item.icon &&
-            (item.id === "deductible-1" ? (
-              <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                alt="Deductible icon"
-                className="w-4.5 h-4.5 object-cover"
-                style={{
-                  width: "18px",
-                  height: "18px",
-                  objectFit: "cover",
-                }}
-              />
-            ) : (
-              <span className="text-lg">{item.icon}</span>
-            ))
+            <span className="text-xs font-medium">{item.label.charAt(0)}</span>
           ) : (
             <>
               <div className="flex items-center gap-3">
-                {item.icon &&
-                  (item.id === "deductible-1" ? (
-                    <img
-                      loading="lazy"
-                      srcSet="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                      src="https://cdn.builder.io/api/v1/image/assets%2Fdcea8f7c76214c969c15d3192f8848fc%2Fcab0ba5ef99146c6bf07272f360d9b00"
-                      alt="Deductible icon"
-                      className="w-4.5 h-4.5 object-cover"
-                      style={{
-                        width: "18px",
-                        height: "18px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  ) : (
-                    <span className="text-lg">{item.icon}</span>
-                  ))}
                 <span>{item.label}</span>
                 {item.id === "claimants" && item.subItems && (
                   <span className="ml-2 px-2 py-0.5 bg-white/20 text-white/80 text-xs rounded-full">
@@ -901,13 +883,26 @@ export function Layout({ children }: LayoutProps) {
           )}
         </button>
 
-        {hasSubItems && isExpanded && !sidebarCollapsed && (
-          <ul className="mt-1 ml-6 space-y-1">
-            {item.subItems!.map((subItem) =>
-              renderNavigationItem(subItem, level + 1),
-            )}
-          </ul>
-        )}
+        {hasSubItems &&
+          isExpanded &&
+          !sidebarCollapsed &&
+          item.id !== "claimants" && (
+            <ul className="mt-1 ml-6 space-y-1">
+              {item.subItems!.map((subItem) =>
+                renderNavigationItem(subItem, level + 1),
+              )}
+            </ul>
+          )}
+        {hasSubItems &&
+          isExpanded &&
+          !sidebarCollapsed &&
+          item.id === "claimants" && (
+            <ul className="mt-1 ml-6 space-y-1">
+              {item.subItems!.map((subItem) =>
+                renderNavigationItem(subItem, level + 1),
+              )}
+            </ul>
+          )}
       </li>
     );
   };
@@ -1013,6 +1008,123 @@ export function Layout({ children }: LayoutProps) {
 
           {/* Main Content */}
           <main className="flex-1 overflow-auto">{children}</main>
+
+          {/* Compact Right Panel Toggle for Claimant Details */}
+          {selectedClaimant && (
+            <>
+              {rightPanelCollapsed ? (
+                /* Collapsed State - Small button with claimant name positioned in middle-right */
+                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
+                  <div className="flex items-center">
+                    <div
+                      className="px-3 py-2 flex items-center space-x-2 cursor-pointer flex-1"
+                      onClick={toggleRightPanel}
+                      title={`Click to open ${selectedClaimant.label} details`}
+                    >
+                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-700">
+                        {selectedClaimant.label}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                /* Expanded State - Compact popup window positioned in middle-right */
+                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-xl w-80 max-h-96 flex flex-col">
+                  {/* Header */}
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg writing-mode: vertical-rl transform: rotate(180deg)">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                      <h3 className="font-semibold text-gray-900 text-sm">
+                        {selectedClaimant.label}
+                      </h3>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setRightPanelCollapsed(true)}
+                        className="h-6 w-6 p-0 hover:bg-gray-200 transition-colors"
+                        title="Close panel"
+                      >
+                        <X className="h-3 w-3" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 overflow-y-auto p-3">
+                    <div className="space-y-2">
+                      {/* Filter to only show Reserve, Payment, Recovery, Journal */}
+                      {selectedClaimant.subItems
+                        ?.filter((item) =>
+                          [
+                            "Reserves",
+                            "Payments",
+                            "Recovery",
+                            "Journal",
+                          ].includes(item.label),
+                        )
+                        .map((subItem) => (
+                          <div key={subItem.id}>
+                            {subItem.expandable && subItem.subItems ? (
+                              /* Expandable sections like Recovery and Journal */
+                              <div className="border border-gray-200 rounded-md">
+                                <button
+                                  onClick={() => toggleExpanded(subItem.id)}
+                                  className="w-full flex items-center justify-between p-2 text-left hover:bg-gray-50 transition-colors text-xs"
+                                >
+                                  <span className="font-medium text-gray-700">
+                                    {subItem.label}
+                                  </span>
+                                  {expandedItems.has(subItem.id) ? (
+                                    <ChevronDown className="h-3 w-3 text-gray-500" />
+                                  ) : (
+                                    <ChevronRight className="h-3 w-3 text-gray-500" />
+                                  )}
+                                </button>
+                                {expandedItems.has(subItem.id) && (
+                                  <div className="border-t border-gray-200 bg-gray-50">
+                                    {subItem.subItems.map((nestedItem) => (
+                                      <Link
+                                        key={nestedItem.id}
+                                        to={nestedItem.href}
+                                        className="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-colors"
+                                      >
+                                        {nestedItem.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              /* Direct links like Reserves and Payments */
+                              <Link
+                                to={subItem.href}
+                                className="flex items-center justify-between p-2 rounded-md border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 group"
+                              >
+                                <span className="text-xs font-medium text-gray-700 group-hover:text-gray-900">
+                                  {subItem.label}
+                                </span>
+                                <ChevronRight className="h-3 w-3 text-gray-400 group-hover:text-gray-600" />
+                              </Link>
+                            )}
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+
+                  {/* Footer info */}
+                  <div className="px-4 py-2 border-t border-gray-200 bg-gray-50 rounded-b-lg">
+                    <div className="text-xs text-gray-500">
+                      Form Code : {selectedClaimant.id || "2021"}
+                    </div>
+                    <div className="text-xs text-gray-500">Module : Policy</div>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>
