@@ -460,12 +460,7 @@ export function Summary() {
                 {/* Bottom Summary Bar */}
                 <div className="mt-6 pt-4 border-t border-gray-200">
                   <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-gray-600">Claim Status:</span>
-                      <Badge variant="secondary" className="bg-green-100 text-green-800">
-                        Active
-                      </Badge>
-                    </div>
+
                     <div className="flex items-center space-x-4">
                       <span className="text-gray-600">Net Exposure:</span>
                       <span className="font-semibold text-gray-900">
