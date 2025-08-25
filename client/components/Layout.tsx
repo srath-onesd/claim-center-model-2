@@ -1023,7 +1023,7 @@ export function Layout({ children }: LayoutProps) {
                 /* Expanded State - Compact popup window positioned in middle-right */
                 <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-xl w-80 max-h-96 flex flex-col">
                   {/* Header */}
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg transform: rotate(180deg)">
+                    <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                       <h3 className="font-semibold text-gray-900 text-sm">
