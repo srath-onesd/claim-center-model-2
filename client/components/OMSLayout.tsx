@@ -80,12 +80,12 @@ export function OMSLayout({ children }: OMSLayoutProps) {
     { icon: DollarSign, label: "Accounting", path: "/accounting" },
     { icon: Search, label: "Search Center", path: "/search-center" },
     { icon: Settings, label: "Other Utilities", path: "/other-utilities" },
+    { icon: Link as LinkIcon, label: 'Quick Links', path: '/links' },
+    { icon: TrendingUp, label: 'Bulk Change Endorsements', path: '/bulk-changes' },
+    { icon: Users, label: 'Manage Users', path: '/users' },
+    { icon: BarChart, label: 'Analytic Reports', path: '/reports' }
   ];
-
-  const quickLinks = [
-    { id: "bulk-changes", label: "Bulk Change Endorsements", path: "/bulk-changes" },
-    { id: "manage-users", label: "Manage Users", path: "/manage-users" },
-    { id: "analytics-reports", label: "Analytics Reports", path: "/analytics-reports" },
+    
   ];
 
   const notifications = [
