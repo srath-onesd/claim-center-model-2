@@ -249,8 +249,6 @@ export function OMSLayout({ children }: OMSLayoutProps) {
               );
             })}
           </ul>
-
-
         </nav>
 
         {/* Footer - Auto-adjusts based on screen resolution */}
