@@ -8,7 +8,14 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarInitials } from "@/components/ui/avatar";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  ResponsiveContainer,
+  Legend,
+  Tooltip,
+} from "recharts";
 import {
   MapPin,
   Calendar,
@@ -401,9 +408,7 @@ export function Summary() {
                         <div className="text-xl font-bold text-gray-900 mb-2">
                           $500
                         </div>
-                        <div className="text-xs text-gray-600">
-                          Collected
-                        </div>
+                        <div className="text-xs text-gray-600">Collected</div>
                       </div>
                     </div>
                   </div>
@@ -413,15 +418,27 @@ export function Summary() {
                     <div className="text-sm font-medium text-gray-700 mb-4 text-center">
                       Financial Breakdown
                     </div>
-                    <div className="flex-1" style={{ minHeight: '250px' }}>
+                    <div className="flex-1" style={{ minHeight: "250px" }}>
                       <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                           <Pie
                             data={[
-                              { name: 'Paid', value: 7500, color: '#10b981' },
-                              { name: 'Reserves', value: 8250, color: '#f59e0b' },
-                              { name: 'Recoveries', value: 2100, color: '#8b5cf6' },
-                              { name: 'Deductible', value: 500, color: '#6b7280' }
+                              { name: "Paid", value: 7500, color: "#10b981" },
+                              {
+                                name: "Reserves",
+                                value: 8250,
+                                color: "#f59e0b",
+                              },
+                              {
+                                name: "Recoveries",
+                                value: 2100,
+                                color: "#8b5cf6",
+                              },
+                              {
+                                name: "Deductible",
+                                value: 500,
+                                color: "#6b7280",
+                              },
                             ]}
                             cx="50%"
                             cy="50%"
@@ -436,20 +453,23 @@ export function Summary() {
                             <Cell fill="#6b7280" />
                           </Pie>
                           <Tooltip
-                            formatter={(value) => [`$${value.toLocaleString()}`, '']}
+                            formatter={(value) => [
+                              `$${value.toLocaleString()}`,
+                              "",
+                            ]}
                             labelFormatter={(label) => `${label}`}
                             contentStyle={{
-                              backgroundColor: 'white',
-                              border: '1px solid #e5e7eb',
-                              borderRadius: '8px',
-                              fontSize: '12px'
+                              backgroundColor: "white",
+                              border: "1px solid #e5e7eb",
+                              borderRadius: "8px",
+                              fontSize: "12px",
                             }}
                           />
                           <Legend
                             verticalAlign="bottom"
                             height={36}
                             iconType="circle"
-                            wrapperStyle={{ fontSize: '12px' }}
+                            wrapperStyle={{ fontSize: "12px" }}
                           />
                         </PieChart>
                       </ResponsiveContainer>

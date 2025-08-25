@@ -2,7 +2,21 @@ import { ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { cn } from "../lib/utils";
-import { Menu, X, ChevronDown, ChevronRight, ChevronLeft, Users, CreditCard, FileText, UserCheck, Phone, Mail, Calendar, MapPin } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ChevronRight,
+  ChevronLeft,
+  Users,
+  CreditCard,
+  FileText,
+  UserCheck,
+  Phone,
+  Mail,
+  Calendar,
+  MapPin,
+} from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -703,7 +717,8 @@ export function Layout({ children }: LayoutProps) {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(
     new Set(["claimants"]),
   );
-  const [selectedClaimant, setSelectedClaimant] = useState<NavigationItem | null>(null);
+  const [selectedClaimant, setSelectedClaimant] =
+    useState<NavigationItem | null>(null);
   const [rightPanelCollapsed, setRightPanelCollapsed] = useState(true);
 
   const toggleExpanded = (itemId: string) => {
@@ -868,20 +883,26 @@ export function Layout({ children }: LayoutProps) {
           )}
         </button>
 
-        {hasSubItems && isExpanded && !sidebarCollapsed && item.id !== "claimants" && (
-          <ul className="mt-1 ml-6 space-y-1">
-            {item.subItems!.map((subItem) =>
-              renderNavigationItem(subItem, level + 1),
-            )}
-          </ul>
-        )}
-        {hasSubItems && isExpanded && !sidebarCollapsed && item.id === "claimants" && (
-          <ul className="mt-1 ml-6 space-y-1">
-            {item.subItems!.map((subItem) =>
-              renderNavigationItem(subItem, level + 1),
-            )}
-          </ul>
-        )}
+        {hasSubItems &&
+          isExpanded &&
+          !sidebarCollapsed &&
+          item.id !== "claimants" && (
+            <ul className="mt-1 ml-6 space-y-1">
+              {item.subItems!.map((subItem) =>
+                renderNavigationItem(subItem, level + 1),
+              )}
+            </ul>
+          )}
+        {hasSubItems &&
+          isExpanded &&
+          !sidebarCollapsed &&
+          item.id === "claimants" && (
+            <ul className="mt-1 ml-6 space-y-1">
+              {item.subItems!.map((subItem) =>
+                renderNavigationItem(subItem, level + 1),
+              )}
+            </ul>
+          )}
       </li>
     );
   };
@@ -1005,14 +1026,13 @@ export function Layout({ children }: LayoutProps) {
                         {selectedClaimant.label}
                       </span>
                     </div>
-
                   </div>
                 </div>
               ) : (
                 /* Expanded State - Compact popup window positioned in middle-right */
                 <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-xl w-80 max-h-96 flex flex-col">
                   {/* Header */}
-                    <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg writing-mode: vertical-rl transform: rotate(180deg)">
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg writing-mode: vertical-rl transform: rotate(180deg)">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                       <h3 className="font-semibold text-gray-900 text-sm">
@@ -1037,7 +1057,14 @@ export function Layout({ children }: LayoutProps) {
                     <div className="space-y-2">
                       {/* Filter to only show Reserve, Payment, Recovery, Journal */}
                       {selectedClaimant.subItems
-                        ?.filter(item => ['Reserves', 'Payments', 'Recovery', 'Journal'].includes(item.label))
+                        ?.filter((item) =>
+                          [
+                            "Reserves",
+                            "Payments",
+                            "Recovery",
+                            "Journal",
+                          ].includes(item.label),
+                        )
                         .map((subItem) => (
                           <div key={subItem.id}>
                             {subItem.expandable && subItem.subItems ? (
@@ -1047,7 +1074,9 @@ export function Layout({ children }: LayoutProps) {
                                   onClick={() => toggleExpanded(subItem.id)}
                                   className="w-full flex items-center justify-between p-2 text-left hover:bg-gray-50 transition-colors text-xs"
                                 >
-                                  <span className="font-medium text-gray-700">{subItem.label}</span>
+                                  <span className="font-medium text-gray-700">
+                                    {subItem.label}
+                                  </span>
                                   {expandedItems.has(subItem.id) ? (
                                     <ChevronDown className="h-3 w-3 text-gray-500" />
                                   ) : (
@@ -1088,11 +1117,9 @@ export function Layout({ children }: LayoutProps) {
                   {/* Footer info */}
                   <div className="px-4 py-2 border-t border-gray-200 bg-gray-50 rounded-b-lg">
                     <div className="text-xs text-gray-500">
-                      Form Code : {selectedClaimant.id || '2021'}
+                      Form Code : {selectedClaimant.id || "2021"}
                     </div>
-                    <div className="text-xs text-gray-500">
-                      Module : Policy
-                    </div>
+                    <div className="text-xs text-gray-500">Module : Policy</div>
                   </div>
                 </div>
               )}
