@@ -365,7 +365,7 @@ export function Summary() {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                       <div
-                        className="bg-yellow-600 h-2 rounded-full"
+                        className="bg-gray-600 h-2 rounded-full"
                         style={{ width: "65%" }}
                       ></div>
                     </div>
