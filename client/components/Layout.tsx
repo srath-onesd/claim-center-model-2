@@ -996,12 +996,12 @@ export function Layout({ children }: LayoutProps) {
                 <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
                   <div className="flex items-center">
                     <div
-                      className="px-3 py-2 flex items-center space-x-2 cursor-pointer flex-1"
+                      className="px-3 py-2 flex items-center space-x-2 cursor-pointer flex-1 transform: rotate(180deg)"
                       onClick={toggleRightPanel}
                       title={`Click to open ${selectedClaimant.label} details`}
                     >
                       <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-700 transform: rotate(180deg)">
+                      <span className="text-sm font-medium text-gray-700">
                         {selectedClaimant.label}
                       </span>
                     </div>
