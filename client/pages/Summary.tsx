@@ -344,15 +344,6 @@ export function Summary() {
                     <div className="text-2xl font-bold text-gray-900 mb-2">
                       $15,750.00
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                      <div
-                        className="bg-gray-800 h-2 rounded-full"
-                        style={{ width: "78%" }}
-                      ></div>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      78% of policy limit
-                    </div>
                   </div>
 
                   {/* Outstanding Reserves */}
