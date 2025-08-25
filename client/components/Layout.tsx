@@ -1005,18 +1005,7 @@ export function Layout({ children }: LayoutProps) {
                         {selectedClaimant.label}
                       </span>
                     </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedClaimant(null);
-                      }}
-                      className="h-6 w-6 p-0 mr-1 hover:bg-gray-200 transition-colors"
-                      title="Remove claimant selection"
-                    >
-                      <X className="h-3 w-3 text-gray-500" />
-                    </Button>
+
                   </div>
                 </div>
               ) : (
