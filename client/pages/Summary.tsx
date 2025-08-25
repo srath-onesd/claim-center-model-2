@@ -1098,7 +1098,7 @@ export function Summary() {
             </CardContent>
           </Card>
 
-            {/* Document Management */}
+            {/* Document Management 
             <Card>
             <CardHeader>
               <CardTitle className="text-lg font-semibold flex items-center">
@@ -1141,7 +1141,7 @@ export function Summary() {
                 </Button>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
             {/* Legal & Litigation Status */}
             <Card>
