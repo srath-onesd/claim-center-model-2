@@ -1036,15 +1036,6 @@ export function Layout({ children }: LayoutProps) {
                         size="sm"
                         onClick={() => setRightPanelCollapsed(true)}
                         className="h-6 w-6 p-0 hover:bg-gray-200 transition-colors"
-                        title="Collapse panel"
-                      >
-                        <ChevronDown className="h-3 w-3" />
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setRightPanelCollapsed(true)}
-                        className="h-6 w-6 p-0 hover:bg-gray-200 transition-colors"
                         title="Close panel"
                       >
                         <X className="h-3 w-3" />
