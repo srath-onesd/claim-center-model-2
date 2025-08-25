@@ -343,7 +343,7 @@ export function Summary() {
                             Total Incurred
                           </div>
                           <div className="text-3xl font-bold text-blue-900">
-                            $15,750.00
+                            $13,150.00
                           </div>
                         </div>
                         <div className="p-3 bg-blue-100 rounded-full">
