@@ -775,7 +775,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-green-100 text-green-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             Low
                           </Badge>
