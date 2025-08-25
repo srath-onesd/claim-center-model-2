@@ -85,8 +85,6 @@ export function OMSLayout({ children }: OMSLayoutProps) {
     { icon: Users, label: 'Manage Users', path: '/users' },
     { icon: BarChart, label: 'Analytic Reports', path: '/reports' }
   ];
-    
-  ];
 
   const notifications = [
     {
