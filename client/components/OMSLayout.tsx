@@ -250,24 +250,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
             })}
           </ul>
 
-          {!omsSidebarCollapsed && (
-            <>
-              <div className="pt-4 pb-2">
-                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider px-3">
-                  Quick Links
-                </span>
-              </div>
-              {quickLinks.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.path}
-                  className="group flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors rounded-lg"
-                >
-                  <span className="truncate">{item.label}</span>
-                </a>
-              ))}
-            </>
-          )}
+
         </nav>
 
         {/* Footer - Auto-adjusts based on screen resolution */}
