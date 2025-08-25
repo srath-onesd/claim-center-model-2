@@ -1070,7 +1070,7 @@ export function Summary() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="grid grid-cols-1 gap-3 text-sm">
                   <div>
                     <label className="font-medium text-gray-900">Vehicle</label>
                     <p className="text-gray-600">2020 Honda Civic</p>
