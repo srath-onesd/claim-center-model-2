@@ -56,9 +56,7 @@ type SortDirection = "asc" | "desc";
 export function Summary() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activityFilter, setActivityFilter] = useState("all");
-  const [collapsedClaimants, setCollapsedClaimants] = useState<{
-    [key: string]: boolean;
-  }>({});
+  const [expandedClaimant, setExpandedClaimant] = useState<string | null>(null);
   const [sortField, setSortField] = useState<SortField>("date");
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const [relatedSortField, setRelatedSortField] =
@@ -67,10 +65,7 @@ export function Summary() {
     useState<SortDirection>("asc");
 
   const toggleClaimantCollapse = (claimantId: string) => {
-    setCollapsedClaimants((prev) => ({
-      ...prev,
-      [claimantId]: !prev[claimantId],
-    }));
+    setExpandedClaimant((prev) => prev === claimantId ? null : claimantId);
   };
 
   const handleSort = (field: SortField) => {
@@ -475,14 +470,14 @@ export function Summary() {
                   <User className="h-5 w-5 mr-2" />
                   Claimant: Amy Applegate
                 </div>
-                {collapsedClaimants["amy-applegate"] ? (
+                {expandedClaimant !== "amy-applegate" ? (
                   <ChevronRight className="h-5 w-5" />
                 ) : (
                   <ChevronDown className="h-5 w-5" />
                 )}
               </CardTitle>
             </CardHeader>
-            {!collapsedClaimants["amy-applegate"] && (
+            {expandedClaimant === "amy-applegate" && (
               <CardContent className="space-y-4 h-auto">
                 {/* Financial Summary Card */}
                 <Card>
@@ -721,14 +716,14 @@ export function Summary() {
                   <User className="h-5 w-5 mr-2" />
                   Claimant: Bob Pay
                 </div>
-                {collapsedClaimants["bob-pay"] ? (
+                {expandedClaimant !== "bob-pay" ? (
                   <ChevronRight className="h-5 w-5" />
                 ) : (
                   <ChevronDown className="h-5 w-5" />
                 )}
               </CardTitle>
             </CardHeader>
-            {!collapsedClaimants["bob-pay"] && (
+            {expandedClaimant === "bob-pay" && (
               <CardContent className="space-y-4 h-auto">
                 {/* Financial Summary Card */}
                 <Card>
