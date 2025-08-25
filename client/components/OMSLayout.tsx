@@ -80,7 +80,7 @@ export function OMSLayout({ children }: OMSLayoutProps) {
     { icon: DollarSign, label: "Accounting", path: "/accounting" },
     { icon: Search, label: "Search Center", path: "/search-center" },
     { icon: Settings, label: "Other Utilities", path: "/other-utilities" },
-    { icon: Link as LinkIcon, label: 'Quick Links', path: '/links' },
+    { icon: LinkIcon, label: 'Quick Links', path: '/links' },
     { icon: TrendingUp, label: 'Bulk Change Endorsements', path: '/bulk-changes' },
     { icon: Users, label: 'Manage Users', path: '/users' },
     { icon: BarChart, label: 'Analytic Reports', path: '/reports' }
@@ -111,6 +111,14 @@ export function OMSLayout({ children }: OMSLayoutProps) {
   ];
 
   const unreadCount = notifications.filter(n => n.unread).length;
+
+  const quickLinks = [
+    { id: 1, label: 'Policy Search', path: '/policy-search' },
+    { id: 2, label: 'Claim Search', path: '/claim-search' },
+    { id: 3, label: 'Customer Lookup', path: '/customer-lookup' },
+    { id: 4, label: 'Payment Center', path: '/payments' },
+    { id: 5, label: 'Reports', path: '/reports' }
+  ];
 
   const toggleExpanded = (itemPath: string) => {
     setExpandedItems(prev =>
