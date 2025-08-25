@@ -16,7 +16,6 @@ export function DavidWilliamsDetail() {
   };
 
   const breadcrumbItems = [
-    { label: "Home", href: "/dashboard" },
     { label: "Claims", href: "/claims" },
     { label: "Claimants", href: "/" },
     { label: claimantData.displayName, active: true },
