@@ -810,7 +810,7 @@ export function AmyApplegateDetail() {
               <CardContent>
                 <div className="space-y-4">
                   {/* Claimant */}
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
                         <AvatarFallback className="bg-gray-600 text-white">
