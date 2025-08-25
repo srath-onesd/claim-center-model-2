@@ -878,28 +878,6 @@ export function AmyApplegateDetail() {
                     </div>
                   </div>
 
-                  {/* Medical Provider 
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-green-600 text-white">CGH</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">City General Hospital</p>
-                        <p className="text-xs text-gray-500">Medical Provider</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                  */}
-
                   {/* Repair Shop */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
