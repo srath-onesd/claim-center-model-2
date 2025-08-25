@@ -993,16 +993,30 @@ export function Layout({ children }: LayoutProps) {
             <>
               {rightPanelCollapsed ? (
                 /* Collapsed State - Small button with claimant name positioned in middle-right */
-                <div
-                  className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-200"
-                  onClick={toggleRightPanel}
-                  title={`Click to open ${selectedClaimant.label} details`}
-                >
-                  <div className="px-3 py-2 flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    <span className="text-sm font-medium text-gray-700">
-                      {selectedClaimant.label}
-                    </span>
+                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
+                  <div className="flex items-center">
+                    <div
+                      className="px-3 py-2 flex items-center space-x-2 cursor-pointer flex-1"
+                      onClick={toggleRightPanel}
+                      title={`Click to open ${selectedClaimant.label} details`}
+                    >
+                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-700">
+                        {selectedClaimant.label}
+                      </span>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedClaimant(null);
+                      }}
+                      className="h-6 w-6 p-0 mr-1 hover:bg-gray-200 transition-colors"
+                      title="Remove claimant selection"
+                    >
+                      <X className="h-3 w-3 text-gray-500" />
+                    </Button>
                   </div>
                 </div>
               ) : (
