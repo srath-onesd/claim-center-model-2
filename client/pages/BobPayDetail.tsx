@@ -134,10 +134,7 @@ export function BobPayDetail() {
                 <label className="text-sm font-medium text-gray-900">
                   Phone Number
                 </label>
-                <div className="flex items-center mt-1">
-                  <Phone className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">(555) 987-6543</p>
-                </div>
+                <p className="text-sm text-gray-600 mt-1">(555) 987-6543</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">
