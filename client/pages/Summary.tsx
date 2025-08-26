@@ -566,7 +566,7 @@ export function Summary() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <div className="p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                      <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400">
                         <div className="flex justify-between items-start">
                           <div className="flex-1">
                             <p className="text-sm font-medium text-gray-900">
@@ -811,7 +811,7 @@ export function Summary() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <div className="p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                      <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400">
                         <div className="flex justify-between items-start">
                           <div className="flex-1">
                             <p className="text-sm font-medium text-gray-900">
