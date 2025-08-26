@@ -128,10 +128,7 @@ export function BobPayDetail() {
                 <label className="text-sm font-medium text-gray-900">
                   Date of Birth
                 </label>
-                <div className="flex items-center mt-1">
-                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">**-**-****</p>
-                </div>
+                <p className="text-sm text-gray-600 mt-1">**-**-****</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">
