@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { MapPin, Phone, Mail, Edit, User, ArrowLeft, DollarSign } from "lucide-react";
+import { MapPin, Calendar, Phone, Mail, Edit, User, ArrowLeft, DollarSign } from "lucide-react";
 
 export function JenniferDavisDetail() {
   const claimantData = {
@@ -50,16 +50,24 @@ export function JenniferDavisDetail() {
                 <label className="text-sm font-medium text-gray-900">Claimant Status</label>
                 <div className="flex items-center mt-2">
                   <Badge variant="secondary" className="bg-blue-100 text-blue-800">Active</Badge>
-                  <span className="text-sm text-gray-600 ml-2">First Party Claimant</span>
+                  <span className="text-sm text-gray-600 ml-2">Third Party Claimant</span>
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Claim Type</label>
                 <p className="text-sm text-gray-600 mt-2">Bodily Injury</p>
+                <p className="text-sm text-gray-600 mt-2">Property Damage - Motor Vehicle Accident</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div>
+                <label className="text-sm font-medium text-gray-900">Date of Birth</label>
+                <div className="flex items-center mt-1">
+                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
+                  <p className="text-sm text-gray-600">**-**-****</p>
+                </div>
+              </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Phone Number</label>
                 <div className="flex items-center mt-1">
@@ -82,8 +90,20 @@ export function JenniferDavisDetail() {
                 </div>
               </div>
               <div>
+                <label className="text-sm font-medium text-gray-900">Social Security</label>
+                <p className="text-sm text-gray-600 mt-1">***-**-7890</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Driver's License</label>
+                <p className="text-sm text-gray-600 mt-1">CO DL456789012</p>
+              </div>
+              <div>
                 <label className="text-sm font-medium text-gray-900">Employment Status</label>
                 <p className="text-sm text-gray-600 mt-1">Marketing Manager</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Attorney</label>
+                <p className="text-sm text-gray-600 mt-1">Davis & Associates</p>
               </div>
             </div>
           </CardContent>
