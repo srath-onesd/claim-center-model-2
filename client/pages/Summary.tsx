@@ -36,7 +36,9 @@ type SortField =
   | "incurred"
   | "reserves"
   | "paid"
-  | "recovery";
+  | "recovery"
+  | "id"
+  | "description";
 type SortDirection = "asc" | "desc";
 
 export function Summary() {
