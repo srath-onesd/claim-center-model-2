@@ -82,6 +82,24 @@ export function Summary() {
     }
   };
 
+  const handleRelatedClaimsSort = (field: SortField) => {
+    if (relatedClaimsSortField === field) {
+      setRelatedClaimsSortDirection(relatedClaimsSortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setRelatedClaimsSortField(field);
+      setRelatedClaimsSortDirection("asc");
+    }
+  };
+
+  const handleActivitySort = (field: SortField) => {
+    if (activitySortField === field) {
+      setActivitySortDirection(activitySortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setActivitySortField(field);
+      setActivitySortDirection("asc");
+    }
+  };
+
   const getSortIcon = (
     field: SortField,
     currentField: SortField,
