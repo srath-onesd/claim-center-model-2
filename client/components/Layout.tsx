@@ -253,33 +253,46 @@ export function Layout({ children }: LayoutProps) {
       // Special styling for claimant level (level 1)
       const isClaimantLevel = level === 1 && /^claimant\d+$/.test(item.id);
 
-      // For claimant level items, make them expandable to show sub-items
+      // For claimant level items, create a container with clickable name and expand button
       if (isClaimantLevel) {
         return (
           <li key={item.id}>
-            <button
-              onClick={() => toggleExpanded(item.id)}
-              className={cn(
-                "w-full flex items-center justify-between px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
-                isExpanded
-                  ? "bg-white/15 text-white border-white/40"
-                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
-                "font-medium",
-              )}
-              style={{
-                paddingLeft: `${level * 16 + 16}px`,
-              }}
-              role="menuitem"
-              aria-label={item.label}
-              aria-expanded={isExpanded}
-            >
-              <span>{item.label}</span>
-              {isExpanded ? (
-                <ChevronDown size={12} className="text-white/80" />
-              ) : (
-                <ChevronRight size={12} className="text-white/80" />
-              )}
-            </button>
+            <div className="flex items-center">
+              {/* Clickable claimant name */}
+              <Link
+                to={item.href}
+                className={cn(
+                  "flex-1 px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                  isActive
+                    ? "bg-white/15 text-white border-white/40"
+                    : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+                  "font-medium",
+                )}
+                style={{
+                  paddingLeft: `${level * 16 + 16}px`,
+                }}
+                role="menuitem"
+                aria-label={item.label}
+              >
+                {item.label}
+              </Link>
+
+              {/* Expand/collapse button */}
+              <button
+                onClick={() => toggleExpanded(item.id)}
+                className="px-2 py-1.5 text-white/70 hover:text-white transition-colors"
+                aria-label={`Toggle ${item.label} sections`}
+                aria-expanded={isExpanded}
+              >
+                {isExpanded ? (
+                  <ChevronDown size={12} className="text-white/80" />
+                ) : (
+                  <ChevronRight size={12} className="text-white/80" />
+                )}
+              </button>
+            </div>
+
+            {/* Sub-items */}
             {isExpanded && item.subItems && (
               <ul className="mt-1 ml-6 space-y-1">
                 {item.subItems.map((subItem) =>
