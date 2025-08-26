@@ -393,10 +393,10 @@ export function Summary() {
                         paddingAngle={2}
                         dataKey="value"
                       >
-                        <Cell fill="#10b981" />
-                        <Cell fill="#f59e0b" />
-                        <Cell fill="#8b5cf6" />
+                        <Cell fill="#3b82f6" />
                         <Cell fill="#6b7280" />
+                        <Cell fill="#64748b" />
+                        <Cell fill="#475569" />
                       </Pie>
                       <Tooltip
                         formatter={(value) => [
