@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { Phone, Mail, Edit, User, ArrowLeft, DollarSign } from "lucide-react";
+import { MapPin, Calendar, Phone, Mail, Edit, User, ArrowLeft, DollarSign } from "lucide-react";
 
 export function JamesAndersonDetail() {
   const claimantData = {
@@ -56,11 +56,18 @@ export function JamesAndersonDetail() {
               <div>
                 <label className="text-sm font-medium text-gray-900">Claim Type</label>
                 <p className="text-sm text-gray-600 mt-2">Bodily Injury</p>
-                <p className="text-sm text-gray-600 mt-2">Property Damage</p>
+                <p className="text-sm text-gray-600 mt-2">Property Damage - Motor Vehicle Accident</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div>
+                <label className="text-sm font-medium text-gray-900">Date of Birth</label>
+                <div className="flex items-center mt-1">
+                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
+                  <p className="text-sm text-gray-600">**-**-****</p>
+                </div>
+              </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Phone Number</label>
                 <div className="flex items-center mt-1">
@@ -74,6 +81,21 @@ export function JamesAndersonDetail() {
                   <Mail className="h-4 w-4 text-gray-400 mr-1" />
                   <p className="text-sm text-gray-600">james.anderson@email.com</p>
                 </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Address</label>
+                <div className="flex items-center mt-1">
+                  <MapPin className="h-4 w-4 text-gray-400 mr-1" />
+                  <p className="text-sm text-gray-600">741 Maple Dr, Denver, CO 80202</p>
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Social Security</label>
+                <p className="text-sm text-gray-600 mt-1">***-**-0123</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Driver's License</label>
+                <p className="text-sm text-gray-600 mt-1">CO DL012345678</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Employment Status</label>
