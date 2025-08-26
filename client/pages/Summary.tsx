@@ -308,14 +308,14 @@ export function Summary() {
                 {/* Grid of other metrics */}
                 <div className="grid grid-cols-2 gap-4">
                   {/* Outstanding Reserves */}
-                  <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <div className="text-xs text-yellow-800 mb-1">
+                  <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <div className="text-xs text-gray-800 mb-1">
                       Outstanding Reserves
                     </div>
-                    <div className="text-xl font-bold text-yellow-900 mb-2">
+                    <div className="text-xl font-bold text-gray-900 mb-2">
                       $8,250
                     </div>
-                    <div className="text-xs text-yellow-600">
+                    <div className="text-xs text-gray-600">
                       Reserve adequacy: Good
                     </div>
                   </div>
