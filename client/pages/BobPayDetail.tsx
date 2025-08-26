@@ -73,8 +73,7 @@ export function BobPayDetail() {
       <div className="flex flex-row items-center justify-between space-y-0 pb-4">
         <Breadcrumb items={breadcrumbItems} />
         <Button variant="ghost" size="sm" asChild>
-          <RouterLink to="/" className="flex items-center">
-            <ArrowLeft className="h-4 w-4 mr-2" />
+          <RouterLink to="/">
             Back to Overview
           </RouterLink>
         </Button>
