@@ -204,9 +204,9 @@ export function Summary() {
       <Breadcrumb items={breadcrumbItems} />
 
       <div className="p-4 space-y-4">
-        {/* Full-Width Basic Information Section */}
+        {/* Basic Information Section */}
         <Card className="w-full">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-lg font-semibold">
               Basic Information
             </CardTitle>
@@ -214,14 +214,14 @@ export function Summary() {
               Edit
             </Button>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4 pt-2">
             {/* Status and Loss Description - Prominent placement */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 bg-gray-50 rounded-lg">
               <div>
                 <label className="text-sm font-medium text-gray-900">
                   Status
                 </label>
-                <div className="flex items-center mt-2">
+                <div className="flex items-center mt-1">
                   <Badge
                     variant="secondary"
                     className="bg-blue-100 text-blue-800"
@@ -237,7 +237,7 @@ export function Summary() {
                 <label className="text-sm font-medium text-gray-900">
                   Loss Description
                 </label>
-                <p className="text-sm text-gray-600 mt-2">
+                <p className="text-sm text-gray-600 mt-1">
                   Insured hit other party's car in the front passenger tire
                   while making a left turn at intersection. Multi-vehicle
                   collision with property damage and potential bodily injury
@@ -247,7 +247,7 @@ export function Summary() {
             </div>
 
             {/* Other Basic Information Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               <div>
                 <label className="text-sm font-medium text-gray-900">
                   Claim Number
