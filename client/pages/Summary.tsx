@@ -681,8 +681,7 @@ export function Summary() {
               onClick={() => toggleClaimantCollapse("bob-pay")}
             >
               <CardTitle className="text-lg font-semibold flex items-center justify-between">
-                <div className="flex items-center">
-                  <User className="h-5 w-5 mr-2" />
+                <div>
                   Claimant: Bob Pay
                 </div>
                 {expandedClaimant !== "bob-pay" ? (
