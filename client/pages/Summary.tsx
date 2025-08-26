@@ -11,6 +11,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import {
   PieChart,
   Pie,
+  Phone,
   Cell,
   ResponsiveContainer,
   Legend,
@@ -632,9 +633,7 @@ export function Summary() {
                             </div>
                           </div>
                           <div className="flex space-x-2">
-                            <Button variant="ghost" size="sm">
-                              Phone
-                            </Button>
+                            <Phone className="h-4 w-4 text-gray-400" />
                             <Button variant="ghost" size="sm">
                               Email
                             </Button>
@@ -655,9 +654,7 @@ export function Summary() {
                             </div>
                           </div>
                           <div className="flex space-x-2">
-                            <Button variant="ghost" size="sm">
-                              Phone
-                            </Button>
+                            <Phone className="h-4 w-4 text-gray-400" />
                             <Button variant="ghost" size="sm">
                               Email
                             </Button>
