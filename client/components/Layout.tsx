@@ -272,15 +272,15 @@ export function Layout({ children }: LayoutProps) {
       // Special styling for claimant level (level 1)
       const isClaimantLevel = level === 1 && /^claimant\d+$/.test(item.id);
 
-      // For claimant level items, navigate to detail page
+      // For claimant level items, make them expandable to show sub-items
       if (isClaimantLevel) {
         return (
           <li key={item.id}>
-            <Link
-              to={item.href}
+            <button
+              onClick={() => toggleExpanded(item.id)}
               className={cn(
-                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
-                isActive
+                "w-full flex items-center justify-between px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                isExpanded
                   ? "bg-white/15 text-white border-white/40"
                   : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
                 "font-medium",
@@ -290,10 +290,22 @@ export function Layout({ children }: LayoutProps) {
               }}
               role="menuitem"
               aria-label={item.label}
-              onClick={() => setSelectedClaimant(item)}
+              aria-expanded={isExpanded}
             >
-              {item.label}
-            </Link>
+              <span>{item.label}</span>
+              {isExpanded ? (
+                <ChevronDown size={12} className="text-white/80" />
+              ) : (
+                <ChevronRight size={12} className="text-white/80" />
+              )}
+            </button>
+            {isExpanded && item.subItems && (
+              <ul className="mt-1 ml-6 space-y-1">
+                {item.subItems.map((subItem) =>
+                  renderNavigationItem(subItem, level + 1),
+                )}
+              </ul>
+            )}
           </li>
         );
       }
