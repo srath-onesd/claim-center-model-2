@@ -578,7 +578,7 @@ export function Summary() {
                           </div>
                           <Badge
                             variant="outline"
-                            className="text-yellow-700 border-yellow-300"
+                            className="text-gray-700 border-gray-300"
                           >
                             Pending
                           </Badge>
@@ -823,7 +823,7 @@ export function Summary() {
                           </div>
                           <Badge
                             variant="outline"
-                            className="text-yellow-700 border-yellow-300"
+                            className="text-gray-700 border-gray-300"
                           >
                             Pending
                           </Badge>
