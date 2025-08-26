@@ -270,11 +270,9 @@ export function Summary() {
                   <p className="text-sm text-gray-600">Mital Patel</p>
                   <div className="flex items-center space-x-2 mt-1">
                     <Button variant="ghost" size="sm" className="p-0 h-auto">
-                      <Phone className="h-3 w-3 mr-1" />
                       <span className="text-xs">(555) 123-4567</span>
                     </Button>
                     <Button variant="ghost" size="sm" className="p-0 h-auto">
-                      <Mail className="h-3 w-3 mr-1" />
                       <span className="text-xs">mital@company.com</span>
                     </Button>
                   </div>
