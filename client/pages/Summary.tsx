@@ -273,6 +273,7 @@ export function Summary() {
                       <span className="text-xs">(555) 123-4567</span>
                     </Button>
                     <Button variant="ghost" size="sm" className="p-0 h-auto">
+                      <Mail className="h-4 w-4 text-gray-400" />
                       <span className="text-xs">mital@company.com</span>
                     </Button>
                   </div>
