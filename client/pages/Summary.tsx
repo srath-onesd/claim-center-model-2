@@ -1009,8 +1009,7 @@ export function Summary() {
             {/* Vehicle Information */}
             <Card>
             <CardHeader>
-              <CardTitle className="text-lg font-semibold flex items-center">
-                <Shield className="h-5 w-5 mr-2 text-blue-500" />
+              <CardTitle className="text-lg font-semibold">
                 Vehicle Information
               </CardTitle>
             </CardHeader>
