@@ -846,7 +846,7 @@ export function Summary() {
           </div>
 
           {/* Right Column - Additional Cards */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Related Claims & Incidents */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
