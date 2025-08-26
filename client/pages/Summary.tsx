@@ -294,18 +294,13 @@ export function Summary() {
               {/* Left Side - Key Metrics */}
               <div className="space-y-4">
                 {/* Total Incurred - Prominent */}
-                <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-sm font-medium text-blue-800 mb-1">
-                        Total Incurred
-                      </div>
-                      <div className="text-3xl font-bold text-blue-900">
-                        $13,150.00
-                      </div>
+                <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-100">
+                  <div>
+                    <div className="text-sm font-medium text-blue-800 mb-1">
+                      Total Incurred
                     </div>
-                    <div className="p-3 bg-blue-100 rounded-full">
-                      <TrendingUp className="h-6 w-6 text-blue-600" />
+                    <div className="text-3xl font-bold text-blue-900">
+                      $13,150.00
                     </div>
                   </div>
                 </div>
