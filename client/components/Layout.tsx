@@ -205,9 +205,6 @@ export function Layout({ children }: LayoutProps) {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(
     new Set(["claimants"]),
   );
-  const [selectedClaimant, setSelectedClaimant] =
-    useState<NavigationItem | null>(null);
-  const [rightPanelCollapsed, setRightPanelCollapsed] = useState(true);
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
