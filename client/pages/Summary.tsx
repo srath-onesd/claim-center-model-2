@@ -285,8 +285,7 @@ export function Summary() {
         {/* Full-Width Financial Summary Section */}
         <Card className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-            <CardTitle className="text-lg font-semibold flex items-center">
-              <DollarSign className="h-5 w-5 mr-2 text-gray-600" />
+            <CardTitle className="text-lg font-semibold">
               Financial Summary
             </CardTitle>
           </CardHeader>
