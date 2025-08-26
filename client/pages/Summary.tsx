@@ -234,12 +234,9 @@ export function Summary() {
                 <label className="text-sm font-medium text-gray-900">
                   Loss Location
                 </label>
-                <div className="flex items-center mt-1">
-                  <MapPin className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">
-                    1922 Patricia Ave, Arvada, CA
-                  </p>
-                </div>
+                <p className="text-sm text-gray-600 mt-1">
+                  1922 Patricia Ave, Arvada, CA
+                </p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">
