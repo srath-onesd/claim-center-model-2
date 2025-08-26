@@ -50,7 +50,7 @@ export function LisaRodriguezDetail() {
                 <label className="text-sm font-medium text-gray-900">Claimant Status</label>
                 <div className="flex items-center mt-2">
                   <Badge variant="secondary" className="bg-blue-100 text-blue-800">Active</Badge>
-                  <span className="text-sm text-gray-600 ml-2">First Party Claimant</span>
+                  <span className="text-sm text-gray-600 ml-2">Third Party Claimant</span>
                 </div>
               </div>
               <div>
@@ -61,6 +61,13 @@ export function LisaRodriguezDetail() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div>
+                <label className="text-sm font-medium text-gray-900">Date of Birth</label>
+                <div className="flex items-center mt-1">
+                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
+                  <p className="text-sm text-gray-600">**-**-****</p>
+                </div>
+              </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">Phone Number</label>
                 <div className="flex items-center mt-1">
@@ -83,8 +90,20 @@ export function LisaRodriguezDetail() {
                 </div>
               </div>
               <div>
+                <label className="text-sm font-medium text-gray-900">Social Security</label>
+                <p className="text-sm text-gray-600 mt-1">***-**-5678</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Driver's License</label>
+                <p className="text-sm text-gray-600 mt-1">FL DL567890123</p>
+              </div>
+              <div>
                 <label className="text-sm font-medium text-gray-900">Employment Status</label>
                 <p className="text-sm text-gray-600 mt-1">Nurse</p>
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-900">Attorney</label>
+                <p className="text-sm text-gray-600 mt-1">Rodriguez Legal Group</p>
               </div>
             </div>
           </CardContent>
