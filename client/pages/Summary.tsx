@@ -369,21 +369,21 @@ export function Summary() {
                     <PieChart>
                       <Pie
                         data={[
-                          { name: "Paid", value: 7500, color: "#10b981" },
+                          { name: "Paid", value: 7500, color: "#3b82f6" },
                           {
                             name: "Reserves",
                             value: 8250,
-                            color: "#f59e0b",
+                            color: "#6b7280",
                           },
                           {
                             name: "Recoveries",
                             value: 2100,
-                            color: "#8b5cf6",
+                            color: "#64748b",
                           },
                           {
                             name: "Deductible",
                             value: 500,
-                            color: "#6b7280",
+                            color: "#475569",
                           },
                         ]}
                         cx="50%"
