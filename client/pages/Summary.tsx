@@ -925,36 +925,62 @@ export function Summary() {
 
             {/* Activity Timeline */}
             <Card>
-              <CardHeader>
-                <div className="flex flex-row items-center justify-between space-y-0 pb-4">
-                  <CardTitle className="text-lg font-semibold">
-                    Activity Timeline
-                  </CardTitle>
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto text-blue-600"
-                    asChild
-                  >
-                    <RouterLink to="/claim-history">View All</RouterLink>
-                  </Button>
-                </div>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-lg font-semibold">
+                  Activity Timeline
+                </CardTitle>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-blue-600 text-sm"
+                  asChild
+                >
+                  <RouterLink to="/claim-history">View All</RouterLink>
+                </Button>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {activityData.slice(0, 4).map((activity, index) => (
-                    <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-gray-900">
-                            {activity.activity}
-                          </p>
-                          <p className="text-xs text-gray-600 mt-1">
-                            {activity.date} • {activity.actionTaker}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+              <CardContent className="pt-2">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("date")}
+                        >
+                          <div className="flex items-center">
+                            Date
+                            {getSortIcon("date", activitySortField, activitySortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("activity")}
+                        >
+                          <div className="flex items-center">
+                            Activity
+                            {getSortIcon("activity", activitySortField, activitySortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("actionTaker")}
+                        >
+                          <div className="flex items-center">
+                            Action Taken By
+                            {getSortIcon("actionTaker", activitySortField, activitySortDirection)}
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {activityData.slice(0, 4).map((activity, index) => (
+                        <tr key={index} className="hover:bg-gray-50">
+                          <td className="px-3 py-2 font-medium">{activity.date}</td>
+                          <td className="px-3 py-2">{activity.activity}</td>
+                          <td className="px-3 py-2">{activity.actionTaker}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </CardContent>
             </Card>
