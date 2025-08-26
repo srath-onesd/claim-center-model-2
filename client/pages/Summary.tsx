@@ -21,6 +21,7 @@ import {
   ChevronRight,
   ChevronUp,
   ArrowUpDown,
+  Mail,
 } from "lucide-react";
 
 type SortField =
