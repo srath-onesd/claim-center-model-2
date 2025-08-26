@@ -6,42 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import {
-  MapPin,
-  Calendar,
-  Phone,
-  Mail,
-  FileText,
-  Upload,
-  Download,
-  Search,
-  Edit,
-  Clock,
-  User,
-  Shield,
-  AlertCircle,
-  ArrowLeft,
-  Eye,
-  Building,
-  UserCheck,
-  CheckCircle,
-  ExternalLink,
-  DollarSign,
-  TrendingUp,
-  CreditCard,
-  Target,
-  BarChart3,
-  PieChart,
-  Receipt,
-  ArrowUpRight,
-  ArrowDownRight,
-  CalendarDays,
-  Flag,
-  Plus,
-  ArrowUpDown,
-  ChevronUp,
-  ChevronDown,
-} from "lucide-react";
+import { ArrowUpDown, ChevronUp, ChevronDown } from "lucide-react";
 
 type SortField =
   | "dueDate"
@@ -104,10 +69,7 @@ export function BobPayDetail() {
       <div className="flex flex-row items-center justify-between space-y-0 pb-4">
         <Breadcrumb items={breadcrumbItems} />
         <Button variant="ghost" size="sm" asChild>
-          <RouterLink to="/" className="flex items-center">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Overview
-          </RouterLink>
+          <RouterLink to="/">Back to Overview</RouterLink>
         </Button>
       </div>
 
@@ -115,12 +77,11 @@ export function BobPayDetail() {
         {/* Full-Width Claimant Information Section */}
         <Card className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-            <CardTitle className="text-lg font-semibold flex items-center">
-              <User className="h-5 w-5 mr-2" />
+            <CardTitle className="text-lg font-semibold">
               Claimant Information - {claimantData.displayName}
             </CardTitle>
             <Button variant="ghost" size="sm">
-              <Edit className="h-4 w-4" />
+              Edit
             </Button>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -146,9 +107,7 @@ export function BobPayDetail() {
                 <label className="text-sm font-medium text-gray-900">
                   Claim Type
                 </label>
-                <p className="text-sm text-gray-600 mt-2">
-                  Bodily Injury
-                </p>
+                <p className="text-sm text-gray-600 mt-2">Bodily Injury</p>
                 <p className="text-sm text-gray-600 mt-2">
                   Property Damage - Motor Vehicle Accident
                 </p>
@@ -161,19 +120,13 @@ export function BobPayDetail() {
                 <label className="text-sm font-medium text-gray-900">
                   Date of Birth
                 </label>
-                <div className="flex items-center mt-1">
-                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">**-**-****</p>
-                </div>
+                <p className="text-sm text-gray-600 mt-1">**-**-****</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">
                   Phone Number
                 </label>
-                <div className="flex items-center mt-1">
-                  <Phone className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">(555) 987-6543</p>
-                </div>
+                <p className="text-sm text-gray-600 mt-1">(555) 987-6543</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">
@@ -231,7 +184,7 @@ export function BobPayDetail() {
               Financial Information - {claimantData.displayName}
             </CardTitle>
             <Button variant="ghost" size="sm">
-              <Edit className="h-4 w-4" />
+              Edit
             </Button>
           </CardHeader>
           <CardContent>
@@ -301,46 +254,67 @@ export function BobPayDetail() {
                 <table className="w-full text-sm">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-4 py-3 text-left font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('coverage')}>
+                      <th
+                        className="px-4 py-3 text-left font-medium text-gray-900 cursor-pointer"
+                        onClick={() => handleSort("coverage")}
+                      >
                         <div className="flex items-center">
                           Coverage Type
-                          {getSortIcon('coverage')}
+                          {getSortIcon("coverage")}
                         </div>
                       </th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('limit')}>
+                      <th
+                        className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                        onClick={() => handleSort("limit")}
+                      >
                         <div className="flex items-center justify-end">
                           Limit
-                          {getSortIcon('limit')}
+                          {getSortIcon("limit")}
                         </div>
                       </th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('incurred')}>
+                      <th
+                        className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                        onClick={() => handleSort("incurred")}
+                      >
                         <div className="flex items-center justify-end">
                           Incurred
-                          {getSortIcon('incurred')}
+                          {getSortIcon("incurred")}
                         </div>
                       </th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('paid')}>
+                      <th
+                        className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                        onClick={() => handleSort("paid")}
+                      >
                         <div className="flex items-center justify-end">
                           Paid
-                          {getSortIcon('paid')}
+                          {getSortIcon("paid")}
                         </div>
                       </th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('reserve')}>
+                      <th
+                        className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                        onClick={() => handleSort("reserve")}
+                      >
                         <div className="flex items-center justify-end">
                           Reserve
-                          {getSortIcon('reserve')}
+                          {getSortIcon("reserve")}
                         </div>
                       </th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('recovery')}>
+                      <th
+                        className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                        onClick={() => handleSort("recovery")}
+                      >
                         <div className="flex items-center justify-end">
                           Recovery
-                          {getSortIcon('recovery')}
+                          {getSortIcon("recovery")}
                         </div>
                       </th>
-                      <th className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer" onClick={() => handleSort('available')}>
+                      <th
+                        className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                        onClick={() => handleSort("available")}
+                      >
                         <div className="flex items-center justify-end">
                           Available
-                          {getSortIcon('available')}
+                          {getSortIcon("available")}
                         </div>
                       </th>
                     </tr>
@@ -410,7 +384,7 @@ export function BobPayDetail() {
                   Bodily Injury Information
                 </CardTitle>
                 <Button variant="ghost" size="sm">
-                  <Edit className="h-4 w-4" />
+                  Edit
                 </Button>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -480,7 +454,7 @@ export function BobPayDetail() {
                   Vehicle & Property Damage
                 </CardTitle>
                 <Button variant="ghost" size="sm">
-                  <Edit className="h-4 w-4" />
+                  Edit
                 </Button>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -552,22 +526,31 @@ export function BobPayDetail() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('date')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("date")}
+                        >
                           <div className="flex items-center">
                             Date
-                            {getSortIcon('date')}
+                            {getSortIcon("date")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('activity')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("activity")}
+                        >
                           <div className="flex items-center">
                             Activity
-                            {getSortIcon('activity')}
+                            {getSortIcon("activity")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('actionby')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("actionby")}
+                        >
                           <div className="flex items-center">
                             Action Taken By
-                            {getSortIcon('actionby')}
+                            {getSortIcon("actionby")}
                           </div>
                         </th>
                       </tr>
@@ -624,7 +607,9 @@ export function BobPayDetail() {
                   Diaries
                 </CardTitle>
                 <div className="flex space-x-2">
-                  <Button variant="link" className="p-0 h-auto text-blue-600">View All</Button>
+                  <Button variant="link" className="p-0 h-auto text-blue-600">
+                    View All
+                  </Button>
                   <Button variant="outline" size="sm">
                     <Plus className="h-4 w-4 mr-2" />
                     Add
@@ -636,28 +621,40 @@ export function BobPayDetail() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('dueDate')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("dueDate")}
+                        >
                           <div className="flex items-center">
                             Due Date
-                            {getSortIcon('dueDate')}
+                            {getSortIcon("dueDate")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('title')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("title")}
+                        >
                           <div className="flex items-center">
                             Title
-                            {getSortIcon('title')}
+                            {getSortIcon("title")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('priority')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("priority")}
+                        >
                           <div className="flex items-center">
                             Priority
-                            {getSortIcon('priority')}
+                            {getSortIcon("priority")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('actions')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("actions")}
+                        >
                           <div className="flex items-center">
                             Actions
-                            {getSortIcon('actions')}
+                            {getSortIcon("actions")}
                           </div>
                         </th>
                       </tr>
@@ -765,7 +762,7 @@ export function BobPayDetail() {
                   </table>
                 </div>
               </CardContent>
-            </Card>     
+            </Card>
 
             {/* Parties Details */}
             <Card>
@@ -774,7 +771,9 @@ export function BobPayDetail() {
                   <UserCheck className="h-5 w-5 mr-2" />
                   Parties
                 </CardTitle>
-                <Button variant="link" className="p-0 h-auto text-blue-600">View All</Button>
+                <Button variant="link" className="p-0 h-auto text-blue-600">
+                  View All
+                </Button>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">

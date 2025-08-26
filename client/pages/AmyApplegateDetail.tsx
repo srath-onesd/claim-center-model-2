@@ -116,8 +116,7 @@ export function AmyApplegateDetail() {
         <Card className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
             <CardTitle className="text-lg font-semibold flex items-center">
-              <User className="h-5 w-5 mr-2" />
-              Claimant Information - {claimantData.displayName}
+              Claimant Information
             </CardTitle>
             <Button variant="ghost" size="sm">
               <Edit className="h-4 w-4" />
@@ -156,7 +155,7 @@ export function AmyApplegateDetail() {
                 </p>
 
                 {/* Information grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0">
                   <div className="flex items-center space-x-2">
                     <Calendar className="h-4 w-4 text-gray-400" />
                     <span className="text-sm text-gray-500">DOB</span>
