@@ -1116,7 +1116,7 @@ export function Summary() {
                 <div className="pt-2 border-t">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Legal Reserves:</span>
-                    <span className="font-medium text-red-600">$25,000</span>
+                    <span className="font-medium text-blue-600">$25,000</span>
                   </div>
                 </div>
               </div>
