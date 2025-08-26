@@ -640,7 +640,7 @@ export function Summary() {
                             Phone
                           </Button>
                           <Button variant="ghost" size="sm">
-                            <Mail className="h-4 w-4" />
+                            Email
                           </Button>
                         </div>
                       </div>
@@ -663,7 +663,7 @@ export function Summary() {
                             Phone
                           </Button>
                           <Button variant="ghost" size="sm">
-                            <Mail className="h-4 w-4" />
+                            Email
                           </Button>
                         </div>
                       </div>
@@ -883,7 +883,7 @@ export function Summary() {
                             Phone
                           </Button>
                           <Button variant="ghost" size="sm">
-                            <Mail className="h-4 w-4" />
+                            Email
                           </Button>
                         </div>
                       </div>
@@ -906,7 +906,7 @@ export function Summary() {
                             Phone
                           </Button>
                           <Button variant="ghost" size="sm">
-                            <Mail className="h-4 w-4" />
+                            Email
                           </Button>
                         </div>
                       </div>
