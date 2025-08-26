@@ -228,10 +228,7 @@ export function Summary() {
                 <label className="text-sm font-medium text-gray-900">
                   Date of Loss
                 </label>
-                <div className="flex items-center mt-1">
-                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">12/31/2025</p>
-                </div>
+                <p className="text-sm text-gray-600 mt-1">12/31/2025</p>
               </div>
               <div>
                 <label className="text-sm font-medium text-gray-900">
