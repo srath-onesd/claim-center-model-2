@@ -321,14 +321,14 @@ export function Summary() {
                   </div>
 
                   {/* Amount Paid */}
-                  <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                    <div className="text-xs text-green-800 mb-1">
+                  <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                    <div className="text-xs text-blue-800 mb-1">
                       Amount Paid
                     </div>
-                    <div className="text-xl font-bold text-green-900 mb-2">
+                    <div className="text-xl font-bold text-blue-900 mb-2">
                       $7,500
                     </div>
-                    <div className="text-xs text-green-600">
+                    <div className="text-xs text-blue-600">
                       Last: Mar 20, 2024
                     </div>
                   </div>
