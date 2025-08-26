@@ -139,14 +139,21 @@ export function AmyApplegateDetail() {
               <div className="flex-1">
                 {/* Name and Status row */}
                 <div className="flex items-center space-x-3 mb-3">
-                  <h3 className="text-lg font-semibold text-gray-900">Amy Applegate</h3>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Amy Applegate
+                  </h3>
+                  <Badge
+                    variant="secondary"
+                    className="bg-blue-100 text-blue-800"
+                  >
                     Active
                   </Badge>
                 </div>
 
                 {/* Role */}
-                <p className="text-sm text-gray-600 mb-4">Third Party Claimant</p>
+                <p className="text-sm text-gray-600 mb-4">
+                  Third Party Claimant
+                </p>
 
                 {/* Information grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
@@ -171,19 +178,25 @@ export function AmyApplegateDetail() {
                   <div className="flex items-center space-x-2">
                     <Phone className="h-4 w-4 text-gray-400" />
                     <span className="text-sm text-gray-500">Phone</span>
-                    <span className="text-sm text-gray-900">(555) 123-4567</span>
+                    <span className="text-sm text-gray-900">
+                      (555) 123-4567
+                    </span>
                   </div>
 
                   <div className="flex items-center space-x-2">
                     <Mail className="h-4 w-4 text-gray-400" />
                     <span className="text-sm text-gray-500">Email</span>
-                    <span className="text-sm text-gray-900">amy.applegate@email.com</span>
+                    <span className="text-sm text-gray-900">
+                      amy.applegate@email.com
+                    </span>
                   </div>
 
                   <div className="flex items-center space-x-2">
                     <MapPin className="h-4 w-4 text-gray-400" />
                     <span className="text-sm text-gray-500">Address</span>
-                    <span className="text-sm text-gray-900">123 Main St, Anytown, CA 90210</span>
+                    <span className="text-sm text-gray-900">
+                      123 Main St, Anytown, CA 90210
+                    </span>
                   </div>
                 </div>
               </div>
@@ -531,22 +544,31 @@ export function AmyApplegateDetail() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('date')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("date")}
+                        >
                           <div className="flex items-center">
                             Date
-                            {getSortIcon('date')}
+                            {getSortIcon("date")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('activity')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("activity")}
+                        >
                           <div className="flex items-center">
                             Activity
-                            {getSortIcon('activity')}
+                            {getSortIcon("activity")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('actionby')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("actionby")}
+                        >
                           <div className="flex items-center">
                             Action Taken By
-                            {getSortIcon('actionby')}
+                            {getSortIcon("actionby")}
                           </div>
                         </th>
                       </tr>
@@ -846,9 +868,7 @@ export function AmyApplegateDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback>
-                          ABC
-                        </AvatarFallback>
+                        <AvatarFallback>ABC</AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">ABC Auto Repair</p>
