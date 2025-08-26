@@ -1100,7 +1100,7 @@ export function Summary() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium">Litigation Status</span>
-                    <Badge variant="destructive">Active</Badge>
+                    <Badge variant="secondary" className="bg-blue-100 text-blue-800">Active</Badge>
                   </div>
                   <p className="text-xs text-gray-600">Suit filed on 03/15/2024</p>
                 </div>
