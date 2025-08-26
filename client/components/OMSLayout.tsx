@@ -80,12 +80,10 @@ export function OMSLayout({ children }: OMSLayoutProps) {
     { icon: DollarSign, label: "Accounting", path: "/accounting" },
     { icon: Search, label: "Search Center", path: "/search-center" },
     { icon: Settings, label: "Other Utilities", path: "/other-utilities" },
-  ];
-
-  const quickLinks = [
-    { id: "bulk-changes", label: "Bulk Change Endorsements", path: "/bulk-changes" },
-    { id: "manage-users", label: "Manage Users", path: "/manage-users" },
-    { id: "analytics-reports", label: "Analytics Reports", path: "/analytics-reports" },
+    { icon: LinkIcon, label: 'Quick Links', path: '/links' },
+    { icon: TrendingUp, label: 'Bulk Change Endorsements', path: '/bulk-changes' },
+    { icon: Users, label: 'Manage Users', path: '/users' },
+    { icon: BarChart, label: 'Analytic Reports', path: '/reports' }
   ];
 
   const notifications = [
@@ -113,6 +111,14 @@ export function OMSLayout({ children }: OMSLayoutProps) {
   ];
 
   const unreadCount = notifications.filter(n => n.unread).length;
+
+  const quickLinks = [
+    { id: 1, label: 'Policy Search', path: '/policy-search' },
+    { id: 2, label: 'Claim Search', path: '/claim-search' },
+    { id: 3, label: 'Customer Lookup', path: '/customer-lookup' },
+    { id: 4, label: 'Payment Center', path: '/payments' },
+    { id: 5, label: 'Reports', path: '/reports' }
+  ];
 
   const toggleExpanded = (itemPath: string) => {
     setExpandedItems(prev =>
@@ -243,25 +249,6 @@ export function OMSLayout({ children }: OMSLayoutProps) {
               );
             })}
           </ul>
-
-          {!omsSidebarCollapsed && (
-            <>
-              <div className="pt-4 pb-2">
-                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider px-3">
-                  Quick Links
-                </span>
-              </div>
-              {quickLinks.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.path}
-                  className="group flex items-center px-6 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors rounded-lg"
-                >
-                  <span className="truncate">{item.label}</span>
-                </a>
-              ))}
-            </>
-          )}
         </nav>
 
         {/* Footer - Auto-adjusts based on screen resolution */}
@@ -277,19 +264,17 @@ export function OMSLayout({ children }: OMSLayoutProps) {
       {/* Content Area with Header */}
       <div className="flex-1 flex flex-col overflow-hidden bg-white">
         {/* Enhanced OMS Header - Only spans content area */}
-        <div className="bg-white px-4 py-3 flex items-center justify-between border-b border-gray-200 shadow-sm">
-          <div className="flex-1 max-w-md mx-8 items-center space-x-4">
+        <div className="bg-white px-4 py-3 flex items-center justify-end border-b border-gray-200 shadow-sm">
+          <div className="flex items-center space-x-4">
+            {/* Search Input */}
             <div className="relative">
               <Search className="h-4 w-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search policies, claims, customers..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-80 pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
             {/* Notifications */}
             <Popover open={notificationsOpen} onOpenChange={setNotificationsOpen}>
               <PopoverTrigger asChild>

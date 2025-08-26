@@ -123,105 +123,82 @@ export function AmyApplegateDetail() {
               <Edit className="h-4 w-4" />
             </Button>
           </CardHeader>
-          <CardContent className="space-y-6">
-            {/* Status and Claimant Type - Prominent placement */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-lg">
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Claimant Status
-                </label>
-                <div className="flex items-center mt-2">
+          <CardContent className="p-6">
+            {/* Profile-style layout matching screenshot */}
+            <div className="flex items-start space-x-6">
+              {/* Avatar section */}
+              <div className="flex-shrink-0">
+                <Avatar className="h-12 w-12">
+                  <AvatarFallback className="bg-blue-600 text-white text-lg font-semibold">
+                    AA
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+
+              {/* Information section */}
+              <div className="flex-1">
+                {/* Name and Status row */}
+                <div className="flex items-center space-x-3 mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Amy Applegate
+                  </h3>
                   <Badge
                     variant="secondary"
                     className="bg-blue-100 text-blue-800"
                   >
                     Active
                   </Badge>
-                  <span className="text-sm text-gray-600 ml-2">
-                    Third Party Claimant
-                  </span>
                 </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Claim Type
-                </label>
-                <p className="text-sm text-gray-600 mt-2">
-                  Bodily Injury
-                </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Property Damage - Motor Vehicle Accident
-                </p>
-              </div>
-            </div>
 
-            {/* Other Claimant Information Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Date of Birth
-                </label>
-                <div className="flex items-center mt-1">
-                  <Calendar className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">**-**-****</p>
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Phone Number
-                </label>
-                <div className="flex items-center mt-1">
-                  <Phone className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">(555) 123-4567</p>
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Email Address
-                </label>
-                <div className="flex items-center mt-1">
-                  <Mail className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">
-                    amy.applegate@email.com
-                  </p>
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Address
-                </label>
-                <div className="flex items-center mt-1">
-                  <MapPin className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">
-                    123 Main St, Anytown, CA 90210
-                  </p>
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Social Security
-                </label>
-                <p className="text-sm text-gray-600 mt-1">***-**-4567</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Driver's License
-                </label>
-                <p className="text-sm text-gray-600 mt-1">CA DL123456789</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Employment Status
-                </label>
-                <p className="text-sm text-gray-600 mt-1">Full-time Employed</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Attorney
-                </label>
-                <p className="text-sm text-gray-600 mt-1">
-                  Johnson & Associates
+                {/* Role */}
+                <p className="text-sm text-gray-600 mb-4">
+                  Third Party Claimant
                 </p>
+
+                {/* Information grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">DOB</span>
+                    <span className="text-sm text-gray-900">**-**-****</span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <User className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Gender</span>
+                    <span className="text-sm text-gray-900">Female</span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">SSN</span>
+                    <span className="text-sm text-gray-900">***-**-4567</span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Phone</span>
+                    <span className="text-sm text-gray-900">
+                      (555) 123-4567
+                    </span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Mail className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Email</span>
+                    <span className="text-sm text-gray-900">
+                      amy.applegate@email.com
+                    </span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Address</span>
+                    <span className="text-sm text-gray-900">
+                      123 Main St, Anytown, CA 90210
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </CardContent>
@@ -292,44 +269,6 @@ export function AmyApplegateDetail() {
                 </div>
                 <div className="text-xs text-gray-500">
                   Last payment: Mar 15, 2024
-                </div>
-              </div>
-
-              {/* Medical Payments */}
-              <div className="p-4 bg-blue-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">
-                  Medical Payments
-                </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">
-                  {claimantData.medicalPayments}
-                </div>
-                <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
-                  <div
-                    className="bg-blue-600 h-2 rounded-full"
-                    style={{ width: "77%" }}
-                  ></div>
-                </div>
-                <div className="text-xs text-gray-500">
-                  77% of medical limit
-                </div>
-              </div>
-
-              {/* Bodily Injury Liability */}
-              <div className="p-4 bg-red-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">
-                  Bodily Injury Liability
-                </div>
-                <div className="text-2xl font-bold text-red-600 mb-2">
-                  {claimantData.bodilyInjury}
-                </div>
-                <div className="w-full bg-red-200 rounded-full h-2 mb-2">
-                  <div
-                    className="bg-red-600 h-2 rounded-full"
-                    style={{ width: "17%" }}
-                  ></div>
-                </div>
-                <div className="text-xs text-gray-500">
-                  17% of BI limit used
                 </div>
               </div>
             </div>
@@ -605,22 +544,31 @@ export function AmyApplegateDetail() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('date')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("date")}
+                        >
                           <div className="flex items-center">
                             Date
-                            {getSortIcon('date')}
+                            {getSortIcon("date")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('activity')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("activity")}
+                        >
                           <div className="flex items-center">
                             Activity
-                            {getSortIcon('activity')}
+                            {getSortIcon("activity")}
                           </div>
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer" onClick={() => handleSort('actionby')}>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("actionby")}
+                        >
                           <div className="flex items-center">
                             Action Taken By
-                            {getSortIcon('actionby')}
+                            {getSortIcon("actionby")}
                           </div>
                         </th>
                       </tr>
@@ -738,7 +686,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-red-100 text-red-800"
+                            className="bg-gray-300 text-gray-1000"
                           >
                             High
                           </Badge>
@@ -763,7 +711,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-yellow-100 text-yellow-800"
+                            className="bg-gray-200 text-gray-900"
                           >
                             Medium
                           </Badge>
@@ -788,7 +736,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-red-100 text-red-800"
+                            className="bg-gray-300 text-red-1000"
                           >
                             High
                           </Badge>
@@ -813,7 +761,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-green-100 text-green-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             Low
                           </Badge>
@@ -834,128 +782,6 @@ export function AmyApplegateDetail() {
               </CardContent>
             </Card>
 
-            {/* Document Details */}
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <FileText className="h-5 w-5 mr-2" />
-                  Document Details
-                </CardTitle>
-                <div className="flex space-x-2">
-                  <Button variant="link" className="p-0 h-auto text-blue-600">
-                    View All
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Upload className="h-4 w-4 mr-2" />
-                    Upload
-                  </Button>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-blue-600" />
-                      <div>
-                        <p className="text-sm font-medium">Medical Records</p>
-                        <p className="text-xs text-gray-500">
-                          5 files • 12.3 MB
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-green-600" />
-                      <div>
-                        <p className="text-sm font-medium">Vehicle Photos</p>
-                        <p className="text-xs text-gray-500">
-                          8 files • 4.2 MB
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-red-600" />
-                      <div>
-                        <p className="text-sm font-medium">Police Report</p>
-                        <p className="text-xs text-gray-500">1 file • 2.3 MB</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-purple-600" />
-                      <div>
-                        <p className="text-sm font-medium">
-                          Insurance Documentation
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          3 files • 1.8 MB
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="h-5 w-5 text-orange-600" />
-                      <div>
-                        <p className="text-sm font-medium">Legal Documents</p>
-                        <p className="text-xs text-gray-500">
-                          2 files • 956 KB
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
             {/* Parties Details */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
@@ -970,10 +796,10 @@ export function AmyApplegateDetail() {
               <CardContent>
                 <div className="space-y-4">
                   {/* Claimant */}
-                  <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-blue-600 text-white">
+                        <AvatarFallback className="bg-gray-600 text-white">
                           AA
                         </AvatarFallback>
                       </Avatar>
@@ -1017,7 +843,7 @@ export function AmyApplegateDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-purple-600 text-white">
+                        <AvatarFallback className="bg-gray-600 text-white">
                           JA
                         </AvatarFallback>
                       </Avatar>
@@ -1038,35 +864,11 @@ export function AmyApplegateDetail() {
                     </div>
                   </div>
 
-                  {/* Medical Provider 
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-green-600 text-white">CGH</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">City General Hospital</p>
-                        <p className="text-xs text-gray-500">Medical Provider</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                  */}
-
                   {/* Repair Shop */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-orange-600 text-white">
-                          ABC
-                        </AvatarFallback>
+                        <AvatarFallback>ABC</AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">ABC Auto Repair</p>
@@ -1087,7 +889,7 @@ export function AmyApplegateDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-blue-600 text-white">
+                        <AvatarFallback className="bg-gray-600 text-white">
                           MP
                         </AvatarFallback>
                       </Avatar>

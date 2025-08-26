@@ -290,44 +290,6 @@ export function BobPayDetail() {
                   Last payment: Mar 10, 2024
                 </div>
               </div>
-
-              {/* Medical Payments */}
-              <div className="p-4 bg-blue-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">
-                  Medical Payments
-                </div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">
-                  {claimantData.medicalPayments}
-                </div>
-                <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
-                  <div
-                    className="bg-blue-600 h-2 rounded-full"
-                    style={{ width: "42%" }}
-                  ></div>
-                </div>
-                <div className="text-xs text-gray-500">
-                  42% of medical limit
-                </div>
-              </div>
-
-              {/* Bodily Injury Liability */}
-              <div className="p-4 bg-red-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-1">
-                  Bodily Injury Liability
-                </div>
-                <div className="text-2xl font-bold text-red-600 mb-2">
-                  {claimantData.bodilyInjury}
-                </div>
-                <div className="w-full bg-red-200 rounded-full h-2 mb-2">
-                  <div
-                    className="bg-red-600 h-2 rounded-full"
-                    style={{ width: "13%" }}
-                  ></div>
-                </div>
-                <div className="text-xs text-gray-500">
-                  13% of BI limit used
-                </div>
-              </div>
             </div>
 
             {/* Financial Breakdown Table */}
