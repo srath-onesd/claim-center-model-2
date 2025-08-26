@@ -310,27 +310,65 @@ export function Layout({ children }: LayoutProps) {
         );
       }
 
-      // For non-claimant nested items (shouldn't appear now, but keeping for safety)
-      return (
-        <li key={item.id}>
-          <Link
-            to={item.href}
-            className={cn(
-              "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
-              isActive
-                ? "bg-white/15 text-white border-white/40"
-                : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+      // For sub-items under claimants (level 2+)
+      if (item.expandable && hasSubItems) {
+        // Expandable items like Recovery and Journal
+        return (
+          <li key={item.id}>
+            <button
+              onClick={() => toggleExpanded(item.id)}
+              className={cn(
+                "w-full flex items-center justify-between px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                isExpanded
+                  ? "bg-white/15 text-white border-white/40"
+                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+              )}
+              style={{
+                paddingLeft: `${level * 16 + 16}px`,
+              }}
+              role="menuitem"
+              aria-label={item.label}
+              aria-expanded={isExpanded}
+            >
+              <span>{item.label}</span>
+              {isExpanded ? (
+                <ChevronDown size={12} className="text-white/80" />
+              ) : (
+                <ChevronRight size={12} className="text-white/80" />
+              )}
+            </button>
+            {isExpanded && item.subItems && (
+              <ul className="mt-1 ml-6 space-y-1">
+                {item.subItems.map((subItem) =>
+                  renderNavigationItem(subItem, level + 1),
+                )}
+              </ul>
             )}
-            style={{
-              paddingLeft: `${level * 16 + 16}px`,
-            }}
-            role="menuitem"
-            aria-label={item.label}
-          >
-            {item.label}
-          </Link>
-        </li>
-      );
+          </li>
+        );
+      } else {
+        // Direct links like Reserves, Payments, and nested items under Recovery/Journal
+        return (
+          <li key={item.id}>
+            <Link
+              to={item.href}
+              className={cn(
+                "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                isActive
+                  ? "bg-white/15 text-white border-white/40"
+                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+              )}
+              style={{
+                paddingLeft: `${level * 16 + 16}px`,
+              }}
+              role="menuitem"
+              aria-label={item.label}
+            >
+              {item.label}
+            </Link>
+          </li>
+        );
+      }
     }
 
     // Top-level item styling
