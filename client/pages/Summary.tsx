@@ -1091,8 +1091,7 @@ export function Summary() {
             {/* Legal & Litigation Status */}
             <Card>
             <CardHeader>
-              <CardTitle className="text-lg font-semibold flex items-center">
-                <AlertCircle className="h-5 w-5 mr-2 text-red-500" />
+              <CardTitle className="text-lg font-semibold">
                 Legal Status
               </CardTitle>
             </CardHeader>
