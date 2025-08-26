@@ -637,7 +637,7 @@ export function Summary() {
                         </div>
                         <div className="flex space-x-2">
                           <Button variant="ghost" size="sm">
-                            <Phone className="h-4 w-4" />
+                            Phone
                           </Button>
                           <Button variant="ghost" size="sm">
                             <Mail className="h-4 w-4" />
@@ -660,7 +660,7 @@ export function Summary() {
                         </div>
                         <div className="flex space-x-2">
                           <Button variant="ghost" size="sm">
-                            <Phone className="h-4 w-4" />
+                            Phone
                           </Button>
                           <Button variant="ghost" size="sm">
                             <Mail className="h-4 w-4" />
@@ -880,7 +880,7 @@ export function Summary() {
                         </div>
                         <div className="flex space-x-2">
                           <Button variant="ghost" size="sm">
-                            <Phone className="h-4 w-4" />
+                            Phone
                           </Button>
                           <Button variant="ghost" size="sm">
                             <Mail className="h-4 w-4" />
@@ -903,7 +903,7 @@ export function Summary() {
                         </div>
                         <div className="flex space-x-2">
                           <Button variant="ghost" size="sm">
-                            <Phone className="h-4 w-4" />
+                            Phone
                           </Button>
                           <Button variant="ghost" size="sm">
                             <Mail className="h-4 w-4" />
