@@ -203,7 +203,7 @@ export function Summary() {
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
 
-      <div className="p-6 space-y-6">
+      <div className="p-4 space-y-4">
         {/* Full-Width Basic Information Section */}
         <Card className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
