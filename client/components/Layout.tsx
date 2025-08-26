@@ -239,22 +239,6 @@ export function Layout({ children }: LayoutProps) {
     setExpandedItems(newExpanded);
   };
 
-  const handleClaimantClick = (claimant: NavigationItem) => {
-    if (selectedClaimant?.id === claimant.id) {
-      // If same claimant is clicked, toggle the panel collapsed state
-      setRightPanelCollapsed(!rightPanelCollapsed);
-    } else {
-      // If different claimant is clicked, select it and show expanded panel
-      setSelectedClaimant(claimant);
-      setRightPanelCollapsed(false);
-    }
-  };
-
-  const toggleRightPanel = () => {
-    if (selectedClaimant) {
-      setRightPanelCollapsed(!rightPanelCollapsed);
-    }
-  };
 
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
     const isActive =
