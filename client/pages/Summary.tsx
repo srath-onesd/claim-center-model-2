@@ -334,14 +334,14 @@ export function Summary() {
                   </div>
 
                   {/* Recoveries */}
-                  <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
-                    <div className="text-xs text-purple-800 mb-1">
+                  <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <div className="text-xs text-gray-800 mb-1">
                       Recoveries
                     </div>
-                    <div className="text-xl font-bold text-purple-900 mb-2">
+                    <div className="text-xl font-bold text-gray-900 mb-2">
                       $2,100
                     </div>
-                    <div className="text-xs text-purple-600">
+                    <div className="text-xs text-gray-600">
                       13.3% recovery rate
                     </div>
                   </div>
