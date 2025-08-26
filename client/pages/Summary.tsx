@@ -9,14 +9,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarInitials } from "@/components/ui/avatar";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  Legend,
-  Tooltip,
-} from "recharts";
-import {
   ChevronDown,
   ChevronRight,
   ChevronUp,
@@ -988,7 +980,7 @@ export function Summary() {
         </div>
 
         {/* Bottom Section - Detailed Tables */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           <Tabs defaultValue="reserves" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>
