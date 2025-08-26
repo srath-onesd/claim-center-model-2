@@ -654,9 +654,7 @@ export function Summary() {
                           </div>
                           <div className="flex space-x-2">
                             <Phone className="h-4 w-4 text-gray-400" />
-                            <Button variant="ghost" size="sm">
-                              Email
-                            </Button>
+                            <Mail className="h-4 w-4 text-gray-400" />
                           </div>
                         </div>
                       </div>
@@ -870,9 +868,7 @@ export function Summary() {
                           </div>
                           <div className="flex space-x-2">
                             <Phone className="h-4 w-4 text-gray-400" />
-                            <Button variant="ghost" size="sm">
-                              Email
-                            </Button>
+                            <Mail className="h-4 w-4 text-gray-400" />
                           </div>
                         </div>
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -891,9 +887,7 @@ export function Summary() {
                           </div>
                           <div className="flex space-x-2">
                             <Phone className="h-4 w-4 text-gray-400" />
-                            <Button variant="ghost" size="sm">
-                              Email
-                            </Button>
+                            <Mail className="h-4 w-4 text-gray-400" />
                           </div>
                         </div>
                       </div>
