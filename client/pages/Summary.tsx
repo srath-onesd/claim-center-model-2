@@ -51,6 +51,14 @@ export function Summary() {
     useState<SortField>("claimNumber");
   const [relatedSortDirection, setRelatedSortDirection] =
     useState<SortDirection>("asc");
+  const [relatedClaimsSortField, setRelatedClaimsSortField] =
+    useState<SortField>("id");
+  const [relatedClaimsSortDirection, setRelatedClaimsSortDirection] =
+    useState<SortDirection>("asc");
+  const [activitySortField, setActivitySortField] =
+    useState<SortField>("date");
+  const [activitySortDirection, setActivitySortDirection] =
+    useState<SortDirection>("desc");
 
   const toggleClaimantCollapse = (claimantId: string) => {
     setExpandedClaimant((prev) => (prev === claimantId ? null : claimantId));
