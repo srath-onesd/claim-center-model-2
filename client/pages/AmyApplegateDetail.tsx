@@ -348,7 +348,7 @@ export function AmyApplegateDetail() {
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     <tr>
-                      <td className="flex px-4 py-3 font-medium items-center p-1">
+                      <td className="flex px-4 py-3 font-medium items-center justify-left">
                         Medical Payments
                         <Eye className="h-4 w-4" />
                       </td>
