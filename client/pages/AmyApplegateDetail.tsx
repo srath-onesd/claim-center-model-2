@@ -257,12 +257,12 @@ export function AmyApplegateDetail() {
               {/* Amount Paid to Claimant */}
               <div className="p-4 bg-gray-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
-                <div className="text-2xl font-bold text-blue-600 mb-2">
+                <div className="text-2xl font-bold text-gray-600 mb-2">
                   {claimantData.paid}
                 </div>
-                <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
+                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
-                    className="bg-blue-600 h-2 rounded-full"
+                    className="bg-gray-600 h-2 rounded-full"
                     style={{ width: "42%" }}
                   ></div>
                 </div>
