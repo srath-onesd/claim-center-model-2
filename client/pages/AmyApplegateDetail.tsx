@@ -218,7 +218,7 @@ export function AmyApplegateDetail() {
         <Card className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
             <CardTitle className="text-lg font-semibold flex items-center">
-              Financial Information - {claimantData.displayName}
+              Financial Information
             </CardTitle>
             <Button variant="ghost" size="sm">
               <Edit className="h-4 w-4" />
