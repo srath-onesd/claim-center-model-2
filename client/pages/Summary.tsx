@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarInitials } from "@/components/ui/avatar";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import {
   ChevronDown,
@@ -15,7 +16,8 @@ import {
   ArrowUpDown,
   Mail,
   Phone,
-  Edit3
+  Edit3,
+  Info
 } from "lucide-react";
 
 type SortField =
@@ -242,8 +244,18 @@ export function Summary() {
             {/* Other Basic Information Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               <div>
-                <label className="text-sm font-medium text-gray-900">
+                <label className="text-sm font-medium text-gray-900 flex items-center gap-2">
                   Claim Number
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Info className="h-3 w-3 text-gray-400 hover:text-gray-600" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="max-w-xs">Insured hit other party's car in the front passenger tire while making a left turn at intersection. Multi-vehicle collision with property damage and potential bodily injury claims.</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </label>
                 <p className="text-sm text-gray-600 mt-1">23E-12345</p>
               </div>
@@ -324,6 +336,9 @@ export function Summary() {
                 <div className="text-xl font-bold text-gray-900">
                   $13,150.00
                 </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Sum of all claimed amounts
+                </div>
               </div>
 
               {/* Outstanding Reserves */}
@@ -333,6 +348,9 @@ export function Summary() {
                 </div>
                 <div className="text-xl font-bold text-gray-900">
                   $8,250
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Funds set aside for future payments
                 </div>
               </div>
 
@@ -344,6 +362,9 @@ export function Summary() {
                 <div className="text-xl font-bold text-gray-900">
                   $7,500
                 </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Total disbursed to date
+                </div>
               </div>
 
               {/* Recoveries */}
@@ -352,6 +373,9 @@ export function Summary() {
                 <div className="text-xl font-bold text-gray-900">
                   $2,100
                 </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Amount recovered from third parties
+                </div>
               </div>
 
               {/* Deductible */}
@@ -359,6 +383,9 @@ export function Summary() {
                 <div className="text-xs text-gray-800 mb-1">Deductible</div>
                 <div className="text-xl font-bold text-gray-900">
                   $500
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Policy holder responsibility
                 </div>
               </div>
             </div>
