@@ -99,7 +99,7 @@ export function AmyApplegateDetail() {
     status: "Active",
     dateOfBirth: "••••••••",
     gender: "Female",
-    lsc: "000000",
+    lso: "123AA",
     phone: "(416) 555-0123",
     email: "rose.greenthumb@example.com",
     address: "1508 - 141 Lyon Court, Toronto, ON M5B 3H2",
@@ -278,8 +278,8 @@ export function AmyApplegateDetail() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div>
-                    <span className="text-xs text-gray-500">LSC#</span>
-                    <p className="text-sm font-medium">{customerData.lsc}</p>
+                    <span className="text-xs text-gray-500">LSO#</span>
+                    <p className="text-sm font-medium">{customerData.lso}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
