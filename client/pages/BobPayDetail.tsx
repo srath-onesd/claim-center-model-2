@@ -768,7 +768,7 @@ export function BobPayDetail() {
                           <Button
                             variant="link"
                             size="sm"
-                            className="p-0 h-auto text-blue-600"
+                            className="p-0 h-auto text-gray-600"
                           >
                             Close
                           </Button>
