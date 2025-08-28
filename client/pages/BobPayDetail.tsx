@@ -285,7 +285,7 @@ export function BobPayDetail() {
             {/* Financial Breakdown Table */}
             <div className="mt-6">
               <h3 className="text-md font-semibold mb-4">
-                Coverage Breakdown - {claimantData.displayName}
+                Coverage Breakdown
               </h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
