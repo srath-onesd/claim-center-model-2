@@ -413,7 +413,7 @@ export function BobPayDetail() {
                     <div className="flex items-center mt-1">
                       <Badge
                         variant="secondary"
-                        className="bg-green-100 text-green-800"
+                        className="bg-gray-100 text-gray-800"
                       >
                         Minor
                       </Badge>
@@ -679,7 +679,7 @@ export function BobPayDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-yellow-100 text-yellow-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             Medium
                           </Badge>
@@ -702,7 +702,7 @@ export function BobPayDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-red-100 text-red-800"
+                            className="bg-blue-100 text-blue-800"
                           >
                             High
                           </Badge>
@@ -727,7 +727,7 @@ export function BobPayDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-green-100 text-green-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             Low
                           </Badge>
@@ -752,7 +752,7 @@ export function BobPayDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-yellow-100 text-yellow-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             Medium
                           </Badge>
