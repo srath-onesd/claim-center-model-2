@@ -6,7 +6,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { ArrowUpDown, ChevronUp, ChevronDown } from "lucide-react";
+import {
+  MapPin,
+  Calendar,
+  Phone,
+  Mail,
+  DollarSign,
+  Plus,
+  AlertCircle,
+  Shield,
+  Clock,
+  UserCheck,
+  User,
+  ArrowLeft,
+  Edit,
+  ArrowUpDown,
+  ChevronUp,
+  ChevronDown,
+} from "lucide-react";
 
 type SortField =
   | "dueDate"
