@@ -316,11 +316,11 @@ export function Summary() {
           <CardContent className="pt-2">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {/* Total Incurred */}
-              <div className="p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200">
-                <div className="text-xs font-medium text-blue-800 mb-1">
+              <div className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
+                <div className="text-xs font-medium text-gray-800 mb-1">
                   Total Incurred
                 </div>
-                <div className="text-xl font-bold text-blue-900">
+                <div className="text-xl font-bold text-gray-900">
                   $13,150.00
                 </div>
               </div>
@@ -336,11 +336,11 @@ export function Summary() {
               </div>
 
               {/* Amount Paid */}
-              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <div className="text-xs text-blue-800 mb-1">
+              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="text-xs text-gray-800 mb-1">
                   Amount Paid
                 </div>
-                <div className="text-xl font-bold text-blue-900">
+                <div className="text-xl font-bold text-gray-900">
                   $7,500
                 </div>
               </div>
