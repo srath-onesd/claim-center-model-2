@@ -218,16 +218,16 @@ export function BobPayDetail() {
               </div>
 
               {/* Outstanding Reserves */}
-              <div className="p-4 bg-yellow-50 rounded-lg">
+              <div className="p-4 bg-gray-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">
                   Outstanding Reserves
                 </div>
-                <div className="text-2xl font-bold text-yellow-600 mb-2">
+                <div className="text-2xl font-bold text-gray-600 mb-2">
                   {claimantData.reserves}
                 </div>
-                <div className="w-full bg-yellow-200 rounded-full h-2 mb-2">
+                <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
-                    className="bg-yellow-600 h-2 rounded-full"
+                    className="bg-gray-600 h-2 rounded-full"
                     style={{ width: "51%" }}
                   ></div>
                 </div>
@@ -237,14 +237,14 @@ export function BobPayDetail() {
               </div>
 
               {/* Amount Paid to Claimant */}
-              <div className="p-4 bg-green-50 rounded-lg">
+              <div className="p-4 bg-blue-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
-                <div className="text-2xl font-bold text-green-600 mb-2">
+                <div className="text-2xl font-bold text-blue-600 mb-2">
                   {claimantData.paid}
                 </div>
-                <div className="w-full bg-green-200 rounded-full h-2 mb-2">
+                <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
                   <div
-                    className="bg-green-600 h-2 rounded-full"
+                    className="bg-blue-600 h-2 rounded-full"
                     style={{ width: "49%" }}
                   ></div>
                 </div>
