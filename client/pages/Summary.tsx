@@ -545,7 +545,7 @@ export function Summary() {
                     <tbody className="divide-y divide-gray-200">
                       {[...relatedClaims, ...relatedIncidents].map((item, index) => (
                         <tr key={index} className="hover:bg-gray-50">
-                          <td className="px-3 py-2 font-medium text-blue-600">{item.id}</td>
+                          <td className="px-3 py-2 font-medium text-gray-600">{item.id}</td>
                           <td className="px-3 py-2">
                             <Badge variant={item.type === "Claim" ? "default" : "secondary"}>
                               {item.type}
