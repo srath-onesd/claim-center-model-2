@@ -392,6 +392,93 @@ export function Summary() {
           </CardContent>
         </Card>
 
+        {/* Financial Summary by Claimant */}
+        <Card className="w-full">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-lg font-semibold">
+              Financial Summary by Claimant
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-2">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-50 border-b">
+                  <tr>
+                    <th
+                      className="px-4 py-3 text-left font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("claimant")}
+                    >
+                      <div className="flex items-center">
+                        Claimant
+                        {getSortIcon("claimant", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("incurred")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Incurred
+                        {getSortIcon("incurred", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("reserves")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Reserves
+                        {getSortIcon("reserves", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("paid")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Paid
+                        {getSortIcon("paid", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("recovery")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Recovery
+                        {getSortIcon("recovery", sortField, sortDirection)}
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-4 py-3 font-medium text-gray-900">Amy Applegate</td>
+                    <td className="px-4 py-3 text-right">$12,450.00</td>
+                    <td className="px-4 py-3 text-right">$7,250.00</td>
+                    <td className="px-4 py-3 text-right">$5,200.00</td>
+                    <td className="px-4 py-3 text-right">$2,100.00</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-4 py-3 font-medium text-gray-900">Bob Pay</td>
+                    <td className="px-4 py-3 text-right">$700.00</td>
+                    <td className="px-4 py-3 text-right">$1,000.00</td>
+                    <td className="px-4 py-3 text-right">$2,300.00</td>
+                    <td className="px-4 py-3 text-right">$0.00</td>
+                  </tr>
+                  <tr className="bg-gray-100 font-semibold hover:bg-gray-100 border-t-2 border-gray-300">
+                    <td className="px-4 py-3 font-bold text-gray-900">Total</td>
+                    <td className="px-4 py-3 text-right font-bold">$13,150.00</td>
+                    <td className="px-4 py-3 text-right font-bold">$8,250.00</td>
+                    <td className="px-4 py-3 text-right font-bold">$7,500.00</td>
+                    <td className="px-4 py-3 text-right font-bold">$2,100.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Left Column - Claimant Details */}
