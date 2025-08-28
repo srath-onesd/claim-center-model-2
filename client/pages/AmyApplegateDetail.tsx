@@ -408,7 +408,7 @@ export function AmyApplegateDetail() {
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column - Injury and Vehicle Details */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-6">
             {/* Activity Timeline */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
