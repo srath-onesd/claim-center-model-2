@@ -834,7 +834,7 @@ export function AmyApplegateDetail() {
                           08-20-25
                         </td>
                         <td className="px-4 py-3">
-                          Annual Policy Audit – Rose K
+                          Annual Policy Audit – Amy Applegate
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
