@@ -848,7 +848,7 @@ export function AmyApplegateDetail() {
                           <Button
                             variant="link"
                             size="sm"
-                            className="p-0 h-auto text-blue-600"
+                            className="p-0 h-auto text-gray-600"
                           >
                             Close
                           </Button>
@@ -864,7 +864,7 @@ export function AmyApplegateDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-blue-100 text-blue-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             High
                           </Badge>
@@ -873,7 +873,7 @@ export function AmyApplegateDetail() {
                           <Button
                             variant="link"
                             size="sm"
-                            className="p-0 h-auto text-blue-600"
+                            className="p-0 h-auto text-gray-600"
                           >
                             Close
                           </Button>
@@ -884,7 +884,7 @@ export function AmyApplegateDetail() {
                           09-01-25
                         </td>
                         <td className="px-4 py-3">
-                          Financial Statement Review – Rose K
+                          Financial Statement Review – Amy Applegate
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
