@@ -198,14 +198,14 @@ export function Summary() {
       <div className="p-4 space-y-4">
         {/* Basic Information Section */}
         <Card className="w-full">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          {/*<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-lg font-semibold">
               Basic Information
             </CardTitle>
             <Button variant="ghost" size="sm">
               Edit
             </Button>
-          </CardHeader>
+          </CardHeader>*/}
           <CardContent className="space-y-4 pt-2">
             {/* Status and Loss Description - Prominent placement 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 bg-gray-50 rounded-lg">
