@@ -94,7 +94,7 @@ export function AmyApplegateDetail() {
   };
 
   const customerData = {
-    name: "Rose K",
+    name: "Amy Applegate",
     role: "Lawyer",
     status: "Active",
     dateOfBirth: "••••••••",
