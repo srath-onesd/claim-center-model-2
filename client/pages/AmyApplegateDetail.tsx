@@ -278,6 +278,7 @@ export function AmyApplegateDetail() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
+                  <FileText size={14} className="text-gray-400" />
                   <div>
                     <span className="text-xs text-gray-500">LSO#</span>
                     <p className="text-sm font-medium">{customerData.lso}</p>
