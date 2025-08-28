@@ -271,12 +271,10 @@ export function AmyApplegateDetail() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
+                  <User size={14} className="text-gray-400" />
                   <div>
-                    <User size={14} className="text-gray-400" />
-                    <div>
-                      <span className="text-xs text-gray-500">Gender</span>
-                      <p className="text-sm font-medium">{customerData.gender}</p>
-                    </div>
+                    <span className="text-xs text-gray-500">Gender</span>
+                    <p className="text-sm font-medium">{customerData.gender}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
