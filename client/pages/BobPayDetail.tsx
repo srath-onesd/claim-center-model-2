@@ -512,11 +512,6 @@ export function BobPayDetail() {
                   {/* Claimant */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarFallback className="bg-blue-600 text-white">
-                          BP
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">Bob Pay</p>
                         <p className="text-xs text-gray-500">Third Party Claimant</p>
@@ -535,11 +530,6 @@ export function BobPayDetail() {
                   {/* Insured */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          SR
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">Shubham Raut</p>
                         <p className="text-xs text-gray-500">Insured</p>
@@ -558,11 +548,6 @@ export function BobPayDetail() {
                   {/* Attorney */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          JA
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">
                           Johnson & Associates
@@ -583,11 +568,6 @@ export function BobPayDetail() {
                   {/* Repair Shop */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          QR
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">Quick Repair</p>
                         <p className="text-xs text-gray-500">Repair Shop</p>
@@ -606,11 +586,6 @@ export function BobPayDetail() {
                   {/* Adjuster */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar className="h-10 w-10">
-                        <AvatarFallback className="bg-blue-600 text-white">
-                          MP
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">Mital Patel</p>
                         <p className="text-xs text-gray-500">Adjuster</p>
