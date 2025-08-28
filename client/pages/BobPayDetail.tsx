@@ -13,6 +13,7 @@ import {
   Mail,
   DollarSign,
   Plus,
+  Eye,
   AlertCircle,
   Shield,
   Clock,
