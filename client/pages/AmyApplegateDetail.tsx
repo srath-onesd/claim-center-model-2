@@ -356,7 +356,7 @@ export function AmyApplegateDetail() {
                       <td className="px-4 py-3 text-right">$2,850.00</td>
                       <td className="px-4 py-3 text-right">$1,000.00</td>
                       <td className="px-4 py-3 text-right">$150.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">
+                      <td className="px-4 py-3 text-right text-blue-600">
                         $1,150.00
                       </td>
                     </tr>
@@ -369,7 +369,7 @@ export function AmyApplegateDetail() {
                       <td className="px-4 py-3 text-right">$2,350.00</td>
                       <td className="px-4 py-3 text-right">$6,250.00</td>
                       <td className="px-4 py-3 text-right">$500.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">
+                      <td className="px-4 py-3 text-right text-blue-600">
                         $41,400.00
                       </td>
                     </tr>
@@ -380,7 +380,7 @@ export function AmyApplegateDetail() {
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">
+                      <td className="px-4 py-3 text-right text-blue-600">
                         $50,000.00
                       </td>
                     </tr>
@@ -431,7 +431,7 @@ export function AmyApplegateDetail() {
                     <div className="flex items-center mt-1">
                       <Badge
                         variant="secondary"
-                        className="bg-yellow-100 text-yellow-800"
+                        className="bg-gray-100 text-gray-800"
                       >
                         Moderate
                       </Badge>
