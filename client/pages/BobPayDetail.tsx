@@ -189,7 +189,6 @@ export function BobPayDetail() {
         <Card className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
             <CardTitle className="text-lg font-semibold flex items-center">
-              <DollarSign className="h-5 w-5 mr-2" />
               Financial Information - {claimantData.displayName}
             </CardTitle>
             <Button variant="ghost" size="sm">
