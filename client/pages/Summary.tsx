@@ -203,7 +203,7 @@ export function Summary() {
             <CardTitle className="text-lg font-semibold">
               
             </CardTitle>
-            <Button variant="ghost" size="sm" >
+            <Button variant="ghost" size="sm" className="text-blue-600 hover:bg-blue-50">
               <Edit3 size={12} />
             </Button>
           </CardHeader>
