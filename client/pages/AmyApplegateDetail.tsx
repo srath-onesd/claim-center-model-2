@@ -398,7 +398,94 @@ export function AmyApplegateDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Injury and Vehicle Details */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Add Coverage Button 
+            {/* Activity Timeline */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <Clock className="h-5 w-5 mr-2" />
+                  Activity Timeline
+                </CardTitle>
+                <Button variant="link" className="p-0 h-auto text-blue-600">
+                  View All
+                </Button>
+              </CardHeader>
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50 border-b">
+                      <tr>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("date")}
+                        >
+                          <div className="flex items-center">
+                            Date
+                            {getSortIcon("date")}
+                          </div>
+                        </th>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("activity")}
+                        >
+                          <div className="flex items-center">
+                            Activity
+                            {getSortIcon("activity")}
+                          </div>
+                        </th>
+                        <th
+                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
+                          onClick={() => handleSort("actionby")}
+                        >
+                          <div className="flex items-center">
+                            Action Taken By
+                            {getSortIcon("actionby")}
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          07-01-25
+                        </td>
+                        <td className="px-4 py-3">Last Premium Paid - $150</td>
+                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          06-30-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Follow-up on recent claim #C1122 progress.
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">UW John</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          06-29-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Confirmation of payment received premium.
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          06-28-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Logged customer preference for email communication.
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          Agent Johnson
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+            {/* Add Coverage Button
             <div className="flex justify-end">
               <Button variant="outline" size="sm">
                 <Plus className="h-4 w-4 mr-2" />
@@ -531,93 +618,7 @@ export function AmyApplegateDetail() {
 
           {/* Right Column - Activity Timeline, Diaries, Documents, Parties Details */}
           <div className="space-y-6">
-            {/* Activity Timeline */}
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <Clock className="h-5 w-5 mr-2" />
-                  Activity Timeline
-                </CardTitle>
-                <Button variant="link" className="p-0 h-auto text-blue-600">
-                  View All
-                </Button>
-              </CardHeader>
-              <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead className="bg-gray-50 border-b">
-                      <tr>
-                        <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("date")}
-                        >
-                          <div className="flex items-center">
-                            Date
-                            {getSortIcon("date")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("activity")}
-                        >
-                          <div className="flex items-center">
-                            Activity
-                            {getSortIcon("activity")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("actionby")}
-                        >
-                          <div className="flex items-center">
-                            Action Taken By
-                            {getSortIcon("actionby")}
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          07-01-25
-                        </td>
-                        <td className="px-4 py-3">Last Premium Paid - $150</td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          06-30-25
-                        </td>
-                        <td className="px-4 py-3">
-                          Follow-up on recent claim #C1122 progress.
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">UW John</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          06-29-25
-                        </td>
-                        <td className="px-4 py-3">
-                          Confirmation of payment received premium.
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          06-28-25
-                        </td>
-                        <td className="px-4 py-3">
-                          Logged customer preference for email communication.
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          Agent Johnson
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
+            
 
             {/* Diaries */}
             <Card>
