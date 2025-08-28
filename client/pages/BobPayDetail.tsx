@@ -11,19 +11,37 @@ import {
   Calendar,
   Phone,
   Mail,
-  DollarSign,
-  Plus,
-  Eye,
-  AlertCircle,
-  Shield,
-  Clock,
-  UserCheck,
-  User,
-  ArrowLeft,
+  FileText,
+  Upload,
+  Download,
+  Search,
   Edit,
+  Clock,
+  User,
+  Shield,
+  AlertCircle,
+  ArrowLeft,
+  Eye,
+  Building,
+  UserCheck,
+  CheckCircle,
+  ExternalLink,
+  DollarSign,
+  TrendingUp,
+  CreditCard,
+  Target,
+  BarChart3,
+  PieChart,
+  Receipt,
+  ArrowUpRight,
+  ArrowDownRight,
+  CalendarDays,
+  Flag,
+  Plus,
   ArrowUpDown,
   ChevronUp,
   ChevronDown,
+  Edit3,
 } from "lucide-react";
 
 type SortField =
@@ -75,6 +93,25 @@ export function BobPayDetail() {
     bodilyInjury: "$6,650.00",
   };
 
+  const customerData = {
+    name: "Bob Pay",
+    role: "Third Party Claimant",
+    status: "Active",
+    dateOfBirth: "••••••••",
+    gender: "Male",
+    lso: "456BB",
+    phone: "(555) 987-6543",
+    email: "bob.pay@example.com",
+    address: "789 Oak Street, Los Angeles, CA 90210",
+    memberSince: "2020",
+    satisfactionScore: 4.5
+  };
+
+  const navigateToProfile = () => {
+    // Handle navigation to profile
+    console.log("Navigate to profile");
+  };
+
   const breadcrumbItems = [
     { label: "Claims", href: "/claims" },
     { label: "Claimants", href: "/" },
@@ -95,93 +132,85 @@ export function BobPayDetail() {
       </div>
 
       <div className="p-6 space-y-6">
-        {/* Claimant Information Section */}
-        <Card className="w-full">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-            <CardTitle className="text-lg font-semibold flex items-center">
-              Claimant Information
-            </CardTitle>
-            <Button variant="ghost" size="sm">
-              <Edit className="h-4 w-4" />
-            </Button>
-          </CardHeader>
+        {/* Customer Information Card */}
+        <Card className="shadow-sm border">
           <CardContent className="p-6">
-            {/* Profile-style layout matching screenshot */}
-            <div className="flex items-start space-x-6">
-              {/* Avatar section */}
-              <div className="flex-shrink-0">
-                <Avatar className="h-12 w-12">
-                  <AvatarFallback className="bg-blue-600 text-white text-lg font-semibold">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#0054A6] to-[#003d7a] rounded-full flex items-center justify-center text-white text-lg font-semibold shadow-lg">
                     BP
-                  </AvatarFallback>
-                </Avatar>
-              </div>
-
-              {/* Information section */}
-              <div className="flex-1">
-                {/* Name and Status row */}
-                <div className="flex items-center space-x-3 mb-3">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    Bob Pay
-                  </h3>
-                  <Badge
-                    variant="secondary"
-                    className="bg-blue-100 text-blue-800"
-                  >
-                    Active
-                  </Badge>
+                  </div>
                 </div>
-
-                {/* Role */}
-                <p className="text-sm text-gray-600 mb-4">
-                  Third Party Claimant
-                </p>
-
-                {/* Information grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0">
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="h-4 w-4 text-gray-400" />
-                    <span className="text-sm text-gray-500">DOB</span>
-                    <span className="text-sm text-gray-900">**-**-****</span>
+                <div>
+                  <div className="flex items-center gap-3">
+                    <h2 className="text-xl font-bold text-gray-900">{customerData.name}</h2>
+                    <Badge className="bg-blue-100 text-blue-800 border-blue-200">
+                      <CheckCircle size={10} className="mr-1" />
+                      {customerData.status}
+                    </Badge>
                   </div>
-
-                  <div className="flex items-center space-x-2">
-                    <User className="h-4 w-4 text-gray-400" />
-                    <span className="text-sm text-gray-500">Gender</span>
-                    <span className="text-sm text-gray-900">Male</span>
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Phone className="h-4 w-4 text-gray-400" />
-                    <span className="text-sm text-gray-500">SSN</span>
-                    <span className="text-sm text-gray-900">***-**-7890</span>
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Phone className="h-4 w-4 text-gray-400" />
-                    <span className="text-sm text-gray-500">Phone</span>
-                    <span className="text-sm text-gray-900">
-                      (555) 987-6543
-                    </span>
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Mail className="h-4 w-4 text-gray-400" />
-                    <span className="text-sm text-gray-500">Email</span>
-                    <span className="text-sm text-gray-900">
-                      bob.pay@email.com
-                    </span>
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <MapPin className="h-4 w-4 text-gray-400" />
-                    <span className="text-sm text-gray-500">Address</span>
-                    <span className="text-sm text-gray-900">
-                      456 Oak St, Hometown, CA 90211
-                    </span>
+                  <p className="text-gray-600 font-medium">{customerData.role}</p>
+                  <div className="flex items-center gap-4 mt-2">
+                    <div className="flex items-center gap-1 text-sm text-gray-500">
+                      <Calendar size={12} />
+                      Customer since {customerData.memberSince}
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <div className="flex-1 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 relative">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="absolute -top-2 -right-2 h-6 w-6 p-0 text-blue-600 hover:bg-blue-50"
+                  onClick={navigateToProfile}
+                >
+                  <Edit3 size={12} />
+                </Button>
+                <div className="flex items-center gap-2">
+                  <Calendar size={14} className="text-gray-400" />
+                  <div>
+                    <span className="text-xs text-gray-500">DOB</span>
+                    <p className="text-sm font-medium">{customerData.dateOfBirth}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <User size={14} className="text-gray-400" />
+                  <div>
+                    <span className="text-xs text-gray-500">Gender</span>
+                    <p className="text-sm font-medium">{customerData.gender}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FileText size={14} className="text-gray-400" />
+                  <div>
+                    <span className="text-xs text-gray-500">LSO#</span>
+                    <p className="text-sm font-medium">{customerData.lso}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-gray-400" />
+                  <div className="min-w-0">
+                    <span className="text-xs text-gray-500">Phone</span>
+                    <p className="text-sm font-medium whitespace-nowrap">{customerData.phone}</p>
+                  </div>
+                </div>
+                <div className="col-span-2 flex items-center gap-2">
+                  <Mail size={14} className="text-gray-400" />
+                  <div>
+                    <span className="text-xs text-gray-500">Email</span>
+                    <p className="text-sm font-medium">{customerData.email}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-3 flex items-center gap-2 text-sm">
+              <MapPin size={14} className="text-gray-400" />
+              <span className="text-gray-500">Address:</span>
+              <span className="font-medium">{customerData.address}</span>
             </div>
           </CardContent>
         </Card>
@@ -192,8 +221,8 @@ export function BobPayDetail() {
             <CardTitle className="text-lg font-semibold flex items-center">
               Financial Information - {claimantData.displayName}
             </CardTitle>
-            <Button variant="ghost" size="sm">
-              <Edit className="h-4 w-4" />
+            <Button variant="ghost" size="sm" className="text-blue-600 hover:bg-blue-50">
+              <Edit3 size={12} />
             </Button>
           </CardHeader>
           <CardContent>
@@ -209,11 +238,11 @@ export function BobPayDetail() {
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
                     className="bg-gray-800 h-2 rounded-full"
-                    style={{ width: "44%" }}
+                    style={{ width: "55%" }}
                   ></div>
                 </div>
                 <div className="text-xs text-gray-500">
-                  44% of available coverage
+                  55% of available coverage
                 </div>
               </div>
 
@@ -228,7 +257,7 @@ export function BobPayDetail() {
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
                     className="bg-gray-600 h-2 rounded-full"
-                    style={{ width: "51%" }}
+                    style={{ width: "45%" }}
                   ></div>
                 </div>
                 <div className="text-xs text-gray-500">
@@ -245,11 +274,11 @@ export function BobPayDetail() {
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
                     className="bg-gray-600 h-2 rounded-full"
-                    style={{ width: "49%" }}
+                    style={{ width: "48%" }}
                   ></div>
                 </div>
                 <div className="text-xs text-gray-500">
-                  Last payment: Mar 10, 2024
+                  Last payment: Feb 28, 2024
                 </div>
               </div>
             </div>
@@ -336,8 +365,8 @@ export function BobPayDetail() {
                       </td>
                       <td className="px-4 py-3 text-right">$5,000.00</td>
                       <td className="px-4 py-3 text-right">$2,100.00</td>
-                      <td className="px-4 py-3 text-right">$1,500.00</td>
-                      <td className="px-4 py-3 text-right">$600.00</td>
+                      <td className="px-4 py-3 text-right">$1,800.00</td>
+                      <td className="px-4 py-3 text-right">$300.00</td>
                       <td className="px-4 py-3 text-right">$100.00</td>
                       <td className="px-4 py-3 text-right text-blue-600">
                         $2,900.00
@@ -350,9 +379,9 @@ export function BobPayDetail() {
                       </td>
                       <td className="px-4 py-3 text-right">$50,000.00</td>
                       <td className="px-4 py-3 text-right">$6,650.00</td>
-                      <td className="px-4 py-3 text-right">$2,750.00</td>
-                      <td className="px-4 py-3 text-right">$3,900.00</td>
-                      <td className="px-4 py-3 text-right">$300.00</td>
+                      <td className="px-4 py-3 text-right">$2,450.00</td>
+                      <td className="px-4 py-3 text-right">$4,200.00</td>
+                      <td className="px-4 py-3 text-right">$200.00</td>
                       <td className="px-4 py-3 text-right text-blue-600">
                         $43,350.00
                       </td>
@@ -378,14 +407,13 @@ export function BobPayDetail() {
         </Card>
 
         {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column - Injury and Vehicle Details */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-6">
             {/* Activity Timeline */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
-                  <Clock className="h-5 w-5 mr-2" />
                   Activity Timeline
                 </CardTitle>
                 <Button variant="link" className="p-0 h-auto text-blue-600">
@@ -429,40 +457,38 @@ export function BobPayDetail() {
                     <tbody className="bg-white divide-y divide-gray-200">
                       <tr className="hover:bg-gray-50">
                         <td className="px-4 py-3 whitespace-nowrap">
+                          07-05-25
+                        </td>
+                        <td className="px-4 py-3">Medical payment processed - $800</td>
+                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">
                           07-01-25
                         </td>
                         <td className="px-4 py-3">
-                          Medical treatment completed - Final bill $1,850
+                          Follow-up call with claimant Bob Pay regarding treatment progress.
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                        <td className="px-4 py-3 whitespace-nowrap">Mital Patel</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
                         <td className="px-4 py-3 whitespace-nowrap">
                           06-28-25
                         </td>
                         <td className="px-4 py-3">
-                          Follow-up appointment scheduled with Westside Medical
+                          Medical records received from treating physician.
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">UW John</td>
+                        <td className="px-4 py-3 whitespace-nowrap">System</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
                         <td className="px-4 py-3 whitespace-nowrap">
                           06-25-25
                         </td>
                         <td className="px-4 py-3">
-                          Payment issued for vehicle repairs
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          06-20-25
-                        </td>
-                        <td className="px-4 py-3">
-                          Repair estimate approved by adjuster
+                          Initial settlement demand received from claimant.
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
-                          Agent Smith
+                          Legal Dept
                         </td>
                       </tr>
                     </tbody>
@@ -475,7 +501,6 @@ export function BobPayDetail() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
-                  <UserCheck className="h-5 w-5 mr-2" />
                   Parties
                 </CardTitle>
                 <Button variant="link" className="p-0 h-auto text-blue-600">
@@ -485,16 +510,16 @@ export function BobPayDetail() {
               <CardContent>
                 <div className="space-y-4">
                   {/* Claimant */}
-                  <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
+                      <Avatar className="h-10 w-10">
                         <AvatarFallback className="bg-blue-600 text-white">
                           BP
                         </AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">Bob Pay</p>
-                        <p className="text-xs text-gray-500">Claimant</p>
+                        <p className="text-xs text-gray-500">Third Party Claimant</p>
                       </div>
                     </div>
                     <div className="flex space-x-2">
@@ -510,8 +535,10 @@ export function BobPayDetail() {
                   {/* Insured */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>SR</AvatarFallback>
+                      <Avatar className="h-10 w-10">
+                        <AvatarFallback className="bg-gray-600 text-white">
+                          SR
+                        </AvatarFallback>
                       </Avatar>
                       <div>
                         <p className="text-sm font-medium">Shubham Raut</p>
@@ -531,13 +558,15 @@ export function BobPayDetail() {
                   {/* Attorney */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
+                      <Avatar className="h-10 w-10">
                         <AvatarFallback className="bg-gray-600 text-white">
-                          SLG
+                          JA
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className="text-sm font-medium">Smith Legal Group</p>
+                        <p className="text-sm font-medium">
+                          Johnson & Associates
+                        </p>
                         <p className="text-xs text-gray-500">Attorney</p>
                       </div>
                     </div>
@@ -551,38 +580,16 @@ export function BobPayDetail() {
                     </div>
                   </div>
 
-                  {/* Medical Provider 
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-green-600 text-white">WMC</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Westside Medical Center</p>
-                        <p className="text-xs text-gray-500">Medical Provider</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                  */}
-
                   {/* Repair Shop */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
+                      <Avatar className="h-10 w-10">
                         <AvatarFallback className="bg-gray-600 text-white">
-                          QAB
+                          QR
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className="text-sm font-medium">Quality Auto Body</p>
+                        <p className="text-sm font-medium">Quick Repair</p>
                         <p className="text-xs text-gray-500">Repair Shop</p>
                       </div>
                     </div>
@@ -599,7 +606,7 @@ export function BobPayDetail() {
                   {/* Adjuster */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
+                      <Avatar className="h-10 w-10">
                         <AvatarFallback className="bg-blue-600 text-white">
                           MP
                         </AvatarFallback>
@@ -621,150 +628,12 @@ export function BobPayDetail() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Add Coverage Button 
-            <div className="flex justify-end">
-              <Button variant="outline" size="sm">
-                <Plus className="h-4 w-4 mr-2" />
-                Add Coverage
-              </Button>
-            </div>
-            */}
-            {/* Injury Information 
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <AlertCircle className="h-5 w-5 mr-2 text-red-500" />
-                  Bodily Injury Information
-                </CardTitle>
-                <Button variant="ghost" size="sm">
-                  <Edit className="h-4 w-4" />
-                </Button>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Injury Type
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Lower back strain, knee contusion
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Injury Severity
-                    </label>
-                    <div className="flex items-center mt-1">
-                      <Badge
-                        variant="secondary"
-                        className="bg-gray-100 text-gray-800"
-                      >
-                        Minor
-                      </Badge>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Treatment Status
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Completed treatment
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Medical Provider
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Westside Medical Center
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Date of First Treatment
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      January 5, 2024
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Expected Recovery Time
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      2-3 weeks (Completed)
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            */}
-            {/* Vehicle Information 
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <Shield className="h-5 w-5 mr-2 text-blue-500" />
-                  Vehicle & Property Damage
-                </CardTitle>
-                <Button variant="ghost" size="sm">
-                  <Edit className="h-4 w-4" />
-                </Button>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Vehicle
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      2019 Toyota Camry
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      VIN
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      4T1C11AK5KU123456
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      License Plate
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">XYZ-9876</p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Damage Assessment
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Rear bumper damage
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Repair Shop
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Quality Auto Body
-                    </p>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-900">
-                      Repair Cost Estimate
-                    </label>
-                    <p className="text-sm text-gray-600 mt-1">$3,200.00</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            */}
           </div>
 
           {/* Right Column - Activity Timeline, Diaries, Documents, Parties Details */}
-          <div className="space-y-6">        
+          <div className="space-y-6">
+            
+
             {/* Diaries */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
@@ -827,34 +696,11 @@ export function BobPayDetail() {
                     <tbody className="bg-white divide-y divide-gray-200">
                       <tr className="hover:bg-gray-50">
                         <td className="px-4 py-3 whitespace-nowrap">
-                          08-10-25
+                          08-12-25
                         </td>
                         <td className="px-4 py-3">
-                          Final Settlement Review - Bob Pay
+                          Follow up on medical treatment completion - Bob Pay
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <Badge
-                            variant="secondary"
-                            className="bg-gray-100 text-gray-800"
-                          >
-                            Medium
-                          </Badge>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <Button
-                            variant="link"
-                            size="sm"
-                            className="p-0 h-auto text-blue-600"
-                          >
-                            Close
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          08-18-25
-                        </td>
-                        <td className="px-4 py-3">Vehicle Repair Inspection</td>
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
@@ -875,17 +721,17 @@ export function BobPayDetail() {
                       </tr>
                       <tr className="hover:bg-gray-50">
                         <td className="px-4 py-3 whitespace-nowrap">
-                          08-22-25
+                          08-18-25
                         </td>
                         <td className="px-4 py-3">
-                          Medical Records Review - Westside
+                          Review settlement demand from Bob Pay's attorney
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
                             className="bg-gray-100 text-gray-800"
                           >
-                            Low
+                            Medium
                           </Badge>
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
@@ -900,17 +746,42 @@ export function BobPayDetail() {
                       </tr>
                       <tr className="hover:bg-gray-50">
                         <td className="px-4 py-3 whitespace-nowrap">
-                          09-05-25
+                          08-22-25
                         </td>
                         <td className="px-4 py-3">
-                          Final Documentation Review
+                          Schedule IME for Bob Pay claim evaluation
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <Badge
+                            variant="secondary"
+                            className="bg-blue-100 text-blue-800"
+                          >
+                            High
+                          </Badge>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <Button
+                            variant="link"
+                            size="sm"
+                            className="p-0 h-auto text-blue-600"
+                          >
+                            Close
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          08-28-25
+                        </td>
+                        <td className="px-4 py-3">
+                          Process final medical payment - Bob Pay
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
                             className="bg-gray-100 text-gray-800"
                           >
-                            Medium
+                            Low
                           </Badge>
                         </td>
                         <td className="px-4 py-3 whitespace-nowrap">
