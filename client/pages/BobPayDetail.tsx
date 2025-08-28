@@ -286,7 +286,7 @@ export function BobPayDetail() {
             <div className="mt-6">
               <h3 className="text-md font-semibold mb-4">
                 Coverage Breakdown
-                <div className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <div className="flex justify-end">
                   <Button variant="outline" size="sm">
                     <Plus className="h-4 w-4 mr-2" />
                     Add Coverage
