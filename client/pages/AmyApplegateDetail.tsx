@@ -101,7 +101,7 @@ export function AmyApplegateDetail() {
     gender: "Female",
     lso: "123AA",
     phone: "(416) 555-0123",
-    email: "rose.greenthumb@example.com",
+    email: "amy.applegateb@example.com",
     address: "1508 - 141 Lyon Court, Toronto, ON M5B 3H2",
     memberSince: "2019",
     satisfactionScore: 4.8
