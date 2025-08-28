@@ -513,11 +513,6 @@ export function AmyApplegateDetail() {
                   {/* Claimant */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          AA
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">Amy Applegate</p>
                         <p className="text-xs text-gray-500">Claimant</p>
@@ -536,9 +531,6 @@ export function AmyApplegateDetail() {
                   {/* Insured */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>SR</AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">Shubham Raut</p>
                         <p className="text-xs text-gray-500">Insured</p>
@@ -557,11 +549,6 @@ export function AmyApplegateDetail() {
                   {/* Attorney */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          JA
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">
                           Johnson & Associates
@@ -582,9 +569,6 @@ export function AmyApplegateDetail() {
                   {/* Repair Shop */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>ABC</AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">ABC Auto Repair</p>
                         <p className="text-xs text-gray-500">Repair Shop</p>
@@ -603,11 +587,6 @@ export function AmyApplegateDetail() {
                   {/* Adjuster */}
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          MP
-                        </AvatarFallback>
-                      </Avatar>
                       <div>
                         <p className="text-sm font-medium">Mital Patel</p>
                         <p className="text-xs text-gray-500">Adjuster</p>
