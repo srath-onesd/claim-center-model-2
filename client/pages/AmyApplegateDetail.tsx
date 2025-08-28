@@ -284,8 +284,14 @@ export function AmyApplegateDetail() {
 
             {/* Financial Breakdown Table */}
             <div className="mt-6">
-              <h3 className="text-md font-semibold mb-4">
+              <h3 className="text-md font-semibold mb-4 flex flex-row items-center justify-between space-y-0 pb-4">
                 Coverage Breakdown
+                <div className="flex justify-end">
+                  <Button variant="outline" size="sm">
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add Coverage
+                  </Button>
+                </div>
               </h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
