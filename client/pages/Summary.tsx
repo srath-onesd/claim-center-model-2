@@ -364,7 +364,7 @@ export function Summary() {
                   $7,500
                 </div>
                 <div className="text-xs text-gray-500 mt-2">
-                  Total disbursed to date
+                  Total amount disbursed to date
                 </div>
               </div>
 
