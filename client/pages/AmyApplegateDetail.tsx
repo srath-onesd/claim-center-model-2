@@ -255,7 +255,7 @@ export function AmyApplegateDetail() {
               </div>
 
               {/* Amount Paid to Claimant */}
-              <div className="p-4 bg-blue-50 rounded-lg">
+              <div className="p-4 bg-gray-50 rounded-lg">
                 <div className="text-sm text-gray-600 mb-1">Amount Paid</div>
                 <div className="text-2xl font-bold text-blue-600 mb-2">
                   {claimantData.paid}
