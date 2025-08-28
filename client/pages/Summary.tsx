@@ -33,7 +33,8 @@ type SortField =
   | "paid"
   | "recovery"
   | "id"
-  | "description";
+  | "description"
+  | "claimant";
 type SortDirection = "asc" | "desc";
 
 export function Summary() {
