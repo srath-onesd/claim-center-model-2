@@ -129,6 +129,7 @@ export function AmyApplegateDetail() {
       <div className="p-6 space-y-6">
 
         <Card className="shadow-sm border">
+          <CardHeader></CardHeader>
           <CardContent className="p-6">
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-4">
