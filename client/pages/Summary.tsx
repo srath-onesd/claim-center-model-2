@@ -369,7 +369,83 @@ export function Summary() {
           {/* Left Column - Claimant Details */}
           <div className="space-y-4">
 
-            {/* Claimant: Bob Pay */}
+            {/* Related Claims & Incidents */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-lg font-semibold">
+                  Related Claims & Incidents
+                </CardTitle>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-blue-600 text-sm"
+                  asChild
+                >
+                  <RouterLink to="/related">View All</RouterLink>
+                </Button>
+              </CardHeader>
+              <CardContent className="pt-2">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("id")}
+                        >
+                          <div className="flex items-center">
+                            ID
+                            {getSortIcon("id", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("type")}
+                        >
+                          <div className="flex items-center">
+                            Type
+                            {getSortIcon("type", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("description")}
+                        >
+                          <div className="flex items-center">
+                            Description
+                            {getSortIcon("description", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("date")}
+                        >
+                          <div className="flex items-center">
+                            Date
+                            {getSortIcon("date", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {[...relatedClaims, ...relatedIncidents].map((item, index) => (
+                        <tr key={index} className="hover:bg-gray-50">
+                          <td className="px-3 py-2 font-medium text-blue-600">{item.id}</td>
+                          <td className="px-3 py-2">
+                            <Badge variant={item.type === "Claim" ? "default" : "secondary"}>
+                              {item.type}
+                            </Badge>
+                          </td>
+                          <td className="px-3 py-2">{item.description}</td>
+                          <td className="px-3 py-2">{item.date}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Claimant: Bob Pay 
             <Card>
               <CardHeader
                 className="cursor-pointer"
@@ -385,8 +461,8 @@ export function Summary() {
                 </CardTitle>
               </CardHeader>
               {expandedClaimant === "bob-pay" && (
-                <CardContent className="space-y-4 h-auto">
-                  {/* Financial Summary Card */}
+                <CardContent className="space-y-4 h-auto">*/}
+                  {/* Financial Summary Card 
                   <Card>
                     <CardHeader>
                       <CardTitle className="text-md font-semibold">
@@ -487,9 +563,9 @@ export function Summary() {
                         </table>
                       </div>
                     </CardContent>
-                  </Card>
+                  </Card>*/}
 
-                  {/* Diaries Card */}
+                  {/* Diaries Card 
                   <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                       <CardTitle className="text-md font-semibold">
@@ -542,9 +618,9 @@ export function Summary() {
                         </div>
                       </div>
                     </CardContent>
-                  </Card>
+                  </Card>*/}
 
-                  {/* Parties Card */}
+                  {/* Parties Card 
                   <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                       <CardTitle className="text-md font-semibold">
@@ -600,87 +676,11 @@ export function Summary() {
                   </Card>
                 </CardContent>
               )}
-            </Card>
+            </Card>*/}
           </div>
 
           {/* Right Column - Additional Cards */}
           <div className="space-y-4">
-            {/* Related Claims & Incidents */}
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-lg font-semibold">
-                  Related Claims & Incidents
-                </CardTitle>
-                <Button
-                  variant="link"
-                  className="p-0 h-auto text-blue-600 text-sm"
-                  asChild
-                >
-                  <RouterLink to="/related">View All</RouterLink>
-                </Button>
-              </CardHeader>
-              <CardContent className="pt-2">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th
-                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
-                          onClick={() => handleRelatedClaimsSort("id")}
-                        >
-                          <div className="flex items-center">
-                            ID
-                            {getSortIcon("id", relatedClaimsSortField, relatedClaimsSortDirection)}
-                          </div>
-                        </th>
-                        <th
-                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
-                          onClick={() => handleRelatedClaimsSort("type")}
-                        >
-                          <div className="flex items-center">
-                            Type
-                            {getSortIcon("type", relatedClaimsSortField, relatedClaimsSortDirection)}
-                          </div>
-                        </th>
-                        <th
-                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
-                          onClick={() => handleRelatedClaimsSort("description")}
-                        >
-                          <div className="flex items-center">
-                            Description
-                            {getSortIcon("description", relatedClaimsSortField, relatedClaimsSortDirection)}
-                          </div>
-                        </th>
-                        <th
-                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
-                          onClick={() => handleRelatedClaimsSort("date")}
-                        >
-                          <div className="flex items-center">
-                            Date
-                            {getSortIcon("date", relatedClaimsSortField, relatedClaimsSortDirection)}
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200">
-                      {[...relatedClaims, ...relatedIncidents].map((item, index) => (
-                        <tr key={index} className="hover:bg-gray-50">
-                          <td className="px-3 py-2 font-medium text-blue-600">{item.id}</td>
-                          <td className="px-3 py-2">
-                            <Badge variant={item.type === "Claim" ? "default" : "secondary"}>
-                              {item.type}
-                            </Badge>
-                          </td>
-                          <td className="px-3 py-2">{item.description}</td>
-                          <td className="px-3 py-2">{item.date}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-
             {/* Activity Timeline */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
