@@ -398,15 +398,15 @@ export function AmyApplegateDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Injury and Vehicle Details */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Add Coverage Button */}
+            {/* Add Coverage Button 
             <div className="flex justify-end">
               <Button variant="outline" size="sm">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Coverage
               </Button>
             </div>
-
-            {/* Injury Information */}
+            */}
+            {/* Injury Information 
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
@@ -465,8 +465,8 @@ export function AmyApplegateDetail() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Vehicle Information */}
+            */}
+            {/* Vehicle Information 
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
@@ -526,6 +526,7 @@ export function AmyApplegateDetail() {
                 </div>
               </CardContent>
             </Card>
+            */}
           </div>
 
           {/* Right Column - Activity Timeline, Diaries, Documents, Parties Details */}
