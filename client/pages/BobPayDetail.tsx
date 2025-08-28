@@ -834,7 +834,7 @@ export function BobPayDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-purple-600 text-white">
+                        <AvatarFallback className="bg-gray-600 text-white">
                           SLG
                         </AvatarFallback>
                       </Avatar>
@@ -879,7 +879,7 @@ export function BobPayDetail() {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
                     <div className="flex items-center space-x-3">
                       <Avatar>
-                        <AvatarFallback className="bg-orange-600 text-white">
+                        <AvatarFallback className="bg-gray-600 text-white">
                           QAB
                         </AvatarFallback>
                       </Avatar>
