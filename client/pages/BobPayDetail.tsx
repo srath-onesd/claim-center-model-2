@@ -465,6 +465,158 @@ export function BobPayDetail() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Parties Details */}
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+                <CardTitle className="text-lg font-semibold flex items-center">
+                  <UserCheck className="h-5 w-5 mr-2" />
+                  Parties
+                </CardTitle>
+                <Button variant="link" className="p-0 h-auto text-blue-600">
+                  View All
+                </Button>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Claimant */}
+                  <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback className="bg-blue-600 text-white">
+                          BP
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Bob Pay</p>
+                        <p className="text-xs text-gray-500">Claimant</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Insured */}
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback>SR</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Shubham Raut</p>
+                        <p className="text-xs text-gray-500">Insured</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Attorney */}
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback className="bg-gray-600 text-white">
+                          SLG
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Smith Legal Group</p>
+                        <p className="text-xs text-gray-500">Attorney</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Medical Provider 
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback className="bg-green-600 text-white">WMC</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Westside Medical Center</p>
+                        <p className="text-xs text-gray-500">Medical Provider</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                  */}
+
+                  {/* Repair Shop */}
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback className="bg-gray-600 text-white">
+                          QAB
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Quality Auto Body</p>
+                        <p className="text-xs text-gray-500">Repair Shop</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Adjuster */}
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
+                    <div className="flex items-center space-x-3">
+                      <Avatar>
+                        <AvatarFallback className="bg-blue-600 text-white">
+                          MP
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium">Mital Patel</p>
+                        <p className="text-xs text-gray-500">Adjuster</p>
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <Button variant="ghost" size="sm">
+                        <Phone className="h-4 w-4" />
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        <Mail className="h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Add Coverage Button 
             <div className="flex justify-end">
               <Button variant="outline" size="sm">
@@ -607,9 +759,7 @@ export function BobPayDetail() {
           </div>
 
           {/* Right Column - Activity Timeline, Diaries, Documents, Parties Details */}
-          <div className="space-y-6">
-            
-
+          <div className="space-y-6">        
             {/* Diaries */}
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
@@ -770,157 +920,6 @@ export function BobPayDetail() {
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Parties Details */}
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold flex items-center">
-                  <UserCheck className="h-5 w-5 mr-2" />
-                  Parties
-                </CardTitle>
-                <Button variant="link" className="p-0 h-auto text-blue-600">
-                  View All
-                </Button>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {/* Claimant */}
-                  <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg border border-blue-200">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-blue-600 text-white">
-                          BP
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Bob Pay</p>
-                        <p className="text-xs text-gray-500">Claimant</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Insured */}
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback>SR</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Shubham Raut</p>
-                        <p className="text-xs text-gray-500">Insured</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Attorney */}
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          SLG
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Smith Legal Group</p>
-                        <p className="text-xs text-gray-500">Attorney</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Medical Provider 
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-green-600 text-white">WMC</AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Westside Medical Center</p>
-                        <p className="text-xs text-gray-500">Medical Provider</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                  */}
-
-                  {/* Repair Shop */}
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-gray-600 text-white">
-                          QAB
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Quality Auto Body</p>
-                        <p className="text-xs text-gray-500">Repair Shop</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Adjuster */}
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
-                    <div className="flex items-center space-x-3">
-                      <Avatar>
-                        <AvatarFallback className="bg-blue-600 text-white">
-                          MP
-                        </AvatarFallback>
-                      </Avatar>
-                      <div>
-                        <p className="text-sm font-medium">Mital Patel</p>
-                        <p className="text-xs text-gray-500">Adjuster</p>
-                      </div>
-                    </div>
-                    <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Phone className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm">
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
                 </div>
               </CardContent>
             </Card>
