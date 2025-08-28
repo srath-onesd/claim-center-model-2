@@ -72,6 +72,20 @@ export function AmyApplegateDetail() {
     }
   };
 
+  const customerData = {
+    name: "Rose K",
+    role: "Lawyer",
+    status: "Active",
+    dateOfBirth: "••••••••",
+    gender: "Female",
+    lsc: "000000",
+    phone: "(416) 555-0123",
+    email: "rose.greenthumb@example.com",
+    address: "1508 - 141 Lyon Court, Toronto, ON M5B 3H2",
+    memberSince: "2019",
+    satisfactionScore: 4.8
+  };
+
   const getSortIcon = (field: SortField) => {
     if (field !== sortField) return <ArrowUpDown className="h-3 w-3" />;
     return sortDirection === "asc" ? (
