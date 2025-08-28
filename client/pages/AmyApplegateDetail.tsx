@@ -95,7 +95,7 @@ export function AmyApplegateDetail() {
 
   const customerData = {
     name: "Amy Applegate",
-    role: "Lawyer",
+    role: "Third Party Claimant",
     status: "Active",
     dateOfBirth: "••••••••",
     gender: "Female",
