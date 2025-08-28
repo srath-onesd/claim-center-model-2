@@ -350,6 +350,7 @@ export function AmyApplegateDetail() {
                     <tr>
                       <td className="px-4 py-3 font-medium">
                         Medical Payments
+                        <Eye className="h-4 w-4" />
                       </td>
                       <td className="px-4 py-3 text-right">$5,000.00</td>
                       <td className="px-4 py-3 text-right">$3,850.00</td>
