@@ -621,7 +621,7 @@ export function BobPayDetail() {
                   Diaries
                 </CardTitle>
                 <div className="flex space-x-2">
-                  <Button variant="link" className="p-0 h-auto text-blue-600">
+                  <Button variant="link" className="p-0 h-auto text-gray-600">
                     View All
                   </Button>
                   <Button variant="outline" size="sm">
@@ -684,7 +684,7 @@ export function BobPayDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-blue-100 text-blue-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             High
                           </Badge>
@@ -693,7 +693,7 @@ export function BobPayDetail() {
                           <Button
                             variant="link"
                             size="sm"
-                            className="p-0 h-auto text-blue-600"
+                            className="p-0 h-auto text-gray-600"
                           >
                             Close
                           </Button>
@@ -718,7 +718,7 @@ export function BobPayDetail() {
                           <Button
                             variant="link"
                             size="sm"
-                            className="p-0 h-auto text-blue-600"
+                            className="p-0 h-auto text-gray-600"
                           >
                             Close
                           </Button>
@@ -734,7 +734,7 @@ export function BobPayDetail() {
                         <td className="px-4 py-3 whitespace-nowrap">
                           <Badge
                             variant="secondary"
-                            className="bg-blue-100 text-blue-800"
+                            className="bg-gray-100 text-gray-800"
                           >
                             High
                           </Badge>
@@ -743,7 +743,7 @@ export function BobPayDetail() {
                           <Button
                             variant="link"
                             size="sm"
-                            className="p-0 h-auto text-blue-600"
+                            className="p-0 h-auto text-gray-600"
                           >
                             Close
                           </Button>
