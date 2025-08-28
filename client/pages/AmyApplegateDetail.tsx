@@ -362,7 +362,7 @@ export function AmyApplegateDetail() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">
+                      <td className="flex px-4 py-3 font-medium items-center justify-between">
                         Bodily Injury Liability
                         <Eye className="h-4 w-4" />
                       </td>
