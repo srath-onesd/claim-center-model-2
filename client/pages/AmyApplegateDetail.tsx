@@ -141,7 +141,6 @@ export function AmyApplegateDetail() {
                   <div className="w-16 h-16 bg-gradient-to-br from-[#0054A6] to-[#003d7a] rounded-full flex items-center justify-center text-white text-lg font-semibold shadow-lg">
                     AA
                   </div>
-
                 </div>
                 <div>
                   <div className="flex items-center gap-3">
