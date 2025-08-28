@@ -15,6 +15,7 @@ import {
   ArrowUpDown,
   Mail,
   Phone,
+  Edit3
 } from "lucide-react";
 
 type SortField =
