@@ -207,7 +207,7 @@ export function Summary() {
             </Button>
           </CardHeader>
           <CardContent className="space-y-4 pt-2">
-            {/* Status and Loss Description - Prominent placement */}
+            {/* Status and Loss Description - Prominent placement 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 bg-gray-50 rounded-lg">
               <div>
                 <label className="text-sm font-medium text-gray-900">
@@ -236,7 +236,7 @@ export function Summary() {
                   claims.
                 </p>
               </div>
-            </div>
+            </div>*/}
 
             {/* Other Basic Information Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
