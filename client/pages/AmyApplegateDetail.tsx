@@ -220,7 +220,7 @@ export function AmyApplegateDetail() {
             <CardTitle className="text-lg font-semibold flex items-center">
               Financial Information
             </CardTitle>
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" className="text-blue-600 hover:bg-blue-50">
               <Edit3 size={12} />
             </Button>
           </CardHeader>
