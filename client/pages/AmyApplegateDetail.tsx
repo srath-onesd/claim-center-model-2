@@ -221,7 +221,7 @@ export function AmyApplegateDetail() {
               Financial Information
             </CardTitle>
             <Button variant="ghost" size="sm">
-              <Edit className="h-4 w-4" />
+              <Edit3 size={12} />
             </Button>
           </CardHeader>
           <CardContent>
