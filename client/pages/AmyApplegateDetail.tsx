@@ -166,7 +166,7 @@ export function AmyApplegateDetail() {
                   className="absolute -top-2 -right-2 h-6 w-6 p-0 text-blue-600 hover:bg-blue-50"
                   onClick={navigateToProfile}
                 >
-                  <Edit3 size={12} />
+                  
                 </Button>
                 <div className="flex items-center gap-2">
                   <Calendar size={14} className="text-gray-400" />
