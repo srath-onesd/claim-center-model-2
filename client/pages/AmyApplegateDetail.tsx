@@ -364,6 +364,7 @@ export function AmyApplegateDetail() {
                     <tr>
                       <td className="px-4 py-3 font-medium">
                         Bodily Injury Liability
+                        <Eye className="h-4 w-4" />
                       </td>
                       <td className="px-4 py-3 text-right">$50,000.00</td>
                       <td className="px-4 py-3 text-right">$8,600.00</td>
