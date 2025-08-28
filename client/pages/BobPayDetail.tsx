@@ -338,7 +338,7 @@ export function BobPayDetail() {
                       <td className="px-4 py-3 text-right">$1,500.00</td>
                       <td className="px-4 py-3 text-right">$600.00</td>
                       <td className="px-4 py-3 text-right">$100.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">
+                      <td className="px-4 py-3 text-right text-blue-600">
                         $2,900.00
                       </td>
                     </tr>
@@ -351,7 +351,7 @@ export function BobPayDetail() {
                       <td className="px-4 py-3 text-right">$2,750.00</td>
                       <td className="px-4 py-3 text-right">$3,900.00</td>
                       <td className="px-4 py-3 text-right">$300.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">
+                      <td className="px-4 py-3 text-right text-blue-600">
                         $43,350.00
                       </td>
                     </tr>
@@ -362,7 +362,7 @@ export function BobPayDetail() {
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
                       <td className="px-4 py-3 text-right">$0.00</td>
-                      <td className="px-4 py-3 text-right text-green-600">
+                      <td className="px-4 py-3 text-right text-blue-600">
                         $50,000.00
                       </td>
                     </tr>
