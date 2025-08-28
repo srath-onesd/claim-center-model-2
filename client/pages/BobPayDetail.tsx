@@ -384,7 +384,7 @@ export function BobPayDetail() {
               </Button>
             </div>
             */}
-            {/* Injury Information */}
+            {/* Injury Information 
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
@@ -453,8 +453,8 @@ export function BobPayDetail() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Vehicle Information */}
+            */}
+            {/* Vehicle Information 
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                 <CardTitle className="text-lg font-semibold flex items-center">
@@ -514,6 +514,7 @@ export function BobPayDetail() {
                 </div>
               </CardContent>
             </Card>
+            */}
           </div>
 
           {/* Right Column - Activity Timeline, Diaries, Documents, Parties Details */}
