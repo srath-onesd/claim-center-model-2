@@ -300,7 +300,7 @@ export function ClaimHistory() {
 
         {/* History Table */}
         <Card>
-          <CardHeader/>
+          <CardHeader></CardHeader>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <table className="w-full">
