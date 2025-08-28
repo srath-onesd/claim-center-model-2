@@ -751,7 +751,7 @@ export function AmyApplegateDetail() {
                   Diaries
                 </CardTitle>
                 <div className="flex space-x-2">
-                  <Button variant="link" className="p-0 h-auto text-gray-600">
+                  <Button variant="link" className="p-0 h-auto text-blue-600">
                     View All
                   </Button>
                   <Button variant="outline" size="sm">
