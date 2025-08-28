@@ -193,7 +193,7 @@ export function BobPayDetail() {
               Financial Information - {claimantData.displayName}
             </CardTitle>
             <Button variant="ghost" size="sm">
-              Edit
+              <Edit className="h-4 w-4" />
             </Button>
           </CardHeader>
           <CardContent>
@@ -393,7 +393,7 @@ export function BobPayDetail() {
                   Bodily Injury Information
                 </CardTitle>
                 <Button variant="ghost" size="sm">
-                  Edit
+                  <Edit className="h-4 w-4" />
                 </Button>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -463,7 +463,7 @@ export function BobPayDetail() {
                   Vehicle & Property Damage
                 </CardTitle>
                 <Button variant="ghost" size="sm">
-                  Edit
+                  <Edit className="h-4 w-4" />
                 </Button>
               </CardHeader>
               <CardContent className="space-y-4">
