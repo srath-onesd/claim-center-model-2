@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -299,64 +300,7 @@ export function ClaimHistory() {
 
         {/* History Table */}
         <Card>
-          <CardHeader>
-            <div className="flex flex-col space-y-4">
-              <CardTitle>Claim Activity History</CardTitle>
-
-              {/* Search and Filters */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex-1">
-                  <div className="relative">
-                    <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-                    <Input
-                      placeholder="Search events..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-10"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex gap-2">
-                  <Select value={typeFilter} onValueChange={setTypeFilter}>
-                    <SelectTrigger className="w-40">
-                      <SelectValue placeholder="Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Types</SelectItem>
-                      {uniqueTypes.map(type => (
-                        <SelectItem key={type} value={type}>{type}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-
-                  <Select value={relatedToFilter} onValueChange={setRelatedToFilter}>
-                    <SelectTrigger className="w-48">
-                      <SelectValue placeholder="Related To" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Categories</SelectItem>
-                      {uniqueRelatedTo.map(category => (
-                        <SelectItem key={category} value={category}>{category}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-
-                  <Select value={userFilter} onValueChange={setUserFilter}>
-                    <SelectTrigger className="w-40">
-                      <SelectValue placeholder="User" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Users</SelectItem>
-                      {uniqueUsers.map(user => (
-                        <SelectItem key={user} value={user}>{user}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-            </div>
-          </CardHeader>
+          <CardHeader/>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <table className="w-full">
