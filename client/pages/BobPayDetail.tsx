@@ -94,103 +94,92 @@ export function BobPayDetail() {
       </div>
 
       <div className="p-6 space-y-6">
-        {/* Full-Width Claimant Information Section */}
+        {/* Claimant Information Section */}
         <Card className="w-full">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-            <CardTitle className="text-lg font-semibold">
-              Claimant Information - {claimantData.displayName}
+            <CardTitle className="text-lg font-semibold flex items-center">
+              Claimant Information
             </CardTitle>
             <Button variant="ghost" size="sm">
-              Edit
+              <Edit className="h-4 w-4" />
             </Button>
           </CardHeader>
-          <CardContent className="space-y-6">
-            {/* Status and Claimant Type - Prominent placement */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-lg">
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Claimant Status
-                </label>
-                <div className="flex items-center mt-2">
+          <CardContent className="p-6">
+            {/* Profile-style layout matching screenshot */}
+            <div className="flex items-start space-x-6">
+              {/* Avatar section */}
+              <div className="flex-shrink-0">
+                <Avatar className="h-12 w-12">
+                  <AvatarFallback className="bg-blue-600 text-white text-lg font-semibold">
+                    BP
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+
+              {/* Information section */}
+              <div className="flex-1">
+                {/* Name and Status row */}
+                <div className="flex items-center space-x-3 mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    Bob Pay
+                  </h3>
                   <Badge
                     variant="secondary"
                     className="bg-blue-100 text-blue-800"
                   >
                     Active
                   </Badge>
-                  <span className="text-sm text-gray-600 ml-2">
-                    Third Party Claimant
-                  </span>
                 </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Claim Type
-                </label>
-                <p className="text-sm text-gray-600 mt-2">Bodily Injury</p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Property Damage - Motor Vehicle Accident
-                </p>
-              </div>
-            </div>
 
-            {/* Other Claimant Information Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Date of Birth
-                </label>
-                <p className="text-sm text-gray-600 mt-1">**-**-****</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Phone Number
-                </label>
-                <p className="text-sm text-gray-600 mt-1">(555) 987-6543</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Email Address
-                </label>
-                <div className="flex items-center mt-1">
-                  <Mail className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">bob.pay@email.com</p>
+                {/* Role */}
+                <p className="text-sm text-gray-600 mb-4">
+                  Third Party Claimant
+                </p>
+
+                {/* Information grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-0">
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">DOB</span>
+                    <span className="text-sm text-gray-900">**-**-****</span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <User className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Gender</span>
+                    <span className="text-sm text-gray-900">Male</span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">SSN</span>
+                    <span className="text-sm text-gray-900">***-**-7890</span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Phone</span>
+                    <span className="text-sm text-gray-900">
+                      (555) 987-6543
+                    </span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Mail className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Email</span>
+                    <span className="text-sm text-gray-900">
+                      bob.pay@email.com
+                    </span>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="h-4 w-4 text-gray-400" />
+                    <span className="text-sm text-gray-500">Address</span>
+                    <span className="text-sm text-gray-900">
+                      456 Oak St, Hometown, CA 90211
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Address
-                </label>
-                <div className="flex items-center mt-1">
-                  <MapPin className="h-4 w-4 text-gray-400 mr-1" />
-                  <p className="text-sm text-gray-600">
-                    456 Oak St, Hometown, CA 90211
-                  </p>
-                </div>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Social Security
-                </label>
-                <p className="text-sm text-gray-600 mt-1">***-**-7890</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Driver's License
-                </label>
-                <p className="text-sm text-gray-600 mt-1">CA DL987654321</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Employment Status
-                </label>
-                <p className="text-sm text-gray-600 mt-1">Self-Employed</p>
-              </div>
-              <div>
-                <label className="text-sm font-medium text-gray-900">
-                  Attorney
-                </label>
-                <p className="text-sm text-gray-600 mt-1">Smith Legal Group</p>
               </div>
             </div>
           </CardContent>
