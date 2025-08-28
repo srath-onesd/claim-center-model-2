@@ -139,7 +139,7 @@ export function AmyApplegateDetail() {
               <div className="flex items-center gap-4">
                 <div className="relative">
                   <div className="w-16 h-16 bg-gradient-to-br from-[#0054A6] to-[#003d7a] rounded-full flex items-center justify-center text-white text-lg font-semibold shadow-lg">
-                    RK
+                    AA
                   </div>
                   <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#0054A6] rounded-full border-2 border-white flex items-center justify-center">
                     <CheckCircle size={12} className="text-white" />
