@@ -300,11 +300,6 @@ export function ClaimHistory() {
         {/* History Table */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg font-semibold flex items-center">
-              <Clock className="h-5 w-5 mr-2" />
-              Claims History
-            </CardTitle>
-          </CardHeader>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <table className="w-full">
