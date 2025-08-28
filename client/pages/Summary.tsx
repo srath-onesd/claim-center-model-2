@@ -493,7 +493,7 @@ export function Summary() {
                 </CardTitle>
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-gray-600 text-sm"
+                  className="p-0 h-auto text-blue-600 text-sm"
                   asChild
                 >
                   <RouterLink to="/related">View All</RouterLink>
