@@ -203,7 +203,7 @@ export function Summary() {
               
             </CardTitle>
             <Button variant="ghost" size="sm">
-              Edit
+              <Edit3 size={12} />
             </Button>
           </CardHeader>
           <CardContent className="space-y-4 pt-2">
