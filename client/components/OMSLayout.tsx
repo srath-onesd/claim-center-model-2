@@ -80,7 +80,6 @@ export function OMSLayout({ children }: OMSLayoutProps) {
     { icon: DollarSign, label: "Accounting", path: "/accounting" },
     { icon: Search, label: "Search Center", path: "/search-center" },
     { icon: Settings, label: "Other Utilities", path: "/other-utilities" },
-    { icon: LinkIcon, label: 'Quick Links', path: '/links' },
     { icon: TrendingUp, label: 'Bulk Change Endorsements', path: '/bulk-changes' },
     { icon: Users, label: 'Manage Users', path: '/users' },
     { icon: BarChart, label: 'Analytic Reports', path: '/reports' }
