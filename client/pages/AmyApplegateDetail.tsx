@@ -376,7 +376,7 @@ export function AmyApplegateDetail() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Property Damage
+                      <td className="flex px-4 py-3 font-medium items-center justify-between">Property Damage
                         <Eye className="h-4 w-4" />
                       </td>
                       <td className="px-4 py-3 text-right">$50,000.00</td>
