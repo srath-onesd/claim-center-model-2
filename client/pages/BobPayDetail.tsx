@@ -329,7 +329,7 @@ export function BobPayDetail() {
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     <tr>
-                      <td className="px-4 py-3 font-medium">
+                      <td className="flex px-4 py-3 font-medium items-center justify-between">
                         Medical Payments
                         <Eye className="h-4 w-4" />
                       </td>
@@ -343,7 +343,7 @@ export function BobPayDetail() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">
+                      <td className="flex px-4 py-3 font-medium items-center justify-between">
                         Bodily Injury Liability
                         <Eye className="h-4 w-4" />
                       </td>
@@ -357,7 +357,7 @@ export function BobPayDetail() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="px-4 py-3 font-medium">Property Damage
+                      <td className="flex px-4 py-3 font-medium items-center justify-between">Property Damage
                         <Eye className="h-4 w-4" />
                       </td>
                       <td className="px-4 py-3 text-right">$50,000.00</td>
