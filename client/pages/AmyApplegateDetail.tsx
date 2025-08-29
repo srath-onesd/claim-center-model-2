@@ -793,72 +793,59 @@ export function AmyApplegateDetail() {
 
             {/* Diaries */}
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold flex items-center">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-lg font-semibold">
                   Diaries
                 </CardTitle>
-                <div className="flex space-x-2">
-                  <Button variant="link" className="p-0 h-auto text-blue-600">
-                    View All
-                  </Button>
-                  <Button variant="outline" size="sm">
-                    <Plus className="h-4 w-4 mr-2" />
-                    Add
-                  </Button>
-                </div>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-blue-600 text-sm"
+                  asChild
+                >
+                  <RouterLink to="/diaries">View All</RouterLink>
+                </Button>
               </CardHeader>
-              <CardContent className="p-0">
+              <CardContent className="pt-2">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-gray-50 border-b">
+                    <thead className="bg-gray-50">
                       <tr>
                         <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("dueDate")}
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleDiariesSort("dueDate")}
                         >
                           <div className="flex items-center">
                             Due Date
-                            {getSortIcon("dueDate")}
+                            {getDiariesSortIcon("dueDate", diariesSortField, diariesSortDirection)}
                           </div>
                         </th>
                         <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("title")}
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleDiariesSort("title")}
                         >
                           <div className="flex items-center">
                             Title
-                            {getSortIcon("title")}
+                            {getDiariesSortIcon("title", diariesSortField, diariesSortDirection)}
                           </div>
                         </th>
                         <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("priority")}
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleDiariesSort("priority")}
                         >
                           <div className="flex items-center">
                             Priority
-                            {getSortIcon("priority")}
-                          </div>
-                        </th>
-                        <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("actions")}
-                        >
-                          <div className="flex items-center">
-                            Actions
-                            {getSortIcon("actions")}
+                            {getDiariesSortIcon("priority", diariesSortField, diariesSortDirection)}
                           </div>
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
+                    <tbody className="divide-y divide-gray-200">
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          08-15-25
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-3 py-2 font-medium">08-15-25</td>
+                        <td className="px-3 py-2">
                           Policy Renewal Review - Auto
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
+                        <td className="px-3 py-2">
                           <Badge
                             variant="secondary"
                             className="bg-gray-100 text-gray-800"
@@ -866,24 +853,13 @@ export function AmyApplegateDetail() {
                             High
                           </Badge>
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <Button
-                            variant="link"
-                            size="sm"
-                            className="p-0 h-auto text-gray-600"
-                          >
-                            Close
-                          </Button>
-                        </td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          08-20-25
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-3 py-2 font-medium">08-20-25</td>
+                        <td className="px-3 py-2">
                           Annual Policy Audit – Amy Applegate
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
+                        <td className="px-3 py-2">
                           <Badge
                             variant="secondary"
                             className="bg-gray-100 text-gray-800"
@@ -891,24 +867,13 @@ export function AmyApplegateDetail() {
                             Medium
                           </Badge>
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <Button
-                            variant="link"
-                            size="sm"
-                            className="p-0 h-auto text-gray-600"
-                          >
-                            Close
-                          </Button>
-                        </td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          08-25-25
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-3 py-2 font-medium">08-25-25</td>
+                        <td className="px-3 py-2">
                           Review & Approve Claim #C1189
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
+                        <td className="px-3 py-2">
                           <Badge
                             variant="secondary"
                             className="bg-gray-100 text-gray-800"
@@ -916,39 +881,19 @@ export function AmyApplegateDetail() {
                             High
                           </Badge>
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <Button
-                            variant="link"
-                            size="sm"
-                            className="p-0 h-auto text-gray-600"
-                          >
-                            Close
-                          </Button>
-                        </td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          09-01-25
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-3 py-2 font-medium">09-01-25</td>
+                        <td className="px-3 py-2">
                           Financial Statement Review – Amy Applegate
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
+                        <td className="px-3 py-2">
                           <Badge
                             variant="secondary"
                             className="bg-gray-100 text-gray-800"
                           >
                             Low
                           </Badge>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <Button
-                            variant="link"
-                            size="sm"
-                            className="p-0 h-auto text-gray-600"
-                          >
-                            Close
-                          </Button>
                         </td>
                       </tr>
                     </tbody>
