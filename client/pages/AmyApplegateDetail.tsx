@@ -468,82 +468,78 @@ export function AmyApplegateDetail() {
           <div className="space-y-6">
             {/* Activity Timeline */}
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                <CardTitle className="text-lg font-semibold flex items-center">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-lg font-semibold">
                   Activity Timeline
                 </CardTitle>
-                <Button variant="link" className="p-0 h-auto text-blue-600">
-                  View All
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-blue-600 text-sm"
+                  asChild
+                >
+                  <RouterLink to="/claim-history">View All</RouterLink>
                 </Button>
               </CardHeader>
-              <CardContent className="p-0">
+              <CardContent className="pt-2">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead className="bg-gray-50 border-b">
+                    <thead className="bg-gray-50">
                       <tr>
                         <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("date")}
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("date")}
                         >
                           <div className="flex items-center">
                             Date
-                            {getSortIcon("date")}
+                            {getActivitySortIcon("date", activitySortField, activitySortDirection)}
                           </div>
                         </th>
                         <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("activity")}
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("activity")}
                         >
                           <div className="flex items-center">
                             Activity
-                            {getSortIcon("activity")}
+                            {getActivitySortIcon("activity", activitySortField, activitySortDirection)}
                           </div>
                         </th>
                         <th
-                          className="px-4 py-3 text-left text-xs font-medium text-gray-500 tracking-wider cursor-pointer"
-                          onClick={() => handleSort("actionby")}
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("actionTaker")}
                         >
                           <div className="flex items-center">
                             Action Taken By
-                            {getSortIcon("actionby")}
+                            {getActivitySortIcon("actionTaker", activitySortField, activitySortDirection)}
                           </div>
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
+                    <tbody className="divide-y divide-gray-200">
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          07-01-25
-                        </td>
-                        <td className="px-4 py-3">Last Premium Paid - $150</td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                        <td className="px-3 py-2 font-medium">07-01-25</td>
+                        <td className="px-3 py-2">Last Premium Paid - $150</td>
+                        <td className="px-3 py-2">System</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          06-30-25
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-3 py-2 font-medium">06-30-25</td>
+                        <td className="px-3 py-2">
                           Follow-up on recent claim #C1122 progress.
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">UW John</td>
+                        <td className="px-3 py-2">UW John</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          06-29-25
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-3 py-2 font-medium">06-29-25</td>
+                        <td className="px-3 py-2">
                           Confirmation of payment received premium.
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">System</td>
+                        <td className="px-3 py-2">System</td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          06-28-25
-                        </td>
-                        <td className="px-4 py-3">
+                        <td className="px-3 py-2 font-medium">06-28-25</td>
+                        <td className="px-3 py-2">
                           Logged customer preference for email communication.
                         </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
+                        <td className="px-3 py-2">
                           Agent Johnson
                         </td>
                       </tr>
