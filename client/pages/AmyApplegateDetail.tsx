@@ -65,6 +65,10 @@ export function AmyApplegateDetail() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortField, setSortField] = useState<SortField>("dueDate");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const [activitySortField, setActivitySortField] = useState<SortField>("date");
+  const [activitySortDirection, setActivitySortDirection] = useState<SortDirection>("desc");
+  const [diariesSortField, setDiariesSortField] = useState<SortField>("dueDate");
+  const [diariesSortDirection, setDiariesSortDirection] = useState<SortDirection>("asc");
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
