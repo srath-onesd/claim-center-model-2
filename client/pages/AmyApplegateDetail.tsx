@@ -79,9 +79,53 @@ export function AmyApplegateDetail() {
     }
   };
 
+  const handleActivitySort = (field: SortField) => {
+    if (activitySortField === field) {
+      setActivitySortDirection(activitySortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setActivitySortField(field);
+      setActivitySortDirection("asc");
+    }
+  };
+
+  const handleDiariesSort = (field: SortField) => {
+    if (diariesSortField === field) {
+      setDiariesSortDirection(diariesSortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setDiariesSortField(field);
+      setDiariesSortDirection("asc");
+    }
+  };
+
   const getSortIcon = (field: SortField) => {
     if (field !== sortField) return <ArrowUpDown className="h-3 w-3" />;
     return sortDirection === "asc" ? (
+      <ChevronUp className="h-3 w-3" />
+    ) : (
+      <ChevronDown className="h-3 w-3" />
+    );
+  };
+
+  const getActivitySortIcon = (
+    field: SortField,
+    currentField: SortField,
+    direction: SortDirection,
+  ) => {
+    if (field !== currentField) return <ArrowUpDown className="h-3 w-3" />;
+    return direction === "asc" ? (
+      <ChevronUp className="h-3 w-3" />
+    ) : (
+      <ChevronDown className="h-3 w-3" />
+    );
+  };
+
+  const getDiariesSortIcon = (
+    field: SortField,
+    currentField: SortField,
+    direction: SortDirection,
+  ) => {
+    if (field !== currentField) return <ArrowUpDown className="h-3 w-3" />;
+    return direction === "asc" ? (
       <ChevronUp className="h-3 w-3" />
     ) : (
       <ChevronDown className="h-3 w-3" />
