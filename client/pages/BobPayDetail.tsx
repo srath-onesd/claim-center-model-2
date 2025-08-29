@@ -523,7 +523,7 @@ export function BobPayDetail() {
                       <tr className="hover:bg-gray-50">
                         <td className="px-3 py-2 font-medium">07-01-25</td>
                         <td className="px-3 py-2">
-                          Follow-up call with claimant Bob Pay regarding treatment progress.
+                          Follow-up call with claimant Bob Pay on treatment.
                         </td>
                         <td className="px-3 py-2">Mital Patel</td>
                       </tr>
