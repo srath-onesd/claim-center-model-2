@@ -55,7 +55,10 @@ type SortField =
   | "paid"
   | "reserve"
   | "recovery"
-  | "available";
+  | "available"
+  | "date"
+  | "activity"
+  | "actionTaker";
 type SortDirection = "asc" | "desc";
 
 export function BobPayDetail() {
