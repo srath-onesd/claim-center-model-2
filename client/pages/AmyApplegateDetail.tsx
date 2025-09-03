@@ -288,11 +288,11 @@ export function AmyApplegateDetail() {
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
                     className="bg-gray-800 h-2 rounded-full"
-                    style={{ width: "62%" }}
+                    style={{ width: "21%" }}
                   ></div>
                 </div>
                 <div className="text-xs text-gray-500">
-                  62% of available coverage
+                  21% of available coverage
                 </div>
               </div>
 
