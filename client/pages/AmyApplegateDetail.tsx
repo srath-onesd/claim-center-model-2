@@ -420,7 +420,7 @@ export function AmyApplegateDetail() {
                         <Eye className="h-4 w-4" />
                       </td>
                       <td className="px-4 py-3 text-right">$5,000.00</td>
-                      <td className="px-4 py-3 text-right">$3,850.00</td>
+                      <td className="px-4 py-3 text-right">$3,700.00</td>
                       <td className="px-4 py-3 text-right">$2,850.00</td>
                       <td className="px-4 py-3 text-right">$1,000.00</td>
                       <td className="px-4 py-3 text-right">$150.00</td>
