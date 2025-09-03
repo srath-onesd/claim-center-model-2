@@ -288,11 +288,11 @@ export function BobPayDetail() {
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
                     className="bg-gray-800 h-2 rounded-full"
-                    style={{ width: "55%" }}
+                    style={{ width: "15%" }}
                   ></div>
                 </div>
                 <div className="text-xs text-gray-500">
-                  55% of available coverage
+                  15% of available coverage
                 </div>
               </div>
 
