@@ -230,18 +230,18 @@ export function ClaimHistory() {
   const getTypeBadgeColor = (type: string) => {
     switch (type) {
       case "Payment":
-        return "bg-blue-100 text-blue-800";
+        return "bg-gray-100 text-gray-800";
       case "Reserve Change":
       case "Reserve Establishment":
         return "bg-gray-100 text-gray-800";
       case "Document Upload":
-        return "bg-blue-100 text-blue-800";
+        return "bg-gray-100 text-gray-800";
       case "Status Change":
-        return "bg-blue-100 text-blue-800";
+        return "bg-gray-100 text-gray-800";
       case "Communication":
         return "bg-gray-100 text-gray-800";
       case "Settlement Demand":
-        return "bg-blue-100 text-blue-800";
+        return "bg-gray-100 text-gray-800";
       case "Assignment":
         return "bg-gray-100 text-gray-800";
       case "Claim Creation":
