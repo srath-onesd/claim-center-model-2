@@ -137,11 +137,11 @@ export function BobPayDetail() {
     displayName: "Bob Pay",
     initials: "BP",
     role: "Third Party Claimant",
-    totalIncurred: "$8,750.00",
+    totalIncurred: "$8,450.00",
     reserves: "$4,500.00",
     paid: "$4,250.00",
-    medicalPayments: "$2,100.00",
-    bodilyInjury: "$6,650.00",
+    medicalPayments: "$2,000.00",
+    bodilyInjury: "$6,450.00",
   };
 
   const customerData = {
