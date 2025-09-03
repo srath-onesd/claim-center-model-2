@@ -383,7 +383,7 @@ export function Summary() {
               <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <div className="text-xs text-gray-800 mb-1">Deductible</div>
                 <div className="text-xl font-bold text-gray-900">
-                  $500
+                  $5000
                 </div>
                 <div className="text-xs text-gray-500 mt-2">
                   Policy holder responsibility
