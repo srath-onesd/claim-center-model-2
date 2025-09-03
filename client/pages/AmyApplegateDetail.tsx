@@ -140,8 +140,8 @@ export function AmyApplegateDetail() {
     totalIncurred: "$11,800.00",
     reserves: "$7,250.00",
     paid: "$5,200.00",
-    medicalPayments: "$3,850.00",
-    bodilyInjury: "$8,600.00",
+    medicalPayments: "$3,700.00",
+    bodilyInjury: "$8,100.00",
   };
 
   const customerData = {
