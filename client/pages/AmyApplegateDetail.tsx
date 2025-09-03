@@ -137,7 +137,7 @@ export function AmyApplegateDetail() {
     displayName: "Amy Applegate",
     initials: "AA",
     role: "Third Party Claimant",
-    totalIncurred: "$12,450.00",
+    totalIncurred: "$11,800.00",
     reserves: "$7,250.00",
     paid: "$5,200.00",
     medicalPayments: "$3,850.00",
