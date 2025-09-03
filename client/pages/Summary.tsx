@@ -149,7 +149,7 @@ export function Summary() {
   const activityData = [
     {
       date: "07-01-25",
-      activity: "Last Claim Amount Paid - $150",
+      activity: "Claim Amount Paid - $150",
       actionTaker: "System",
     },
     {
