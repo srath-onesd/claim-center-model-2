@@ -7,20 +7,17 @@ import { Progress } from "@/components/ui/progress";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarInitials } from "@/components/ui/avatar";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  Legend,
-  Tooltip,
-} from "recharts";
 import {
   ChevronDown,
   ChevronRight,
   ChevronUp,
   ArrowUpDown,
+  Mail,
+  Phone,
+  Edit3,
+  Info
 } from "lucide-react";
 
 type SortField =
@@ -34,7 +31,10 @@ type SortField =
   | "incurred"
   | "reserves"
   | "paid"
-  | "recovery";
+  | "recovery"
+  | "id"
+  | "description"
+  | "claimant";
 type SortDirection = "asc" | "desc";
 
 export function Summary() {
@@ -47,6 +47,14 @@ export function Summary() {
     useState<SortField>("claimNumber");
   const [relatedSortDirection, setRelatedSortDirection] =
     useState<SortDirection>("asc");
+  const [relatedClaimsSortField, setRelatedClaimsSortField] =
+    useState<SortField>("id");
+  const [relatedClaimsSortDirection, setRelatedClaimsSortDirection] =
+    useState<SortDirection>("asc");
+  const [activitySortField, setActivitySortField] =
+    useState<SortField>("date");
+  const [activitySortDirection, setActivitySortDirection] =
+    useState<SortDirection>("desc");
 
   const toggleClaimantCollapse = (claimantId: string) => {
     setExpandedClaimant((prev) => (prev === claimantId ? null : claimantId));
@@ -67,6 +75,24 @@ export function Summary() {
     } else {
       setRelatedSortField(field);
       setRelatedSortDirection("asc");
+    }
+  };
+
+  const handleRelatedClaimsSort = (field: SortField) => {
+    if (relatedClaimsSortField === field) {
+      setRelatedClaimsSortDirection(relatedClaimsSortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setRelatedClaimsSortField(field);
+      setRelatedClaimsSortDirection("asc");
+    }
+  };
+
+  const handleActivitySort = (field: SortField) => {
+    if (activitySortField === field) {
+      setActivitySortDirection(activitySortDirection === "asc" ? "desc" : "asc");
+    } else {
+      setActivitySortField(field);
+      setActivitySortDirection("asc");
     }
   };
 
@@ -123,7 +149,7 @@ export function Summary() {
   const activityData = [
     {
       date: "07-01-25",
-      activity: "Last Premium Paid - $150",
+      activity: "Claim Amount Paid - $150",
       actionTaker: "System",
     },
     {
@@ -173,25 +199,25 @@ export function Summary() {
       {/* Breadcrumb Navigation */}
       <Breadcrumb items={breadcrumbItems} />
 
-      <div className="p-6 space-y-6">
-        {/* Full-Width Basic Information Section */}
+      <div className="p-4 space-y-4">
+        {/* Basic Information Section */}
         <Card className="w-full">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-lg font-semibold">
-              Basic Information
+              
             </CardTitle>
-            <Button variant="ghost" size="sm">
-              Edit
+            <Button variant="ghost" size="sm" className="text-blue-600 hover:bg-blue-50">
+              <Edit3 size={12} />
             </Button>
           </CardHeader>
-          <CardContent className="space-y-6">
-            {/* Status and Loss Description - Prominent placement */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-lg">
+          <CardContent className="space-y-4 pt-2">
+            {/* Status and Loss Description - Prominent placement 
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 bg-gray-50 rounded-lg">
               <div>
                 <label className="text-sm font-medium text-gray-900">
                   Status
                 </label>
-                <div className="flex items-center mt-2">
+                <div className="flex items-center mt-1">
                   <Badge
                     variant="secondary"
                     className="bg-blue-100 text-blue-800"
@@ -207,20 +233,30 @@ export function Summary() {
                 <label className="text-sm font-medium text-gray-900">
                   Loss Description
                 </label>
-                <p className="text-sm text-gray-600 mt-2">
+                <p className="text-sm text-gray-600 mt-1">
                   Insured hit other party's car in the front passenger tire
                   while making a left turn at intersection. Multi-vehicle
                   collision with property damage and potential bodily injury
                   claims.
                 </p>
               </div>
-            </div>
+            </div>*/}
 
             {/* Other Basic Information Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
               <div>
-                <label className="text-sm font-medium text-gray-900">
+                <label className="text-sm font-medium text-gray-900 flex items-center gap-2">
                   Claim Number
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <Info className="h-3 w-3 text-gray-400 hover:text-gray-600" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="max-w-xs">Insured hit other party's car in the front passenger tire while making a left turn at intersection. Multi-vehicle collision with property damage and potential bodily injury claims.</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </label>
                 <p className="text-sm text-gray-600 mt-1">23E-12345</p>
               </div>
@@ -270,9 +306,11 @@ export function Summary() {
                   <p className="text-sm text-gray-600">Mital Patel</p>
                   <div className="flex items-center space-x-2 mt-1">
                     <Button variant="ghost" size="sm" className="p-0 h-auto">
+                      <Phone className="h-4 w-4 text-gray-400" />
                       <span className="text-xs">(555) 123-4567</span>
                     </Button>
                     <Button variant="ghost" size="sm" className="p-0 h-auto">
+                      <Mail className="h-4 w-4 text-gray-400" />
                       <span className="text-xs">mital@company.com</span>
                     </Button>
                   </div>
@@ -282,393 +320,248 @@ export function Summary() {
           </CardContent>
         </Card>
 
-        {/* Full-Width Financial Summary Section */}
+        {/* Financial Summary Section - Single Row */}
         <Card className="w-full">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-lg font-semibold">
               Financial Summary
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Left Side - Key Metrics */}
-              <div className="space-y-4">
-                {/* Total Incurred - Prominent */}
-                <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl border border-blue-100">
-                  <div>
-                    <div className="text-sm font-medium text-blue-800 mb-1">
-                      Total Incurred
-                    </div>
-                    <div className="text-3xl font-bold text-blue-900">
-                      $13,150.00
-                    </div>
-                  </div>
+          <CardContent className="pt-2">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {/* Total Incurred */}
+              <div className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
+                <div className="text-xs font-medium text-gray-800 mb-1">
+                  Total Incurred
                 </div>
-
-                {/* Grid of other metrics */}
-                <div className="grid grid-cols-2 gap-4">
-                  {/* Outstanding Reserves */}
-                  <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-800 mb-1">
-                      Outstanding Reserves
-                    </div>
-                    <div className="text-xl font-bold text-gray-900 mb-2">
-                      $8,250
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      Reserve adequacy: Good
-                    </div>
-                  </div>
-
-                  {/* Amount Paid */}
-                  <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <div className="text-xs text-blue-800 mb-1">
-                      Amount Paid
-                    </div>
-                    <div className="text-xl font-bold text-blue-900 mb-2">
-                      $7,500
-                    </div>
-                    <div className="text-xs text-blue-600">
-                      Last: Mar 20, 2024
-                    </div>
-                  </div>
-
-                  {/* Recoveries */}
-                  <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-800 mb-1">Recoveries</div>
-                    <div className="text-xl font-bold text-gray-900 mb-2">
-                      $2,100
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      13.3% recovery rate
-                    </div>
-                  </div>
-
-                  {/* Deductible */}
-                  <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                    <div className="text-xs text-gray-800 mb-1">Deductible</div>
-                    <div className="text-xl font-bold text-gray-900 mb-2">
-                      $500
-                    </div>
-                    <div className="text-xs text-gray-600">Collected</div>
-                  </div>
+                <div className="text-xl font-bold text-gray-900">
+                  $13,150.00
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Cumulative Incurred Claim Costs
                 </div>
               </div>
 
-              {/* Right Side - Pie Chart */}
-              <div className="flex flex-col">
-                <div className="text-sm font-medium text-gray-700 mb-4 text-center">
-                  Financial Breakdown
+              {/* Outstanding Reserves */}
+              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="text-xs text-gray-800 mb-1">
+                  Outstanding Reserves
                 </div>
-                <div className="flex-1" style={{ minHeight: "250px" }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={[
-                          { name: "Paid", value: 7500, color: "#3b82f6" },
-                          {
-                            name: "Reserves",
-                            value: 8250,
-                            color: "#6b7280",
-                          },
-                          {
-                            name: "Recoveries",
-                            value: 2100,
-                            color: "#64748b",
-                          },
-                          {
-                            name: "Deductible",
-                            value: 500,
-                            color: "#475569",
-                          },
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={40}
-                        outerRadius={80}
-                        paddingAngle={2}
-                        dataKey="value"
-                      >
-                        <Cell fill="#3b82f6" />
-                        <Cell fill="#6b7280" />
-                        <Cell fill="#64748b" />
-                        <Cell fill="#475569" />
-                      </Pie>
-                      <Tooltip
-                        formatter={(value) => [
-                          `$${value.toLocaleString()}`,
-                          "",
-                        ]}
-                        labelFormatter={(label) => `${label}`}
-                        contentStyle={{
-                          backgroundColor: "white",
-                          border: "1px solid #e5e7eb",
-                          borderRadius: "8px",
-                          fontSize: "12px",
-                        }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        height={36}
-                        iconType="circle"
-                        wrapperStyle={{ fontSize: "12px" }}
-                      />
-                    </PieChart>
-                  </ResponsiveContainer>
+                <div className="text-xl font-bold text-gray-900">
+                  $8,250
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Funds set aside for future payments
+                </div>
+              </div>
+
+              {/* Amount Paid */}
+              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="text-xs text-gray-800 mb-1">
+                  Amount Paid
+                </div>
+                <div className="text-xl font-bold text-gray-900">
+                  $7,500
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Total amount disbursed to date
+                </div>
+              </div>
+
+              {/* Recoveries */}
+              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="text-xs text-gray-800 mb-1">Recoveries</div>
+                <div className="text-xl font-bold text-gray-900">
+                  $2,100
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Amount recovered from third parties
+                </div>
+              </div>
+
+              {/* Deductible */}
+              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="text-xs text-gray-800 mb-1">Deductible</div>
+                <div className="text-xl font-bold text-gray-900">
+                  $5000
+                </div>
+                <div className="text-xs text-gray-500 mt-2">
+                  Policy holder responsibility
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
 
+        {/* Financial Summary by Claimant */}
+        <Card className="w-full">
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-lg font-semibold">
+              Financial Summary by Claimant
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-2">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-50 border-b">
+                  <tr>
+                    <th
+                      className="px-4 py-3 text-left font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("claimant")}
+                    >
+                      <div className="flex items-center">
+                        Claimant
+                        {getSortIcon("claimant", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("incurred")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Incurred
+                        {getSortIcon("incurred", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("reserves")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Reserves
+                        {getSortIcon("reserves", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("paid")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Paid
+                        {getSortIcon("paid", sortField, sortDirection)}
+                      </div>
+                    </th>
+                    <th
+                      className="px-4 py-3 text-right font-medium text-gray-900 cursor-pointer"
+                      onClick={() => handleSort("recovery")}
+                    >
+                      <div className="flex items-center justify-end">
+                        Recovery
+                        {getSortIcon("recovery", sortField, sortDirection)}
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-4 py-3 font-medium text-gray-900">Amy Applegate</td>
+                    <td className="px-4 py-3 text-right">$12,450.00</td>
+                    <td className="px-4 py-3 text-right">$7,250.00</td>
+                    <td className="px-4 py-3 text-right">$5,200.00</td>
+                    <td className="px-4 py-3 text-right">$2,100.00</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-4 py-3 font-medium text-gray-900">Bob Pay</td>
+                    <td className="px-4 py-3 text-right">$700.00</td>
+                    <td className="px-4 py-3 text-right">$1,000.00</td>
+                    <td className="px-4 py-3 text-right">$2,300.00</td>
+                    <td className="px-4 py-3 text-right">$0.00</td>
+                  </tr>
+                  <tr className="bg-gray-100 font-semibold hover:bg-gray-100 border-t-2 border-gray-300">
+                    <td className="px-4 py-3 font-bold text-gray-900">Total</td>
+                    <td className="px-4 py-3 text-right font-bold">$13,150.00</td>
+                    <td className="px-4 py-3 text-right font-bold">$8,250.00</td>
+                    <td className="px-4 py-3 text-right font-bold">$7,500.00</td>
+                    <td className="px-4 py-3 text-right font-bold">$2,100.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Left Column - Claimant Details */}
-          <div className="space-y-6">
-            {/* Claimant: Amy Applegate */}
+          <div className="space-y-4">
+
+            {/* Related Claims & Incidents */}
             <Card>
-              <CardHeader
-                className="cursor-pointer"
-                onClick={() => toggleClaimantCollapse("amy-applegate")}
-              >
-                <CardTitle className="text-lg font-semibold flex items-center justify-between">
-                  <div>Claimant: Amy Applegate</div>
-                  {expandedClaimant !== "amy-applegate" ? (
-                    <ChevronRight className="h-5 w-5" />
-                  ) : (
-                    <ChevronDown className="h-5 w-5" />
-                  )}
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-lg font-semibold">
+                  Related Claims & Incidents
                 </CardTitle>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-blue-600 text-sm"
+                  asChild
+                >
+                  <RouterLink to="/related">View All</RouterLink>
+                </Button>
               </CardHeader>
-              {expandedClaimant === "amy-applegate" && (
-                <CardContent className="space-y-4 h-auto">
-                  {/* Financial Summary Card */}
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-md font-semibold">
-                        Financial Summary
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                          <thead className="bg-gray-50">
-                            <tr>
-                              <th
-                                className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
-                                onClick={() => handleSort("coverage")}
-                              >
-                                <div className="flex items-center">
-                                  Coverage
-                                  {getSortIcon(
-                                    "coverage",
-                                    sortField,
-                                    sortDirection,
-                                  )}
-                                </div>
-                              </th>
-                              <th
-                                className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer"
-                                onClick={() => handleSort("incurred")}
-                              >
-                                <div className="flex items-center justify-end">
-                                  Incurred
-                                  {getSortIcon(
-                                    "incurred",
-                                    sortField,
-                                    sortDirection,
-                                  )}
-                                </div>
-                              </th>
-                              <th
-                                className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer"
-                                onClick={() => handleSort("reserves")}
-                              >
-                                <div className="flex items-center justify-end">
-                                  Reserves
-                                  {getSortIcon(
-                                    "reserves",
-                                    sortField,
-                                    sortDirection,
-                                  )}
-                                </div>
-                              </th>
-                              <th
-                                className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer"
-                                onClick={() => handleSort("paid")}
-                              >
-                                <div className="flex items-center justify-end">
-                                  Paid
-                                  {getSortIcon(
-                                    "paid",
-                                    sortField,
-                                    sortDirection,
-                                  )}
-                                </div>
-                              </th>
-                              <th
-                                className="px-3 py-2 text-right font-medium text-gray-900 cursor-pointer"
-                                onClick={() => handleSort("recovery")}
-                              >
-                                <div className="flex items-center justify-end">
-                                  Recovery
-                                  {getSortIcon(
-                                    "recovery",
-                                    sortField,
-                                    sortDirection,
-                                  )}
-                                </div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody className="divide-y divide-gray-200">
-                            {amyFinancialData.map((item, index) => (
-                              <tr key={index} className="hover:bg-gray-50">
-                                <td className="px-3 py-2">{item.coverage}</td>
-                                <td className="px-3 py-2 text-right">
-                                  ${item.incurred.toLocaleString()}
-                                </td>
-                                <td className="px-3 py-2 text-right">
-                                  ${item.reserves.toLocaleString()}
-                                </td>
-                                <td className="px-3 py-2 text-right">
-                                  ${item.paid.toLocaleString()}
-                                </td>
-                                <td className="px-3 py-2 text-right">
-                                  ${item.recovery.toLocaleString()}
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Diaries Card */}
-                  <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                      <CardTitle className="text-md font-semibold">
-                        Diaries
-                      </CardTitle>
-                      <Button
-                        variant="link"
-                        className="p-0 h-auto text-blue-600 text-sm"
-                      >
-                        View All
-                      </Button>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400">
-                          <div className="flex justify-between items-start">
-                            <div className="flex-1">
-                              <p className="text-sm font-medium text-gray-900">
-                                Follow up with medical provider
-                              </p>
-                              <p className="text-xs text-gray-600 mt-1">
-                                Due: 07-15-25
-                              </p>
-                            </div>
-                            <Badge
-                              variant="outline"
-                              className="text-gray-700 border-gray-300"
-                            >
-                              Pending
+              <CardContent className="pt-2">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("id")}
+                        >
+                          <div className="flex items-center">
+                            ID
+                            {getSortIcon("id", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("type")}
+                        >
+                          <div className="flex items-center">
+                            Type
+                            {getSortIcon("type", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("description")}
+                        >
+                          <div className="flex items-center">
+                            Description
+                            {getSortIcon("description", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleRelatedClaimsSort("date")}
+                        >
+                          <div className="flex items-center">
+                            Date
+                            {getSortIcon("date", relatedClaimsSortField, relatedClaimsSortDirection)}
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {[...relatedClaims, ...relatedIncidents].map((item, index) => (
+                        <tr key={index} className="hover:bg-gray-50">
+                          <td className="px-3 py-2 font-medium text-gray-600">{item.id}</td>
+                          <td className="px-3 py-2">
+                            <Badge variant={item.type === "Claim" ? "default" : "secondary"}>
+                              {item.type}
                             </Badge>
-                          </div>
-                        </div>
-                        <div className="p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
-                          <div className="flex justify-between items-start">
-                            <div className="flex-1">
-                              <p className="text-sm font-medium text-gray-900">
-                                Review settlement documentation
-                              </p>
-                              <p className="text-xs text-gray-600 mt-1">
-                                Due: 07-20-25
-                              </p>
-                            </div>
-                            <Badge
-                              variant="outline"
-                              className="text-blue-700 border-blue-300"
-                            >
-                              Scheduled
-                            </Badge>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Parties Card */}
-                  <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-                      <CardTitle className="text-md font-semibold">
-                        Parties
-                      </CardTitle>
-                      <Button
-                        variant="link"
-                        className="p-0 h-auto text-blue-600 text-sm"
-                      >
-                        View All
-                      </Button>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center space-x-3">
-                            <Avatar>
-                              <AvatarFallback>AA</AvatarFallback>
-                            </Avatar>
-                            <div>
-                              <p className="text-sm font-medium">
-                                Amy Applegate
-                              </p>
-                              <p className="text-xs text-gray-500">
-                                Claimant - Bodily Injury
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex space-x-2">
-                            <Button variant="ghost" size="sm">
-                              Phone
-                            </Button>
-                            <Button variant="ghost" size="sm">
-                              Email
-                            </Button>
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center space-x-3">
-                            <Avatar>
-                              <AvatarFallback>JD</AvatarFallback>
-                            </Avatar>
-                            <div>
-                              <p className="text-sm font-medium">
-                                Dr. Jane Doe
-                              </p>
-                              <p className="text-xs text-gray-500">
-                                Medical Provider
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex space-x-2">
-                            <Button variant="ghost" size="sm">
-                              Phone
-                            </Button>
-                            <Button variant="ghost" size="sm">
-                              Email
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CardContent>
-              )}
+                          </td>
+                          <td className="px-3 py-2">{item.description}</td>
+                          <td className="px-3 py-2">{item.date}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
             </Card>
 
-            {/* Claimant: Bob Pay */}
+            {/* Claimant: Bob Pay 
             <Card>
               <CardHeader
                 className="cursor-pointer"
@@ -684,8 +577,8 @@ export function Summary() {
                 </CardTitle>
               </CardHeader>
               {expandedClaimant === "bob-pay" && (
-                <CardContent className="space-y-4 h-auto">
-                  {/* Financial Summary Card */}
+                <CardContent className="space-y-4 h-auto">*/}
+                  {/* Financial Summary Card 
                   <Card>
                     <CardHeader>
                       <CardTitle className="text-md font-semibold">
@@ -786,9 +679,9 @@ export function Summary() {
                         </table>
                       </div>
                     </CardContent>
-                  </Card>
+                  </Card>*/}
 
-                  {/* Diaries Card */}
+                  {/* Diaries Card 
                   <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                       <CardTitle className="text-md font-semibold">
@@ -841,9 +734,9 @@ export function Summary() {
                         </div>
                       </div>
                     </CardContent>
-                  </Card>
+                  </Card>*/}
 
-                  {/* Parties Card */}
+                  {/* Parties Card 
                   <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
                       <CardTitle className="text-md font-semibold">
@@ -871,12 +764,8 @@ export function Summary() {
                             </div>
                           </div>
                           <div className="flex space-x-2">
-                            <Button variant="ghost" size="sm">
-                              Phone
-                            </Button>
-                            <Button variant="ghost" size="sm">
-                              Email
-                            </Button>
+                            <Phone className="h-4 w-4 text-gray-400" />
+                            <Mail className="h-4 w-4 text-gray-400" />
                           </div>
                         </div>
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -894,12 +783,8 @@ export function Summary() {
                             </div>
                           </div>
                           <div className="flex space-x-2">
-                            <Button variant="ghost" size="sm">
-                              Phone
-                            </Button>
-                            <Button variant="ghost" size="sm">
-                              Email
-                            </Button>
+                            <Phone className="h-4 w-4 text-gray-400" />
+                            <Mail className="h-4 w-4 text-gray-400" />
                           </div>
                         </div>
                       </div>
@@ -907,244 +792,69 @@ export function Summary() {
                   </Card>
                 </CardContent>
               )}
-            </Card>
+            </Card>*/}
           </div>
 
           {/* Right Column - Additional Cards */}
-          <div className="space-y-6">
-            {/* Related Claims & Incidents */}
+          <div className="space-y-4">
+            {/* Activity Timeline */}
             <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-lg font-semibold">
-                  Related Claims & Incidents
+                  Activity Timeline
                 </CardTitle>
                 <Button
                   variant="link"
-                  className="p-0 h-auto text-blue-600"
+                  className="p-0 h-auto text-blue-600 text-sm"
                   asChild
                 >
-                  <RouterLink to="/related">View All</RouterLink>
+                  <RouterLink to="/claim-history">View All</RouterLink>
                 </Button>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {/* Related Claims */}
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
-                      Claims (2)
-                    </h4>
-                    <div className="space-y-2">
-                      {relatedClaims.map((claim) => (
-                        <div
-                          key={claim.id}
-                          className="p-2 bg-gray-50 rounded text-sm"
+              <CardContent className="pt-2">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("date")}
                         >
-                          <div className="font-medium text-blue-600">
-                            {claim.id}
+                          <div className="flex items-center">
+                            Date
+                            {getSortIcon("date", activitySortField, activitySortDirection)}
                           </div>
-                          <div className="text-gray-600 text-xs">
-                            {claim.description}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Related Incidents */}
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
-                      Incidents (2)
-                    </h4>
-                    <div className="space-y-2">
-                      {relatedIncidents.map((incident) => (
-                        <div
-                          key={incident.id}
-                          className="p-2 bg-gray-50 rounded text-sm"
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("activity")}
                         >
-                          <div className="font-medium text-blue-600">
-                            {incident.id}
+                          <div className="flex items-center">
+                            Activity
+                            {getSortIcon("activity", activitySortField, activitySortDirection)}
                           </div>
-                          <div className="text-gray-600 text-xs">
-                            {incident.description}
+                        </th>
+                        <th
+                          className="px-3 py-2 text-left font-medium text-gray-900 cursor-pointer"
+                          onClick={() => handleActivitySort("actionTaker")}
+                        >
+                          <div className="flex items-center">
+                            Action Taken By
+                            {getSortIcon("actionTaker", activitySortField, activitySortDirection)}
                           </div>
-                        </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {activityData.slice(0, 4).map((activity, index) => (
+                        <tr key={index} className="hover:bg-gray-50">
+                          <td className="px-3 py-2 font-medium">{activity.date}</td>
+                          <td className="px-3 py-2">{activity.activity}</td>
+                          <td className="px-3 py-2">{activity.actionTaker}</td>
+                        </tr>
                       ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Activity Timeline */}
-            <Card>
-              <CardHeader>
-                <div className="flex flex-row items-center justify-between space-y-0 pb-4">
-                  <CardTitle className="text-lg font-semibold">
-                    Activity Timeline
-                  </CardTitle>
-                  <Button
-                    variant="link"
-                    className="p-0 h-auto text-blue-600"
-                    asChild
-                  >
-                    <RouterLink to="/claim-history">View All</RouterLink>
-                  </Button>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {activityData.slice(0, 4).map((activity, index) => (
-                    <div key={index} className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <p className="text-sm font-medium text-gray-900">
-                            {activity.activity}
-                          </p>
-                          <p className="text-xs text-gray-600 mt-1">
-                            {activity.date} • {activity.actionTaker}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Vehicle Information */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold">
-                  Vehicle Information
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 gap-3 text-sm">
-                    <div>
-                      <label className="font-medium text-gray-900">
-                        Vehicle
-                      </label>
-                      <p className="text-gray-600">2020 Honda Civic</p>
-                    </div>
-                    <div>
-                      <label className="font-medium text-gray-900">VIN</label>
-                      <p className="text-gray-600">1HGBH41JXMN109186</p>
-                    </div>
-                    <div>
-                      <label className="font-medium text-gray-900">
-                        Damage
-                      </label>
-                      <p className="text-gray-600">Front-end collision</p>
-                    </div>
-                    <div>
-                      <label className="font-medium text-gray-900">
-                        Repair Shop
-                      </label>
-                      <p className="text-gray-600">ABC Auto Repair</p>
-                    </div>
-                  </div>
-                  <div className="pt-2 border-t">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Estimated Repair:</span>
-                      <span className="font-medium">$3,200</span>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Document Management 
-            <Card>
-            <CardHeader>
-              <CardTitle className="text-lg font-semibold flex items-center">
-                <FileText className="h-5 w-5 mr-2 text-orange-500" />
-                Documents
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-2 bg-gray-50 rounded">
-                  <div className="flex items-center space-x-2">
-                    <FileText className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm">Police Report</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    <Download className="h-4 w-4" />
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between p-2 bg-gray-50 rounded">
-                  <div className="flex items-center space-x-2">
-                    <FileText className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm">Medical Records</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    <Download className="h-4 w-4" />
-                  </Button>
-                </div>
-                <div className="flex items-center justify-between p-2 bg-gray-50 rounded">
-                  <div className="flex items-center space-x-2">
-                    <FileText className="h-4 w-4 text-gray-500" />
-                    <span className="text-sm">Repair Estimates</span>
-                  </div>
-                  <Button variant="ghost" size="sm">
-                    <Download className="h-4 w-4" />
-                  </Button>
-                </div>
-                <Button variant="outline" size="sm" className="w-full mt-3">
-                  <Upload className="h-4 w-4 mr-2" />
-                  Upload Document
-                </Button>
-              </div>
-            </CardContent>
-          </Card> */}
-
-            {/* Legal & Litigation Status */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold">
-                  Legal Status
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium">
-                        Litigation Status
-                      </span>
-                      <Badge
-                        variant="secondary"
-                        className="bg-blue-100 text-blue-800"
-                      >
-                        Active
-                      </Badge>
-                    </div>
-                    <p className="text-xs text-gray-600">
-                      Suit filed on 03/15/2024
-                    </p>
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium text-gray-900">
-                      Attorney
-                    </span>
-                    <p className="text-sm text-gray-600">
-                      Smith & Associates Law
-                    </p>
-                    <p className="text-xs text-gray-500">(555) 987-6543</p>
-                  </div>
-                  <div>
-                    <span className="text-sm font-medium text-gray-900">
-                      Next Hearing
-                    </span>
-                    <p className="text-sm text-gray-600">August 15, 2025</p>
-                  </div>
-                  <div className="pt-2 border-t">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Legal Reserves:</span>
-                      <span className="font-medium text-blue-600">$25,000</span>
-                    </div>
-                  </div>
+                    </tbody>
+                  </table>
                 </div>
               </CardContent>
             </Card>
@@ -1152,7 +862,7 @@ export function Summary() {
         </div>
 
         {/* Bottom Section - Detailed Tables */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           <Tabs defaultValue="reserves" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="reserves">Reserve Analysis</TabsTrigger>

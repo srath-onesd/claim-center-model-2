@@ -204,24 +204,24 @@ export function ClaimHistory() {
   const getEventIcon = (type: string) => {
     switch (type) {
       case "Payment":
-        return <DollarSign className="h-4 w-4 text-green-600" />;
+        return <DollarSign className="h-4 w-4 text-blue-600" />;
       case "Reserve Change":
       case "Reserve Establishment":
-        return <AlertCircle className="h-4 w-4 text-yellow-600" />;
+        return <AlertCircle className="h-4 w-4 text-gray-600" />;
       case "Document Upload":
         return <FileText className="h-4 w-4 text-blue-600" />;
       case "Status Change":
-        return <CheckCircle className="h-4 w-4 text-purple-600" />;
+        return <CheckCircle className="h-4 w-4 text-blue-600" />;
       case "Communication":
-        return <Phone className="h-4 w-4 text-indigo-600" />;
+        return <Phone className="h-4 w-4 text-gray-600" />;
       case "Settlement Demand":
-        return <Edit className="h-4 w-4 text-red-600" />;
+        return <Edit className="h-4 w-4 text-blue-600" />;
       case "Assignment":
-        return <User className="h-4 w-4 text-orange-600" />;
+        return <User className="h-4 w-4 text-gray-600" />;
       case "Claim Creation":
         return <Settings className="h-4 w-4 text-gray-600" />;
       case "Contact Update":
-        return <User className="h-4 w-4 text-teal-600" />;
+        return <User className="h-4 w-4 text-gray-600" />;
       default:
         return <Clock className="h-4 w-4 text-gray-600" />;
     }
@@ -230,24 +230,24 @@ export function ClaimHistory() {
   const getTypeBadgeColor = (type: string) => {
     switch (type) {
       case "Payment":
-        return "bg-green-100 text-green-800";
+        return "bg-gray-100 text-gray-800";
       case "Reserve Change":
       case "Reserve Establishment":
-        return "bg-yellow-100 text-yellow-800";
+        return "bg-gray-100 text-gray-800";
       case "Document Upload":
-        return "bg-blue-100 text-blue-800";
+        return "bg-gray-100 text-gray-800";
       case "Status Change":
-        return "bg-purple-100 text-purple-800";
+        return "bg-gray-100 text-gray-800";
       case "Communication":
-        return "bg-indigo-100 text-indigo-800";
+        return "bg-gray-100 text-gray-800";
       case "Settlement Demand":
-        return "bg-red-100 text-red-800";
+        return "bg-gray-100 text-gray-800";
       case "Assignment":
-        return "bg-orange-100 text-orange-800";
+        return "bg-gray-100 text-gray-800";
       case "Claim Creation":
         return "bg-gray-100 text-gray-800";
       case "Contact Update":
-        return "bg-teal-100 text-teal-800";
+        return "bg-gray-100 text-gray-800";
       default:
         return "bg-gray-100 text-gray-800";
     }
@@ -299,12 +299,7 @@ export function ClaimHistory() {
 
         {/* History Table */}
         <Card>
-          <CardHeader>
-            <CardTitle className="text-lg font-semibold flex items-center">
-              <Clock className="h-5 w-5 mr-2" />
-              Claims History
-            </CardTitle>
-          </CardHeader>
+          <CardHeader></CardHeader>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -354,12 +349,9 @@ export function ClaimHistory() {
                             </Button>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="flex items-center space-x-2">
-                              {getEventIcon(event.type)}
-                              <Badge variant="secondary" className={getTypeBadgeColor(event.type)}>
-                                {event.type}
-                              </Badge>
-                            </div>
+                            <Badge variant="secondary" className={getTypeBadgeColor(event.type)}>
+                              {event.type}
+                            </Badge>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             {event.relatedTo}

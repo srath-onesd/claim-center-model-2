@@ -163,518 +163,6 @@ const navigationItems = [
           },
         ],
       },
-      {
-        id: "claimant3",
-        label: "Sarah Johnson",
-        href: "/claimants/sarah-johnson",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-3",
-            label: "Reserves",
-            href: "/claimants/sarah-johnson/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-3",
-            label: "Payments",
-            href: "/claimants/sarah-johnson/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-3",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-3",
-                label: "Subrogation",
-                href: "/claimants/sarah-johnson/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-3",
-                label: "Financial Receipts",
-                href: "/claimants/sarah-johnson/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-3",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-3",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-3",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-3",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-3",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "claimant4",
-        label: "Michael Chen",
-        href: "/claimants/michael-chen",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-4",
-            label: "Reserves",
-            href: "/claimants/michael-chen/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-4",
-            label: "Payments",
-            href: "/claimants/michael-chen/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-4",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-4",
-                label: "Subrogation",
-                href: "/claimants/michael-chen/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-4",
-                label: "Financial Receipts",
-                href: "/claimants/michael-chen/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-4",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-4",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-4",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-4",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-4",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "claimant5",
-        label: "Lisa Rodriguez",
-        href: "/claimants/lisa-rodriguez",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-5",
-            label: "Reserves",
-            href: "/claimants/lisa-rodriguez/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-5",
-            label: "Payments",
-            href: "/claimants/lisa-rodriguez/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-5",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-5",
-                label: "Subrogation",
-                href: "/claimants/lisa-rodriguez/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-5",
-                label: "Financial Receipts",
-                href: "/claimants/lisa-rodriguez/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-5",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-5",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-5",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-5",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-5",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "claimant6",
-        label: "David Williams",
-        href: "/claimants/david-williams",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-6",
-            label: "Reserves",
-            href: "/claimants/david-williams/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-6",
-            label: "Payments",
-            href: "/claimants/david-williams/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-6",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-6",
-                label: "Subrogation",
-                href: "/claimants/david-williams/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-6",
-                label: "Financial Receipts",
-                href: "/claimants/david-williams/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-6",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-6",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-6",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-6",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-6",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "claimant7",
-        label: "Jennifer Davis",
-        href: "/claimants/jennifer-davis",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-7",
-            label: "Reserves",
-            href: "/claimants/jennifer-davis/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-7",
-            label: "Payments",
-            href: "/claimants/jennifer-davis/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-7",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-7",
-                label: "Subrogation",
-                href: "/claimants/jennifer-davis/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-7",
-                label: "Financial Receipts",
-                href: "/claimants/jennifer-davis/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-7",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-7",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-7",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-7",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-7",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "claimant8",
-        label: "Robert Miller",
-        href: "/claimants/robert-miller",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-8",
-            label: "Reserves",
-            href: "/claimants/robert-miller/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-8",
-            label: "Payments",
-            href: "/claimants/robert-miller/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-8",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-8",
-                label: "Subrogation",
-                href: "/claimants/robert-miller/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-8",
-                label: "Financial Receipts",
-                href: "/claimants/robert-miller/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-8",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-8",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-8",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-8",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-8",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "claimant9",
-        label: "Emily Thompson",
-        href: "/claimants/emily-thompson",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-9",
-            label: "Reserves",
-            href: "/claimants/emily-thompson/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-9",
-            label: "Payments",
-            href: "/claimants/emily-thompson/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-9",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-9",
-                label: "Subrogation",
-                href: "/claimants/emily-thompson/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-9",
-                label: "Financial Receipts",
-                href: "/claimants/emily-thompson/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-9",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-9",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-9",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-9",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-9",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: "claimant10",
-        label: "James Anderson",
-        href: "/claimants/james-anderson",
-        expandable: true,
-        subItems: [
-          {
-            id: "bi-reserves-10",
-            label: "Reserves",
-            href: "/claimants/james-anderson/bodily-injury/reserves",
-          },
-          {
-            id: "bi-payments-10",
-            label: "Payments",
-            href: "/claimants/james-anderson/bodily-injury/payments",
-          },
-          {
-            id: "bi-recovery-10",
-            label: "Recovery",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "subrogation-10",
-                label: "Subrogation",
-                href: "/claimants/james-anderson/bodily-injury/recovery/Subrogation",
-              },
-              {
-                id: "finreceipts-10",
-                label: "Financial Receipts",
-                href: "/claimants/james-anderson/bodily-injury/recovery/finreceipts",
-              },
-            ],
-          },
-          {
-            id: "journal-10",
-            label: "Journal",
-            href: "#",
-            expandable: true,
-            subItems: [
-              {
-                id: "diary-10",
-                label: "Diary",
-                href: "/journal/diary",
-              },
-              {
-                id: "notes-10",
-                label: "Notes",
-                href: "/journal/notes",
-              },
-              {
-                id: "documents-10",
-                label: "Documents",
-                href: "/journal/documents",
-              },
-              {
-                id: "emails-10",
-                label: "Emails",
-                href: "/journal/emails",
-              },
-            ],
-          },
-        ],
-      },
     ],
   },
   {
@@ -717,9 +205,6 @@ export function Layout({ children }: LayoutProps) {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(
     new Set(["claimants"]),
   );
-  const [selectedClaimant, setSelectedClaimant] =
-    useState<NavigationItem | null>(null);
-  const [rightPanelCollapsed, setRightPanelCollapsed] = useState(true);
 
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
@@ -754,22 +239,6 @@ export function Layout({ children }: LayoutProps) {
     setExpandedItems(newExpanded);
   };
 
-  const handleClaimantClick = (claimant: NavigationItem) => {
-    if (selectedClaimant?.id === claimant.id) {
-      // If same claimant is clicked, toggle the panel collapsed state
-      setRightPanelCollapsed(!rightPanelCollapsed);
-    } else {
-      // If different claimant is clicked, select it and show expanded panel
-      setSelectedClaimant(claimant);
-      setRightPanelCollapsed(false);
-    }
-  };
-
-  const toggleRightPanel = () => {
-    if (selectedClaimant) {
-      setRightPanelCollapsed(!rightPanelCollapsed);
-    }
-  };
 
   const renderNavigationItem = (item: NavigationItem, level: number = 0) => {
     const isActive =
@@ -784,8 +253,95 @@ export function Layout({ children }: LayoutProps) {
       // Special styling for claimant level (level 1)
       const isClaimantLevel = level === 1 && /^claimant\d+$/.test(item.id);
 
-      // For claimant level items, navigate to detail page
+      // For claimant level items, create a container with clickable name and expand button
       if (isClaimantLevel) {
+        return (
+          <li key={item.id}>
+            <div className="flex items-center">
+              {/* Clickable claimant name */}
+              <Link
+                to={item.href}
+                className={cn(
+                  "flex-1 px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                  isActive
+                    ? "bg-white/15 text-white border-white/40"
+                    : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+                  "font-medium",
+                )}
+                style={{
+                  paddingLeft: `${level * 16 + 16}px`,
+                }}
+                role="menuitem"
+                aria-label={item.label}
+              >
+                {item.label}
+              </Link>
+
+              {/* Expand/collapse button */}
+              <button
+                onClick={() => toggleExpanded(item.id)}
+                className="px-2 py-1.5 text-white/70 hover:text-white transition-colors"
+                aria-label={`Toggle ${item.label} sections`}
+                aria-expanded={isExpanded}
+              >
+                {isExpanded ? (
+                  <ChevronDown size={12} className="text-white/80" />
+                ) : (
+                  <ChevronRight size={12} className="text-white/80" />
+                )}
+              </button>
+            </div>
+
+            {/* Sub-items */}
+            {isExpanded && item.subItems && (
+              <ul className="mt-1 ml-6 space-y-1">
+                {item.subItems.map((subItem) =>
+                  renderNavigationItem(subItem, level + 1),
+                )}
+              </ul>
+            )}
+          </li>
+        );
+      }
+
+      // For sub-items under claimants (level 2+)
+      if (item.expandable && hasSubItems) {
+        // Expandable items like Recovery and Journal
+        return (
+          <li key={item.id}>
+            <button
+              onClick={() => toggleExpanded(item.id)}
+              className={cn(
+                "w-full flex items-center justify-between px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
+                isExpanded
+                  ? "bg-white/15 text-white border-white/40"
+                  : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
+              )}
+              style={{
+                paddingLeft: `${level * 16 + 16}px`,
+              }}
+              role="menuitem"
+              aria-label={item.label}
+              aria-expanded={isExpanded}
+            >
+              <span>{item.label}</span>
+              {isExpanded ? (
+                <ChevronDown size={12} className="text-white/80" />
+              ) : (
+                <ChevronRight size={12} className="text-white/80" />
+              )}
+            </button>
+            {isExpanded && item.subItems && (
+              <ul className="mt-1 ml-6 space-y-1">
+                {item.subItems.map((subItem) =>
+                  renderNavigationItem(subItem, level + 1),
+                )}
+              </ul>
+            )}
+          </li>
+        );
+      } else {
+        // Direct links like Reserves, Payments, and nested items under Recovery/Journal
         return (
           <li key={item.id}>
             <Link
@@ -795,42 +351,18 @@ export function Layout({ children }: LayoutProps) {
                 isActive
                   ? "bg-white/15 text-white border-white/40"
                   : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
-                "font-medium",
               )}
               style={{
                 paddingLeft: `${level * 16 + 16}px`,
               }}
               role="menuitem"
               aria-label={item.label}
-              onClick={() => setSelectedClaimant(item)}
             >
               {item.label}
             </Link>
           </li>
         );
       }
-
-      // For non-claimant nested items (shouldn't appear now, but keeping for safety)
-      return (
-        <li key={item.id}>
-          <Link
-            to={item.href}
-            className={cn(
-              "block px-3 py-1.5 text-xs rounded transition-colors border-l-2 border-white/20",
-              isActive
-                ? "bg-white/15 text-white border-white/40"
-                : "text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30",
-            )}
-            style={{
-              paddingLeft: `${level * 16 + 16}px`,
-            }}
-            role="menuitem"
-            aria-label={item.label}
-          >
-            {item.label}
-          </Link>
-        </li>
-      );
     }
 
     // Top-level item styling
@@ -1009,122 +541,6 @@ export function Layout({ children }: LayoutProps) {
           {/* Main Content */}
           <main className="flex-1 overflow-auto">{children}</main>
 
-          {/* Compact Right Panel Toggle for Claimant Details */}
-          {selectedClaimant && (
-            <>
-              {rightPanelCollapsed ? (
-                /* Collapsed State - Small button with claimant name positioned in middle-right */
-                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200">
-                  <div className="flex items-center">
-                    <div
-                      className="px-3 py-2 flex items-center space-x-2 cursor-pointer flex-1"
-                      onClick={toggleRightPanel}
-                      title={`Click to open ${selectedClaimant.label} details`}
-                    >
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-700">
-                        {selectedClaimant.label}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                /* Expanded State - Compact popup window positioned in middle-right */
-                <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50 bg-white border border-gray-300 rounded-lg shadow-xl w-80 max-h-96 flex flex-col">
-                  {/* Header */}
-                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg writing-mode: vertical-rl transform: rotate(180deg)">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                      <h3 className="font-semibold text-gray-900 text-sm">
-                        {selectedClaimant.label}
-                      </h3>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setRightPanelCollapsed(true)}
-                        className="h-6 w-6 p-0 hover:bg-gray-200 transition-colors"
-                        title="Close panel"
-                      >
-                        <X className="h-3 w-3" />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 overflow-y-auto p-3">
-                    <div className="space-y-2">
-                      {/* Filter to only show Reserve, Payment, Recovery, Journal */}
-                      {selectedClaimant.subItems
-                        ?.filter((item) =>
-                          [
-                            "Reserves",
-                            "Payments",
-                            "Recovery",
-                            "Journal",
-                          ].includes(item.label),
-                        )
-                        .map((subItem) => (
-                          <div key={subItem.id}>
-                            {subItem.expandable && subItem.subItems ? (
-                              /* Expandable sections like Recovery and Journal */
-                              <div className="border border-gray-200 rounded-md">
-                                <button
-                                  onClick={() => toggleExpanded(subItem.id)}
-                                  className="w-full flex items-center justify-between p-2 text-left hover:bg-gray-50 transition-colors text-xs"
-                                >
-                                  <span className="font-medium text-gray-700">
-                                    {subItem.label}
-                                  </span>
-                                  {expandedItems.has(subItem.id) ? (
-                                    <ChevronDown className="h-3 w-3 text-gray-500" />
-                                  ) : (
-                                    <ChevronRight className="h-3 w-3 text-gray-500" />
-                                  )}
-                                </button>
-                                {expandedItems.has(subItem.id) && (
-                                  <div className="border-t border-gray-200 bg-gray-50">
-                                    {subItem.subItems.map((nestedItem) => (
-                                      <Link
-                                        key={nestedItem.id}
-                                        to={nestedItem.href}
-                                        className="block px-4 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-colors"
-                                      >
-                                        {nestedItem.label}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            ) : (
-                              /* Direct links like Reserves and Payments */
-                              <Link
-                                to={subItem.href}
-                                className="flex items-center justify-between p-2 rounded-md border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 group"
-                              >
-                                <span className="text-xs font-medium text-gray-700 group-hover:text-gray-900">
-                                  {subItem.label}
-                                </span>
-                                <ChevronRight className="h-3 w-3 text-gray-400 group-hover:text-gray-600" />
-                              </Link>
-                            )}
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-
-                  {/* Footer info */}
-                  <div className="px-4 py-2 border-t border-gray-200 bg-gray-50 rounded-b-lg">
-                    <div className="text-xs text-gray-500">
-                      Form Code : {selectedClaimant.id || "2021"}
-                    </div>
-                    <div className="text-xs text-gray-500">Module : Policy</div>
-                  </div>
-                </div>
-              )}
-            </>
-          )}
         </div>
       </div>
     </div>
